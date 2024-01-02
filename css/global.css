@@ -324,23 +324,43 @@ a {
 	color: var(--color-white);
 	text-decoration: none;
 	border-bottom: 2px solid transparent;
-	/* text-decoration-color: transparent; */
 	margin: var(--spacing-sm);
 }
 
 a:hover,
-a:focus {
+a:focus,
+.land-ack-btn:hover,
+.land-ack-btn:focus {
 	border-bottom-color: var(--color-white);
-	/* text-decoration-color: var(--color-white); */
 }
 
 .img-link {
-	height: fit-content;
 	margin: 0;
+	border-bottom: none;
 }
 .img-link:hover,
 .img-link:focus {
 	border-bottom-color: transparent;
+}
+
+.land-ack-btn {
+	background-color: transparent;
+	color: var(--color-white);
+
+	border: none;
+	border-bottom: 2px solid transparent;
+	font-size: var(--font-size-body-reg);
+	font-weight: var(--font-weight-reg);
+	border-radius: 0;
+	padding: 0;
+	line-height: normal;
+	width: fit-content;
+}
+
+.land-ack-btn:hover,
+.land-ack-btn:focus-within {
+	background-color: transparent;
+	color: var(--color-white);
 }
 /* Lists */
 ul {
@@ -397,8 +417,6 @@ button,
 	color: var(--color-white);
 	font-size: var(--font-size-body-lg);
 	font-weight: var(--font-weight-bold);
-	line-height: 32px;
-
 	background-color: var(--color-amaranth);
 	border: 5px solid transparent;
 	border-radius: 10px;
@@ -445,8 +463,11 @@ Global Nav Styles
 ===================================
 */
 
-header nav {
+header nav,
+footer {
 	background-color: var(--color-onyx);
+}
+header nav {
 	min-height: 85px;
 }
 header nav .wrapper {
@@ -467,6 +488,43 @@ header nav ul {
 Global Footer Styles
 ===================================
 */
+
+/* Footer Layout: column container */
+.column-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Company Column */
+.column-container .company,
+footer nav ul {
+	display: flex;
+	flex-direction: column;
+}
+
+.column-container .company {
+	gap: 40px;
+}
+
+/* Footer Navigation */
+footer nav ul {
+	gap: var(--spacing-sm);
+}
+/* Footer layout: policy and socials */
+.policy-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+footer .policy,
+footer .social {
+	display: flex;
+	gap: var(--spacing-sm);
+}
+
+footer .social svg {
+	fill: var(--color-white);
+}
 
 /* 
 ===================================
