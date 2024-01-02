@@ -238,12 +238,12 @@ Variables (colors, text, spacing, etc.)
 	--body-background-color: var(--color-white);
 
 	/* Text */
-	/* Text Fonts */
+	/* Font */
 	--font-main: "Josefin Sans", sans-serif;
-	/* Text Sizing */
+	/* Sizing */
 	/* heading elements */
-	--font-size-title-lg: 5.6rem; /* Title Large - 56px */
-	--font-size-title-reg: 4.6rem; /* Title Regular - 46px */
+	--font-size-title-xl: 5.6rem; /* Title Large - 56px */
+	--font-size-title-lg: 4.6rem; /* Title Regular - 46px */
 	--font-size-title-med: 3.6rem; /* Title Medium - 36px */
 	--font-size-title-sm: 2.8rem; /* Title Small - 28px */
 	--font-size-title-xs: 2.4rem; /* Title Extra Small - 24px */
@@ -255,7 +255,12 @@ Variables (colors, text, spacing, etc.)
 	--font-weight-bold: 700;
 	--font-weight-med: 500;
 	--font-weight-reg: 400;
+
 	/* Spacing */
+	--spacing-xl: 100px;
+	--spacing-lg: 80px;
+	--spacing-med: 40px;
+	--spacing-sm: 20px;
 
 	/* Wrappers */
 	--wrapper-width: 85%;
@@ -277,6 +282,7 @@ html {
 
 body {
 	background-color: var(--body-background-color);
+	font-size: var(--font-size-body-reg);
 }
 
 /* Images */
@@ -296,29 +302,60 @@ h5 {
 }
 
 h1 {
+	font-size: var(--font-size-title-xl);
 }
 h2 {
+	font-size: var(--font-size-title-lg);
 }
 h3 {
+	font-size: var(--font-size-title-med);
 }
 h4 {
+	font-size: var(--font-size-title-sm);
 }
 h5 {
+	font-size: var(--font-size-title-xs);
 }
 
+p {
+}
 /* Links */
+a {
+	color: var(--color-white);
+	text-decoration-color: transparent;
+}
 
+a:hover,
+a:focus {
+	text-decoration-color: var(--color-white);
+}
 /* Lists */
+ul {
+	padding: 0;
+	list-style: none;
+}
 
 /* Forms */
 
 /* 
 ===================================
-Wrappers (container, flexbox, etc.)
+Utility Classes ( flexbox, wrappers,  etc.)
 ===================================
 */
 
-/* Container */
+/* sr only class  */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
 
 /* Wrappers */
 .wrapper {
@@ -332,11 +369,63 @@ Wrappers (container, flexbox, etc.)
 Global Component Styles (buttons, forms, etc.)
 ===================================
 */
+/* HR and Blockquote */
+hr {
+	border-color: var(--color-white);
+}
+
+blockquote {
+}
 
 /* Buttons */
+/* main red button style */
+button,
+.btn-main {
+	color: var(--color-white);
+	font-size: var(--font-size-body-lg);
+	font-weight: var(--font-weight-bold);
+
+	background-color: var(--color-amaranth);
+	border: 5px solid transparent;
+	border-radius: 10px;
+	padding: 10px 40px;
+
+	cursor: pointer;
+}
+
+button:hover,
+button:focus,
+.btn-main:hover,
+.btn-main:focus {
+	color: var(--color-onyx);
+	background-color: var(--color-white);
+}
+
+/* white alternate button */
+.btn-alt {
+	border-color: var(--color-white);
+	background-color: transparent;
+}
+
+.btn-alt:hover,
+.btn-alt:focus {
+	background-color: var(--color-white);
+	color: var(--color-onyx);
+}
 
 /* Forms */
 
+/* 
+===================================
+Global Header Styles
+===================================
+*/
+
+/* 
+===================================
+Global Footer Styles
+===================================
+*/
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
