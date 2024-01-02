@@ -322,12 +322,25 @@ p {
 /* Links */
 a {
 	color: var(--color-white);
-	text-decoration-color: transparent;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	/* text-decoration-color: transparent; */
+	margin: var(--spacing-sm);
 }
 
 a:hover,
 a:focus {
-	text-decoration-color: var(--color-white);
+	border-bottom-color: var(--color-white);
+	/* text-decoration-color: var(--color-white); */
+}
+
+.img-link {
+	height: fit-content;
+	margin: 0;
+}
+.img-link:hover,
+.img-link:focus {
+	border-bottom-color: transparent;
 }
 /* Lists */
 ul {
@@ -384,12 +397,12 @@ button,
 	color: var(--color-white);
 	font-size: var(--font-size-body-lg);
 	font-weight: var(--font-weight-bold);
+	line-height: 32px;
 
 	background-color: var(--color-amaranth);
 	border: 5px solid transparent;
 	border-radius: 10px;
 	padding: 10px 40px;
-
 	cursor: pointer;
 }
 
@@ -401,6 +414,11 @@ button:focus,
 	background-color: var(--color-white);
 }
 
+.btn-main,
+.btn-alt {
+	height: fit-content;
+	margin: 0;
+}
 /* white alternate button */
 .btn-alt {
 	border-color: var(--color-white);
@@ -423,9 +441,33 @@ Global Header Styles
 
 /* 
 ===================================
+Global Nav Styles
+===================================
+*/
+
+header nav {
+	background-color: var(--color-onyx);
+	min-height: 85px;
+}
+header nav .wrapper {
+	width: inherit;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 65px;
+}
+
+header nav ul {
+	display: flex;
+}
+
+/* 
+===================================
 Global Footer Styles
 ===================================
 */
+
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
