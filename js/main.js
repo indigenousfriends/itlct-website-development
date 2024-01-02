@@ -1,7 +1,27 @@
-/*
-  This is the main JavaScript file for the project.
-  We will start by building compoents in their own files.
-  At the end of our project, we will move all of the component JavaScript into this main.js file.
-*/
+let openLaBtn = document.querySelector("#open-la-btn");
+let closeLaBtn = document.querySelector("#close-la-btn");
+let landAckModal = document.querySelector("#land-ack-modal");
 
-console.log("Hello, friends!");
+// open land acknowledgement
+openLaBtn.addEventListener("click", () => {
+	landAckModal.classList.remove("hidden");
+});
+
+// close land acknowledgement
+closeLaBtn.addEventListener("click", () => {
+	landAckModal.classList.add("hidden");
+});
+
+// click on land ack modal overlay
+document.addEventListener("click", event => {
+	if (event.target.classList.contains("modal-overlay")) {
+		landAckModal.classList.add("hidden");
+	}
+});
+
+// escape key on land ack modal
+document.addEventListener("keydown", function (event) {
+	if (event.key === "Escape" && !landAckModal.classList.contains("hidden")) {
+		landAckModal.classList.add("hidden");
+	}
+});

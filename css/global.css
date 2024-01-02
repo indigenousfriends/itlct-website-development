@@ -262,6 +262,7 @@ Variables (colors, text, spacing, etc.)
 	--spacing-med: 40px;
 	--spacing-sm: 20px;
 
+	--border-radius: 10px;
 	/* Wrappers */
 	--wrapper-width: 85%;
 	--wrapper-max-width: 1328px;
@@ -325,6 +326,7 @@ a {
 	text-decoration: none;
 	border-bottom: 2px solid transparent;
 	margin: var(--spacing-sm);
+	height: fit-content;
 }
 
 a:hover,
@@ -334,6 +336,7 @@ a:focus,
 	border-bottom-color: var(--color-white);
 }
 
+/* img links (logo, socials) */
 .img-link {
 	margin: 0;
 	border-bottom: none;
@@ -343,25 +346,6 @@ a:focus,
 	border-bottom-color: transparent;
 }
 
-.land-ack-btn {
-	background-color: transparent;
-	color: var(--color-white);
-
-	border: none;
-	border-bottom: 2px solid transparent;
-	font-size: var(--font-size-body-reg);
-	font-weight: var(--font-weight-reg);
-	border-radius: 0;
-	padding: 0;
-	line-height: normal;
-	width: fit-content;
-}
-
-.land-ack-btn:hover,
-.land-ack-btn:focus-within {
-	background-color: transparent;
-	color: var(--color-white);
-}
 /* Lists */
 ul {
 	padding: 0;
@@ -376,7 +360,7 @@ Utility Classes ( flexbox, wrappers,  etc.)
 ===================================
 */
 
-/* sr only class  */
+/* sr only custom class  */
 .sr-only {
 	position: absolute;
 	width: 1px;
@@ -390,6 +374,11 @@ Utility Classes ( flexbox, wrappers,  etc.)
 	overflow: hidden;
 }
 
+/* hidden */
+
+.hidden {
+	display: none;
+}
 /* Wrappers */
 .wrapper {
 	margin: 0 auto;
@@ -408,6 +397,29 @@ hr {
 }
 
 blockquote {
+	background-color: var(--color-onyx);
+	color: var(--color-white);
+
+	width: fit-content;
+	padding: 80px;
+	margin: 0;
+	border-radius: var(--border-radius);
+}
+
+blockquote p {
+	position: relative;
+}
+blockquote p::before {
+	content: url(../images/blockquote-start.svg);
+	position: absolute;
+	left: -60px;
+	top: -40px;
+}
+blockquote p::after {
+	content: url(../images/blockquote-end.svg);
+	position: absolute;
+	right: -60px;
+	bottom: -30px;
 }
 
 /* Buttons */
@@ -419,7 +431,7 @@ button,
 	font-weight: var(--font-weight-bold);
 	background-color: var(--color-amaranth);
 	border: 5px solid transparent;
-	border-radius: 10px;
+	border-radius: var(--border-radius);
 	padding: 10px 40px;
 	cursor: pointer;
 }
@@ -451,6 +463,51 @@ button:focus,
 
 /* Forms */
 
+/* text inputs */
+input[type="text"],
+input[type="email"],
+textarea {
+	border-radius: var(--border-radius);
+	padding: 18px;
+}
+/* text area */
+textarea {
+	width: 100%;
+	resize: vertical;
+}
+
+/* modals */
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.406);
+}
+
+.modal-content {
+	border-radius: var(--border-radius);
+	background-color: var(--color-white);
+
+	padding: var(--spacing-lg);
+	margin: 0 auto;
+	width: 80%;
+}
+
+.close-modal {
+	background-color: transparent;
+	border: transparent;
+	padding: 0;
+}
+.close-modal svg {
+	fill: var(--color-onyx);
+}
+.close-modal svg:hover {
+	fill: var(--color-amaranth);
+}
 /* 
 ===================================
 Global Header Styles
@@ -493,6 +550,7 @@ Global Footer Styles
 .column-container {
 	display: flex;
 	justify-content: space-between;
+	padding: 50px 0;
 }
 
 /* Company Column */
@@ -506,6 +564,25 @@ footer nav ul {
 	gap: 40px;
 }
 
+.land-ack-btn {
+	background-color: transparent;
+	color: var(--color-white);
+
+	border: none;
+	border-bottom: 2px solid transparent;
+	font-size: var(--font-size-body-reg);
+	font-weight: var(--font-weight-reg);
+	border-radius: 0;
+	padding: 0;
+	line-height: normal;
+	width: fit-content;
+}
+
+.land-ack-btn:hover,
+.land-ack-btn:focus-within {
+	background-color: transparent;
+	color: var(--color-white);
+}
 /* Footer Navigation */
 footer nav ul {
 	gap: var(--spacing-sm);
@@ -525,7 +602,10 @@ footer .social {
 footer .social svg {
 	fill: var(--color-white);
 }
-
+/* newsletter form  */
+.newsletter-form {
+	color: var(--color-white);
+}
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
