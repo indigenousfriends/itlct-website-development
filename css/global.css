@@ -410,13 +410,13 @@ blockquote p {
 	position: relative;
 }
 blockquote p::before {
-	content: url(../images/blockquote-start.svg);
+	content: url(../images/global/blockquote-start.svg);
 	position: absolute;
 	left: -60px;
 	top: -40px;
 }
 blockquote p::after {
-	content: url(../images/blockquote-end.svg);
+	content: url(../images/global/blockquote-end.svg);
 	position: absolute;
 	right: -60px;
 	bottom: -30px;
@@ -426,6 +426,7 @@ blockquote p::after {
 /* main red button style */
 button,
 .btn-main {
+	font-family: var(--font-main);
 	color: var(--color-white);
 	font-size: var(--font-size-body-lg);
 	font-weight: var(--font-weight-bold);
@@ -526,6 +527,7 @@ footer {
 }
 header nav {
 	min-height: 85px;
+	padding: var(--spacing-sm) 0;
 }
 header nav .wrapper {
 	width: inherit;
@@ -606,6 +608,7 @@ footer .social svg {
 .newsletter-form {
 	color: var(--color-white);
 }
+
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
@@ -619,16 +622,12 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 */
 
 /* Tablet Only */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-	/* Add styles that only apply to tablet. These are usually fixes to get resposniveness right */
-}
 
-/* Tablet and Larger */
-@media screen and (min-width: 768px) {
+/* Tablet and smaller */
+@media screen and (max-width: 768px) {
 	/* Add styles that apply to table and desktop */
 }
 
-/* Desktop Only */
-@media screen and (min-width: 1024px) {
-	/* Add styles that apply specifically to desktop */
+/* Mobile Only */
+@media screen and (max-width: 400px) {
 }
