@@ -325,8 +325,6 @@ a {
 	color: var(--color-white);
 	text-decoration: none;
 	border-bottom: 2px solid transparent;
-	margin: var(--spacing-sm);
-	height: fit-content;
 }
 
 a:hover,
@@ -348,6 +346,7 @@ a:focus,
 
 /* Lists */
 ul {
+	margin: 0;
 	padding: 0;
 	list-style: none;
 }
@@ -379,11 +378,12 @@ Utility Classes ( flexbox, wrappers,  etc.)
 .hidden {
 	display: none;
 }
+
 /* Wrappers */
 .wrapper {
-	margin: 0 auto;
 	width: var(--wrapper-width);
 	max-width: var(--wrapper-max-width);
+	margin: 0 auto;
 }
 
 /* 
@@ -509,11 +509,6 @@ textarea {
 .close-modal svg:hover {
 	fill: var(--color-amaranth);
 }
-/* 
-===================================
-Global Header Styles
-===================================
-*/
 
 /* 
 ===================================
@@ -529,9 +524,8 @@ header nav {
 	min-height: 85px;
 	padding: var(--spacing-sm) 0;
 }
-header nav .wrapper {
-	width: inherit;
 
+header nav .flex-container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -540,8 +534,37 @@ header nav .wrapper {
 
 header nav ul {
 	display: flex;
+	gap: var(--spacing-med);
 }
 
+header nav li:last-child {
+	display: none;
+}
+
+/* Mobile Menu button */
+.mobile-menu {
+	background-color: transparent;
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+	display: none; /* hidden until mobile media query */
+}
+
+.mobile-menu:hover,
+.mobile-menu:focus-within {
+	background-color: transparent;
+}
+
+/* Mobile menu icons */
+.mobile-menu svg {
+	fill: var(--color-white);
+}
+
+/* 
+===================================
+Global Header Styles
+===================================
+*/
 /* 
 ===================================
 Global Footer Styles
@@ -621,7 +644,47 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 ===================================
 */
 
-/* Tablet Only */
+/* Tablet and smaller */
+@media (max-width: 1024px) {
+	/* 
+	===================================
+	Mobile Menu
+	===================================
+	*/
+	.mobile-menu-container {
+		position: relative;
+	}
+
+	/* REVEAL: mobile menu button */
+	.mobile-menu,
+	.mobile-support-btn {
+		display: block;
+	}
+
+	/* HIDE: desktop support button */
+	.desktop-support-btn {
+		display: none;
+	}
+
+	.nav-links {
+		background-color: var(--color-onyx);
+		padding: var(--spacing-med);
+
+		flex-direction: column;
+		gap: var(--spacing-sm);
+
+		position: absolute;
+		top: 78px;
+		right: 0px;
+		width: 185px;
+
+		display: none;
+	}
+
+	.open-menu {
+		display: flex;
+	}
+}
 
 /* Tablet and smaller */
 @media screen and (max-width: 768px) {
