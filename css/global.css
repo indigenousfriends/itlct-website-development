@@ -379,7 +379,8 @@ Utility Classes ( flexbox, wrappers,  etc.)
 	display: none;
 }
 
-/* Wrappers */
+/* Global Wrapper */
+
 .wrapper {
 	width: var(--wrapper-width);
 	max-width: var(--wrapper-max-width);
@@ -391,6 +392,12 @@ Utility Classes ( flexbox, wrappers,  etc.)
 Global Component Styles (buttons, forms, etc.)
 ===================================
 */
+/* Section */
+
+section {
+	margin: var(--spacing-lg) 0;
+}
+
 /* HR and Blockquote */
 hr {
 	border-color: var(--color-white);
@@ -410,13 +417,13 @@ blockquote p {
 	position: relative;
 }
 blockquote p::before {
-	content: url(../images/global/blockquote-start.svg);
+	content: url("../assets/icons/global/blockquote-start.svg");
 	position: absolute;
 	left: -60px;
 	top: -40px;
 }
 blockquote p::after {
-	content: url(../images/global/blockquote-end.svg);
+	content: url("../assets/icons/global/blockquote-end.svg");
 	position: absolute;
 	right: -60px;
 	bottom: -30px;
@@ -464,13 +471,14 @@ button:focus,
 
 /* Forms */
 
-/* text inputs */
+/* General styles */
 input[type="text"],
 input[type="email"],
 textarea {
 	border-radius: var(--border-radius);
 	padding: 18px;
 }
+
 /* text area */
 textarea {
 	width: 100%;
@@ -478,7 +486,6 @@ textarea {
 }
 
 /* modals */
-
 .modal-overlay {
 	position: fixed;
 	top: 0;

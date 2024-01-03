@@ -1,13 +1,20 @@
+/* 
+===================================
+Land Acknowledgement Modal
+===================================
+*/
+
+// HTML Reference Variables
 let openLaBtn = document.querySelector("#open-la-btn");
 let closeLaBtn = document.querySelector("#close-la-btn");
 let landAckModal = document.querySelector("#land-ack-modal");
 
-// open land acknowledgement
+// open land acknowledgement via button
 openLaBtn.addEventListener("click", () => {
 	landAckModal.classList.remove("hidden");
 });
 
-// close land acknowledgement
+// close land acknowledgement via button
 closeLaBtn.addEventListener("click", () => {
 	landAckModal.classList.add("hidden");
 });
@@ -26,13 +33,20 @@ document.addEventListener("keydown", function (event) {
 	}
 });
 
-// mobile menu functionality
+/* 
+===================================
+Mobile Menu
+===================================
+*/
+
+// HTML Reference Variables
 let mobileMenuBtn = document.querySelector("#mobile-menu");
 let menuIconOpen = document.querySelector(".menu-icon");
 let menuIconClose = document.querySelector(".menu-exit-icon");
 
 let mobileMenuComponent = document.querySelector("#nav-links");
 
+// toggle Mobile Menu via button
 mobileMenuBtn.addEventListener("click", () => {
 	// toggle close and open icons for menu button
 	menuIconOpen.classList.toggle("hidden");
