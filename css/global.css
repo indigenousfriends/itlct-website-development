@@ -236,7 +236,8 @@ Variables (colors, text, spacing, etc.)
 
 	/* Color Assignment */
 	--body-background-color: var(--color-white);
-
+	--text-color-dark: var(--color-onyx);
+	--text-color-light: var(--color-white);
 	/* Text */
 	/* Font */
 	--font-main: "Josefin Sans", sans-serif;
@@ -256,17 +257,28 @@ Variables (colors, text, spacing, etc.)
 	--font-weight-med: 500;
 	--font-weight-reg: 400;
 
+	/* Line Height */
+	--line-height-lg: 26px;
+
 	/* Spacing */
 	--spacing-xl: 100px;
 	--spacing-lg: 80px;
 	--spacing-med: 40px;
 	--spacing-sm: 20px;
 
+	/* Borders */
+	/* width */
+	--border-width-link: 2px;
+	--border-width-btn: 3px;
+	/* radius */
 	--border-radius: 10px;
+
 	/* Wrappers */
 	--wrapper-width: 85%;
-	--wrapper-max-width: 1328px;
 
+	--mq-width-desktop-max: 1328px;
+	--mq-width-tablet-max: 768px;
+	--mq-width-phone-max: 400px;
 	/* Media Queries */
 }
 
@@ -318,13 +330,11 @@ h5 {
 	font-size: var(--font-size-title-xs);
 }
 
-p {
-}
 /* Links */
 a {
 	color: var(--color-white);
 	text-decoration: none;
-	border-bottom: 2px solid transparent;
+	border-bottom: var(--border-width-link) solid transparent;
 }
 
 a:hover,
@@ -382,8 +392,8 @@ Utility Classes ( flexbox, wrappers,  etc.)
 /* Global Wrapper */
 
 .wrapper {
-	width: var(--wrapper-width);
-	max-width: var(--wrapper-max-width);
+	width: var(--mq-width-desktop-max);
+	max-width: var(--mq-width-desktop-max);
 	margin: 0 auto;
 }
 
@@ -395,7 +405,7 @@ Global Component Styles (buttons, forms, etc.)
 /* Section */
 
 section {
-	margin: var(--spacing-lg) 0;
+	padding: var(--spacing-lg) 0;
 }
 
 /* HR and Blockquote */
@@ -408,7 +418,7 @@ blockquote {
 	color: var(--color-white);
 
 	width: fit-content;
-	padding: 80px;
+	padding: var(--spacing-lg);
 	margin: 0;
 	border-radius: var(--border-radius);
 }
@@ -432,15 +442,21 @@ blockquote p::after {
 /* Buttons */
 /* main red button style */
 button,
-.btn-main {
+.btn-main,
+.btn-alt {
+	display: block;
+	width: fit-content;
+	padding: 10px 40px;
+
 	font-family: var(--font-main);
-	color: var(--color-white);
 	font-size: var(--font-size-body-lg);
 	font-weight: var(--font-weight-bold);
+
+	color: var(--color-white);
 	background-color: var(--color-amaranth);
-	border: 5px solid transparent;
+
+	border: var(--border-width-btn) solid transparent;
 	border-radius: var(--border-radius);
-	padding: 10px 40px;
 	cursor: pointer;
 }
 
@@ -450,6 +466,10 @@ button:focus,
 .btn-main:focus {
 	color: var(--color-onyx);
 	background-color: var(--color-white);
+}
+/* long button */
+.btn-long {
+	padding: 10px var(--spacing-lg);
 }
 
 .btn-main,
@@ -601,7 +621,7 @@ footer nav ul {
 	color: var(--color-white);
 
 	border: none;
-	border-bottom: 2px solid transparent;
+	border-bottom: var(--border-width-link) transparent;
 	font-size: var(--font-size-body-reg);
 	font-weight: var(--font-weight-reg);
 	border-radius: 0;
@@ -692,10 +712,16 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 
 /* Tablet and smaller */
 @media screen and (max-width: 768px) {
-	/* Add styles that apply to table and desktop */
+	/* wrapper adjustment */
+	.wrapper {
+		max-width: var(--mq-width-tablet-max);
+	}
 }
 
 /* Mobile Only */
 @media screen and (max-width: 400px) {
-
+	/* wrapper adjustment */
+	.wrapper {
+		max-width: var(--mq-width-phone-max);
+	}
 }
