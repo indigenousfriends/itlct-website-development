@@ -666,6 +666,7 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 		display: none;
 	}
 
+	/* Changing nav links style */
 	.nav-links {
 		background-color: var(--color-onyx);
 		padding: var(--spacing-med);
@@ -681,6 +682,7 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 		display: none;
 	}
 
+	/* open menu class toggled via js  */
 	.open-menu {
 		display: flex;
 	}
