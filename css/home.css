@@ -106,7 +106,7 @@ Global Eco System
 ===================================
 */
 
-/* to be added over to global */
+/* text styles: to be added over to global */
 
 .global-ecosystem h3,
 .global-ecosystem p {
@@ -117,13 +117,74 @@ Global Eco System
 	color: white;
 }
 
+/* background img */
+
+.global-ecosystem {
+}
+
+/* overlapping grid layout */
+.global-ecosystem .content-container {
+}
+
+/* Text and blockquote styles */
 .global-ecosystem .text-container {
 	background-color: var(--color-grape);
 	padding: var(--spacing-lg) 100px;
 	border-radius: var(--border-radius);
 }
 
-.global-ecosystem .content-container {
+/* 
+===================================
+What We Do
+===================================
+*/
+
+/* text adjustments */
+.what-we-do h3 {
+	text-align: center;
+}
+
+.wwd-card h4,
+.wwd-card p {
+	color: var(--text-color-light);
+}
+.wwd-card h4 {
+	font-size: var(--font-size-title-med);
+}
+.wwd-card p {
+	font-size: var(--font-size-body-lg);
+}
+
+/* card layout */
+.wwd-card-list {
+	display: flex;
+	justify-content: center;
+	gap: var(--spacing-med);
+}
+
+/* card styling */
+.wwd-card {
+	width: calc(33% - var(--spacing-med));
+}
+
+.wwd-card-img img {
+	border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.wwd-card-text {
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
+	padding: var(--spacing-sm);
+}
+
+/* individual card styling */
+.wwd-digital {
+	background-color: var(--color-teal);
+}
+.wwd-community {
+	background-color: var(--color-copper);
+}
+.wwd-programs {
+	background-color: var(--color-blue);
 }
 
 /* 
@@ -140,7 +201,7 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 
 /* Tablet Only */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-	/* Add styles that only apply to tablet. These are usually fixes to get resposnivenes right */
+	/* Add styles that only apply to tablet. These are usually fixes to get responsiveness right */
 }
 
 /* Tablet and Larger */
