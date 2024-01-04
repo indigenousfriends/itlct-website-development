@@ -202,6 +202,44 @@ What We Do
 
 /* 
 ===================================
+Our Values
+===================================
+*/
+
+/* text adjustments */
+
+.value-card h4 {
+	font-size: var(--font-size-title-med);
+}
+
+.our-values p {
+	font-size: var(--font-size-body-lg);
+}
+/* title layout */
+.values-title-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+/* values list layout */
+.values-list {
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--color-blue);
+
+	border-radius: var(--border-radius);
+	padding: var(--spacing-lg);
+	gap: var(--spacing-lg);
+}
+.value-card {
+	color: var(--text-color-light);
+	width: calc(33% - var(--spacing-lg));
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+/* 
+===================================
 Media Queries (overriding styles for different screen sizes)
 
 Note: Here we are using a mobile-first approach, so we start with the smallest screen size and work our way up.
