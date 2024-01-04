@@ -50,11 +50,18 @@ function getItemData(collection, item) {
 		.catch(error => console.error("Error:", error));
 }
 
-// Fetch all posts from Strapi
+// Fetch all events
 function getCollectData(collection, source) {
 	const cms = source;
+	const apiURL = "";
 
-	fetch(`${apiURL}/${collection}-items?populate=*`, {
+	if (cms === "strapi") {
+		const apiURL = `https://cms.iftheselandscouldtalk.org/api/${collection}-items?populate=*`;
+	} else if (cms === "wordpress") {
+		const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/posts?type=events`;
+	}
+
+	fetch(`${apiURL}`, {
 		method: "GET",
 		headers: {
 			"Content-Type": "application/json",
@@ -62,10 +69,12 @@ function getCollectData(collection, source) {
 	})
 		.then(response => response.json())
 		.then(response => {
+			console.log(response.data);
 			response.data.forEach(post => {
 				const container = document.getElementById(`${collection}-container`);
 				const postDiv = document.createElement("div");
 				postDiv.classList.add("post");
+
 				const postImage = document.createElement("img");
 				const postTitle = document.createElement("h2");
 				const postContent = document.createElement("p");
