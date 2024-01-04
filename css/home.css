@@ -1,0 +1,154 @@
+/* 
+===================================
+Page Component Styles (icon grid, team member card)
+===================================
+*/
+
+/* 
+===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+/* 
+===================================
+Hero 
+===================================
+*/
+
+.hero {
+	background-image: url("https://placedog.net/800/640?id=7");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+	padding: 140px 0;
+	color: var(--color-white);
+	text-align: center;
+	min-height: 85vh;
+	display: flex;
+}
+
+.hero .wrapper {
+	height: inherit;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+.hero h2 {
+	font-size: var(--font-size-title-xl);
+}
+
+.hero p {
+	font-size: var(--font-size-body-lg);
+}
+
+/* hero button container */
+
+.hero-btn-container {
+	display: flex;
+	justify-content: center;
+	gap: var(--spacing-med);
+}
+
+/* 
+===================================
+Community Partnerships 
+===================================
+*/
+
+/* Community Card */
+
+/* flex layout */
+.community-card {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+/* flex children */
+.community-card .img-container,
+.community-card .text-container {
+	width: 50%;
+}
+
+/* text container */
+.community-card .text-container {
+	border-radius: var(--border-radius) 0 0 var(--border-radius);
+	padding: var(--spacing-lg);
+	background-color: var(--color-amaranth);
+	color: var(--color-white);
+}
+
+.community-card p {
+	font-size: var(--font-size-body-lg);
+	line-height: var(--line-height-lg);
+	margin: var(--spacing-sm) 0;
+}
+
+.community-card img {
+	height: 100%;
+	object-fit: cover;
+
+	border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.community-card a {
+	text-decoration: none;
+}
+
+.community-card a:hover,
+.community-card a:focus {
+	background-color: var(--color-white);
+}
+
+/* 
+===================================
+Global Eco System
+===================================
+*/
+
+/* to be added over to global */
+
+.global-ecosystem h3,
+.global-ecosystem p {
+	color: white;
+}
+.global-ecosystem p {
+	font-size: var(--font-size-body-lg);
+	color: white;
+}
+
+.global-ecosystem .text-container {
+	background-color: var(--color-grape);
+	padding: var(--spacing-lg) 100px;
+	border-radius: var(--border-radius);
+}
+
+.global-ecosystem .content-container {
+}
+
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+
+Note: Here we are using a mobile-first approach, so we start with the smallest screen size and work our way up.
+Start by writing styles for the mobile version of the design on the lines above.
+Anything that needs to change for larger screens should be added to the media queries below.
+
+Feel free to change the min/max-width values to whatever you need. Use variables.
+===================================
+*/
+
+/* Tablet Only */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	/* Add styles that only apply to tablet. These are usually fixes to get resposnivenes right */
+}
+
+/* Tablet and Larger */
+@media screen and (min-width: 768px) {
+	/* Add styles that apply to table and desktop */
+}
+
+/* Desktop Only */
+@media screen and (min-width: 1024px) {
+	/* Add styles that apply specifically to desktop */
+}
