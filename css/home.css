@@ -91,7 +91,7 @@ Community Partnerships
 
 /* 
 ===================================
-Global Eco System
+Global Ecosystem
 ===================================
 */
 
@@ -111,14 +111,29 @@ Global Eco System
 .global-ecosystem {
 }
 
-/* overlapping grid layout */
 .global-ecosystem .content-container {
+	display: flex;
+}
+.global-ecosystem .text-container,
+.global-ecosystem blockquote {
+	width: 50%;
+}
+.global-ecosystem blockquote {
+	position: relative;
+	top: 100px;
+	right: 100px;
+
+	height: min-content;
 }
 
 /* Text and blockquote styles */
 .global-ecosystem .text-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
 	background-color: var(--color-grape);
-	padding: var(--spacing-lg) 100px;
+	padding: var(--spacing-lg);
+	padding-right: 140px;
 	border-radius: var(--border-radius);
 }
 
@@ -205,6 +220,7 @@ Our Values
 	/* temporary, will update to img */
 	background-color: var(--color-onyx);
 }
+
 /* title and card layout */
 .our-values .wrapper {
 	display: flex;
@@ -240,27 +256,35 @@ Upcoming Events and Programs
 ===================================
 */
 
+/* text adjustments */
+.events,
+.event a {
+	color: var(--text-color-dark);
+}
+
 /* event list layout */
 .event-list {
+	margin-top: var(--spacing-med);
+
 	display: flex;
+	justify-content: space-between;
+	gap: var(--spacing-sm);
 }
 
 /* Event Card Style */
-.event-card {
+.event {
+	width: calc(33% - var(--spacing-sm));
 	max-width: 335px;
-
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
 }
 
-.event-card img {
+.event img {
 	border-radius: var(--border-radius);
 	min-height: 430px;
 	object-fit: cover;
 }
 
-.event-card-text {
+.event-text {
+	margin-top: var(--spacing-sm);
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
@@ -268,12 +292,6 @@ Upcoming Events and Programs
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
-
-Note: Here we are using a mobile-first approach, so we start with the smallest screen size and work our way up.
-Start by writing styles for the mobile version of the design on the lines above.
-Anything that needs to change for larger screens should be added to the media queries below.
-
-Feel free to change the min/max-width values to whatever you need. Use variables.
 ===================================
 */
 

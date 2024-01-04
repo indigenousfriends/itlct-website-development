@@ -302,6 +302,7 @@ body {
 /* Images */
 img {
 	width: 100%;
+	height: auto;
 	display: block;
 }
 
@@ -359,7 +360,6 @@ a:focus,
 
 /* img links (logo, socials) */
 .img-link {
-	margin: 0;
 	border-bottom: none;
 }
 .img-link:hover,
