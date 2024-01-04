@@ -8,6 +8,7 @@
   <meta name="robots" content="noindex">
   <title>ITLCT Homepage Demo from WordPress</title>
   <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/cms.css" />
 </head>
 
 <body>
@@ -15,14 +16,14 @@
     <div class="wrapper">
       <h1 id="page-title">WordPress Demo</h1>
       <div id="content-container"></div>
-      <div id="event-container"></div>
+      <div id="events-container" class="card-container"></div>
     </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="./js/cms.js"></script>
   <script>
-    getPageData('homepage', 'wordpress');
-    getCollectData('event', 'wordpress');
+    // getPageData('homepage', 'wordpress');
+    getCollectData('events', 'wordpress');
   </script>
 </body>
 

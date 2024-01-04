@@ -1,12 +1,12 @@
 // Fetch page data from Strapi
 function getPageData(page, source) {
 	const cms = source;
-	const apiURL = "";
+	let apiURL = "";
 
 	if (cms === "strapi") {
-		const apiURL = `https://cms.iftheselandscouldtalk.org/api/${page}?populate=*`;
+		apiURL = `https://cms.iftheselandscouldtalk.org/api/${page}?populate=*`;
 	} else if (cms === "wordpress") {
-		const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2`;
+		apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/page`;
 	}
 
 	fetch(`${apiURL}`, {
@@ -53,13 +53,15 @@ function getItemData(collection, item) {
 // Fetch all events
 function getCollectData(collection, source) {
 	const cms = source;
-	const apiURL = "";
+	let apiURL = "";
 
 	if (cms === "strapi") {
-		const apiURL = `https://cms.iftheselandscouldtalk.org/api/${collection}-items?populate=*`;
+		apiURL = `https://cms.iftheselandscouldtalk.org/api/${collection}-items?populate=*`;
 	} else if (cms === "wordpress") {
-		const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/posts?type=events`;
+		apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}`;
 	}
+
+	console.log(apiURL);
 
 	fetch(`${apiURL}`, {
 		method: "GET",
@@ -69,20 +71,37 @@ function getCollectData(collection, source) {
 	})
 		.then(response => response.json())
 		.then(response => {
-			console.log(response.data);
-			response.data.forEach(post => {
+			console.log(response);
+			let posts = response.data;
+
+			if (cms === "wordpress") {
+				posts = response;
+			}
+
+			posts.forEach(post => {
 				const container = document.getElementById(`${collection}-container`);
 				const postDiv = document.createElement("div");
-				postDiv.classList.add("post");
+				postDiv.classList.add("card");
 
 				const postImage = document.createElement("img");
 				const postTitle = document.createElement("h2");
 				const postContent = document.createElement("p");
 				const postLink = document.createElement("a");
 
-				// postImage.src = cmsURL + post.attributes.featuredImage.data.attributes.url;
-				postTitle.textContent = post.attributes.title;
-				postContent.innerHTML = marked.parse(post.attributes.content);
+				let p = post.attributes;
+
+				if (cms === "wordpress") {
+					p = post;
+				}
+
+				// postImage.src = cmsURL + p.featuredImage.data.attributes.url;
+				postTitle.textContent = p.title.rendered;
+				if (cms == "strapi") {
+					postContent.innerHTML = marked.parse(p.content);
+				} else if (cms == "wordpress") {
+					postContent.innerHTML = p.acf.content;
+				}
+
 				postLink.innerHTML = "Read more";
 				postLink.href = "/events/event.html?e=" + post.id;
 
