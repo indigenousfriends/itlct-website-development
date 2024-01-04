@@ -17,8 +17,202 @@ Resets (box-sizing, normalize, etc.)
 ===================================
 */
 
+/* box-sizing */
 * {
 	box-sizing: border-box;
+}
+/* 
+minified css normalize from Nicolas Gallagher: 
+https://github.com/necolas/normalize.css
+*/
+html {
+	line-height: 1.15;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+body {
+	margin: 0;
+}
+article,
+aside,
+footer,
+header,
+nav,
+section {
+	display: block;
+}
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+figcaption,
+figure,
+main {
+	display: block;
+}
+figure {
+	margin: 1em 40px;
+}
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+}
+pre {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+a {
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+}
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted;
+}
+b,
+strong {
+	font-weight: inherit;
+}
+b,
+strong {
+	font-weight: bolder;
+}
+code,
+kbd,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+dfn {
+	font-style: italic;
+}
+mark {
+	background-color: #ff0;
+	color: #000;
+}
+small {
+	font-size: 80%;
+}
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sub {
+	bottom: -0.25em;
+}
+sup {
+	top: -0.5em;
+}
+audio,
+video {
+	display: inline-block;
+}
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+img {
+	border-style: none;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: sans-serif;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+}
+button,
+input {
+	overflow: visible;
+}
+button,
+select {
+	text-transform: none;
+}
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+fieldset {
+	padding: 0.35em 0.75em 0.625em;
+}
+legend {
+	box-sizing: border-box;
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal;
+}
+progress {
+	display: inline-block;
+	vertical-align: baseline;
+}
+textarea {
+	overflow: auto;
+}
+[type="checkbox"],
+[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+[type="search"] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
+}
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+details,
+menu {
+	display: block;
+}
+summary {
+	display: list-item;
+}
+canvas {
+	display: inline-block;
+}
+template {
+	display: none;
+}
+[hidden] {
+	display: none;
 }
 
 /* 
@@ -30,17 +224,63 @@ Variables (colors, text, spacing, etc.)
 :root {
 	/* Color Definitions */
 	--color-white: #fff;
+	--color-amaranth: #b91515;
+	--color-teal: #007a80;
+	--color-grape: #6c4681;
+	--color-onyx: #1f1d1d;
+	--color-blue: #184f85;
+	--color-pink: #fa6cb7;
+	--color-citrine: #d3c53f;
+	--color-citron: #92a32d;
+	--color-copper: #b37122;
 
 	/* Color Assignment */
 	--body-background-color: var(--color-white);
-
+	--text-color-dark: var(--color-onyx);
+	--text-color-light: var(--color-white);
 	/* Text */
+	/* Font */
+	--font-main: "Josefin Sans", sans-serif;
+	/* Sizing */
+	/* heading elements */
+	--font-size-title-xl: 5.6rem; /* Title Large - 56px */
+	--font-size-title-lg: 4.6rem; /* Title Regular - 46px */
+	--font-size-title-med: 3.6rem; /* Title Medium - 36px */
+	--font-size-title-sm: 2.8rem; /* Title Small - 28px */
+	--font-size-title-xs: 2.4rem; /* Title Extra Small - 24px */
+	/* body text */
+	--font-size-body-lg: 2.1rem; /* Body Large - 21px */
+	--font-size-body-reg: 1.6rem; /* Body Regular - 16px */
+
+	/* Text Weight */
+	--font-weight-bold: 700;
+	--font-weight-med: 500;
+	--font-weight-reg: 400;
+
+	/* Line Height */
+	--line-height-lg: 26px;
 
 	/* Spacing */
+	--spacing-xl: 100px;
+	--spacing-lg: 80px;
+	--spacing-med: 40px;
+	--spacing-sm: 20px;
+
+	/* Borders */
+	/* width */
+	--border-width-link: 2px;
+	--border-width-btn: 3px;
+	/* radius */
+	--border-radius: 10px;
 
 	/* Wrappers */
+	--wrapper-width: 85%;
+	--wrapper-width-max: 1328px;
 
 	/* Media Queries */
+	--mq-width-desktop-max: 1024px;
+	--mq-width-tablet-max: 768px;
+	--mq-width-phone-max: 400px;
 }
 
 /* 
@@ -50,45 +290,387 @@ Global Styles (html, body, text, links, etc.)
 */
 
 html {
-	font-size: 16px;
+	font-size: 62.5%; /* 1 rem === 10px */
+	font-family: var(--font-main);
 }
 
 body {
 	background-color: var(--body-background-color);
+	font-size: var(--font-size-body-reg);
 }
 
 /* Images */
 img {
-	max-width: 100%;
+	width: 100%;
+	display: block;
 }
 
 /* Text */
+/* remove default margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+/* general font sizing */
+h1,
+h2,
+h3 {
+	font-weight: var(--font-weight-bold);
+}
+h4,
+h5 {
+	font-weight: var(--font-weight-med);
+}
+
+h1 {
+	font-size: var(--font-size-title-xl);
+}
+h2 {
+	font-size: var(--font-size-title-lg);
+}
+h3 {
+	font-size: var(--font-size-title-med);
+}
+h4 {
+	font-size: var(--font-size-title-sm);
+}
+h5 {
+	font-size: var(--font-size-title-xs);
+}
 
 /* Links */
+a {
+	color: var(--color-white);
+	text-decoration: none;
+	border-bottom: var(--border-width-link) solid transparent;
+}
+
+a:hover,
+a:focus,
+.land-ack-btn:hover,
+.land-ack-btn:focus {
+	border-bottom-color: var(--color-white);
+}
+
+/* img links (logo, socials) */
+.img-link {
+	margin: 0;
+	border-bottom: none;
+}
+.img-link:hover,
+.img-link:focus {
+	border-bottom-color: transparent;
+}
 
 /* Lists */
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
 
 /* Forms */
 
 /* 
 ===================================
-Wrappers (container, flexbox, etc.)
+Utility Classes ( flexbox, wrappers,  etc.)
 ===================================
 */
 
-/* Container */
+/* sr only custom class  */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
 
-/* Wrappers */
+/* hidden */
+
+.hidden {
+	display: none;
+}
+
+/* Global Wrapper */
+
+.wrapper {
+	width: var(--wrapper-width);
+	max-width: var(--wrapper-width-max);
+	margin: 0 auto;
+}
 
 /* 
 ===================================
 Global Component Styles (buttons, forms, etc.)
 ===================================
 */
+/* Section */
+
+section {
+	padding: var(--spacing-lg) 0;
+}
+
+/* HR and Blockquote */
+hr {
+	border-color: var(--color-white);
+}
+
+blockquote {
+	background-color: var(--color-onyx);
+	color: var(--color-white);
+
+	width: fit-content;
+	padding: var(--spacing-lg);
+	margin: 0;
+	border-radius: var(--border-radius);
+}
+
+blockquote p {
+	position: relative;
+}
+blockquote p::before {
+	content: url("../assets/icons/global/blockquote-start.svg");
+	position: absolute;
+	left: -60px;
+	top: -40px;
+}
+blockquote p::after {
+	content: url("../assets/icons/global/blockquote-end.svg");
+	position: absolute;
+	right: -60px;
+	bottom: -30px;
+}
 
 /* Buttons */
+/* main red button style */
+button,
+.btn-main,
+.btn-alt {
+	display: block;
+	width: fit-content;
+	padding: 10px 40px;
+
+	font-family: var(--font-main);
+	font-size: var(--font-size-body-lg);
+	font-weight: var(--font-weight-bold);
+
+	color: var(--color-white);
+	background-color: var(--color-amaranth);
+
+	border: var(--border-width-btn) solid transparent;
+	border-radius: var(--border-radius);
+	cursor: pointer;
+}
+
+button:hover,
+button:focus,
+.btn-main:hover,
+.btn-main:focus {
+	color: var(--color-onyx);
+	background-color: var(--color-white);
+}
+/* long button */
+.btn-long {
+	padding: 10px var(--spacing-lg);
+}
+
+.btn-main,
+.btn-alt {
+	height: fit-content;
+	margin: 0;
+}
+/* white alternate button */
+.btn-alt {
+	border-color: var(--color-white);
+	background-color: transparent;
+}
+
+.btn-alt:hover,
+.btn-alt:focus {
+	background-color: var(--color-white);
+	color: var(--color-onyx);
+}
 
 /* Forms */
+
+/* General styles */
+input[type="text"],
+input[type="email"],
+textarea {
+	border-radius: var(--border-radius);
+	padding: 18px;
+}
+
+/* text area */
+textarea {
+	width: 100%;
+	resize: vertical;
+}
+
+/* modals */
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.406);
+}
+
+.modal-content {
+	border-radius: var(--border-radius);
+	background-color: var(--color-white);
+
+	padding: var(--spacing-lg);
+	margin: 0 auto;
+	width: 80%;
+}
+
+.close-modal {
+	background-color: transparent;
+	border: transparent;
+	padding: 0;
+}
+.close-modal svg {
+	fill: var(--color-onyx);
+}
+.close-modal svg:hover {
+	fill: var(--color-amaranth);
+}
+
+/* 
+===================================
+Global Nav Styles
+===================================
+*/
+
+header nav,
+footer {
+	background-color: var(--color-onyx);
+}
+header nav {
+	min-height: 85px;
+	padding: var(--spacing-sm) 0;
+}
+
+header nav .flex-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 65px;
+}
+
+header nav ul {
+	display: flex;
+	gap: var(--spacing-med);
+}
+
+header nav li:last-child {
+	display: none;
+}
+
+/* Mobile Menu button */
+.mobile-menu {
+	background-color: transparent;
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+	display: none; /* hidden until mobile media query */
+}
+
+.mobile-menu:hover,
+.mobile-menu:focus-within {
+	background-color: transparent;
+}
+
+/* Mobile menu icons */
+.mobile-menu svg {
+	fill: var(--color-white);
+}
+
+/* 
+===================================
+Global Header Styles
+===================================
+*/
+/* 
+===================================
+Global Footer Styles
+===================================
+*/
+
+/* Footer Layout: column container */
+.column-container {
+	display: flex;
+	justify-content: space-between;
+	padding: 50px 0;
+}
+
+/* Company Column */
+.column-container .company,
+footer nav ul {
+	display: flex;
+	flex-direction: column;
+}
+
+.column-container .company {
+	gap: 40px;
+}
+
+.land-ack-btn {
+	background-color: transparent;
+	color: var(--color-white);
+
+	border: none;
+	border-bottom: var(--border-width-link) transparent;
+	font-size: var(--font-size-body-reg);
+	font-weight: var(--font-weight-reg);
+	border-radius: 0;
+	padding: 0;
+	line-height: normal;
+	width: fit-content;
+}
+
+.land-ack-btn:hover,
+.land-ack-btn:focus-within {
+	background-color: transparent;
+	color: var(--color-white);
+}
+/* Footer Navigation */
+footer nav ul {
+	gap: var(--spacing-sm);
+}
+/* Footer layout: policy and socials */
+.policy-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+footer .policy,
+footer .social {
+	display: flex;
+	gap: var(--spacing-sm);
+}
+
+footer .social svg {
+	fill: var(--color-white);
+}
+/* newsletter form  */
+.newsletter-form {
+	color: var(--color-white);
+}
 
 /* 
 ===================================
@@ -97,14 +679,54 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 ===================================
 */
 
-/* Tablet & Smaller */
-@media (max-width: 768px) {
+/* Tablet and smaller 1024px*/
+@media (max-width: var(--mq-width-desktop-max)) {
+	/* 
+	===================================
+	Mobile Menu
+	===================================
+	*/
+	.mobile-menu-container {
+		position: relative;
+	}
+
+	/* REVEAL: mobile menu button */
+	.mobile-menu,
+	.mobile-support-btn {
+		display: block;
+	}
+
+	/* HIDE: desktop support button */
+	.desktop-support-btn {
+		display: none;
+	}
+
+	/* Changing nav links style */
+	.nav-links {
+		background-color: var(--color-onyx);
+		padding: var(--spacing-med);
+
+		flex-direction: column;
+		gap: var(--spacing-sm);
+
+		position: absolute;
+		top: 78px;
+		right: 0px;
+		width: 185px;
+
+		display: none;
+	}
+
+	/* open menu class toggled via js  */
+	.open-menu {
+		display: flex;
+	}
 }
 
-/* Tablet Only */
-@media (min-width: 768px) and (max-width: 1024px) {
+/* Tablet and smaller 768px */
+@media screen and (max-width: var(--mq-width-tablet-max)) {
 }
 
-/* Phone Only */
-@media (max-width: 480px) {
+/* Mobile Only 400px */
+@media screen and (max-width: var(--mq-width-phone-max)) {
 }
