@@ -5,7 +5,8 @@ Hero
 */
 /* background and layout adjustments  */
 .hero {
-	background-image: url("https://placedog.net/800/640?id=7");
+	background: url("../assets/images/pages/home/hero-home.jpg") top/cover,
+		linear-gradient(352deg, rgba(9, 9, 9, 0.8) 32.03%, rgba(9, 9, 9, 0) 73.42%);
 	text-align: center;
 	display: flex;
 }
@@ -217,8 +218,7 @@ Our Values
 /* section styles */
 .our-values {
 	color: var(--text-color-light);
-	/* temporary, will update to img */
-	background-color: var(--color-onyx);
+	background: url("../assets/images/pages/home/bg-section-our-values.jpg");
 }
 
 /* title and card layout */
@@ -243,6 +243,7 @@ Our Values
 	padding: var(--spacing-lg);
 	gap: var(--spacing-lg);
 }
+/* card style */
 .value-card {
 	width: calc(33% - var(--spacing-lg));
 	display: flex;
@@ -289,6 +290,7 @@ Upcoming Events and Programs
 	flex-direction: column;
 	gap: 20px;
 }
+
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
