@@ -275,11 +275,12 @@ Variables (colors, text, spacing, etc.)
 
 	/* Wrappers */
 	--wrapper-width: 85%;
+	--wrapper-width-max: 1328px;
 
-	--mq-width-desktop-max: 1328px;
+	/* Media Queries */
+	--mq-width-desktop-max: 1024px;
 	--mq-width-tablet-max: 768px;
 	--mq-width-phone-max: 400px;
-	/* Media Queries */
 }
 
 /* 
@@ -304,6 +305,17 @@ img {
 }
 
 /* Text */
+/* remove default margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+/* general font sizing */
 h1,
 h2,
 h3 {
@@ -392,8 +404,8 @@ Utility Classes ( flexbox, wrappers,  etc.)
 /* Global Wrapper */
 
 .wrapper {
-	width: var(--mq-width-desktop-max);
-	max-width: var(--mq-width-desktop-max);
+	width: var(--wrapper-width);
+	max-width: var(--wrapper-width-max);
 	margin: 0 auto;
 }
 
@@ -666,8 +678,8 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 ===================================
 */
 
-/* Tablet and smaller */
-@media (max-width: 1024px) {
+/* Tablet and smaller 1024px*/
+@media (max-width: var(--mq-width-desktop-max)) {
 	/* 
 	===================================
 	Mobile Menu
@@ -710,18 +722,10 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 	}
 }
 
-/* Tablet and smaller */
-@media screen and (max-width: 768px) {
-	/* wrapper adjustment */
-	.wrapper {
-		max-width: var(--mq-width-tablet-max);
-	}
+/* Tablet and smaller 768px */
+@media screen and (max-width: var(--mq-width-tablet-max)) {
 }
 
-/* Mobile Only */
-@media screen and (max-width: 400px) {
-	/* wrapper adjustment */
-	.wrapper {
-		max-width: var(--mq-width-phone-max);
-	}
+/* Mobile Only 400px */
+@media screen and (max-width: var(--mq-width-phone-max)) {
 }
