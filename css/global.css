@@ -605,6 +605,22 @@ header nav li:last-child {
 Global Header Styles
 ===================================
 */
+header {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+/* Hero Image Component */
+.hero {
+	flex-grow: 1;
+	height: inherit;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+	padding: 140px 0;
+	color: var(--color-white);
+}
+
 /* 
 ===================================
 Global Footer Styles

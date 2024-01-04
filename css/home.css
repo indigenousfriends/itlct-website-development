@@ -1,30 +1,12 @@
 /* 
 ===================================
-Page Component Styles (icon grid, team member card)
-===================================
-*/
-
-/* 
-===================================
-Section Styles (background, padding, etc.)
-===================================
-*/
-
-/* 
-===================================
 Hero 
 ===================================
 */
-
+/* background and layout adjustments  */
 .hero {
 	background-image: url("https://placedog.net/800/640?id=7");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: top center;
-	padding: 140px 0;
-	color: var(--color-white);
 	text-align: center;
-	min-height: 85vh;
 	display: flex;
 }
 
@@ -35,6 +17,7 @@ Hero
 	justify-content: flex-end;
 	gap: var(--spacing-sm);
 }
+/* text adjustments */
 .hero h2 {
 	font-size: var(--font-size-title-xl);
 }
@@ -215,6 +198,19 @@ Our Values
 .our-values p {
 	font-size: var(--font-size-body-lg);
 }
+
+/* section styles */
+.our-values {
+	color: var(--text-color-light);
+	/* temporary, will update to img */
+	background-color: var(--color-onyx);
+}
+/* title and card layout */
+.our-values .wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-med);
+}
 /* title layout */
 .values-title-container {
 	display: flex;
@@ -232,11 +228,42 @@ Our Values
 	gap: var(--spacing-lg);
 }
 .value-card {
-	color: var(--text-color-light);
 	width: calc(33% - var(--spacing-lg));
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-sm);
+}
+
+/* 
+===================================
+Upcoming Events and Programs
+===================================
+*/
+
+/* event list layout */
+.event-list {
+	display: flex;
+}
+
+/* Event Card Style */
+.event-card {
+	max-width: 335px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.event-card img {
+	border-radius: var(--border-radius);
+	min-height: 430px;
+	object-fit: cover;
+}
+
+.event-card-text {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 /* 
 ===================================
@@ -250,17 +277,14 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 ===================================
 */
 
-/* Tablet Only */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-	/* Add styles that only apply to tablet. These are usually fixes to get responsiveness right */
+/* Tablet and smaller 1024px*/
+@media (max-width: var(--mq-width-desktop-max)) {
 }
 
-/* Tablet and Larger */
-@media screen and (min-width: 768px) {
-	/* Add styles that apply to table and desktop */
+/* Tablet and smaller 768px */
+@media screen and (max-width: var(--mq-width-tablet-max)) {
 }
 
-/* Desktop Only */
-@media screen and (min-width: 1024px) {
-	/* Add styles that apply specifically to desktop */
+/* Mobile Only 400px */
+@media screen and (max-width: var(--mq-width-phone-max)) {
 }
