@@ -154,6 +154,7 @@ What We Do
 .what-we-do h3 {
 	text-align: center;
 	margin-bottom: var(--spacing-lg);
+	font-size: var(--font-size-title-lg);
 }
 
 .wwd-card h4,
@@ -396,6 +397,7 @@ Global Ecosystem
 What We Do
 ===================================
 */
+
 	.wwd-card-list {
 		flex-direction: column;
 		gap: var(--spacing-med);

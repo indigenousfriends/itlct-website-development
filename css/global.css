@@ -605,12 +605,12 @@ header nav .flex-container {
 	gap: 65px;
 }
 
-header nav ul {
+.nav-links {
 	display: flex;
 	gap: var(--spacing-med);
 }
 
-header nav li:last-child {
+.nav-links li:last-child {
 	display: none;
 }
 
@@ -751,11 +751,15 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 ===================================
 */
 
-/* custom breakpoint for top navigation */
-@media screen and(max-width: 1360px) {
+/* custom breakpoint for top navigation 1360px*/
+@media screen and (max-width: 1360px) {
 	/* header nav adjustments */
-	header nav ul {
+	.nav-links {
 		gap: var(--spacing-sm);
+	}
+
+	.nav-links li {
+		font-size: var(--font-size-body-reg);
 	}
 }
 
