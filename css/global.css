@@ -719,8 +719,8 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 ===================================
 */
 
-/* custom media query for top navigation */
-@media (max-width: 1360px) {
+/* custom mq for top navigation */
+@media screen and(max-width: 1360px) {
 	/* header nav adjustments */
 	header nav ul {
 		gap: var(--spacing-sm);
@@ -728,7 +728,8 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 }
 
 /* Tablet and smaller 1024px*/
-@media (max-width: var(--mq-width-desktop-max)) {
+/* custom mq for mobile menu */
+@media screen and (max-width: 1240px) {
 	/* 
 	===================================
 	Mobile Menu
@@ -769,20 +770,11 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 	.open-menu {
 		display: flex;
 	}
-
-	/* 
-	===================================
-	Header
-	===================================
-	*/
-
-	/* 
-	===================================
-	Footer
-	===================================
-	*/
 }
 
+/* Tablet and smaller 1024px*/
+@media screen and (max-width: var(--mq-width-desktop-max)) {
+}
 /* Tablet and smaller 768px */
 @media screen and (max-width: var(--mq-width-tablet-max)) {
 }

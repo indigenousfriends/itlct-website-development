@@ -183,6 +183,7 @@ What We Do
 
 .wwd-card-img img {
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
+	object-position: top;
 	object-fit: cover;
 	height: 200px;
 }
@@ -315,11 +316,117 @@ Media Queries (overriding styles for different screen sizes)
 */
 
 /* Tablet and smaller 1024px*/
-@media (max-width: var(--mq-width-desktop-max)) {
+@media screen and (max-width: var(--mq-width-desktop-max)) {
 }
 
 /* Tablet and smaller 768px */
-@media screen and (max-width: var(--mq-width-tablet-max)) {
+@media screen and (max-width: 768px) {
+	/* 
+===================================
+Community Partnerships
+===================================
+*/
+	.community-card {
+		flex-direction: column;
+	}
+
+	.community-card .img-container,
+	.community-card .text-container {
+		width: 100%;
+	}
+
+	.community-card img,
+	.community-card .text-container {
+		border-radius: 0px;
+	}
+	/* 
+===================================
+Global Ecosystem
+===================================
+*/
+
+	/* layout  */
+	.global-ecosystem .content-container {
+		flex-direction: column;
+		gap: var(--spacing-med);
+	}
+
+	/* background */
+	.global-ecosystem {
+		background: var(--color-grape);
+	}
+
+	.global-ecosystem .text-container,
+	.global-ecosystem blockquote {
+		width: 100%;
+	}
+	.global-ecosystem .text-container {
+		padding: 0;
+	}
+	.global-ecosystem blockquote {
+		position: static;
+	}
+
+	/* 
+===================================
+What We Do
+===================================
+*/
+	.wwd-card-list {
+		flex-direction: column;
+	}
+
+	.wwd-card {
+		width: 100%;
+	}
+
+	/* 
+===================================
+Our Values
+===================================
+*/
+
+	/* layout */
+	.values-list {
+		flex-direction: column;
+	}
+
+	/* background */
+	.our-values {
+		background: var(--color-onyx);
+		text-align: center;
+	}
+
+	/* title adjustment */
+	.value-card {
+		width: 100%;
+	}
+
+	/* 
+===================================
+Events and Programs
+===================================
+*/
+	/* layout */
+	.event-list {
+		flex-direction: column;
+		align-items: center;
+		gap: var(--spacing-med);
+	}
+
+	.event {
+		width: 100%;
+	}
+
+	/* background + text */
+	.events {
+		background: var(--color-white);
+	}
+
+	.events,
+	.event a {
+		color: var(--text-color-dark);
+	}
 }
 
 /* Mobile Only 400px */
