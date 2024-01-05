@@ -3,10 +3,15 @@
 Hero 
 ===================================
 */
+
 /* background and layout adjustments  */
 .hero {
-	background: url("../assets/images/pages/home/hero-home.jpg") top/cover,
-		linear-gradient(352deg, rgba(9, 9, 9, 0.8) 32.03%, rgba(9, 9, 9, 0) 73.42%);
+	background: linear-gradient(
+			352deg,
+			rgba(9, 9, 9, 0.8) 32.03%,
+			rgba(9, 9, 9, 0) 73.42%
+		),
+		url("../assets/images/pages/home/hero-home.jpg") top/cover;
 	text-align: center;
 	display: flex;
 }
@@ -110,6 +115,9 @@ Global Ecosystem
 /* background img */
 
 .global-ecosystem {
+	background: url("../assets/images/pages/home/bg-overlay-vector-01.svg")
+			center/cover,
+		linear-gradient(to top, var(--color-blue), var(--color-grape));
 }
 
 .global-ecosystem .content-container {
@@ -218,7 +226,8 @@ Our Values
 /* section styles */
 .our-values {
 	color: var(--text-color-light);
-	background: url("../assets/images/pages/home/bg-section-our-values.jpg");
+	background: url("../assets/images/pages/home/bg-section-our-values.jpg")
+		top/cover;
 }
 
 /* title and card layout */
@@ -260,9 +269,15 @@ Upcoming Events and Programs
 /* text adjustments */
 .events,
 .event a {
-	color: var(--text-color-dark);
+	color: var(--text-color-light);
 }
 
+/* section background */
+.events {
+	background: url("../assets/images/pages/home/bg-overlay-vector-02.svg")
+			center/cover,
+		linear-gradient(to top, var(--color-grape), var(--color-blue));
+}
 /* event list layout */
 .event-list {
 	margin-top: var(--spacing-med);

@@ -261,6 +261,7 @@ Variables (colors, text, spacing, etc.)
 	--line-height-lg: 26px;
 
 	/* Spacing */
+	--spacing-xxl: 140px;
 	--spacing-xl: 100px;
 	--spacing-lg: 80px;
 	--spacing-med: 40px;
@@ -416,7 +417,7 @@ Global Component Styles (buttons, forms, etc.)
 /* Section */
 
 section {
-	padding: var(--spacing-lg) 0;
+	padding: var(--spacing-xxl) 0;
 }
 
 /* HR and Blockquote */
