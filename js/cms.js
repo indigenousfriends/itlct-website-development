@@ -27,12 +27,18 @@ function getPageData(page, source) {
 		.catch(error => console.error("Error:", error));
 }
 
-function getItemData(collection, item) {
+function getItemData(collection, source) {
 	const urlParams = new URLSearchParams(window.location.search);
 	const slug = urlParams.get("e");
-	console.log(slug);
+	let apiURL = "";
 
-	fetch(`${apiURL}/${collection}/${slug}?populate=*`, {
+	if (source === "strapi") {
+		apiURL = `https://cms.iftheselandscouldtalk.org/api/${collection}/${slug}?populate=*`;
+	} else if (source === "wordpress") {
+		apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}?slug=${slug}`;
+	}
+
+	fetch(`${apiURL}`, {
 		method: "GET",
 		headers: {
 			"Content-Type": "application/json",
@@ -40,18 +46,29 @@ function getItemData(collection, item) {
 	})
 		.then(response => response.json())
 		.then(response => {
-			const post = response.data;
+			console.log(response);
+
+			let p = {};
+
+			if (source === "strapi") {
+				p = response.data.attributes;
+			} else if (source === "wordpress") {
+				p = response[0].acf;
+			}
+
 			const postTitle = document.getElementById("post-title");
 			const postContent = document.getElementById("content-container");
+			const postHighlights = document.getElementById("highlights-container");
 
-			postTitle.textContent = post.attributes.title;
-			postContent.innerHTML = marked.parse(post.attributes.content);
+			postTitle.textContent = p.title;
+			postContent.innerHTML = marked.parse(p.content);
+			postHighlights.innerHTML = marked.parse(p.highlights);
 		})
 		.catch(error => console.error("Error:", error));
 }
 
 // Fetch all events
-function getCollectData(collection, source) {
+function getCollectionData(collection, source) {
 	const cms = source;
 	let apiURL = "";
 
@@ -87,23 +104,24 @@ function getCollectData(collection, source) {
 				const postTitle = document.createElement("h2");
 				const postContent = document.createElement("p");
 				const postLink = document.createElement("a");
+				postLink.classList.add("button");
 
 				let p = post.attributes;
 
 				if (cms === "wordpress") {
-					p = post;
+					p = post.acf;
 				}
 
 				// postImage.src = cmsURL + p.featuredImage.data.attributes.url;
-				postTitle.textContent = p.title.rendered;
+				postTitle.textContent = p.title;
 				if (cms == "strapi") {
 					postContent.innerHTML = marked.parse(p.content);
 				} else if (cms == "wordpress") {
-					postContent.innerHTML = p.acf.content;
+					postContent.innerHTML = p.content;
 				}
 
 				postLink.innerHTML = "Read more";
-				postLink.href = "/events/event.html?e=" + post.id;
+				postLink.href = "/events/event.html?e=" + post.slug;
 
 				postDiv.appendChild(postTitle);
 				postDiv.appendChild(postImage);
