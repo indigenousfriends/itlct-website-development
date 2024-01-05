@@ -271,7 +271,9 @@ Upcoming Events and Programs
 .event a {
 	color: var(--text-color-light);
 }
-
+.events p {
+	font-size: var(--font-size-body-lg);
+}
 /* section background */
 .events {
 	background: url("../assets/images/pages/home/bg-overlay-vector-02.svg")

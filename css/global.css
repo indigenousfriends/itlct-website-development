@@ -581,6 +581,9 @@ header nav ul {
 	display: flex;
 	gap: var(--spacing-med);
 }
+/* header nav li {
+	width: min-content;
+} */
 
 header nav li:last-child {
 	display: none;
@@ -636,9 +639,12 @@ Global Footer Styles
 
 /* Footer Layout: column container */
 .column-container {
+	padding: var(--spacing-med) 0;
+
 	display: flex;
 	justify-content: space-between;
-	padding: 50px 0;
+	gap: var(--spacing-sm);
+	flex-wrap: wrap;
 }
 
 /* Company Column */
@@ -679,9 +685,9 @@ footer nav ul {
 .policy-container {
 	display: flex;
 	justify-content: space-between;
+	padding-bottom: var(--spacing-sm);
 }
 
-footer .policy,
 footer .social {
 	display: flex;
 	gap: var(--spacing-sm);
@@ -712,6 +718,14 @@ Media Queries (overriding styles for different screen sizes)
 Feel free to change the min/max-width values to whatever you need. Use variables.
 ===================================
 */
+
+/* custom media query for top navigation */
+@media (max-width: 1360px) {
+	/* header nav adjustments */
+	header nav ul {
+		gap: var(--spacing-sm);
+	}
+}
 
 /* Tablet and smaller 1024px*/
 @media (max-width: var(--mq-width-desktop-max)) {
@@ -755,6 +769,18 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 	.open-menu {
 		display: flex;
 	}
+
+	/* 
+	===================================
+	Header
+	===================================
+	*/
+
+	/* 
+	===================================
+	Footer
+	===================================
+	*/
 }
 
 /* Tablet and smaller 768px */
