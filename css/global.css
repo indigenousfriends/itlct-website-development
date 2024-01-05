@@ -297,7 +297,7 @@ html {
 
 body {
 	background-color: var(--body-background-color);
-	font-size: var(--font-size-body-reg);
+	font-size: var(--font-size-body-lg);
 }
 
 /* Images */
@@ -461,7 +461,6 @@ button,
 	padding: 10px 40px;
 
 	font-family: var(--font-main);
-	font-size: var(--font-size-body-lg);
 	font-weight: var(--font-weight-bold);
 
 	color: var(--color-white);
@@ -541,6 +540,35 @@ textarea {
 	padding: var(--spacing-lg);
 	margin: 0 auto;
 	width: 80%;
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	max-width: 1100px;
+	max-height: 90vh;
+}
+
+.modal-btn-container {
+	display: flex;
+	justify-content: flex-end;
+}
+.modal-text-container,
+.modal-scroll-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.modal-scroll-container {
+	max-height: calc(85vh - 300px);
+	overflow-y: scroll;
+}
+
+.modal-text-container h4 {
+	font-size: var(--font-size-title-lg);
+	text-align: center;
 }
 
 .close-modal {
@@ -581,9 +609,6 @@ header nav ul {
 	display: flex;
 	gap: var(--spacing-med);
 }
-/* header nav li {
-	width: min-content;
-} */
 
 header nav li:last-child {
 	display: none;
@@ -653,18 +678,20 @@ footer nav ul {
 	display: flex;
 	flex-direction: column;
 }
-
+footer a {
+	font-size: var(--font-size-body-reg);
+}
 .column-container .company {
 	gap: 40px;
 }
 
+/* land acknowledgement button */
 .land-ack-btn {
 	background-color: transparent;
 	color: var(--color-white);
 
 	border: none;
 	border-bottom: var(--border-width-link) transparent;
-	font-size: var(--font-size-body-reg);
 	font-weight: var(--font-weight-reg);
 	border-radius: 0;
 	padding: 0;
@@ -681,6 +708,7 @@ footer nav ul {
 footer nav ul {
 	gap: var(--spacing-sm);
 }
+
 /* Footer layout: policy and socials */
 .policy-container {
 	display: flex;
@@ -688,6 +716,9 @@ footer nav ul {
 	padding-bottom: var(--spacing-sm);
 }
 
+footer .policy {
+	padding-top: 5px;
+}
 footer .social {
 	display: flex;
 	gap: var(--spacing-sm);
@@ -712,6 +743,7 @@ footer .social svg {
 .newsletter-form input[type="email"] {
 	flex-grow: 1;
 }
+
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
@@ -719,7 +751,7 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 ===================================
 */
 
-/* custom mq for top navigation */
+/* custom breakpoint for top navigation */
 @media screen and(max-width: 1360px) {
 	/* header nav adjustments */
 	header nav ul {
@@ -727,7 +759,6 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 	}
 }
 
-/* Tablet and smaller 1024px*/
 /* custom mq for mobile menu */
 @media screen and (max-width: 1240px) {
 	/* 
@@ -759,8 +790,8 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 		gap: var(--spacing-sm);
 
 		position: absolute;
-		top: 78px;
-		right: 0px;
+		top: 70px;
+		right: -10px;
 		width: 185px;
 
 		display: none;
@@ -772,15 +803,29 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 	}
 }
 
-/* Tablet and smaller 1024px*/
-@media screen and (max-width: var(--mq-width-desktop-max)) {
-}
 /* Tablet and smaller 768px */
-@media screen and (max-width: var(--mq-width-tablet-max)) {
+@media screen and (max-width: 768px) {
+	/* 
+	===================================
+	Modal Adjustment
+	===================================
+	*/
+	.modal-content {
+		width: 90%;
+		padding: var(--spacing-sm);
+	}
 }
 
 /* custom breakpoint 470px */
 @media screen and (max-width: 470px) {
+	/* 
+	===================================
+	Mobile Text
+	===================================
+	*/
+	body {
+		font-size: var(--font-size-body-reg);
+	}
 	/* 
 	===================================
 	Footer
@@ -815,6 +860,21 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 	.newsletter-form input[type="email"] {
 		width: 100%;
 	}
+
+	/* 
+	===================================
+	Modal 
+	===================================
+	*/
+
+	.modal-text-container h4 {
+		font-size: var(--font-size-title-sm);
+	}
+}
+
+/* NOT CURRENTLY WORKING */
+/* Tablet and smaller 1024px*/
+@media screen and (max-width: var(--mq-width-desktop-max)) {
 }
 /* Mobile Only 400px */
 @media screen and (max-width: var(--mq-width-phone-max)) {

@@ -28,16 +28,16 @@ Hero
 	font-size: var(--font-size-title-xl);
 }
 
-.hero p {
-	font-size: var(--font-size-body-lg);
-}
-
 /* hero button container */
 
 .hero-btn-container {
 	display: flex;
 	justify-content: center;
 	gap: var(--spacing-med);
+}
+
+.mobile-about-btn {
+	display: none;
 }
 
 /* 
@@ -74,7 +74,6 @@ Community Partnerships
 }
 
 .community-card p {
-	font-size: var(--font-size-body-lg);
 	line-height: var(--line-height-lg);
 	margin: var(--spacing-sm) 0;
 }
@@ -108,7 +107,6 @@ Global Ecosystem
 	color: var(--text-color-light);
 }
 .global-ecosystem p {
-	font-size: var(--font-size-body-lg);
 	color: var(--text-color-light);
 }
 
@@ -165,9 +163,6 @@ What We Do
 .wwd-card h4 {
 	font-size: var(--font-size-title-med);
 }
-.wwd-card p {
-	font-size: var(--font-size-body-lg);
-}
 
 /* card layout */
 .wwd-card-list {
@@ -220,10 +215,6 @@ Our Values
 	font-size: var(--font-size-title-med);
 }
 
-.our-values p {
-	font-size: var(--font-size-body-lg);
-}
-
 /* section styles */
 .our-values {
 	color: var(--text-color-light);
@@ -272,9 +263,7 @@ Upcoming Events and Programs
 .event a {
 	color: var(--text-color-light);
 }
-.events p {
-	font-size: var(--font-size-body-lg);
-}
+
 /* section background */
 .events {
 	background: url("../assets/images/pages/home/bg-overlay-vector-02.svg")
@@ -293,7 +282,7 @@ Upcoming Events and Programs
 /* Event Card Style */
 .event {
 	width: calc(33% - var(--spacing-sm));
-	max-width: 335px;
+	max-width: 320px;
 }
 
 .event img {
@@ -329,9 +318,29 @@ Media Queries (overriding styles for different screen sizes)
 @media screen and (max-width: 768px) {
 	/* 
 ===================================
+Hero
+===================================
+*/
+
+	.hero-btn-container .btn-alt {
+		display: none;
+	}
+	.mobile-about-btn {
+		display: block;
+	}
+
+	/* 
+===================================
 Community Partnerships
 ===================================
 */
+	.community {
+		background: var(--color-amaranth);
+		padding-top: 0;
+	}
+	.community .wrapper {
+		width: 100%;
+	}
 	.community-card {
 		flex-direction: column;
 	}
@@ -344,6 +353,13 @@ Community Partnerships
 	.community-card img,
 	.community-card .text-container {
 		border-radius: 0px;
+	}
+
+	.community-card .text-container {
+		gap: var(--spacing-sm);
+		align-items: center;
+		text-align: center;
+		padding: var(--spacing-lg) var(--spacing-sm);
 	}
 	/* 
 ===================================
@@ -360,6 +376,7 @@ Global Ecosystem
 	/* background */
 	.global-ecosystem {
 		background: var(--color-grape);
+		text-align: center;
 	}
 
 	.global-ecosystem .text-container,
@@ -371,6 +388,7 @@ Global Ecosystem
 	}
 	.global-ecosystem blockquote {
 		position: static;
+		text-align: start;
 	}
 
 	/* 
@@ -400,6 +418,7 @@ Our Values
 	/* layout */
 	.values-list {
 		flex-direction: column;
+		padding: var(--spacing-lg) var(--spacing-sm);
 	}
 
 	/* background */
@@ -433,7 +452,6 @@ Events and Programs
 	.events {
 		background: var(--color-white);
 	}
-
 	.events h3 {
 		text-align: center;
 	}
@@ -441,6 +459,40 @@ Events and Programs
 	.event a {
 		color: var(--text-color-dark);
 	}
+}
+
+/* Custom Breakpoint 470px */
+@media screen and (max-width: 470px) {
+	/* 
+	===================================
+	Mobile Font Size
+	===================================
+	*/
+	/* headings */
+	.hero h2,
+	.what-we-do h3,
+	.events h3 {
+		font-size: var(--font-size-title-med);
+	}
+	.community h3,
+	.global-ecosystem h3,
+	.our-values h3 {
+		font-size: var(--font-size-title-sm);
+	}
+
+	.value-card h4 {
+		font-size: var(--font-size-title-sm);
+	}
+
+	.newsletter-form h5 {
+		font-size: var(--font-size-title-sm);
+	}
+
+	/* 
+	===================================
+	Mobile Menu
+	===================================
+	*/
 }
 
 /* Mobile Only 400px */
