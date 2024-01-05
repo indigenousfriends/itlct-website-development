@@ -779,6 +779,43 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 @media screen and (max-width: var(--mq-width-tablet-max)) {
 }
 
+/* custom breakpoint 470px */
+@media screen and (max-width: 470px) {
+	/* 
+	===================================
+	Footer
+	===================================
+	*/
+
+	.column-container {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		gap: var(--spacing-med);
+	}
+
+	footer .company,
+	footer nav ul {
+		align-items: center;
+	}
+	/* newsletter form */
+	.newsletter-form {
+		text-align: center;
+	}
+
+	.newsletter-form p {
+		width: 100%;
+	}
+
+	.newsletter-form .input-label-container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.newsletter-form input[type="email"] {
+		width: 100%;
+	}
+}
 /* Mobile Only 400px */
 @media screen and (max-width: var(--mq-width-phone-max)) {
 }

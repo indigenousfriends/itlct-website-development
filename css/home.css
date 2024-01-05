@@ -316,7 +316,13 @@ Media Queries (overriding styles for different screen sizes)
 */
 
 /* Tablet and smaller 1024px*/
-@media screen and (max-width: var(--mq-width-desktop-max)) {
+@media screen and (max-width: 1024px) {
+	.wwd-card-list {
+		gap: var(--spacing-sm);
+	}
+	.wwd-card {
+		width: calc(33% - var(--spacing-sm));
+	}
 }
 
 /* Tablet and smaller 768px */
@@ -374,10 +380,15 @@ What We Do
 */
 	.wwd-card-list {
 		flex-direction: column;
+		gap: var(--spacing-med);
 	}
 
 	.wwd-card {
 		width: 100%;
+	}
+
+	.wwd-card-text {
+		min-height: auto;
 	}
 
 	/* 
@@ -423,6 +434,9 @@ Events and Programs
 		background: var(--color-white);
 	}
 
+	.events h3 {
+		text-align: center;
+	}
 	.events,
 	.event a {
 		color: var(--text-color-dark);
