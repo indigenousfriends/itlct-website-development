@@ -517,7 +517,13 @@ textarea {
 	resize: vertical;
 }
 
-/* modals */
+/* custom input/label class: side  */
+.input-label-container {
+	display: flex;
+	gap: var(--spacing-sm);
+}
+
+/* Modal Content */
 .modal-overlay {
 	position: fixed;
 	top: 0;
@@ -687,8 +693,19 @@ footer .social svg {
 /* newsletter form  */
 .newsletter-form {
 	color: var(--color-white);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
 }
 
+/* text adjustments  */
+.newsletter-form p {
+	width: 60%;
+}
+/* email input adjustment */
+.newsletter-form input[type="email"] {
+	flex-grow: 1;
+}
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
