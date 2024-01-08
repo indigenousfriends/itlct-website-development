@@ -17,6 +17,7 @@ Hero
 }
 .hero-img-mobile {
 	display: none;
+	visibility: hidden;
 }
 .hero .wrapper {
 	height: inherit;
@@ -40,6 +41,7 @@ Hero
 
 .mobile-about-btn {
 	display: none;
+	visibility: hidden;
 }
 
 /* 
@@ -343,6 +345,7 @@ Hero
 	/* revealing mobile hero img */
 	.hero-img-mobile {
 		display: block;
+		visibility: visible;
 	}
 
 	/* text spacing adjustment */
@@ -353,9 +356,11 @@ Hero
 	/* removing desktop buttons, replacing with mobile CAT Btn */
 	.hero-btn-container .btn-alt {
 		display: none;
+		visibility: hidden;
 	}
 	.mobile-about-btn {
 		display: block;
+		visibility: visible;
 	}
 
 	/* 

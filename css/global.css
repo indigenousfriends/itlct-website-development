@@ -400,6 +400,7 @@ Utility Classes ( flexbox, wrappers,  etc.)
 /* hidden */
 .hidden {
 	display: none;
+	visibility: hidden;
 }
 
 /* Global Wrapper */
@@ -778,6 +779,7 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 	.mobile-menu,
 	.mobile-support-btn {
 		display: block;
+		visibility: visible;
 	}
 
 	/* HIDE: desktop support button */
