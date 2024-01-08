@@ -854,6 +854,10 @@ Media Queries (overriding styles for different screen sizes)
 	Mobile Text
 	===================================
 	*/
+
+	.hero h2 {
+		font-size: var(--font-size-title-med);
+	}
 	body {
 		font-size: var(--font-size-body-reg);
 	}

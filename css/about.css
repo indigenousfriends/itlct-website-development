@@ -24,9 +24,42 @@ Section Styles (background, padding, etc.)
 ===================================
 */
 
+/* 
+===================================
+Hero 
+===================================
+*/
+
+/* background and layout adjustments  */
+.hero {
+	background: linear-gradient(
+			107deg,
+			rgba(9, 9, 9, 0.8) 9.51%,
+			rgba(9, 9, 9, 0) 76.72%
+		),
+		url("../assets/images/pages/about/hero-about.jpg") top/cover;
+	/* text-align: center; */
+	display: flex;
+	align-items: center;
+}
+
+/* about heading layout and sizing */
+.hero-text-container {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+/* 
+===================================
+Main Content  
+===================================
+*/
 /* wrapper spacing similar to section */
 main .wrapper {
 	padding: var(--spacing-xxl) 0;
+	/* width: 60%; */
+	max-width: 800px;
 }
 /* about article flex layout */
 .about-article {
@@ -34,6 +67,7 @@ main .wrapper {
 	flex-direction: column;
 	gap: var(--spacing-sm);
 }
+
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
@@ -47,6 +81,27 @@ Media Queries (overriding styles for different screen sizes)
 
 /* Tablet and Smaller */
 @media screen and (max-width: 768px) {
+	/* 
+===================================
+Hero
+===================================
+*/
+	.hero {
+		/* remove background-img */
+		background: none;
+		padding: 0;
+	}
+
+	.hero-text-container {
+		width: 100%;
+		text-align: center;
+	}
+
+	/* main wrapper reset */
+	main .wrapper {
+		/* width: var(--wrapper-width); */
+		max-width: var(--wrapper-max-width);
+	}
 }
 
 /* Mobile Only */
