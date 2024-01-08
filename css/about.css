@@ -2,19 +2,21 @@
 ===================================
 ===================================
 Styles for an individual page
-
-- Rename this file to match the page you are working on (e.g. home.css, about.css, etc.)
-- Create a new file for your page and link this file to it in the <head> of your HTML document
-- Variables from global.css will work in this CSS file as well. Do not add any variables to this file.
 ===================================
 ===================================
 */
 
 /* 
 ===================================
-Page Component Styles (icon grid, team member card)
+Text Styles 
 ===================================
 */
+
+/* signature text style */
+.about-signature {
+	padding-top: var(--spacing-sm);
+	font-size: var(--font-size-title-xs);
+}
 
 /* 
 ===================================
@@ -22,29 +24,39 @@ Section Styles (background, padding, etc.)
 ===================================
 */
 
+/* wrapper spacing similar to section */
+main .wrapper {
+	padding: var(--spacing-xxl) 0;
+}
+/* about article flex layout */
+.about-article {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
-
-Note: Here we are using a mobile-first approach, so we start with the smallest screen size and work our way up.
-Start by writing styles for the mobile version of the design on the lines above.
-Anything that needs to change for larger screens should be added to the media queries below.
-
-Feel free to change the min/max-width values to whatever you need. Use variables.
 ===================================
 */
 
 /* Tablet Only */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and(max-width: 1024px) {
 	/* Add styles that only apply to tablet. These are usually fixes to get resposnivenes right */
 }
 
-/* Tablet and Larger */
-@media screen and (min-width: 768px) {
-	/* Add styles that apply to table and desktop */
+/* Tablet and Smaller */
+@media screen and (max-width: 768px) {
 }
 
-/* Desktop Only */
-@media screen and (min-width: 1024px) {
-	/* Add styles that apply specifically to desktop */
+/* Mobile Only */
+@media screen and (max-width: 470px) {
+	/* mobile font  */
+	.about-article h2 {
+		font-size: var(--font-size-title-med);
+	}
+
+	.about-signature {
+		font-size: var(--font-size-body-lg);
+	}
 }
