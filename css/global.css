@@ -657,6 +657,10 @@ header {
 	color: var(--color-white);
 }
 
+.hero-img-mobile {
+	display: none;
+	visibility: hidden;
+}
 /* 
 ===================================
 Global Footer Styles
@@ -742,13 +746,12 @@ footer .social svg {
 }
 /* email input adjustment */
 .newsletter-form input[type="email"] {
-	flex-grow: 1;
+	width: 100%;
 }
 
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
-Feel free to change the min/max-width values to whatever you need. Use variables.
 ===================================
 */
 
@@ -811,6 +814,28 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 
 /* Tablet and smaller 768px */
 @media screen and (max-width: 768px) {
+	/* 
+	===================================
+	Hero Adjustment
+	===================================
+	*/
+
+	.hero {
+		/* layout for <img> and wrapper */
+		flex-direction: column;
+
+		color: var(--color-onyx);
+		padding-top: 0;
+
+		gap: var(--spacing-lg);
+	}
+
+	/* revealing mobile hero img */
+	.hero-img-mobile {
+		display: block;
+		visibility: visible;
+	}
+
 	/* 
 	===================================
 	Modal Adjustment
