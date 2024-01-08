@@ -38,6 +38,7 @@ Hero
 
 .mobile-about-btn {
 	display: none;
+	visibility: hidden;
 }
 
 /* 
@@ -322,12 +323,23 @@ Media Queries (overriding styles for different screen sizes)
 Hero
 ===================================
 */
+	.hero {
+		/* remove background-img */
+		background: none;
+	}
+	/* text spacing adjustment */
+	.hero .wrapper {
+		gap: var(--spacing-med);
+	}
 
+	/* removing desktop buttons, replacing with mobile CAT Btn */
 	.hero-btn-container .btn-alt {
 		display: none;
+		visibility: hidden;
 	}
 	.mobile-about-btn {
 		display: block;
+		visibility: visible;
 	}
 
 	/* 
