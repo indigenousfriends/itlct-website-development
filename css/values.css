@@ -1,11 +1,7 @@
 /*
 ===================================
 ===================================
-Styles for an individual page
-
-- Rename this file to match the page you are working on (e.g. home.css, about.css, etc.)
-- Create a new file for your page and link this file to it in the <head> of your HTML document
-- Variables from global.css will work in this CSS file as well. Do not add any variables to this file.
+Our Values
 ===================================
 ===================================
 */
@@ -15,6 +11,47 @@ Styles for an individual page
 Page Component Styles (icon grid, team member card)
 ===================================
 */
+.styled-img-container {
+	position: relative;
+}
+
+.styled-img-container img {
+	border-radius: var(--border-radius);
+	max-height: 550px;
+	object-fit: cover;
+	object-position: top;
+	aspect-ratio: 1/1;
+}
+
+.styled-img-container::before {
+	position: absolute;
+	content: " ";
+	width: 80%;
+	aspect-ratio: 1/1;
+	z-index: -1;
+	background-color: var(--color-amaranth);
+	border-radius: var(--border-radius);
+}
+
+.styled-img-container.style-left::before {
+	transform: translate(-70px, -65px);
+}
+
+.empowering .wrapper {
+	display: flex;
+	flex-direction: row-reverse;
+	gap: var(--spacing-xl);
+	padding: var(--spacing-xl);
+
+	width: var(--wrapper-width);
+	max-width: var(--wrapper-max-width);
+	margin: 0 auto;
+}
+
+.empowering .styled-img-container,
+.empowering .text-container {
+	width: 50%;
+}
 
 /* 
 ===================================
@@ -24,24 +61,132 @@ Section Styles (background, padding, etc.)
 
 /* 
 ===================================
+Hero
+===================================
+*/
+.hero {
+	background: linear-gradient(
+			260deg,
+			rgba(9, 9, 9, 0.8) 46.9%,
+			rgba(9, 9, 9, 0) 86.82%
+		),
+		url("../assets/images/pages/values/hero-values.png") top/cover;
+	display: flex;
+	align-items: center;
+}
+/* values heading layout */
+.hero .wrapper {
+	display: flex;
+	justify-content: flex-end;
+}
+/* values heading sizing */
+.hero-text-container {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* 
+===================================
+Values
+===================================
+*/
+
+/* 
+===================================
+Support Banner
+===================================
+*/
+.support-banner {
+	background-color: var(--color-blue);
+}
+
+.support-banner h2 {
+	color: var(--color-light-amaranth);
+}
+
+.support-banner span {
+	display: block;
+	color: var(--text-color-light);
+}
+.support-text-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-med);
+}
+
+.support-img-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing-sm);
+}
+
+.support-img-container img {
+	width: fit-content;
+	max-height: 100px;
+}
+
+/* 
+===================================
 Media Queries (overriding styles for different screen sizes)
-
-Note: Here we are using a mobile-first approach, so we start with the smallest screen size and work our way up.
-Start by writing styles for the mobile version of the design on the lines above.
-Anything that needs to change for larger screens should be added to the media queries below.
-
-Feel free to change the min/max-width values to whatever you need. Use variables.
 ===================================
 */
 
 /* Tablet and smaller 1024px*/
-@media (max-width: var(--mq-width-desktop-max)) {
+@media (max-width: 1024px) {
+	/* 
+===================================
+Empowering
+===================================
+*/
+
+	.empowering .wrapper {
+		flex-direction: column;
+		width: 100%;
+		padding: var(--spacing-xl) 0;
+	}
+	.empowering .styled-img-container,
+	.empowering .text-container {
+		width: 100%;
+	}
+
+	.styled-img-container::before {
+		position: static;
+	}
+
+	.styled-img-container img {
+		max-height: 300px;
+	}
+
+	.styled-img-container {
+		background-color: var(--color-amaranth);
+		padding: var(--spacing-med) var(--spacing-sm);
+	}
 }
 
 /* Tablet and smaller 768px */
-@media screen and (max-width: var(--mq-width-tablet-max)) {
+@media screen and (max-width: 768px) {
+	/* 
+===================================
+Hero
+===================================
+*/
+	/* mobile view + layout */
+	.hero {
+		background: none;
+	}
+
+	.hero .wrapper {
+		justify-content: flex-start;
+	}
+
+	.hero-text-container {
+		width: 100%;
+		text-align: center;
+	}
 }
 
-/* Mobile Only 400px */
-@media screen and (max-width: var(--mq-width-phone-max)) {
+/* Mobile Only 470px */
+@media screen and (max-width: 470px) {
 }
