@@ -1,0 +1,236 @@
+/*
+===================================
+===================================
+Our Impact Styles
+===================================
+===================================
+*/
+
+/* 
+===================================
+Page Component Styles (icon grid, team member card)
+===================================
+*/
+
+/* styled img container */
+
+.styled-img-container {
+	position: relative;
+}
+
+.styled-img-container img {
+	border-radius: var(--border-radius);
+	max-height: 550px;
+	object-fit: cover;
+	aspect-ratio: 1/1;
+}
+
+.styled-img-container::before {
+	position: absolute;
+	content: " ";
+	width: 80%;
+	aspect-ratio: 1/1;
+	z-index: -1;
+	background-color: var(--color-amaranth);
+	border-radius: var(--border-radius);
+}
+
+.styled-img-container.style-left::before {
+	transform: translate(-70px, -65px);
+}
+
+.styled-img-container.style-right::before {
+	transform: translate(200px, -65px);
+}
+/* 
+===================================
+Hero 
+===================================
+*/
+
+/* background and layout adjustments  */
+.hero {
+	background: linear-gradient(
+			107deg,
+			rgba(9, 9, 9, 0.8) 9.51%,
+			rgba(9, 9, 9, 0) 76.72%
+		),
+		url("../assets/images/pages/impact/hero-impact.png") top/cover;
+	display: flex;
+	align-items: center;
+}
+
+/* about heading layout and sizing */
+.hero-text-container {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* 
+===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+/* 
+===================================
+Technology & Stewardship Cards
+===================================
+*/
+.technology .wrapper,
+.stewardship .wrapper {
+	display: flex;
+	gap: var(--spacing-xl);
+	padding: var(--spacing-xl);
+
+	width: var(--wrapper-width);
+	max-width: var(--wrapper-max-width);
+	margin: 0 auto;
+}
+.technology .styled-img-container,
+.technology .text-container,
+.stewardship .styled-img-container,
+.stewardship .text-container {
+	width: 50%;
+}
+
+.technology .text-container,
+.stewardship .text-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* 
+===================================
+Programs Gallery
+===================================
+*/
+.programs {
+	position: relative;
+}
+
+/* overlapping background */
+
+.programs::before {
+	position: absolute;
+	content: "";
+	z-index: -1;
+	top: 215px;
+
+	width: 100%;
+	height: 70%;
+	background: linear-gradient(
+		180deg,
+		#d3c53f 0%,
+		#d3c53f 26.04%,
+		#92a32d 58.85%,
+		#b37122 100%
+	);
+}
+
+/* layout */
+.program-gallery {
+	background-color: var(--color-onyx);
+	padding: var(--spacing-xl);
+
+	display: flex;
+	justify-content: center;
+	gap: var(--spacing-xl);
+	flex-wrap: wrap;
+
+	color: var(--text-color-light);
+}
+
+.program-gallery li {
+	width: 50%;
+	max-width: 350px;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.program-gallery h3 {
+	font-size: var(--font-size-title-sm);
+	text-align: center;
+}
+
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+===================================
+*/
+
+/* Tablet and smaller 1024px*/
+@media (max-width: 1024px) {
+	/* 
+===================================
+Technology & Program Cards
+===================================
+*/
+	/* removing wrapper styles for mobile design */
+	.technology .wrapper,
+	.stewardship .wrapper {
+		flex-direction: column;
+		padding: var(--spacing-xl) 0;
+		width: 100%;
+	}
+
+	.technology .styled-img-container,
+	.technology .text-container,
+	.stewardship .styled-img-container,
+	.stewardship .text-container {
+		width: 100%;
+	}
+
+	.styled-img-container::before {
+		position: static;
+	}
+
+	.styled-img-container {
+		background-color: var(--color-amaranth);
+		padding: var(--spacing-med) 0;
+	}
+
+	.styled-img-container img {
+		max-height: 300px;
+	}
+
+	/* mobile wrapper */
+	.styled-img-container img,
+	.technology .text-container,
+	.stewardship .text-container {
+		width: var(--wrapper-width);
+		margin: 0 auto;
+	}
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+	.hero {
+		/* remove background-img */
+		background: none;
+		padding: 0;
+	}
+
+	.hero-text-container {
+		width: 100%;
+		text-align: center;
+	}
+
+	/* 
+===================================
+Program Gallery
+===================================
+*/
+
+	.program-gallery {
+		padding: var(--spacing-med) var(--spacing-sm);
+	}
+}
+
+/* Mobile Only 470px */
+@media screen and (max-width: 470px) {
+}

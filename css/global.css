@@ -298,6 +298,7 @@ html {
 body {
 	background-color: var(--body-background-color);
 	font-size: var(--font-size-body-lg);
+	color: var(--text-color-dark);
 }
 
 /* Images */
