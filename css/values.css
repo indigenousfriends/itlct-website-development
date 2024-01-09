@@ -116,6 +116,17 @@ Support Banner
 	gap: var(--spacing-med);
 }
 
+/* heading */
+.support-heading {
+	display: flex;
+	gap: var(--spacing-med);
+}
+
+.support-heading img {
+	width: var(--spacing-med);
+}
+
+/* un images */
 .support-img-container {
 	display: flex;
 	flex-wrap: wrap;
