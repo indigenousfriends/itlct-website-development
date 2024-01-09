@@ -25,7 +25,7 @@
 						<!-- ITLCT Logo -->
 						<a href="#" class="img-link">
 							<img
-								src="./assets/icons/global/itlct-logo.svg"
+								src="./assets/logos/itlct-logo.svg"
 								alt="If These Lands Could Talk Logo"
 							/>
 						</a>
@@ -74,9 +74,9 @@
 
 							<!-- Page Links -->
 							<ul id="nav-links" class="nav-links">
-								<li><a href="#">About US</a></li>
+								<li><a href="./pages/about.html">About US</a></li>
 								<li><a href="#">Our Impact</a></li>
-								<li><a href="#">Our Values</a></li>
+								<li><a href="./pages/values.html">Our Values</a></li>
 								<li><a href="#">Events</a></li>
 								<li><a href="#">Our Team</a></li>
 								<li><a href="#">Contact</a></li>
@@ -92,6 +92,11 @@
 			</nav>
 			<!-- Hero -->
 			<section class="hero">
+				<img
+					src="./assets/images/pages/home/hero-home.jpg"
+					alt="homepage background"
+					class="hero-img-mobile"
+				/>
 				<!-- Wrapper -->
 				<div class="wrapper">
 					<h2>Preserving Tomorrow by Building Today</h2>
@@ -105,6 +110,9 @@
 					<div class="hero-btn-container">
 						<a href="#" class="btn-alt">Our Impact</a>
 						<a href="" class="btn-alt">Our Values</a>
+						<a href="./pages/about.html" class="btn-main mobile-about-btn"
+							>About US</a
+						>
 					</div>
 				</div>
 			</section>
@@ -119,7 +127,10 @@
 					<div class="community-card">
 						<!-- img -->
 						<div class="img-container">
-							<img src="https://placedog.net/800/640?id=7" alt="doggo" />
+							<img
+								src="./assets/images/pages/home/community-partnership.jpg"
+								alt="Community photo of If These Lands Could Talk"
+							/>
 						</div>
 						<!-- text -->
 						<div class="text-container">
@@ -173,8 +184,13 @@
 					<ul class="wwd-card-list">
 						<!-- digital fluency -->
 						<li class="wwd-card">
-							<div class="wwd-card-img"></div>
-							<div class="wwd-card-text wwd-digtal">
+							<div class="wwd-card-img">
+								<img
+									src="./assets/images/pages/home/digital-fluency.jpg"
+									alt=""
+								/>
+							</div>
+							<div class="wwd-card-text wwd-digital">
 								<h4>Digital Fluency</h4>
 								<p>
 									We assist and partner with communities to engage with digital
@@ -186,7 +202,12 @@
 
 						<!-- community engagement -->
 						<li class="wwd-card">
-							<div class="wwd-card-img"></div>
+							<div class="wwd-card-img">
+								<img
+									src="./assets/images/pages/home/community-engagement.jpg"
+									alt=""
+								/>
+							</div>
 							<div class="wwd-card-text wwd-community">
 								<h4>Community Engagement</h4>
 								<p>
@@ -199,7 +220,12 @@
 
 						<!-- Digital Technology Programs -->
 						<li class="wwd-card">
-							<div class="wwd-card-img"></div>
+							<div class="wwd-card-img">
+								<img
+									src="./assets/images/pages/home/digital-technology.jpg"
+									alt=""
+								/>
+							</div>
 							<div class="wwd-card-text wwd-programs">
 								<h4>Digital Technology Programs</h4>
 								<p>
@@ -215,15 +241,18 @@
 			<!-- Our  Values -->
 			<section class="our-values">
 				<div class="wrapper">
-					<h3>Our Values</h3>
-					<p>
-						Appreciate the past, understand the present, adapt to the future.
-					</p>
+					<!-- title and subtitle -->
+					<div class="values-title-container">
+						<h3>Our Values</h3>
+						<p>
+							Appreciate the past, understand the present, adapt to the future.
+						</p>
+					</div>
 
 					<!-- values card -->
 					<ul class="values-list">
 						<!-- Past -->
-						<li>
+						<li class="value-card">
 							<h4>Past</h4>
 							<p>
 								Appreciate the past by preserving heritage and culture to pass
@@ -231,15 +260,15 @@
 							</p>
 						</li>
 						<!-- Present -->
-						<li>
+						<li class="value-card">
 							<h4>Present</h4>
 							<p>
 								Understand current needs and history. Amplify and share native
 								excellence. Enable creativity and growth.
 							</p>
 						</li>
-						<!-- Future Card -->
-						<li>
+						<!-- Future -->
+						<li class="value-card">
 							<h4>Future</h4>
 							<p>
 								Adapt to new innovation where it makes sense. Prepare and
@@ -257,17 +286,67 @@
 					<h3>Upcoming Events and Programs</h3>
 					<!-- Event gallery -->
 					<ul class="event-list">
-						<!-- Event Card -->
-						<li class="event-card">
-							<div class="event-img-container"></div>
+						<!-- Event -->
+						<li class="event">
+							<a href="#" class="img-link">
+								<!-- img container -->
+								<div class="event-img">
+									<img
+										src="./assets/images/pages/home/itlct-event-cover.jpg"
+										alt="Walking in Multiple Worlds Event Poster"
+									/>
+								</div>
+								<!-- text container -->
+								<div class="event-text">
+									<h4>Walking in Multiple Worlds</h4>
+									<p>
+										Appreciate the past by preserving heritage and culture to
+										pass onto future generations.
+									</p>
+								</div>
+							</a>
+						</li>
 
-							<div class="event-text-container">
-								<h4>Walking Across Multiple Worlds</h4>
-								<p>
-									Appreciate the past by preserving heritage and culture to pass
-									onto future generations.
-								</p>
-							</div>
+						<!-- Event -->
+						<li class="event">
+							<a href="#" class="img-link">
+								<!-- img container -->
+								<div class="event-img">
+									<img
+										src="./assets/images/pages/home/itlct-event-cover.jpg"
+										alt="Walking in Multiple Worlds Event Poster"
+									/>
+								</div>
+								<!-- text container -->
+								<div class="event-text">
+									<h4>Walking in Multiple Worlds</h4>
+									<p>
+										Appreciate the past by preserving heritage and culture to
+										pass onto future generations.
+									</p>
+								</div>
+							</a>
+						</li>
+
+						<!-- Event -->
+						<li class="event">
+							<a href="#" class="img-link">
+								<!-- img container -->
+								<div class="event-img">
+									<img
+										src="./assets/images/pages/home/itlct-event-cover.jpg"
+										alt="Walking in Multiple Worlds Event Poster"
+									/>
+								</div>
+								<!-- text container -->
+								<div class="event-text">
+									<h4>Walking in Multiple Worlds</h4>
+									<p>
+										Appreciate the past by preserving heritage and culture to
+										pass onto future generations.
+									</p>
+								</div>
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -283,7 +362,7 @@
 						<!-- Footer Logo -->
 						<a href="" class="img-link">
 							<img
-								src="./assets/icons/global/itlct-logo.svg"
+								src="./assets/logos/itlct-logo.svg"
 								alt="If These Lands Could Talk Logo"
 							/>
 						</a>
@@ -295,10 +374,11 @@
 					<!-- Footer Navigation -->
 					<nav>
 						<ul>
+							<li><a href="#">About US</a></li>
 							<li><a href="#">Our Impact</a></li>
 							<li><a href="#">Our Values</a></li>
 							<li><a href="#">Events & Programs</a></li>
-							<li><a href="#">Join the Team</a></li>
+							<li><a href="#">Contact</a></li>
 							<li><a href="#">Support US</a></li>
 						</ul>
 					</nav>
@@ -310,7 +390,7 @@
 							Register with our newsletter to receive updates on our website,
 							events, and more!
 						</p>
-						<div class="input-container">
+						<div class="input-label-container">
 							<input
 								type="email"
 								name="newsletter-email"
@@ -329,7 +409,6 @@
 					<!-- policy and contact links -->
 					<div class="policy">
 						<a href="#">Privacy Policy</a>
-						<a href="#">Contact</a>
 					</div>
 					<!-- Footer Socials -->
 					<ul class="social">
@@ -339,6 +418,7 @@
 								href="https://www.linkedin.com/company/if-these-lands-could-talk-itlct/"
 								target="_blank"
 								rel="noopener noreferrer"
+								aria-label="LinkedIn"
 								class="img-link"
 							>
 								<svg
@@ -360,6 +440,7 @@
 								href="https://www.facebook.com/people/If-These-Lands-Could-Talk-ITLCT/61550097182345/"
 								target="_blank"
 								rel="noopener noreferrer"
+								aria-label="FaceBook"
 								class="img-link"
 							>
 								<svg
@@ -381,6 +462,7 @@
 								href="https://www.instagram.com/iftheselandscouldtalk/"
 								target="_blank"
 								rel="noopener noreferrer"
+								aria-label="Instagram"
 								class="img-link"
 							>
 								<svg
@@ -430,29 +512,38 @@
 				<!-- text container -->
 				<div class="modal-text-container">
 					<h4>Land Acknowledgement</h4>
-					<p>
-						ITLCT operates predominantly through digital means. The Atlanta,
-						Georgia area is the official home for ITLCT. Our leaders are located
-						in the United States between the states of Georgia and Florida and
-						so we wish to acknowledge both locations. We acknowledge that ITLCT
-						leaders reside on the traditional homelands and territories of
-						Florida consisting of but not limited to the Seminole Nation and
-						other first peoples such as the Calusa, Tobobaga, Timucua,
-						Apalachee, Miccosukee, Mascogo, Taíno, amongst others. ITLCT also
-						acknowledge that we operate, and our leaders also reside on the
-						traditional homelands and territories of Georgia consisting of the
-						Cherokee Nation and other first peoples such as but not limited to
-						the Catawba, Muscogee (Creek), Chickasaw, Shawnee, Oconee,
-						Apalachicola, Chatot, amongst others. The first peoples of Florida
-						and Georgia who lived, worked, nurtured the land, and shared
-						knowledge were involuntarily removed, faced difficult challenges and
-						oppression, may still be seeking recognition and reconciliation in
-						some cases, but today, they continue to shape their communities and
-						the future in positive ways. ITLCT recognizes this and vows to be
-						humble and respectful stewards of the lands, histories, and
-						communities of Florida and Georgia's first people and other global
-						tribes, nations, and communities as we engage in our work.
-					</p>
+					<div class="modal-scroll-container">
+						<p>
+							ITLCT operates predominantly through digital means. The Atlanta,
+							Georgia area is the official home for ITLCT. Our leaders are
+							located in the United States between the states of Georgia and
+							Florida and so we wish to acknowledge both locations.
+						</p>
+
+						<p>
+							We acknowledge that ITLCT leaders reside on the traditional
+							homelands and territories of Florida consisting of but not limited
+							to the Seminole Nation and other first peoples such as the Calusa,
+							Tobobaga, Timucua, Apalachee, Miccosukee, Mascogo, Taíno, amongst
+							others. ITLCT also acknowledge that we operate, and our leaders
+							also reside on the traditional homelands and territories of
+							Georgia consisting of the Cherokee Nation and other first peoples
+							such as but not limited to the Catawba, Muscogee (Creek),
+							Chickasaw, Shawnee, Oconee, Apalachicola, Chatot, amongst others.
+						</p>
+
+						<p>
+							The first peoples of Florida and Georgia who lived, worked,
+							nurtured the land, and shared knowledge were involuntarily
+							removed, faced difficult challenges and oppression, may still be
+							seeking recognition and reconciliation in some cases, but today,
+							they continue to shape their communities and the future in
+							positive ways. ITLCT recognizes this and vows to be humble and
+							respectful stewards of the lands, histories, and communities of
+							Florida and Georgia's first people and other global tribes,
+							nations, and communities as we engage in our work.
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>

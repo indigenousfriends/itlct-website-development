@@ -34,17 +34,14 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 ===================================
 */
 
-/* Tablet Only */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-	/* Add styles that only apply to tablet. These are usually fixes to get resposnivenes right */
+/* Tablet and smaller 1024px*/
+@media (max-width: var(--mq-width-desktop-max)) {
 }
 
-/* Tablet and Larger */
-@media screen and (min-width: 768px) {
-	/* Add styles that apply to table and desktop */
+/* Tablet and smaller 768px */
+@media screen and (max-width: var(--mq-width-tablet-max)) {
 }
 
-/* Desktop Only */
-@media screen and (min-width: 1024px) {
-	/* Add styles that apply specifically to desktop */
+/* Mobile Only 400px */
+@media screen and (max-width: var(--mq-width-phone-max)) {
 }
