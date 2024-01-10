@@ -11,47 +11,6 @@ Our Values
 Page Component Styles (icon grid, team member card)
 ===================================
 */
-.styled-img-container {
-	position: relative;
-}
-
-.styled-img-container img {
-	border-radius: var(--border-radius);
-	max-height: 550px;
-	object-fit: cover;
-	object-position: top;
-	aspect-ratio: 1/1;
-}
-
-.styled-img-container::before {
-	position: absolute;
-	content: " ";
-	width: 80%;
-	aspect-ratio: 1/1;
-	z-index: -1;
-	background-color: var(--color-amaranth);
-	border-radius: var(--border-radius);
-}
-
-.styled-img-container.style-left::before {
-	transform: translate(-70px, -65px);
-}
-
-.empowering .wrapper {
-	display: flex;
-	flex-direction: row-reverse;
-	gap: var(--spacing-xl);
-	padding: var(--spacing-xl);
-
-	width: var(--wrapper-width);
-	max-width: var(--wrapper-max-width);
-	margin: 0 auto;
-}
-
-.empowering .styled-img-container,
-.empowering .text-container {
-	width: 50%;
-}
 
 /* 
 ===================================
@@ -98,35 +57,49 @@ Values
 Support Banner
 ===================================
 */
-.support-banner {
+.support {
 	background-color: var(--color-blue);
 }
 
-.support-banner h2 {
+/* text adjustments */
+.support h2 {
 	color: var(--color-light-amaranth);
 }
 
-.support-banner span {
-	display: block;
+.support p {
 	color: var(--text-color-light);
+	font-size: 46px;
+	font-weight: 700;
+	line-height: 50px;
 }
-.support-text-container {
+
+.support a {
+	width: fit-content;
+}
+.support-text {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* layout */
+.support .wrapper {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-med);
 }
 
-/* heading */
+/* heading and heart layout*/
 .support-heading {
 	display: flex;
-	gap: var(--spacing-med);
+	gap: var(--spacing-sm);
 }
 
 .support-heading img {
 	width: var(--spacing-med);
 }
 
-/* un images */
+/* support un images */
 .support-img-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -136,6 +109,58 @@ Support Banner
 .support-img-container img {
 	width: fit-content;
 	max-height: 100px;
+}
+/* 
+===================================
+Empowering 
+===================================
+*/
+.styled-img-container {
+	position: relative;
+}
+
+.styled-img-container img {
+	border-radius: var(--border-radius);
+	max-height: 550px;
+	object-fit: cover;
+	object-position: top;
+	aspect-ratio: 1/1;
+}
+
+.styled-img-container::before {
+	position: absolute;
+	content: " ";
+	width: 80%;
+	aspect-ratio: 1/1;
+	z-index: -1;
+	background-color: var(--color-amaranth);
+	border-radius: var(--border-radius);
+}
+
+.styled-img-container.style-left::before {
+	transform: translate(-70px, -65px);
+}
+
+.empowering .wrapper {
+	display: flex;
+	flex-direction: row-reverse;
+	gap: var(--spacing-xl);
+	padding: var(--spacing-xl);
+
+	width: var(--wrapper-width);
+	max-width: var(--wrapper-max-width);
+	margin: 0 auto;
+}
+
+.empowering .styled-img-container,
+.empowering .text-container {
+	width: 50%;
+}
+
+.empowering .text-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
 }
 
 /* 
@@ -151,28 +176,39 @@ Media Queries (overriding styles for different screen sizes)
 Empowering
 ===================================
 */
-
+	.empowering {
+		padding: var(--spacing-xxl) 0 0 0;
+	}
 	.empowering .wrapper {
 		flex-direction: column;
 		width: 100%;
-		padding: var(--spacing-xl) 0;
+		padding: 0;
 	}
 	.empowering .styled-img-container,
 	.empowering .text-container {
 		width: 100%;
 	}
 
+	/* removing absolute positioned graphic */
 	.styled-img-container::before {
 		position: static;
 	}
 
+	/* constraint on image height */
 	.styled-img-container img {
 		max-height: 300px;
 	}
 
+	/* background color */
 	.styled-img-container {
 		background-color: var(--color-amaranth);
 		padding: var(--spacing-med) var(--spacing-sm);
+	}
+
+	/* wrapper on text box */
+	.empowering .text-container {
+		width: 85%;
+		margin: 0 auto;
 	}
 }
 
@@ -200,4 +236,9 @@ Hero
 
 /* Mobile Only 470px */
 @media screen and (max-width: 470px) {
+	/* 
+===================================
+Mobile Fonts
+===================================
+*/
 }
