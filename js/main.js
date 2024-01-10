@@ -55,3 +55,27 @@ mobileMenuBtn.addEventListener("click", () => {
 	// toggle mobile menu component
 	mobileMenuComponent.classList.toggle("open-menu");
 });
+
+/* 
+===================================
+Contact Form
+===================================
+*/
+// HTML Reference Variables
+// form elements
+let contactForm = document.querySelector("#");
+let nameInput = document.querySelector("#name-input");
+let emailInput = document.querySelector("#email-input");
+let messageInput = document.querySelector("#message-input");
+
+// User response element
+let formResponse = document.querySelector("#form-response");
+
+// Responses
+let successRes = "Success - we will get back to you soon!";
+let errorRes = "Something went wrong on our end - please try again later!";
+
+// Form submission
+contactForm.addEventListener("submit", event => {
+	event.preventDefault();
+});

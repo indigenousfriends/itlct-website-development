@@ -31,8 +31,8 @@ form .wrapper {
 	max-width: 1075px;
 }
 
-form .text-container,
-form .form-container {
+.text-container,
+.form-container {
 	width: 50%;
 }
 
@@ -53,6 +53,7 @@ form .form-container {
 .form-container button {
 	align-self: center;
 }
+
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
@@ -60,13 +61,37 @@ Media Queries (overriding styles for different screen sizes)
 */
 
 /* Tablet and smaller 1024px*/
-@media screen and (max-width: 1024) {
+@media screen and (max-width: 1024px) {
+	form .wrapper {
+		gap: var(--spacing-lg);
+	}
 }
 
 /* Tablet and smaller 768px */
 @media screen and (max-width: 768px) {
+	/* Layout to column  */
+	form .wrapper {
+		flex-direction: column;
+	}
+
+	.text-container,
+	.form-container {
+		width: 100%;
+	}
+
+	h1 {
+		text-align: center;
+	}
 }
 
 /* Mobile Only 470px */
 @media screen and (max-width: 470px) {
+	/* 
+===================================
+Mobile Fonts
+===================================
+*/
+	h1 {
+		font-size: var(--font-size-title-med);
+	}
 }
