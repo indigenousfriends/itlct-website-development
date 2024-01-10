@@ -1,0 +1,514 @@
+/* 
+===================================
+Hero 
+===================================
+*/
+
+/* background and layout adjustments  */
+.hero {
+	background: linear-gradient(
+			352deg,
+			rgba(9, 9, 9, 0.8) 32.03%,
+			rgba(9, 9, 9, 0) 73.42%
+		),
+		url("../assets/images/pages/home/hero-home.jpg") top/cover;
+	text-align: center;
+	display: flex;
+}
+
+.hero .wrapper {
+	height: inherit;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	gap: var(--spacing-sm);
+}
+/* text adjustments */
+.hero h2 {
+	font-size: var(--font-size-title-xl);
+}
+
+/* hero button container */
+
+.hero-btn-container {
+	display: flex;
+	justify-content: center;
+	gap: var(--spacing-med);
+}
+
+.mobile-about-btn {
+	display: none;
+	visibility: hidden;
+}
+
+/* 
+===================================
+Community Partnerships 
+===================================
+*/
+
+/* Community Card */
+
+/* flex layout */
+.community-card {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+/* flex children */
+.community-card .img-container,
+.community-card .text-container {
+	width: 50%;
+}
+
+/* text container */
+.community-card .text-container {
+	/* layout */
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	/* styling */
+	border-radius: var(--border-radius) 0 0 var(--border-radius);
+	padding: var(--spacing-lg);
+	background-color: var(--color-amaranth);
+	color: var(--color-white);
+}
+
+.community-card p {
+	line-height: var(--line-height-lg);
+	margin: var(--spacing-sm) 0;
+}
+
+.community-card img {
+	height: 100%;
+	object-fit: cover;
+
+	border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.community-card a {
+	text-decoration: none;
+}
+
+.community-card a:hover,
+.community-card a:focus {
+	background-color: var(--color-white);
+}
+
+/* 
+===================================
+Global Ecosystem
+===================================
+*/
+
+/* text styles: to be added over to global */
+
+.global-ecosystem h3,
+.global-ecosystem p {
+	color: var(--text-color-light);
+}
+.global-ecosystem p {
+	color: var(--text-color-light);
+}
+
+/* background img */
+
+.global-ecosystem {
+	background: url("../assets/images/pages/home/bg-overlay-vector-01.svg")
+			center/cover,
+		linear-gradient(to top, var(--color-blue), var(--color-grape));
+}
+
+.global-ecosystem .content-container {
+	display: flex;
+}
+.global-ecosystem .text-container,
+.global-ecosystem blockquote {
+	width: 50%;
+}
+.global-ecosystem blockquote {
+	position: relative;
+	top: 100px;
+	right: 100px;
+
+	height: min-content;
+}
+
+/* Text and blockquote styles */
+.global-ecosystem .text-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	background-color: var(--color-grape);
+	padding: var(--spacing-lg);
+	padding-right: 140px;
+	border-radius: var(--border-radius);
+}
+
+/* 
+===================================
+What We Do
+===================================
+*/
+
+/* text adjustments */
+.what-we-do h3 {
+	text-align: center;
+	margin-bottom: var(--spacing-lg);
+	font-size: var(--font-size-title-lg);
+}
+
+.wwd-card h4,
+.wwd-card p {
+	color: var(--text-color-light);
+}
+.wwd-card h4 {
+	font-size: var(--font-size-title-med);
+}
+
+/* card layout */
+.wwd-card-list {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--spacing-med);
+}
+
+/* card styling */
+.wwd-card {
+	width: calc(33% - var(--spacing-med));
+}
+
+.wwd-card-img img {
+	border-radius: var(--border-radius) var(--border-radius) 0 0;
+	object-position: top;
+	object-fit: cover;
+	height: 200px;
+}
+
+.wwd-card-text {
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
+	padding: var(--spacing-med) var(--spacing-sm);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	min-height: 330px;
+}
+
+/* individual card styling */
+.wwd-digital {
+	background-color: var(--color-teal);
+}
+.wwd-community {
+	background-color: var(--color-copper);
+}
+.wwd-programs {
+	background-color: var(--color-blue);
+}
+
+/* 
+===================================
+Our Values
+===================================
+*/
+
+/* text adjustments */
+
+.value-card h4 {
+	font-size: var(--font-size-title-med);
+}
+
+/* section styles */
+.our-values {
+	color: var(--text-color-light);
+	background: url("../assets/images/pages/home/bg-section-our-values.jpg")
+		top/cover;
+}
+
+/* title and card layout */
+.our-values .wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-med);
+}
+/* title layout */
+.values-title-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+/* values list layout */
+.values-list {
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--color-blue);
+
+	border-radius: var(--border-radius);
+	padding: var(--spacing-lg);
+	gap: var(--spacing-lg);
+}
+/* card style */
+.value-card {
+	width: calc(33% - var(--spacing-lg));
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* 
+===================================
+Upcoming Events and Programs
+===================================
+*/
+
+/* text adjustments */
+.events,
+.event a {
+	color: var(--text-color-light);
+}
+
+/* section background */
+.events {
+	background: url("../assets/images/pages/home/bg-overlay-vector-02.svg")
+			center/cover,
+		linear-gradient(to top, var(--color-grape), var(--color-blue));
+}
+/* event list layout */
+.event-list {
+	margin-top: var(--spacing-med);
+
+	display: flex;
+	justify-content: space-between;
+	gap: var(--spacing-sm);
+}
+
+/* Event Card Style */
+.event {
+	width: calc(33% - var(--spacing-sm));
+	max-width: 320px;
+}
+
+.event img {
+	border-radius: var(--border-radius);
+	min-height: 430px;
+	object-fit: cover;
+}
+
+.event-text {
+	margin-top: var(--spacing-sm);
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+===================================
+*/
+
+/* Tablet and smaller 1024px*/
+@media screen and (max-width: 1024px) {
+	.wwd-card-list {
+		gap: var(--spacing-sm);
+	}
+	.wwd-card {
+		width: calc(33% - var(--spacing-sm));
+	}
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+	/* 
+===================================
+Hero
+===================================
+*/
+	.hero {
+		/* remove background-img */
+		background: none;
+	}
+	/* text spacing adjustment */
+	.hero .wrapper {
+		gap: var(--spacing-med);
+	}
+
+	/* removing desktop buttons, replacing with mobile CAT Btn */
+	.hero-btn-container .btn-alt {
+		display: none;
+		visibility: hidden;
+	}
+	.mobile-about-btn {
+		display: block;
+		visibility: visible;
+	}
+
+	/* 
+===================================
+Community Partnerships
+===================================
+*/
+	.community {
+		background: var(--color-amaranth);
+		padding-top: 0;
+	}
+	.community .wrapper {
+		width: 100%;
+	}
+	.community-card {
+		flex-direction: column;
+	}
+
+	.community-card .img-container,
+	.community-card .text-container {
+		width: 100%;
+	}
+
+	.community-card img,
+	.community-card .text-container {
+		border-radius: 0px;
+	}
+
+	.community-card .text-container {
+		gap: var(--spacing-sm);
+		align-items: center;
+		text-align: center;
+		padding: var(--spacing-lg) var(--spacing-sm);
+	}
+	/* 
+===================================
+Global Ecosystem
+===================================
+*/
+
+	/* layout  */
+	.global-ecosystem .content-container {
+		flex-direction: column;
+		gap: var(--spacing-med);
+	}
+
+	/* background */
+	.global-ecosystem {
+		background: var(--color-grape);
+		text-align: center;
+	}
+
+	.global-ecosystem .text-container,
+	.global-ecosystem blockquote {
+		width: 100%;
+	}
+	.global-ecosystem .text-container {
+		padding: 0;
+	}
+	.global-ecosystem blockquote {
+		position: static;
+		text-align: start;
+	}
+
+	/* 
+===================================
+What We Do
+===================================
+*/
+
+	.wwd-card-list {
+		flex-direction: column;
+		gap: var(--spacing-med);
+	}
+
+	.wwd-card {
+		width: 100%;
+	}
+
+	.wwd-card-text {
+		min-height: auto;
+	}
+
+	/* 
+===================================
+Our Values
+===================================
+*/
+
+	/* layout */
+	.values-list {
+		flex-direction: column;
+		padding: var(--spacing-lg) var(--spacing-sm);
+	}
+
+	/* background */
+	.our-values {
+		background: var(--color-onyx);
+		text-align: center;
+	}
+
+	/* title adjustment */
+	.value-card {
+		width: 100%;
+	}
+
+	/* 
+===================================
+Events and Programs
+===================================
+*/
+	/* layout */
+	.event-list {
+		flex-direction: column;
+		align-items: center;
+		gap: var(--spacing-med);
+	}
+
+	.event {
+		width: 100%;
+	}
+
+	/* background + text */
+	.events {
+		background: var(--color-white);
+	}
+	.events h3 {
+		text-align: center;
+	}
+	.events,
+	.event a {
+		color: var(--text-color-dark);
+	}
+}
+
+/* Custom Breakpoint 470px */
+@media screen and (max-width: 470px) {
+	/* 
+	===================================
+	Mobile Font Size
+	===================================
+	*/
+	/* headings */
+	.hero h2,
+	.what-we-do h3,
+	.events h3 {
+		font-size: var(--font-size-title-med);
+	}
+	.community h3,
+	.global-ecosystem h3,
+	.our-values h3 {
+		font-size: var(--font-size-title-sm);
+	}
+
+	.value-card h4 {
+		font-size: var(--font-size-title-sm);
+	}
+
+	.newsletter-form h5 {
+		font-size: var(--font-size-title-sm);
+	}
+
+	/* 
+	===================================
+	Mobile Menu
+	===================================
+	*/
+}
+
+/* Mobile Only 400px */
+@media screen and (max-width: var(--mq-width-phone-max)) {
+}
