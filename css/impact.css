@@ -80,8 +80,7 @@ Section Styles (background, padding, etc.)
 Technology & Stewardship Cards
 ===================================
 */
-.technology .wrapper,
-.stewardship .wrapper {
+.section-2-col .wrapper {
 	display: flex;
 	gap: var(--spacing-xl);
 	padding: var(--spacing-xl);
@@ -90,15 +89,12 @@ Technology & Stewardship Cards
 	max-width: var(--wrapper-max-width);
 	margin: 0 auto;
 }
-.technology .styled-img-container,
-.technology .text-container,
-.stewardship .styled-img-container,
-.stewardship .text-container {
+.section-2-col .styled-img-container,
+.section-2-col .text-container {
 	width: 50%;
 }
 
-.technology .text-container,
-.stewardship .text-container {
+.section-2-col .text-container {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-sm);
@@ -172,26 +168,25 @@ Technology & Program Cards
 ===================================
 */
 
+	/* removing spacing between footer */
 	.stewardship {
 		padding-bottom: 0;
 	}
+
 	/* removing wrapper styles for mobile design */
-	.technology .wrapper,
-	.stewardship .wrapper {
+	.section-2-col .wrapper {
 		flex-direction: column;
 		gap: var(--spacing-lg);
 		padding: 0;
 		width: 100%;
 	}
 
-	.technology .styled-img-container,
-	.technology .text-container,
-	.stewardship .styled-img-container,
-	.stewardship .text-container {
+	.section-2-col .styled-img-container,
+	.section-2-col .text-container {
 		width: 100%;
 	}
 
-	/* removing graphic */
+	/* removing absolute positioned graphic */
 	.styled-img-container::before {
 		position: static;
 	}
@@ -208,8 +203,7 @@ Technology & Program Cards
 
 	/* mobile wrapper */
 	.styled-img-container img,
-	.technology .text-container,
-	.stewardship .text-container {
+	.section-2-col .text-container {
 		width: var(--wrapper-width);
 		margin: 0 auto;
 	}
