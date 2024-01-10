@@ -175,7 +175,7 @@ Technology & Program Cards
 	.technology .wrapper,
 	.stewardship .wrapper {
 		flex-direction: column;
-		padding: var(--spacing-xl) 0;
+		padding: 0;
 		width: 100%;
 	}
 
