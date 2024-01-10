@@ -585,6 +585,65 @@ textarea {
 .close-modal svg:hover {
 	fill: var(--color-amaranth);
 }
+/* 
+===================================
+Custom Components 
+===================================
+*/
+/* section-2-col  */
+.section-2-col .wrapper {
+	display: flex;
+	gap: var(--spacing-xl);
+	padding: var(--spacing-xl);
+
+	width: var(--wrapper-width);
+	max-width: var(--wrapper-max-width);
+	margin: 0 auto;
+}
+
+/* styled image container layout  */
+.section-2-col .styled-img-container,
+.section-2-col .text-container {
+	width: 50%;
+}
+
+.section-2-col .text-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* styled img container styles */
+
+.styled-img-container {
+	position: relative;
+}
+
+.styled-img-container img {
+	border-radius: var(--border-radius);
+	max-height: 550px;
+	object-fit: cover;
+	object-position: top;
+	aspect-ratio: 1/1;
+}
+
+.styled-img-container::before {
+	position: absolute;
+	content: " ";
+	width: 80%;
+	aspect-ratio: 1/1;
+	z-index: -1;
+	background-color: var(--color-amaranth);
+	border-radius: var(--border-radius);
+}
+
+.styled-img-container.style-left::before {
+	transform: translate(-70px, -65px);
+}
+
+.styled-img-container.style-right::before {
+	transform: translate(200px, -65px);
+}
 
 /* 
 ===================================
@@ -815,6 +874,50 @@ Media Queries (overriding styles for different screen sizes)
 	}
 }
 
+/* Tablet and smaller 1024px*/
+@media (max-width: 1024px) {
+	/* 
+===================================
+Styled Img Container Components
+===================================
+*/
+
+	/* removing wrapper styles for mobile design */
+	.section-2-col .wrapper {
+		flex-direction: column;
+		gap: var(--spacing-lg);
+		padding: 0;
+		width: 100%;
+	}
+
+	.section-2-col .styled-img-container,
+	.section-2-col .text-container {
+		width: 100%;
+	}
+
+	/* removing absolute positioned graphic */
+	.styled-img-container::before {
+		position: static;
+	}
+
+	.styled-img-container {
+		background-color: var(--color-amaranth);
+		padding: var(--spacing-med) 0;
+	}
+
+	/* limiting img height */
+	.styled-img-container img {
+		max-height: 300px;
+	}
+
+	/* mobile wrapper */
+	.styled-img-container img,
+	.section-2-col .text-container {
+		width: var(--wrapper-width);
+		margin: 0 auto;
+	}
+}
+
 /* Tablet and smaller 768px */
 @media screen and (max-width: 768px) {
 	/* 
@@ -858,7 +961,7 @@ Media Queries (overriding styles for different screen sizes)
 	}
 }
 
-/* custom breakpoint 470px */
+/* Mobile Breakpoint 470px */
 @media screen and (max-width: 470px) {
 	/* 
 	===================================
@@ -917,11 +1020,3 @@ Media Queries (overriding styles for different screen sizes)
 		font-size: var(--font-size-title-sm);
 	}
 }
-
-/* NOT CURRENTLY WORKING */
-/* Tablet and smaller 1024px*/
-/* @media screen and (max-width: var(--mq-width-desktop-max)) {
-} */
-/* Mobile Only 400px */
-/* @media screen and (max-width: var(--mq-width-phone-max)) {
-} */

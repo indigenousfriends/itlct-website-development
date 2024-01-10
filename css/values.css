@@ -166,52 +166,10 @@ Support Banner
 Empowering 
 ===================================
 */
-.styled-img-container {
-	position: relative;
-}
-
-.styled-img-container img {
-	border-radius: var(--border-radius);
-	max-height: 550px;
-	object-fit: cover;
-	object-position: top;
-	aspect-ratio: 1/1;
-}
-
-.styled-img-container::before {
-	position: absolute;
-	content: " ";
-	width: 80%;
-	aspect-ratio: 1/1;
-	z-index: -1;
-	background-color: var(--color-amaranth);
-	border-radius: var(--border-radius);
-}
-
-.styled-img-container.style-left::before {
-	transform: translate(-70px, -65px);
-}
+/* using styled img container component in global.css */
 
 .empowering .wrapper {
-	display: flex;
 	flex-direction: row-reverse;
-	gap: var(--spacing-xl);
-	padding: var(--spacing-xl);
-
-	width: var(--wrapper-width);
-	max-width: var(--wrapper-max-width);
-	margin: 0 auto;
-}
-
-.empowering .styled-img-container,
-.empowering .text-container {
-	width: 50%;
-}
-
-.empowering .text-container {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-sm);
 }
 
 /* 
@@ -235,32 +193,8 @@ Empowering
 		width: 100%;
 		padding: 0;
 	}
-	.empowering .styled-img-container,
-	.empowering .text-container {
-		width: 100%;
-	}
 
 	/* removing absolute positioned graphic */
-	.styled-img-container::before {
-		position: static;
-	}
-
-	/* constraint on image height */
-	.styled-img-container img {
-		max-height: 300px;
-	}
-
-	/* background color */
-	.styled-img-container {
-		background-color: var(--color-amaranth);
-		padding: var(--spacing-med) var(--spacing-sm);
-	}
-
-	/* wrapper on text box */
-	.empowering .text-container {
-		width: 85%;
-		margin: 0 auto;
-	}
 }
 
 /* Tablet and smaller 768px */
@@ -292,7 +226,6 @@ Hero
 Mobile Fonts
 ===================================
 */
-
 	.support h2,
 	.empowering h2 {
 		font-size: var(--font-size-title-med);
