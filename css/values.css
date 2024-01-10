@@ -258,7 +258,8 @@ Values
 	.values-img-text img {
 		object-fit: cover;
 	}
-	/* card specific backgrounds */
+
+	/* value card text backgrounds */
 	.sustainability .text {
 		background: #0f0f0f;
 	}
@@ -271,6 +272,7 @@ Values
 	.innovation .text {
 		background-color: var(--color-teal);
 	}
+
 	/* 
 ===================================
 Empowering
