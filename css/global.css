@@ -658,7 +658,7 @@ header {
 	color: var(--color-white);
 }
 
-.hero-img-mobile {
+.img-mobile {
 	display: none;
 	visibility: hidden;
 }
@@ -818,6 +818,14 @@ Media Queries (overriding styles for different screen sizes)
 @media screen and (max-width: 768px) {
 	/* 
 	===================================
+	Global Section Adjustment
+	===================================
+	*/
+	section {
+		padding: var(--spacing-med) 0;
+	}
+	/* 
+	===================================
 	Hero Adjustment
 	===================================
 	*/
@@ -833,7 +841,7 @@ Media Queries (overriding styles for different screen sizes)
 	}
 
 	/* revealing mobile hero img */
-	.hero-img-mobile {
+	.img-mobile {
 		display: block;
 		visibility: visible;
 	}

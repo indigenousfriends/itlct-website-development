@@ -171,11 +171,16 @@ Media Queries (overriding styles for different screen sizes)
 Technology & Program Cards
 ===================================
 */
+
+	.stewardship {
+		padding-bottom: 0;
+	}
 	/* removing wrapper styles for mobile design */
 	.technology .wrapper,
 	.stewardship .wrapper {
 		flex-direction: column;
-		padding: var(--spacing-xl) 0;
+		gap: var(--spacing-lg);
+		padding: 0;
 		width: 100%;
 	}
 
@@ -186,6 +191,7 @@ Technology & Program Cards
 		width: 100%;
 	}
 
+	/* removing graphic */
 	.styled-img-container::before {
 		position: static;
 	}
@@ -195,6 +201,7 @@ Technology & Program Cards
 		padding: var(--spacing-med) 0;
 	}
 
+	/* limiting img height */
 	.styled-img-container img {
 		max-height: 300px;
 	}
@@ -210,6 +217,11 @@ Technology & Program Cards
 
 /* Tablet and smaller 768px */
 @media screen and (max-width: 768px) {
+	/* 
+===================================
+Hero 
+===================================
+*/
 	.hero {
 		/* remove background-img */
 		background: none;
@@ -234,4 +246,16 @@ Program Gallery
 
 /* Mobile Only 470px */
 @media screen and (max-width: 470px) {
+	/* 
+===================================
+Mobile Fonts
+===================================
+*/
+	.technology h3,
+	.stewardship h3 {
+		font-size: var(--font-size-title-sm);
+	}
+	.program-gallery h3 {
+		font-size: var(--font-size-body-lg);
+	}
 }
