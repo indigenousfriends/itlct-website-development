@@ -56,6 +56,7 @@ main .wrapper {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-sm);
+	color: var(--text-color-dark);
 }
 
 /* signature text style */
@@ -103,8 +104,10 @@ Hero
 @media screen and (max-width: 470px) {
 	/* mobile font adjustments  */
 	.about-article h2 {
-		font-size: var(--font-size-title-med);
+		font-size: var(--font-size-title-sm);
+		text-align: center;
 	}
+
 	.about-signature {
 		font-size: var(--font-size-body-lg);
 	}

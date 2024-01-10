@@ -347,6 +347,10 @@ h5 {
 	font-size: var(--font-size-title-xs);
 }
 
+p {
+	font-weight: 400;
+	line-height: 26px;
+}
 /* Links */
 a {
 	color: var(--color-white);
@@ -974,6 +978,10 @@ Styled Img Container Components
 	}
 	body {
 		font-size: var(--font-size-body-reg);
+	}
+
+	p {
+		line-height: 20px;
 	}
 	/* 
 	===================================
