@@ -240,6 +240,11 @@ Hero
 		padding: 0;
 	}
 
+	.impact-hero-wrapper {
+		display: flex;
+		align-items: center;
+		flex: 1 1 50%;
+	}
 	.hero-text-container {
 		width: 100%;
 		text-align: center;
