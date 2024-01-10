@@ -17,8 +17,14 @@ Resets (box-sizing, normalize, etc.)
 ===================================
 */
 
-* {
+html {
 	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
 }
 
 /* 
@@ -30,17 +36,84 @@ Variables (colors, text, spacing, etc.)
 :root {
 	/* Color Definitions */
 	--color-white: #fff;
+	--color-amaranth: #b91515;
+	--color-teal: #007a80;
+	--color-cybergrape: #6c4681;
+	--color-onyx: #1f1d1d;
+	--color-yaleblue: #184f85;
+	--color-hotpink: #fa6cb7;
+	--color-citrine: #d3c53f;
+	--color-citron: #92a32d;
+	--color-copper: #b37122;
+	--color-bluepurple: linear-gradient(180deg, #6c4681 -5.71%, #184f85 103.44%);
+	--color-yellowgreen: linear-gradient(
+		180deg,
+		#d3c53f 0%,
+		#d3c53f 26.04%,
+		#92a32d 58.85%,
+		#b37122 100%
+	);
 
 	/* Color Assignment */
 	--body-background-color: var(--color-white);
+	/* button colors */
+	--button1-color: var(--color-white);
+	--button1-hover-border: var(--color-white);
+	--button2-color: var(--color-amaranth);
+	--button2-hover: var(--color-white);
+	--button3-color: var(--color-amaranth);
+	--button3-hover-border: var(--color-amaranth);
 
 	/* Text */
+	--main-font: "Josefin Sans", sans-serif;
+
+	/* Styles for fonts */
+	--font-weight-regular: 400;
+	--font-weight-medium: 500;
+	--font-weight-bold: 700;
+
+	/* Font sizes */
+	--font16: 1rem;
+	--font21: 1.313rem;
+	--font24: 1.5rem;
+	--font28: 1.75rem;
+	--font36: 2.25rem;
+	--font46: 2.875rem;
+	--font56: 3.5rem;
+
+	/* Line Height */
+	--line-height20: 1.25rem;
+	--line-height26: 1.625rem;
+	--line-height28: 1.75rem;
+	--line-height32: 2rem;
+	--line-height40: 2.5rem;
+	--line-height50: 3.125rem;
+	--line-height58: 3.625rem;
 
 	/* Spacing */
+	--spacing10: 10px;
+	--spacing20: 20px;
+	--spacing40: 40px;
+	--spacing65: 65px;
+	--spacing80: 80px;
+	--spacing84: 84px;
+	--spacing100: 100px;
+	--spacing164: 164px;
+	--spacing185: 185px;
+	--spacing213: 213px;
+
+	--spacing-footer: 50px 160px;
+	--spacing-header-button: 125px 279px;
 
 	/* Wrappers */
+	--wrapper-width-max: 1328px;
+	--desktop-wrapper-width: 90%;
+	--mobile-wrapper-width: 95%;
 
 	/* Media Queries */
+	/* --media-mobile-max:480px;
+ --media-tablet-min:768px;
+ --media-desktop-min:1024px; */
 }
 
 /* 
@@ -55,14 +128,58 @@ html {
 
 body {
 	background-color: var(--body-background-color);
+	font-family: var(--main-font);
 }
 
 /* Images */
 img {
 	max-width: 100%;
+	display: block;
 }
 
 /* Text */
+h1 {
+	font-size: var(--font56);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height58);
+	color: var(--color-white);
+}
+
+h2 {
+	font-size: var(--font46);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height50);
+	color: var(--color-onyx);
+}
+
+h3 {
+	font-size: var(--font36);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height40);
+	color: var(--color-white);
+}
+
+h4 {
+	font-size: var(--font28);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height32);
+	color: var(--color-white);
+}
+
+h5 {
+	font-size: var(--font24);
+	font-weight: var(--font-weight-medium);
+	line-height: var(--line-height28);
+	color: var(--color-onyx);
+}
+
+/* Mobile body2 in figma */
+p {
+	font-size: var(--font16);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height20);
+	color: var(--color-white);
+}
 
 /* Links */
 
@@ -79,7 +196,16 @@ Wrappers (container, flexbox, etc.)
 /* Container */
 
 /* Wrappers */
+.wrapper {
+	width: var(--mobile-wrapper-width);
+	margin: 0 auto;
+	max-width: var(--wrapper-width-max);
+}
 
+/* Global Hidden Class */
+.hidden {
+	display: none;
+}
 /* 
 ===================================
 Global Component Styles (buttons, forms, etc.)
@@ -97,14 +223,24 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 ===================================
 */
 
-/* Tablet & Smaller */
-@media (max-width: 768px) {
+/* Tablet & Larger */
+@media screen and (min-width: 768px) {
 }
 
 /* Tablet Only */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 }
 
-/* Phone Only */
-@media (max-width: 480px) {
+/* Desktop & Larger */
+@media screen and (min-width: 1024px) {
+	/* adjusting font sizes and styling for p tags (in figma this is body1)*/
+	p {
+		font-size: var(--font21);
+		font-weight: var(--font-weight-regular);
+		line-height: var(--line-height26);
+		color: var(--color-onyx);
+	}
 }
+
+/* https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
+Well, it comes down to what the :root element actually means: the root element of the HTML document. But conceptually, media queries aren't attached to HTML elements at all. These declarations are processed while your CSS is being parsed, so it won't know to look to the :root and pull in the variable values. */
