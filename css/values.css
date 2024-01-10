@@ -63,21 +63,32 @@ Values
 	flex-direction: column;
 }
 
-.values-item {
+.values-card {
+	padding: 60px;
 	color: var(--text-color-light);
-	padding: var(--spacing-med) var(--spacing-sm);
 	border-radius: var(--border-radius);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-/* text */
-.values-item h3 {
-}
-/* img + text value items */
-.sustainability,
-.authenticity,
-.education,
-.innovation {
+/* text layout*/
+.values-card .text {
 	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.values-card h3 {
+}
+
+/* img + text value cards */
+.values-img-text {
+	position: relative;
+}
+
+.values-img-text .img {
 }
 
 /* card specific */
@@ -86,21 +97,42 @@ Values
 }
 
 .sustainability {
-	background-color: var(--color-onyx);
+	background: linear-gradient(
+			269deg,
+			#0e0e0e 46.26%,
+			rgba(27, 27, 27, 0) 99.04%
+		),
+		url("/assets/images/pages/values/sustainability.png") top/cover;
 }
 
 .authenticity {
-	background-color: var(--color-amaranth);
+	background: linear-gradient(
+			88deg,
+			#b91515 47.26%,
+			rgba(185, 21, 21, 0.73) 55.57%,
+			rgba(119, 45, 45, 0.4) 68.47%
+		),
+		url("/assets/images/pages/values/authenticity.png") top/cover;
 }
 .multigenerational {
 	background-color: var(--color-grape);
 }
 .education {
-	background-color: var(--color-blue);
+	background: linear-gradient(
+			90deg,
+			#184f85 63.23%,
+			rgba(24, 79, 133, 0) 83.39%
+		),
+		url("/assets/images/pages/values/education.png") top/cover;
 }
 
 .innovation {
-	background-color: var(--color-teal);
+	background: linear-gradient(
+			280deg,
+			#007a80 67.16%,
+			rgba(0, 122, 128, 0) 80.36%
+		),
+		url("/assets/images/pages/values/innovation.png") top/cover;
 }
 
 /* 
@@ -127,6 +159,7 @@ Support Banner
 .support a {
 	width: fit-content;
 }
+
 .support-text {
 	display: flex;
 	flex-direction: column;
@@ -234,5 +267,20 @@ Mobile Fonts
 	.support p {
 		font-size: var(--font-size-title-sm);
 		line-height: 32px;
+	}
+
+	.values-card h3 {
+		font-size: var(--font-size-title-sm);
+		text-align: center;
+	}
+	/* 
+===================================
+Values
+===================================
+*/
+
+	.values-row,
+	.values-img-text {
+		flex-direction: column;
 	}
 }
