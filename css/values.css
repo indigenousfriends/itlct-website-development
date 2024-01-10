@@ -48,15 +48,34 @@ Values
 
 /* layout */
 .values-list,
-.values-row {
+.values-row,
+.values-img-text {
 	display: flex;
 	gap: var(--spacing-sm);
 }
 
-.values-list {
+.values-list,
+.values-img-text {
 	flex-direction: column;
 }
 
+/* card widths */
+.sustainability,
+.authenticity {
+	width: 60%;
+}
+
+.humanity,
+.multigenerational {
+	width: 40%;
+}
+
+.education,
+.innovation {
+	width: 50%;
+}
+
+/* general card styling */
 .values-card {
 	padding: 60px;
 	color: var(--text-color-light);
@@ -72,17 +91,6 @@ Values
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-sm);
-}
-
-.values-card h3 {
-}
-
-/* img + text value cards */
-.values-img-text {
-	position: relative;
-}
-
-.values-img-text .img {
 }
 
 /* card specific */
@@ -244,6 +252,53 @@ Hero
 		width: 100%;
 		text-align: center;
 	}
+
+	/* 
+===================================
+Values
+===================================
+*/
+
+	/* layout to colum */
+	.values-row,
+	.values-img-text {
+		flex-direction: column;
+	}
+
+	.values-card {
+		width: 100%;
+		padding: var(--spacing-sm);
+	}
+
+	/* Img + Text Card styles */
+	.values-img-text {
+		background: none;
+		padding: 0;
+		display: flex;
+	}
+
+	/* images treated like cards */
+	.values-img-text .text,
+	.values-img-text img {
+		border-radius: var(--border-radius);
+	}
+	.values-img-text .text {
+		padding: var(--spacing-sm);
+	}
+
+	/* card specific backgrounds */
+	.sustainability .text {
+		background: #0f0f0f;
+	}
+	.authenticity .text {
+		background-color: var(--color-amaranth);
+	}
+	.education .text {
+		background-color: var(--color-blue);
+	}
+	.innovation .text {
+		background-color: var(--color-teal);
+	}
 }
 
 /* Mobile Only 470px */
@@ -266,15 +321,5 @@ Mobile Fonts
 	.values-card h3 {
 		font-size: var(--font-size-title-sm);
 		text-align: center;
-	}
-	/* 
-===================================
-Values
-===================================
-*/
-
-	.values-row,
-	.values-img-text {
-		flex-direction: column;
 	}
 }
