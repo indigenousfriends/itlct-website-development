@@ -52,6 +52,57 @@ Values
 ===================================
 */
 
+/* layout */
+.values-list,
+.values-row {
+	display: flex;
+	gap: var(--spacing-sm);
+}
+
+.values-list {
+	flex-direction: column;
+}
+
+.values-item {
+	color: var(--text-color-light);
+	padding: var(--spacing-med) var(--spacing-sm);
+	border-radius: var(--border-radius);
+}
+
+/* text */
+.values-item h3 {
+}
+/* img + text value items */
+.sustainability,
+.authenticity,
+.education,
+.innovation {
+	display: flex;
+}
+
+/* card specific */
+.humanity {
+	background-color: var(--color-copper);
+}
+
+.sustainability {
+	background-color: var(--color-onyx);
+}
+
+.authenticity {
+	background-color: var(--color-amaranth);
+}
+.multigenerational {
+	background-color: var(--color-grape);
+}
+.education {
+	background-color: var(--color-blue);
+}
+
+.innovation {
+	background-color: var(--color-teal);
+}
+
 /* 
 ===================================
 Support Banner
@@ -241,4 +292,14 @@ Hero
 Mobile Fonts
 ===================================
 */
+
+	.support h2,
+	.empowering h2 {
+		font-size: var(--font-size-title-med);
+	}
+
+	.support p {
+		font-size: var(--font-size-title-sm);
+		line-height: 32px;
+	}
 }
