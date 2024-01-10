@@ -345,6 +345,10 @@ h5 {
 	font-size: var(--font-size-title-xs);
 }
 
+p {
+	font-weight: 400;
+	line-height: 26px;
+}
 /* Links */
 a {
 	color: var(--color-white);
@@ -657,7 +661,7 @@ header {
 	color: var(--color-white);
 }
 
-.hero-img-mobile {
+.img-mobile {
 	display: none;
 	visibility: hidden;
 }
@@ -831,7 +835,7 @@ Media Queries (overriding styles for different screen sizes)
 	}
 
 	/* revealing mobile hero img */
-	.hero-img-mobile {
+	.img-mobile {
 		display: block;
 		visibility: visible;
 	}
@@ -854,8 +858,16 @@ Media Queries (overriding styles for different screen sizes)
 	Mobile Text
 	===================================
 	*/
+
+	.hero h2 {
+		font-size: var(--font-size-title-med);
+	}
 	body {
 		font-size: var(--font-size-body-reg);
+	}
+
+	p {
+		line-height: 20px;
 	}
 	/* 
 	===================================
@@ -905,8 +917,8 @@ Media Queries (overriding styles for different screen sizes)
 
 /* NOT CURRENTLY WORKING */
 /* Tablet and smaller 1024px*/
-@media screen and (max-width: var(--mq-width-desktop-max)) {
-}
+/* @media screen and (max-width: var(--mq-width-desktop-max)) {
+} */
 /* Mobile Only 400px */
-@media screen and (max-width: var(--mq-width-phone-max)) {
-}
+/* @media screen and (max-width: var(--mq-width-phone-max)) {
+} */

@@ -1,18 +1,8 @@
 /*
 ===================================
 ===================================
-Styles for an individual page
-
-- Rename this file to match the page you are working on (e.g. home.css, about.css, etc.)
-- Create a new file for your page and link this file to it in the <head> of your HTML document
-- Variables from global.css will work in this CSS file as well. Do not add any variables to this file.
+About Page Styles
 ===================================
-===================================
-*/
-
-/* 
-===================================
-Page Component Styles (icon grid, team member card)
 ===================================
 */
 
@@ -24,27 +14,105 @@ Section Styles (background, padding, etc.)
 
 /* 
 ===================================
+Hero 
+===================================
+*/
+
+/* background and layout adjustments  */
+.hero {
+	background: linear-gradient(
+			107deg,
+			rgba(9, 9, 9, 0.8) 9.51%,
+			rgba(9, 9, 9, 0) 76.72%
+		),
+		url("../assets/images/pages/about/hero-about.jpg") top/cover;
+	/* text-align: center; */
+	display: flex;
+	align-items: center;
+}
+
+/* about heading layout and sizing */
+.hero-text-container {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* 
+===================================
+Main Content  
+===================================
+*/
+/* wrapper spacing similar to section */
+main .wrapper {
+	padding: var(--spacing-xxl) 0;
+	max-width: 800px;
+}
+
+/* about article flex layout */
+.about-article {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	color: var(--text-color-dark);
+}
+
+/* signature text style */
+.about-signature {
+	padding-top: var(--spacing-sm);
+	font-size: var(--font-size-title-xs);
+}
+
+/* 
+===================================
 Media Queries (overriding styles for different screen sizes)
-
-Note: Here we are using a mobile-first approach, so we start with the smallest screen size and work our way up.
-Start by writing styles for the mobile version of the design on the lines above.
-Anything that needs to change for larger screens should be added to the media queries below.
-
-Feel free to change the min/max-width values to whatever you need. Use variables.
 ===================================
 */
 
 /* Tablet Only */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-	/* Add styles that only apply to tablet. These are usually fixes to get resposnivenes right */
+@media screen and(max-width: 1024px) {
 }
 
-/* Tablet and Larger */
-@media screen and (min-width: 768px) {
-	/* Add styles that apply to table and desktop */
+/* Tablet and Smaller */
+@media screen and (max-width: 768px) {
+	/* 
+===================================
+Hero
+===================================
+*/
+	/* remove background-img */
+	.hero {
+		background: none;
+		padding: 0;
+	}
+
+	.hero-text-container {
+		width: 100%;
+		text-align: center;
+	}
+
+	/* main wrapper reset */
+	main .wrapper {
+		max-width: var(--wrapper-max-width);
+		padding: var(--spacing-xl) 0;
+	}
 }
 
-/* Desktop Only */
-@media screen and (min-width: 1024px) {
-	/* Add styles that apply specifically to desktop */
+/* Mobile Only */
+@media screen and (max-width: 470px) {
+	/* mobile font adjustments  */
+	.about-article h2 {
+		font-size: var(--font-size-title-sm);
+		text-align: center;
+	}
+
+	.about-signature {
+		font-size: var(--font-size-body-lg);
+	}
+
+	/* padding between header, main, footer */
+	main .wrapper {
+		padding: var(--spacing-med) 0;
+	}
 }
