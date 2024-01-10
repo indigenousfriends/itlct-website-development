@@ -1,0 +1,72 @@
+/*
+===================================
+===================================
+Contact Page Styles
+===================================
+===================================
+*/
+
+/* 
+===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+/* resetting min height with no header  */
+header {
+	min-height: initial;
+}
+
+/* background styles */
+main {
+	background: linear-gradient(0deg, #6c4681 -8.79%, #184f85 132.08%);
+	color: var(--text-color-light);
+}
+
+/* Form layout */
+form .wrapper {
+	padding: var(--spacing-xxl) 0;
+	display: flex;
+	gap: var(--spacing-xxl);
+	max-width: 1075px;
+}
+
+form .text-container,
+form .form-container {
+	width: 50%;
+}
+
+/* Form Text */
+
+form .text-container,
+form .form-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* Form Inputs Layout */
+.input-container input {
+	width: 100%;
+}
+
+.form-container button {
+	align-self: center;
+}
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+===================================
+*/
+
+/* Tablet and smaller 1024px*/
+@media screen and (max-width: 1024) {
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+}
+
+/* Mobile Only 470px */
+@media screen and (max-width: 470px) {
+}
