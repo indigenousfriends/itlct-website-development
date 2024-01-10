@@ -658,7 +658,7 @@ header {
 	color: var(--color-white);
 }
 
-.hero-img-mobile {
+.img-mobile {
 	display: none;
 	visibility: hidden;
 }
@@ -832,7 +832,7 @@ Media Queries (overriding styles for different screen sizes)
 	}
 
 	/* revealing mobile hero img */
-	.hero-img-mobile {
+	.img-mobile {
 		display: block;
 		visibility: visible;
 	}
