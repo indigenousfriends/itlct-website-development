@@ -50,6 +50,7 @@ main .wrapper {
 	max-width: 800px;
 	color: var(--color-onyx);
 }
+
 /* about article flex layout */
 .about-article {
 	display: flex;
@@ -80,8 +81,8 @@ Media Queries (overriding styles for different screen sizes)
 Hero
 ===================================
 */
+	/* remove background-img */
 	.hero {
-		/* remove background-img */
 		background: none;
 		padding: 0;
 	}
@@ -93,8 +94,8 @@ Hero
 
 	/* main wrapper reset */
 	main .wrapper {
-		/* width: var(--wrapper-width); */
 		max-width: var(--wrapper-max-width);
+		padding: var(--spacing-xl) 0;
 	}
 }
 
@@ -106,5 +107,10 @@ Hero
 	}
 	.about-signature {
 		font-size: var(--font-size-body-lg);
+	}
+
+	/* padding between header, main, footer */
+	main .wrapper {
+		padding: var(--spacing-med) 0;
 	}
 }
