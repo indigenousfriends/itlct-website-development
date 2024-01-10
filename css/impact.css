@@ -132,6 +132,7 @@ Programs Gallery
 .program-gallery {
 	background-color: var(--color-onyx);
 	padding: var(--spacing-xl);
+	border-radius: var(--border-radius);
 
 	display: flex;
 	justify-content: center;
@@ -267,8 +268,8 @@ Program Gallery
 Mobile Fonts
 ===================================
 */
-	.technology h3,
-	.stewardship h3 {
+	.section-2-col h3,
+	.section-2-col h3 {
 		font-size: var(--font-size-title-sm);
 	}
 	.program-gallery h3 {
