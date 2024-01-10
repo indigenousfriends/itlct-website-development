@@ -258,6 +258,7 @@ Variables (colors, text, spacing, etc.)
 	--font-weight-reg: 400;
 
 	/* Line Height */
+	--line-height-xl: 32px;
 	--line-height-lg: 26px;
 
 	/* Spacing */
@@ -414,6 +415,10 @@ Utility Classes ( flexbox, wrappers,  etc.)
 	margin: 0 auto;
 }
 
+.text-center {
+	text-align: center;
+}
+
 /* 
 ===================================
 Global Component Styles (buttons, forms, etc.)
@@ -483,6 +488,7 @@ button:focus,
 	color: var(--color-onyx);
 	background-color: var(--color-white);
 }
+
 /* long button */
 .btn-long {
 	padding: 10px var(--spacing-lg);
@@ -659,6 +665,14 @@ header {
 	background-position: top center;
 	padding: 140px 0;
 	color: var(--color-white);
+}
+
+/* Hero heading layout and sizing */
+.hero-text-container {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
 }
 
 .img-mobile {

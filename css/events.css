@@ -1,0 +1,105 @@
+/*
+===================================
+===================================
+Styles for an individual page
+
+- Rename this file to match the page you are working on (e.g. home.css, about.css, etc.)
+- Create a new file for your page and link this file to it in the <head> of your HTML document
+- Variables from global.css will work in this CSS file as well. Do not add any variables to this file.
+===================================
+===================================
+*/
+
+/* 
+===================================
+Page Component Styles (icon grid, team member card)
+===================================
+*/
+
+/* Cards */
+
+.card-container {
+	display: flex;
+	flex-direction: row;
+	gap: 15px;
+	padding: 30px 15px;
+}
+
+.card {
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 33%;
+	width: 33%;
+	gap: 15px;
+}
+
+.card h3 {
+	font-size: var(--font-size-title-sm);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-xl);
+}
+
+.card p {
+	font-size: var(--font-size-body-lg);
+	font-weight: var(--font-weight-reg);
+	line-height: var(--line-height-lg);
+}
+
+/* 
+===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+/* Hero Section */
+.hero {
+	background:
+		linear-gradient(
+			272deg,
+			rgba(9, 9, 9, 0.77) 40.35%,
+			rgba(9, 9, 9, 0.74) 44.51%,
+			rgba(9, 9, 9, 0.71) 48.63%,
+			rgba(9, 9, 9, 0) 83.13%
+		),
+		url("../assets/images/pages/events/hero-events.jpg") top/cover;
+	display: flex;
+	align-items: center;
+}
+
+/* Highlights Section */
+
+#highlights-container {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+#highlights-container img {
+	width: min-content;
+	margin: 0 auto;
+}
+
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+
+Note: Here we are using a mobile-first approach, so we start with the smallest screen size and work our way up.
+Start by writing styles for the mobile version of the design on the lines above.
+Anything that needs to change for larger screens should be added to the media queries below.
+
+Feel free to change the min/max-width values to whatever you need. Use variables.
+===================================
+*/
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+	.hero {
+		background-image: "./assets/images/pages/events/mobile/hero-events-mobile.jpg";
+	}
+
+	.card-container {
+		flex-direction: column;
+		gap: 10px;
+	}
+}

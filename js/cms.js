@@ -88,12 +88,7 @@ function getCollectionData(collection, source) {
 	})
 		.then(response => response.json())
 		.then(response => {
-			console.log(response);
-			let posts = response.data;
-
-			if (cms === "wordpress") {
-				posts = response;
-			}
+			let posts = response;
 
 			posts.forEach(post => {
 				const container = document.getElementById(`${collection}-container`);
@@ -101,10 +96,11 @@ function getCollectionData(collection, source) {
 				postDiv.classList.add("card");
 
 				const postImage = document.createElement("img");
-				const postTitle = document.createElement("h2");
+				const postTitle = document.createElement("h3");
+
 				const postContent = document.createElement("p");
 				const postLink = document.createElement("a");
-				postLink.classList.add("button");
+				postLink.classList.add("btn-main");
 
 				let p = post.attributes;
 
