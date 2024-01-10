@@ -217,6 +217,62 @@ Media Queries (overriding styles for different screen sizes)
 @media (max-width: 1024px) {
 	/* 
 ===================================
+Values
+===================================
+*/
+	.values-img-text .img-mobile {
+		display: block;
+		visibility: visible;
+	}
+	/* layout to colum */
+	.values-row,
+	.values-img-text {
+		flex-direction: column;
+	}
+
+	.values-card {
+		width: 100%;
+		padding: var(--spacing-sm);
+		min-height: 300px;
+	}
+
+	/* Img + Text Card styles */
+	.values-img-text {
+		background: none;
+		padding: 0;
+		display: flex;
+	}
+
+	/* images treated like cards */
+	.values-img-text .text,
+	.values-img-text img {
+		border-radius: var(--border-radius);
+		min-height: 300px;
+	}
+
+	.values-img-text .text {
+		padding: var(--spacing-sm);
+		justify-content: center;
+		width: 100%;
+	}
+	.values-img-text img {
+		object-fit: cover;
+	}
+	/* card specific backgrounds */
+	.sustainability .text {
+		background: #0f0f0f;
+	}
+	.authenticity .text {
+		background-color: var(--color-amaranth);
+	}
+	.education .text {
+		background-color: var(--color-blue);
+	}
+	.innovation .text {
+		background-color: var(--color-teal);
+	}
+	/* 
+===================================
 Empowering
 ===================================
 */
@@ -251,53 +307,6 @@ Hero
 	.hero-text-container {
 		width: 100%;
 		text-align: center;
-	}
-
-	/* 
-===================================
-Values
-===================================
-*/
-
-	/* layout to colum */
-	.values-row,
-	.values-img-text {
-		flex-direction: column;
-	}
-
-	.values-card {
-		width: 100%;
-		padding: var(--spacing-sm);
-	}
-
-	/* Img + Text Card styles */
-	.values-img-text {
-		background: none;
-		padding: 0;
-		display: flex;
-	}
-
-	/* images treated like cards */
-	.values-img-text .text,
-	.values-img-text img {
-		border-radius: var(--border-radius);
-	}
-	.values-img-text .text {
-		padding: var(--spacing-sm);
-	}
-
-	/* card specific backgrounds */
-	.sustainability .text {
-		background: #0f0f0f;
-	}
-	.authenticity .text {
-		background-color: var(--color-amaranth);
-	}
-	.education .text {
-		background-color: var(--color-blue);
-	}
-	.innovation .text {
-		background-color: var(--color-teal);
 	}
 }
 
