@@ -1,0 +1,192 @@
+/*
+===================================
+===================================
+Our Team Styles
+===================================
+===================================
+*/
+
+/* 
+===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+/* 
+===================================
+Hero
+===================================
+*/
+
+.hero {
+	background: url("/assets/images/pages/team/hero-team.png"),
+		lightgray 50% / cover no-repeat;
+	display: flex;
+}
+
+/* flex layout */
+.hero .wrapper {
+	display: flex;
+	padding: var(--spacing-lg);
+	gap: var(--spacing-xxl);
+}
+
+.hero-img,
+.hero-text-container {
+	width: 50%;
+}
+
+.hero-img {
+	max-width: 435px;
+}
+.hero-text-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* 
+===================================
+Team Members
+===================================
+*/
+/* member card style */
+.member {
+	background-color: var(--color-teal);
+	color: var(--text-color-light);
+	padding: var(--spacing-sm);
+	border-radius: var(--border-radius);
+	max-width: 654px;
+}
+/* img styling*/
+.member .img {
+	max-width: 240px;
+}
+.member img {
+	border-radius: var(--border-radius);
+}
+/* text */
+.member h3 {
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 32px;
+}
+
+.member .role {
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 28px;
+}
+.member p {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+/* member card layout */
+.member,
+.member .text,
+.member .bio,
+.member-cat {
+	display: flex;
+}
+
+/* similar gaps */
+.member,
+.member .text,
+.member-cat {
+	gap: var(--spacing-sm);
+}
+
+.member .bio {
+	gap: 10px;
+}
+
+/* text container and bio  */
+.member .text,
+.member .bio {
+	flex-direction: column;
+}
+.member .text {
+	justify-content: space-between;
+}
+
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+===================================
+*/
+
+/* Tablet and smaller 1024px*/
+@media (max-width: 1024px) {
+	/* 
+===================================
+Hero
+===================================
+*/
+
+	.hero .wrapper {
+		gap: var(--spacing-lg);
+		padding: 0;
+	}
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+	/* 
+===================================
+Hero
+===================================
+*/
+	/* remove background-img */
+	.hero {
+		background: none;
+		padding: 0;
+		gap: var(--spacing-lg);
+	}
+
+	.hero-text-container {
+		width: 100%;
+		text-align: center;
+	}
+
+	/* removing desktop img */
+	.hero-img {
+		display: none;
+		visibility: hidden;
+	}
+	/* 
+===================================
+Members
+===================================
+*/
+	/* layout adjustments */
+	.member {
+		flex-direction: column;
+	}
+	.member .img {
+		align-self: center;
+	}
+}
+
+/* Mobile Only 470px */
+@media screen and (max-width: 470px) {
+	/* 
+===================================
+Hero
+===================================
+*/
+	.hero .img-mobile {
+		max-height: 390px;
+		object-fit: cover;
+	}
+
+	/* 
+===================================
+Member
+===================================
+*/
+	.member-cat {
+		flex-wrap: wrap;
+	}
+}
