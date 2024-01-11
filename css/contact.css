@@ -21,6 +21,7 @@ header {
 main {
 	background: linear-gradient(0deg, #6c4681 -8.79%, #184f85 132.08%);
 	color: var(--text-color-light);
+	min-height: 90vh;
 }
 
 /* Form layout */
