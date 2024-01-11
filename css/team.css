@@ -6,48 +6,9 @@ Our Team Styles
 ===================================
 */
 
-/* 
+/*
 ===================================
-Section Styles (background, padding, etc.)
-===================================
-*/
-
-/* 
-===================================
-Hero
-===================================
-*/
-
-.hero {
-	background: url("/assets/images/pages/team/hero-team.png"),
-		lightgray 50% / cover no-repeat;
-	display: flex;
-}
-
-/* flex layout */
-.hero .wrapper {
-	display: flex;
-	padding: var(--spacing-lg);
-	gap: var(--spacing-xxl);
-}
-
-.hero-img,
-.hero-text-container {
-	width: 50%;
-}
-
-.hero-img {
-	max-width: 435px;
-}
-.hero-text-container {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-sm);
-}
-
-/* 
-===================================
-Team Members
+Member Card Component
 ===================================
 */
 /* member card style */
@@ -113,6 +74,104 @@ Team Members
 
 /* 
 ===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+/* 
+===================================
+Hero
+===================================
+*/
+
+.hero {
+	background: url("/assets/images/pages/team/hero-team.png"),
+		lightgray 50% / cover no-repeat;
+	display: flex;
+}
+
+/* flex layout */
+.hero .wrapper {
+	display: flex;
+	padding: var(--spacing-lg);
+	gap: var(--spacing-xxl);
+}
+
+.hero-img,
+.hero-text-container {
+	width: 50%;
+}
+
+.hero-img {
+	max-width: 435px;
+}
+.hero-text-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* 
+===================================
+Team Members
+===================================
+*/
+
+/* layout */
+.team-members {
+	display: flex;
+	gap: var(--spacing-sm);
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+/* 
+===================================
+Positions
+===================================
+*/
+
+.positions .wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-med);
+	max-width: 780px;
+	text-align: center;
+	align-items: center;
+	color: var(--text-color-dark);
+}
+/* 
+===================================
+Get Involved
+===================================
+*/
+
+.get-involved {
+	background: linear-gradient(180deg, #6c4681 -5.71%, #184f85 103.44%);
+	color: var(--text-color-light);
+}
+
+/* flex layout */
+.get-involved .wrapper {
+	display: flex;
+	gap: var(--spacing-xxl);
+}
+.get-involved .text,
+.get-involved .img {
+	width: 50%;
+}
+.get-involved .img {
+	max-width: 435px;
+	aspect-ratio: 1/1;
+}
+/* text layout */
+.get-involved .text {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+/* 
+===================================
 Media Queries (overriding styles for different screen sizes)
 ===================================
 */
@@ -138,6 +197,7 @@ Hero
 Hero
 ===================================
 */
+
 	/* remove background-img */
 	.hero {
 		background: none;
@@ -155,17 +215,71 @@ Hero
 		display: none;
 		visibility: hidden;
 	}
+
+	.hero .img-mobile {
+		max-height: 390px;
+		object-fit: cover;
+	}
 	/* 
 ===================================
-Members
+Members Card Component
 ===================================
 */
 	/* layout adjustments */
 	.member {
 		flex-direction: column;
+		width: 100%;
 	}
 	.member .img {
 		align-self: center;
+	}
+	/* 
+===================================
+Get Involved
+===================================
+*/
+	/* remove background */
+	.get-involved {
+		background: none;
+		color: var(--text-color-dark);
+	}
+
+	/* button style swap to .btn-main styles */
+	.get-involved .btn-alt {
+		color: var(--color-white);
+		background-color: var(--color-amaranth);
+		border: var(--border-width-btn) solid transparent;
+		align-self: center;
+		margin-top: var(--spacing-med);
+	}
+
+	.get-involved .btn-alt:hover,
+	.get-involved .btn-alt:focus {
+		color: var(--color-onyx);
+		background-color: var(--color-white);
+	}
+
+	/* mobile/desktop img swap */
+	.get-involved .img {
+		display: none;
+		visibility: hidden;
+	}
+
+	.get-involved .img-mobile {
+		max-height: 390px;
+	}
+
+	.get-involved img {
+		object-fit: cover;
+	}
+	/* layout */
+	.get-involved .wrapper {
+		flex-direction: column;
+	}
+
+	.get-involved .text {
+		width: 100%;
+		padding: var(--spacing-med) 0;
 	}
 }
 
@@ -173,17 +287,17 @@ Members
 @media screen and (max-width: 470px) {
 	/* 
 ===================================
-Hero
+Mobile Text
 ===================================
 */
-	.hero .img-mobile {
-		max-height: 390px;
-		object-fit: cover;
+	h1,
+	h2 {
+		font-size: var(--font-size-title-sm);
+		text-align: center;
 	}
-
 	/* 
 ===================================
-Member
+Member Card Component
 ===================================
 */
 	.member-cat {
