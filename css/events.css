@@ -21,30 +21,104 @@ Page Component Styles (icon grid, team member card)
 .card-container {
 	display: flex;
 	flex-direction: row;
-	gap: 15px;
-	padding: 30px 15px;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-med);
 }
 
-.card {
-	padding: var(--spacing-med);
+.events-container {
 	display: flex;
-	flex-direction: column;
-	flex: 0 0 33%;
+	flex-flow: row wrap;
 	align-items: flex-start;
-	width: 33%;
+	padding: 0 var(--spacing-xl);
 	gap: var(--spacing-med);
 }
 
-.card h3 {
-	font-size: var(--font-size-title-sm);
-	font-weight: var(--font-weight-bold);
-	line-height: var(--line-height-xl);
+.color-strip-cards .card {
+	border-radius: var(--border-radius);
+	position: relative;
+	overflow: hidden;
 }
 
-.card p {
+.color-strip-cards .card .card-text-container {
+	color: var(--color-white);
+	border-radius: 0px 0px 10px 10px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	flex-flow: column;
+	padding: var(--spacing-sm) var(--spacing-med);
+	gap: var(--spacing-sm);
+}
+
+.bg-grad-blue {
+	background: linear-gradient(
+		60deg,
+		#195085 55.81%,
+		rgba(66, 66, 65, 0) 70.18%
+	);
+}
+
+.bg-grad-grape {
+	background: linear-gradient(
+		60deg,
+		#563867 55.81%,
+		rgba(66, 66, 65, 0) 70.18%
+	);
+}
+
+.bg-grad-copper {
+	background: linear-gradient(
+		60deg,
+		#955c17 55.81%,
+		rgba(66, 66, 65, 0) 70.18%
+	);
+}
+
+.bg-grad-teal {
+	background: linear-gradient(
+		60deg,
+		#017b80 55.81%,
+		rgba(66, 66, 65, 0) 70.18%
+	);
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 0 1 48%;
+	width: 48%;
+	gap: var(--spacing-sm);
+}
+
+.card.event {
+	flex: 0 1 335px;
+	width: 33%;
+}
+
+.events-container a {
+	color: var(--color-onyx);
+}
+
+.events-container a:hover p {
+	text-decoration: underline;
+}
+
+.event h3 {
+	font-size: var(--font-size-title-sm);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-lg);
+}
+
+.event p {
 	font-size: var(--font-size-body-lg);
 	font-weight: var(--font-weight-reg);
-	line-height: var(--line-height-lg);
+	line-height: var(--line-height-med);
 }
 
 /* 
@@ -57,13 +131,14 @@ Section Styles (background, padding, etc.)
 .hero {
 	background:
 		linear-gradient(
-			272deg,
+			-272deg,
 			rgba(9, 9, 9, 0.77) 40.35%,
 			rgba(9, 9, 9, 0.74) 44.51%,
 			rgba(9, 9, 9, 0.71) 48.63%,
 			rgba(9, 9, 9, 0) 83.13%
 		),
 		url("../assets/images/pages/events/hero-events.jpg") top/cover;
+	background-position: center;
 	display: flex;
 	align-items: center;
 }

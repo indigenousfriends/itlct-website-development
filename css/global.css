@@ -258,8 +258,10 @@ Variables (colors, text, spacing, etc.)
 	--font-weight-reg: 400;
 
 	/* Line Height */
-	--line-height-xl: 32px;
-	--line-height-lg: 26px;
+	--line-height-xxl: 50px;
+	--line-height-xl: 40px;
+	--line-height-lg: 32px;
+	--line-height-med: 26px;
 
 	/* Spacing */
 	--spacing-xxl: 140px;
@@ -336,9 +338,11 @@ h1 {
 }
 h2 {
 	font-size: var(--font-size-title-lg);
+	line-height: var(--line-height-xxl);
 }
 h3 {
 	font-size: var(--font-size-title-med);
+	line-height: var(--line-height-xl);
 }
 h4 {
 	font-size: var(--font-size-title-sm);
@@ -348,8 +352,8 @@ h5 {
 }
 
 p {
-	font-weight: 400;
-	line-height: 26px;
+	font-weight: var(--font-weight-reg);
+	line-height: var(--line-height-med);
 }
 /* Links */
 a {
@@ -416,8 +420,13 @@ Utility Classes ( flexbox, wrappers,  etc.)
 	margin: 0 auto;
 }
 
-.text-center {
+.section-header {
+	padding: var(--spacing-lg);
 	text-align: center;
+}
+
+.section-header h2 {
+	font-weight: var(--font-weight-bold);
 }
 
 /* 
@@ -439,7 +448,6 @@ hr {
 blockquote {
 	background-color: var(--color-onyx);
 	color: var(--color-white);
-
 	width: fit-content;
 	padding: var(--spacing-lg);
 	margin: 0;
@@ -470,13 +478,10 @@ button,
 	display: block;
 	width: fit-content;
 	padding: 10px 40px;
-
 	font-family: var(--font-main);
 	font-weight: var(--font-weight-bold);
-
 	color: var(--color-white);
 	background-color: var(--color-amaranth);
-
 	border: var(--border-width-btn) solid transparent;
 	border-radius: var(--border-radius);
 	cursor: pointer;
