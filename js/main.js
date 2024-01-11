@@ -41,6 +41,10 @@ let teamBioData = {
 
 // populate modal
 const populateTeamModal = profile => {
+	// deconstructing object
+	const { imgPath, name, role, bio, email, linkedin } = profile;
+
+	// Team modal elements
 	let memberImg = document.querySelector("#member-img");
 	let memberName = document.querySelector("#member-name");
 	let memberRole = document.querySelector("#member-role");
@@ -49,25 +53,26 @@ const populateTeamModal = profile => {
 	let memberBio = document.querySelector("#member-bio");
 
 	// picture
-	memberImg.src = profile.imgPath;
-	memberImg.alt = profile.name;
+	memberImg.src = imgPath;
+	memberImg.alt = name;
 
 	// text
-	memberName.textContent = profile.name;
-	memberRole.textContent = profile.role;
+	memberName.textContent = name;
+	memberRole.textContent = role;
 
 	// bio
-	profile.bio.forEach(paragraph => {
+	bio.forEach(paragraph => {
 		let pElement = document.createElement("p");
 		pElement.textContent = paragraph;
 		memberBio.appendChild(pElement);
 	});
 
 	// socials
-	memberEmail.href =
-		`mailto:${profile.email}` || "mailto:info@iftheselandscouldtalk.org";
+	memberEmail.href = `mailto:${
+		email || "mailto:info@iftheselandscouldtalk.org"
+	}`;
 	memberLinkedin =
-		profile.linkedin ||
+		linkedin ||
 		"https://www.linkedin.com/company/if-these-lands-could-talk-itlct/";
 };
 
