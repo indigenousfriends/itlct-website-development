@@ -55,6 +55,10 @@ Page Component Styles (icon grid, team member card)
 	gap: var(--spacing-sm);
 }
 
+.card-description {
+	display: none;
+}
+
 .bg-grad-blue {
 	background: linear-gradient(
 		60deg,
@@ -168,14 +172,61 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 ===================================
 */
 
+@media screen and (max-width: 1024px) {
+	.card-container,
+	.events-container {
+		padding: 0;
+		column-gap: var(--spacing-xs);
+	}
+}
+
 /* Tablet and smaller 768px */
 @media screen and (max-width: 768px) {
 	.hero {
 		background-image: "./assets/images/pages/events/mobile/hero-events-mobile.jpg";
 	}
 
-	.card-container {
+	.card-container,
+	.events-container {
 		flex-direction: column;
-		gap: 10px;
+		row-gap: var(--spacing-lg);
+	}
+
+	.card,
+	.card.event {
+		flex: 0 1 100%;
+		width: 100%;
+	}
+
+	.color-strip-cards .card img {
+		border-radius: var(--border-radius);
+	}
+
+	.color-strip-cards .card .card-text-container {
+		position: static;
+		padding: var(--spacing-med);
+		border-radius: var(--border-radius);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-flow: column;
+		width: 100%;
+	}
+
+	.card-description {
+		display: block;
+	}
+
+	.bg-grad-blue {
+		background-color: var(--color-blue);
+	}
+	.bg-grad-grape {
+		background-color: var(--color-grape);
+	}
+	.bg-grad-copper {
+		background-color: var(--color-copper);
+	}
+	.bg-grad-teal {
+		background-color: var(--color-teal);
 	}
 }

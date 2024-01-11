@@ -269,6 +269,7 @@ Variables (colors, text, spacing, etc.)
 	--spacing-lg: 80px;
 	--spacing-med: 40px;
 	--spacing-sm: 20px;
+	--spacing-xs: 10px;
 
 	/* Borders */
 	/* width */
@@ -679,6 +680,7 @@ header {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-sm);
+	padding: var(--spacing-med) 0;
 }
 
 .img-mobile {
@@ -836,8 +838,8 @@ Media Queries (overriding styles for different screen sizes)
 	}
 }
 
-/* Tablet and smaller 768px */
-@media screen and (max-width: 768px) {
+/* Smaller than desktop */
+@media screen and (max-width: 1024px) {
 	/* 
 	===================================
 	Global Section Adjustment
@@ -846,20 +848,47 @@ Media Queries (overriding styles for different screen sizes)
 	section {
 		padding: var(--spacing-med) 0;
 	}
+
+	.section-header {
+		padding: var(--spacing-med) 0;
+	}
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+	h2,
+	h3 {
+		font-size: var(--font-size-title-sm);
+		line-height: var(--line-height-lg);
+	}
+
 	/* 
-	===================================
-	Hero Adjustment
-	===================================
-	*/
+===================================
+Hero 
+===================================
+*/
 
-	.hero {
+	.hero-wrapper {
+		display: flex;
+		align-items: center;
+		flex: 1 1 50%;
+	}
+
+	.hero-text-container {
+		width: 100%;
+		text-align: center;
+	}
+
+	body .hero {
 		/* layout for <img> and wrapper */
+		display: flex;
+		align-items: center;
 		flex-direction: column;
-
 		color: var(--color-onyx);
 		padding-top: 0;
-
-		gap: var(--spacing-lg);
+		gap: 0;
+		background: none;
+		padding: 0;
 	}
 
 	/* revealing mobile hero img */
@@ -887,7 +916,7 @@ Media Queries (overriding styles for different screen sizes)
 	===================================
 	*/
 
-	.hero h2 {
+	.hero h1 {
 		font-size: var(--font-size-title-med);
 	}
 	body {
@@ -942,11 +971,3 @@ Media Queries (overriding styles for different screen sizes)
 		font-size: var(--font-size-title-sm);
 	}
 }
-
-/* NOT CURRENTLY WORKING */
-/* Tablet and smaller 1024px*/
-/* @media screen and (max-width: var(--mq-width-desktop-max)) {
-} */
-/* Mobile Only 400px */
-/* @media screen and (max-width: var(--mq-width-phone-max)) {
-} */

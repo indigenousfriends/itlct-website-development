@@ -19,13 +19,17 @@ Hero
 	flex-direction: column;
 	justify-content: flex-end;
 	gap: var(--spacing-sm);
+	align-items: center;
 }
+
 /* text adjustments */
 .hero h2 {
 	font-size: var(--font-size-title-xl);
 }
 
-/* hero button container */
+.hero-text-container {
+	width: 100%;
+}
 
 .hero-btn-container {
 	display: flex;
@@ -320,14 +324,6 @@ Media Queries (overriding styles for different screen sizes)
 Hero
 ===================================
 */
-	.hero {
-		/* remove background-img */
-		background: none;
-	}
-	/* text spacing adjustment */
-	.hero .wrapper {
-		gap: var(--spacing-med);
-	}
 
 	/* removing desktop buttons, replacing with mobile CAT Btn */
 	.hero-btn-container .btn-alt {
@@ -480,7 +476,7 @@ Events and Programs
 	===================================
 	*/
 	/* headings */
-	.hero h2,
+	.hero h1,
 	.what-we-do h3,
 	.events h3 {
 		font-size: var(--font-size-title-med);
