@@ -54,6 +54,11 @@ form .form-container {
 	align-self: center;
 }
 
+/* text area styles */
+
+textarea[name="message-input"] {
+	min-height: 140px;
+}
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
