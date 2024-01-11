@@ -299,6 +299,7 @@ html {
 body {
 	background-color: var(--body-background-color);
 	font-size: var(--font-size-body-lg);
+	color: var(--text-color-dark);
 }
 
 /* Images */
@@ -832,6 +833,14 @@ Media Queries (overriding styles for different screen sizes)
 
 /* Tablet and smaller 768px */
 @media screen and (max-width: 768px) {
+	/* 
+	===================================
+	Global Section Adjustment
+	===================================
+	*/
+	section {
+		padding: var(--spacing-med) 0;
+	}
 	/* 
 	===================================
 	Hero Adjustment
