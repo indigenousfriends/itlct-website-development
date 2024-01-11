@@ -464,6 +464,7 @@ button,
 .btn-alt {
 	display: block;
 	width: fit-content;
+	min-height: 50px;
 	padding: 10px 40px;
 
 	font-family: var(--font-main);

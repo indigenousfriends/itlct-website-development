@@ -27,7 +27,7 @@ Member Card Component
 	border-radius: var(--border-radius);
 }
 /* text */
-.member h3 {
+.member h2 {
 	font-size: 28px;
 	font-weight: 700;
 	line-height: 32px;
@@ -320,8 +320,7 @@ Team Modal
 Mobile Text
 ===================================
 */
-	h1,
-	h2 {
+	h1 {
 		font-size: var(--font-size-title-sm);
 		text-align: center;
 	}
