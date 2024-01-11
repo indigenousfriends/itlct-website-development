@@ -36,10 +36,10 @@ let teamBioData = {
 		],
 	},
 };
+
 // Team Modal Functions
 
 // populate modal
-
 const populateTeamModal = profile => {
 	let memberImg = document.querySelector("#member-img");
 	let memberName = document.querySelector("#member-name");
@@ -80,11 +80,9 @@ openModalBtns.forEach(button => {
 
 		if (button.dataset.content) {
 			let member = button.dataset.content;
-			console.log(teamBioData[member]);
 			populateTeamModal(teamBioData[member]);
 			modalElement.classList.remove("hidden");
 		} else {
-			console.log(modalElement.dataset.content);
 			modalElement.classList.remove("hidden");
 		}
 	});
@@ -139,8 +137,3 @@ mobileMenuBtn.addEventListener("click", () => {
 	// toggle mobile menu component
 	mobileMenuComponent.classList.toggle("open-menu");
 });
-/* 
-===================================
-Team Modal
-===================================
-*/
