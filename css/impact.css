@@ -80,8 +80,7 @@ Section Styles (background, padding, etc.)
 Technology & Stewardship Cards
 ===================================
 */
-.technology .wrapper,
-.stewardship .wrapper {
+.section-2-col .wrapper {
 	display: flex;
 	gap: var(--spacing-xl);
 	padding: var(--spacing-xl);
@@ -90,15 +89,12 @@ Technology & Stewardship Cards
 	max-width: var(--wrapper-max-width);
 	margin: 0 auto;
 }
-.technology .styled-img-container,
-.technology .text-container,
-.stewardship .styled-img-container,
-.stewardship .text-container {
+.section-2-col .styled-img-container,
+.section-2-col .text-container {
 	width: 50%;
 }
 
-.technology .text-container,
-.stewardship .text-container {
+.section-2-col .text-container {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-sm);
@@ -122,7 +118,7 @@ Programs Gallery
 	top: 215px;
 
 	width: 100%;
-	height: 70%;
+	height: 60%;
 	background: linear-gradient(
 		180deg,
 		#d3c53f 0%,
@@ -136,6 +132,7 @@ Programs Gallery
 .program-gallery {
 	background-color: var(--color-onyx);
 	padding: var(--spacing-xl);
+	border-radius: var(--border-radius);
 
 	display: flex;
 	justify-content: center;
@@ -150,7 +147,11 @@ Programs Gallery
 	max-width: 350px;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: var(--spacing-sm);
+}
+.program-gallery img {
+	max-width: 190px;
 }
 
 .program-gallery h3 {
@@ -164,6 +165,19 @@ Media Queries (overriding styles for different screen sizes)
 ===================================
 */
 
+/* custom breakpoint for programs background */
+@media (max-width: 1176px) {
+	/* 
+===================================
+Programs 
+===================================
+*/
+	/* linear gradient graphic */
+	.programs::before {
+		height: 75%;
+	}
+}
+
 /* Tablet and smaller 1024px*/
 @media (max-width: 1024px) {
 	/* 
@@ -172,26 +186,25 @@ Technology & Program Cards
 ===================================
 */
 
+	/* removing spacing between footer */
 	.stewardship {
 		padding-bottom: 0;
 	}
+
 	/* removing wrapper styles for mobile design */
-	.technology .wrapper,
-	.stewardship .wrapper {
+	.section-2-col .wrapper {
 		flex-direction: column;
 		gap: var(--spacing-lg);
 		padding: 0;
 		width: 100%;
 	}
 
-	.technology .styled-img-container,
-	.technology .text-container,
-	.stewardship .styled-img-container,
-	.stewardship .text-container {
+	.section-2-col .styled-img-container,
+	.section-2-col .text-container {
 		width: 100%;
 	}
 
-	/* removing graphic */
+	/* removing absolute positioned graphic */
 	.styled-img-container::before {
 		position: static;
 	}
@@ -208,8 +221,7 @@ Technology & Program Cards
 
 	/* mobile wrapper */
 	.styled-img-container img,
-	.technology .text-container,
-	.stewardship .text-container {
+	.section-2-col .text-container {
 		width: var(--wrapper-width);
 		margin: 0 auto;
 	}
@@ -228,6 +240,11 @@ Hero
 		padding: 0;
 	}
 
+	.impact-hero-wrapper {
+		display: flex;
+		align-items: center;
+		flex: 1 1 50%;
+	}
 	.hero-text-container {
 		width: 100%;
 		text-align: center;
@@ -242,6 +259,11 @@ Program Gallery
 	.program-gallery {
 		padding: var(--spacing-med) var(--spacing-sm);
 	}
+
+	/* gradient graphic adjustments */
+	.programs::before {
+		top: 180px;
+	}
 }
 
 /* Mobile Only 470px */
@@ -251,8 +273,8 @@ Program Gallery
 Mobile Fonts
 ===================================
 */
-	.technology h3,
-	.stewardship h3 {
+	.section-2-col h3,
+	.section-2-col h3 {
 		font-size: var(--font-size-title-sm);
 	}
 	.program-gallery h3 {
