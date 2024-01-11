@@ -1,35 +1,57 @@
 /* 
 ===================================
-Land Acknowledgement Modal
+Modals
 ===================================
 */
 
-// HTML Reference Variables
+// Land Acknowledgement Variables
 let openLaBtn = document.querySelector("#open-la-btn");
-let closeLaBtn = document.querySelector("#close-la-btn");
 let landAckModal = document.querySelector("#land-ack-modal");
+
+// Team Modal Variables
+let teamModalBtns = document.querySelector(".team-modal-btn");
+let openModalBtns = document.querySelectorAll('[data-role="open-modal"]');
+let closeModalBtns = document.querySelectorAll(".close-modal");
+let teamModalComponent = document.querySelector("#team-modal");
 
 // open land acknowledgement via button
 openLaBtn.addEventListener("click", () => {
 	landAckModal.classList.remove("hidden");
 });
 
-// close land acknowledgement via button
-closeLaBtn.addEventListener("click", () => {
-	landAckModal.classList.add("hidden");
+// Global Modal Events
+// open modal button events
+
+openModalBtns.forEach(button => {
+	button.addEventListener("click", () => {
+		teamModalComponent.classList.add("hidden");
+	});
+});
+// exit via close modal button
+closeModalBtns.forEach(button => {
+	button.addEventListener("click", () => {
+		let modalElement = button.closest(".modal-overlay");
+		modalElement.classList.add("hidden");
+	});
 });
 
-// click on land ack modal overlay
+// exit modal via click on modal overlay
 document.addEventListener("click", event => {
 	if (event.target.classList.contains("modal-overlay")) {
-		landAckModal.classList.add("hidden");
+		event.target.classList.add("hidden");
 	}
 });
 
-// escape key on land ack modal
+// escape key on modal
 document.addEventListener("keydown", function (event) {
-	if (event.key === "Escape" && !landAckModal.classList.contains("hidden")) {
-		landAckModal.classList.add("hidden");
+	let allModalElements = document.querySelectorAll(".modal-overlay");
+
+	if (event.key === "Escape") {
+		allModalElements.forEach(modal => {
+			if (!modal.classList.contains("hidden")) {
+				modal.classList.add("hidden");
+			}
+		});
 	}
 });
 
@@ -55,3 +77,8 @@ mobileMenuBtn.addEventListener("click", () => {
 	// toggle mobile menu component
 	mobileMenuComponent.classList.toggle("open-menu");
 });
+/* 
+===================================
+Team Modal
+===================================
+*/

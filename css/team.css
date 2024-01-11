@@ -72,6 +72,18 @@ Member Card Component
 	justify-content: space-between;
 }
 
+/* team modal styles */
+.team-modal .member {
+	background: none;
+	width: 100%;
+	max-width: initial;
+	color: var(--text-color-dark);
+	padding: var(--spacing-sm) 0;
+}
+
+.team-modal .img {
+	max-width: 140px;
+}
 /* 
 ===================================
 Section Styles (background, padding, etc.)
@@ -280,6 +292,18 @@ Get Involved
 	.get-involved .text {
 		width: 100%;
 		padding: var(--spacing-med) 0;
+	}
+
+	/* 
+===================================
+Team Modal
+===================================
+*/
+	.team-modal .text {
+		flex-direction: row;
+	}
+	.team-modal .member-cat {
+		align-items: flex-end;
 	}
 }
 

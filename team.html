@@ -82,7 +82,7 @@
 								<li><a href="/impact.html">Our Impact</a></li>
 								<li><a href="/values.html">Our Values</a></li>
 								<li><a href="/events.html">Events</a></li>
-								<li><a href="/our-team.html">Our Team</a></li>
+								<li><a href="/team.html">Our Team</a></li>
 								<li><a href="/contact.html">Contact</a></li>
 								<!-- Mobile Support Button -->
 								<li class="mobile-support-btn"><a href="#">Support US</a></li>
@@ -136,7 +136,7 @@
 							<div class="img">
 								<img
 									src="/assets/images/pages/team/natasha-rabsatt.png"
-									alt=""
+									alt="Portrait of Natasha Rabsatt"
 								/>
 							</div>
 							<!-- text -->
@@ -154,7 +154,7 @@
 								<div class="member-cat">
 									<!-- email -->
 									<a
-										href="mailto:natasha@iftheselandscouldtalk.org"
+										href="mailto:info@iftheselandscouldtalk.org"
 										class="social-icon"
 										aria-label="send an email to Natasha Rabsatt"
 									>
@@ -172,7 +172,13 @@
 										/>
 									</a>
 									<!-- Read More Button -->
-									<button class="btn-main team-modal">Read More</button>
+									<button
+										class="btn-main team-modal-btn"
+										data-role="open-modal"
+										data-type="team-modal"
+									>
+										Read More
+									</button>
 								</div>
 							</div>
 						</li>
@@ -200,7 +206,7 @@
 								<div class="member-cat">
 									<!-- email -->
 									<a
-										href="mailto:mmaxwell@aischool.org"
+										href="mailto:info@iftheselandscouldtalk.org"
 										class="social-icon"
 										aria-label="send an email to Marsha Maxwell"
 									>
@@ -218,7 +224,13 @@
 										/>
 									</a>
 									<!-- Read More Button -->
-									<button class="btn-main team-modal">Read More</button>
+									<button
+										class="btn-main team-modal-btn"
+										data-role="open-modal"
+										data-type="team-modal"
+									>
+										Read More
+									</button>
 								</div>
 							</div>
 						</li>
@@ -246,7 +258,7 @@
 				<!-- mobile img -->
 				<img
 					src="/assets/images/pages/team/mobile/get-involved-mobile.png"
-					alt=""
+					alt="Indigenous student writing on a chalk board."
 					class="img-mobile"
 				/>
 				<div class="wrapper">
@@ -261,7 +273,10 @@
 					</div>
 					<!-- img -->
 					<div class="img">
-						<img src="/assets/images/pages/team/get-involved.png" alt="" />
+						<img
+							src="/assets/images/pages/team/get-involved.png"
+							alt="Indigenous student writing on a chalk board."
+						/>
 					</div>
 				</div>
 			</section>
@@ -461,7 +476,112 @@
 				</div>
 			</div>
 		</div>
-
+		<!-- team modal -->
+		<div class="modal-overlay team-modal" id="team-modal">
+			<div class="modal-content">
+				<!-- button container -->
+				<div class="modal-btn-container">
+					<button
+						class="close-modal"
+						id="close-modal-btn"
+						aria-label="open team member modal"
+					>
+						<svg
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M1.7416 23.9993C1.29575 23.9993 0.849903 23.8293 0.509942 23.4894C-0.169981 22.8094 -0.169981 21.7067 0.509942 21.026L21.0267 0.509942C21.7067 -0.169981 22.8094 -0.169981 23.4901 0.509942C24.17 1.18986 24.17 2.29265 23.4901 2.97327L2.97257 23.4894C2.63261 23.8293 2.18745 23.9993 1.7416 23.9993Z"
+							/>
+							<path
+								d="M22.2577 24C21.8118 24 21.366 23.83 21.026 23.4901L0.509942 2.97327C-0.169981 2.29334 -0.169981 1.19056 0.509942 0.509942C1.18986 -0.169981 2.29265 -0.169981 2.97327 0.509942L23.4901 21.0267C24.17 21.7067 24.17 22.8094 23.4901 23.4901C23.1494 23.83 22.7035 24 22.2577 24Z"
+							/>
+						</svg>
+					</button>
+				</div>
+				<!-- member profile -->
+				<div class="member">
+					<!-- img -->
+					<div class="img">
+						<img
+							src="/assets/images/pages/team/natasha-rabsatt.png"
+							alt="Portrait of Natasha Rabsatt"
+						/>
+					</div>
+					<!-- text -->
+					<div class="text">
+						<!-- SM Bio -->
+						<div class="bio">
+							<h3>Name</h3>
+							<p class="role">Role</p>
+						</div>
+						<!-- connect CAT -->
+						<div class="member-cat">
+							<!-- email -->
+							<a
+								href="mailto:info@iftheselandscouldtalk.org"
+								class="social-icon"
+								aria-label="send an email to Natasha Rabsatt"
+							>
+								<img src="/assets/icons/pages/team/mail.svg" alt="email" />
+							</a>
+							<!-- linkedIn -->
+							<a
+								href="https://www.linkedin.com/in/natasha-rabsatt/"
+								class="social-icon"
+								aria-label="Connect with Natasha Rabsatt on LinkedIn"
+							>
+								<img src="/assets/icons/pages/team/mail.svg" alt="LinkedIn" />
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- text container -->
+				<div class="modal-text-container">
+					<div class="modal-scroll-container">
+						<p>
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+							Asperiores vel saepe ipsum magni quaerat earum quos quo quam.
+							Commodi autem excepturi enim accusamus fuga laborum provident
+							facilis voluptatum vero, obcaecati, molestiae, est vel esse atque.
+							Iste asperiores quibusdam sed rerum similique porro sunt soluta
+							dolore fugiat veniam, ipsum laudantium modi odit aliquam sapiente
+							nam unde. Dolorem asperiores, sint ipsum labore quae totam quis
+							dolores! Placeat, molestias eum quisquam similique culpa fugiat
+							optio odit aspernatur sed sequi. Inventore accusamus laboriosam,
+							ipsum iusto possimus incidunt necessitatibus error saepe dolore
+							vitae voluptas quia iste itaque molestias! Saepe id et expedita
+							rem soluta porro voluptate, ut, quibusdam optio odit voluptates
+							delectus, provident consequuntur repudiandae similique aspernatur
+							atque modi dolores! Nostrum possimus similique suscipit, sit quasi
+							autem laudantium pariatur laborum ab itaque minima enim placeat
+							fuga dolor illo velit id delectus eum! Magni optio nemo
+							dignissimos rerum mollitia vero unde fugiat, modi libero ipsam
+							doloremque beatae sed, cupiditate id expedita pariatur voluptates
+							soluta reiciendis incidunt? Accusamus, est accusantium debitis
+							laboriosam quae voluptatem fugit esse dolores maiores nam iste
+							corporis reprehenderit quia ipsam placeat magni tenetur error
+							possimus perspiciatis cupiditate. Porro eaque totam aperiam enim
+							soluta minima et saepe velit! Eum ea error ratione fugiat, amet
+							sit culpa corrupti nisi et numquam, ullam, laboriosam eos sed
+							inventore magni quisquam animi atque. Beatae, impedit? Itaque in
+							quos, provident molestiae libero, numquam alias officia laudantium
+							repellendus ratione rem vero officiis id. Cum eos facilis, odio
+							deserunt error voluptatem maxime culpa veritatis consectetur
+							voluptas quod blanditiis at ipsa in temporibus sunt ullam
+							assumenda dignissimos velit sapiente. Ducimus vitae dolore aliquam
+							nesciunt et quibusdam dicta, asperiores nemo libero? Magnam harum
+							aut saepe deleniti praesentium voluptas placeat illum, beatae
+							soluta voluptate odit eum voluptatum tenetur. Impedit,
+							necessitatibus ad provident doloremque animi similique inventore
+							tenetur voluptatibus sint quos. Sunt fugiat vel laboriosam?
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- JavaScript -->
 		<script src="js/main.js"></script>
 	</body>
