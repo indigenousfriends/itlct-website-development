@@ -4,27 +4,21 @@ Modals
 ===================================
 */
 
-// Land Acknowledgement Variables
-let openLaBtn = document.querySelector("#open-la-btn");
-let landAckModal = document.querySelector("#land-ack-modal");
-
-// Team Modal Variables
-let teamModalBtns = document.querySelector(".team-modal-btn");
-let openModalBtns = document.querySelectorAll('[data-role="open-modal"]');
-let closeModalBtns = document.querySelectorAll(".close-modal");
-let teamModalComponent = document.querySelector("#team-modal");
-
-// open land acknowledgement via button
-openLaBtn.addEventListener("click", () => {
-	landAckModal.classList.remove("hidden");
-});
+// HTML Reference Variables
+let openModalBtns = document.querySelectorAll(`[data-role="open-modal"]`);
+let closeModalBtns = document.querySelectorAll(`[data-role="close-modal"]`);
 
 // Global Modal Events
 // open modal button events
 
 openModalBtns.forEach(button => {
 	button.addEventListener("click", () => {
-		teamModalComponent.classList.add("hidden");
+		// opening modals based on data-type attr
+		let modalElement = document.querySelector(`#${button.dataset.type}`);
+
+		if (modalElement) {
+			modalElement.classList.remove("hidden");
+		}
 	});
 });
 // exit via close modal button
