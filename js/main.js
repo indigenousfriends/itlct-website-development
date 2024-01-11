@@ -12,8 +12,11 @@ let closeModalBtns = document.querySelectorAll(`[data-role="close-modal"]`);
 
 let teamBioData = {
 	natasha: {
+		imgPath: "/assets/images/pages/team/natasha-rabsatt.png",
 		name: "Natasha Rabsatt, M.S.",
 		role: "Co-Founder",
+		email: "info@iftheselandscouldtalk.org",
+		linkedin: "https://www.linkedin.com/in/natasha-rabsatt/",
 		bio: [
 			"Natasha is Caribbean afro-indigenous with Classic Taíno (Puerto Rico - Boríken) and African heritage.",
 			"She is passionate about creating value and social impact through mindful stewardship with innovation, technology, and creative experiences. She is an avid world traveler and has lived in many different regions of the United States and also abroad.",
@@ -21,8 +24,11 @@ let teamBioData = {
 		],
 	},
 	marsha: {
+		imgPath: "/assets/images/pages/team/marsha-maxwell.png",
 		name: "Dr. Marsha Maxwell, CETL ",
 		role: "Co-founder",
+		email: "info@iftheselandscouldtalk.org",
+		linkedin: "https://www.linkedin.com/in/natasha-rabsatt/",
 		bio: [
 			"With strategic, tactical and operational technology experience, Dr. Marsha Maxwell creates innovative environments and applications that harness the power of emerging technologies and neuroscience to enhance the educator's reach to better engage students and foster a culture of innovation in organizations.",
 			"Her areas of interest include Augmented Analytics, Immersive Experiences, Artificial Intelligence, Machine Learning, STEAM programs, and cybersecurity. Marsha has also been very active in bringing STEM/STEAM initiatives to life especially for underserved and underrepresented groups throughout their educational journey from kindergarten to university and beyond.",
@@ -34,24 +40,49 @@ let teamBioData = {
 
 // populate modal
 
-const populateTeamModal = () => {
+const populateTeamModal = profile => {
 	let memberImg = document.querySelector("#member-img");
 	let memberName = document.querySelector("#member-name");
 	let memberRole = document.querySelector("#member-role");
 	let memberEmail = document.querySelector("#member-email");
 	let memberLinkedin = document.querySelector("#member-linkedin");
 	let memberBio = document.querySelector("#member-bio");
+
+	// picture
+	memberImg.src = profile.imgPath;
+	memberImg.alt = profile.name;
+
+	// text
+	memberName.textContent = profile.name;
+	memberRole.textContent = profile.role;
+
+	// bio
+	profile.bio.forEach(paragraph => {
+		let pElement = document.createElement("p");
+		pElement.textContent = paragraph;
+		memberBio.appendChild(pElement);
+	});
+
+	// socials
+	memberEmail.href =
+		`mailto:${profile.email}` || "mailto:info@iftheselandscouldtalk.org";
+	memberLinkedin =
+		profile.linkedin ||
+		"https://www.linkedin.com/company/if-these-lands-could-talk-itlct/";
 };
 
 // Global Modal Events
 // open modal button events
-
 openModalBtns.forEach(button => {
 	button.addEventListener("click", () => {
 		// opening modals based on data-type attr
 		let modalElement = document.querySelector(`#${button.dataset.type}`);
 
 		if (button.dataset.content) {
+			let member = button.dataset.content;
+			console.log(teamBioData[member]);
+			populateTeamModal(teamBioData[member]);
+			modalElement.classList.remove("hidden");
 		} else {
 			console.log(modalElement.dataset.content);
 			modalElement.classList.remove("hidden");

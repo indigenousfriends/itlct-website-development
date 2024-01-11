@@ -304,6 +304,12 @@ Team Modal
 	}
 	.team-modal .member-cat {
 		align-items: flex-end;
+		gap: 10px;
+	}
+
+	/* adjusting height for content */
+	.team-modal .modal-scroll-container {
+		max-height: calc(85vh - 400px);
 	}
 }
 
@@ -326,5 +332,15 @@ Member Card Component
 */
 	.member-cat {
 		flex-wrap: wrap;
+	}
+
+	/* 
+===================================
+Team Modal
+===================================
+*/
+
+	.team-modal .member-cat {
+		justify-content: flex-end;
 	}
 }
