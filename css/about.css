@@ -48,6 +48,7 @@ Main Content
 main .wrapper {
 	padding: var(--spacing-xxl) 0;
 	max-width: 800px;
+	color: var(--color-onyx);
 }
 
 /* about article flex layout */
