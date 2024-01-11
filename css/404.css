@@ -1,0 +1,84 @@
+/*
+===================================
+===================================
+404 Page Styles
+===================================
+===================================
+*/
+
+/* 
+===================================
+Page Component Styles (icon grid, team member card)
+===================================
+*/
+
+/* 
+===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+/* 
+===================================
+Header Styles
+===================================
+*/
+
+/* resetting min height */
+header {
+	min-height: initial;
+}
+/* 
+===================================
+404 Styles
+===================================
+*/
+
+/* background and text */
+main {
+	background: linear-gradient(0deg, #6c4681 -8.79%, #184f85 132.08%);
+	color: var(--text-color-light);
+}
+
+h1 {
+	text-align: center;
+}
+span {
+	display: block;
+	text-transform: uppercase;
+	font-size: var(--font-size-title-sm);
+}
+
+/* layout */
+main .wrapper,
+.page-links {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-sm);
+}
+
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+===================================
+*/
+
+/* Tablet and smaller 1024px*/
+@media (max-width: 1024px) {
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+	h1,
+	p {
+		text-align: center;
+	}
+}
+
+/* Mobile Only 400px */
+@media screen and (max-width: 400px) {
+	h1 {
+		font-size: var(--font-size-title-med);
+	}
+}
