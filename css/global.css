@@ -473,11 +473,11 @@ Utility Classes ( flexbox, wrappers,  etc.)
 }
 
 .gradient-header {
-	background: var(--grad-blue-purple);
+	background-image: var(--grad-blue-purple);
 }
 
 .gradient-header h2 {
-	color: var(--color-white);
+	color: var(--text-color-light);
 }
 
 .section-header h2 {
