@@ -160,6 +160,11 @@ mobileMenuBtn.addEventListener("click", () => {
 	menuIconOpen.classList.toggle("hidden");
 	menuIconClose.classList.toggle("hidden");
 
+	if (!menuIconOpen.classList.contains("hidden")) {
+		mobileMenuBtn.ariaLabel = "toggle mobile menu on";
+	} else {
+		mobileMenuBtn.ariaLabel = "toggle mobile menu off";
+	}
 	// toggle mobile menu component
 	mobileMenuComponent.classList.toggle("open-menu");
 });
