@@ -1,0 +1,305 @@
+/*
+===================================
+===================================
+Our Values
+===================================
+===================================
+*/
+
+/* 
+===================================
+Page Component Styles (icon grid, team member card)
+===================================
+*/
+
+/* 
+===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+/* 
+===================================
+Hero
+===================================
+*/
+.hero {
+	background: linear-gradient(
+			260deg,
+			rgba(9, 9, 9, 0.8) 46.9%,
+			rgba(9, 9, 9, 0) 86.82%
+		),
+		url("../assets/images/pages/values/hero-values.png") top/cover;
+	display: flex;
+	align-items: center;
+}
+/* values heading layout */
+.hero .wrapper {
+	display: flex;
+	justify-content: flex-end;
+}
+/* values heading sizing */
+.hero-text-container {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* 
+===================================
+Values
+===================================
+*/
+
+/* layout */
+.values-list,
+.values-row {
+	display: flex;
+	gap: var(--spacing-sm);
+}
+
+.values-list {
+	flex-direction: column;
+}
+
+.values-item {
+	color: var(--text-color-light);
+	padding: var(--spacing-med) var(--spacing-sm);
+	border-radius: var(--border-radius);
+}
+
+/* text */
+.values-item h3 {
+}
+/* img + text value items */
+.sustainability,
+.authenticity,
+.education,
+.innovation {
+	display: flex;
+}
+
+/* card specific */
+.humanity {
+	background-color: var(--color-copper);
+}
+
+.sustainability {
+	background-color: var(--color-onyx);
+}
+
+.authenticity {
+	background-color: var(--color-amaranth);
+}
+.multigenerational {
+	background-color: var(--color-grape);
+}
+.education {
+	background-color: var(--color-blue);
+}
+
+.innovation {
+	background-color: var(--color-teal);
+}
+
+/* 
+===================================
+Support Banner
+===================================
+*/
+.support {
+	background-color: var(--color-blue);
+}
+
+/* text adjustments */
+.support h2 {
+	color: var(--color-light-amaranth);
+}
+
+.support p {
+	color: var(--text-color-light);
+	font-size: 46px;
+	font-weight: 700;
+	line-height: 50px;
+}
+
+.support a {
+	width: fit-content;
+}
+.support-text {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* layout */
+.support .wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-med);
+}
+
+/* heading and heart layout*/
+.support-heading {
+	display: flex;
+	gap: var(--spacing-sm);
+}
+
+.support-heading img {
+	width: var(--spacing-med);
+}
+
+/* support un images */
+.support-img-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing-sm);
+}
+
+.support-img-container img {
+	width: fit-content;
+	max-height: 100px;
+}
+/* 
+===================================
+Empowering 
+===================================
+*/
+.styled-img-container {
+	position: relative;
+}
+
+.styled-img-container img {
+	border-radius: var(--border-radius);
+	max-height: 550px;
+	object-fit: cover;
+	object-position: top;
+	aspect-ratio: 1/1;
+}
+
+.styled-img-container::before {
+	position: absolute;
+	content: " ";
+	width: 80%;
+	aspect-ratio: 1/1;
+	z-index: -1;
+	background-color: var(--color-amaranth);
+	border-radius: var(--border-radius);
+}
+
+.styled-img-container.style-left::before {
+	transform: translate(-70px, -65px);
+}
+
+.empowering .wrapper {
+	display: flex;
+	flex-direction: row-reverse;
+	gap: var(--spacing-xl);
+	padding: var(--spacing-xl);
+
+	width: var(--wrapper-width);
+	max-width: var(--wrapper-max-width);
+	margin: 0 auto;
+}
+
+.empowering .styled-img-container,
+.empowering .text-container {
+	width: 50%;
+}
+
+.empowering .text-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+===================================
+*/
+
+/* Tablet and smaller 1024px*/
+@media (max-width: 1024px) {
+	/* 
+===================================
+Empowering
+===================================
+*/
+	.empowering {
+		padding: var(--spacing-xxl) 0 0 0;
+	}
+	.empowering .wrapper {
+		flex-direction: column;
+		width: 100%;
+		padding: 0;
+	}
+	.empowering .styled-img-container,
+	.empowering .text-container {
+		width: 100%;
+	}
+
+	/* removing absolute positioned graphic */
+	.styled-img-container::before {
+		position: static;
+	}
+
+	/* constraint on image height */
+	.styled-img-container img {
+		max-height: 300px;
+	}
+
+	/* background color */
+	.styled-img-container {
+		background-color: var(--color-amaranth);
+		padding: var(--spacing-med) var(--spacing-sm);
+	}
+
+	/* wrapper on text box */
+	.empowering .text-container {
+		width: 85%;
+		margin: 0 auto;
+	}
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+	/* 
+===================================
+Hero
+===================================
+*/
+	/* mobile view + layout */
+	.hero {
+		background: none;
+	}
+
+	.hero .wrapper {
+		justify-content: flex-start;
+	}
+
+	.hero-text-container {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+/* Mobile Only 470px */
+@media screen and (max-width: 470px) {
+	/* 
+===================================
+Mobile Fonts
+===================================
+*/
+
+	.support h2,
+	.empowering h2 {
+		font-size: var(--font-size-title-med);
+	}
+
+	.support p {
+		font-size: var(--font-size-title-sm);
+		line-height: 32px;
+	}
+}
