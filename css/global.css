@@ -400,7 +400,10 @@ Utility Classes ( flexbox, wrappers,  etc.)
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 }
-
+/* custom disable scroll class: for modal functionality */
+.disable-scroll {
+	overflow: hidden;
+}
 /* hidden */
 .hidden {
 	display: none;

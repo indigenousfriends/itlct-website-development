@@ -86,6 +86,12 @@ const populateTeamModal = profile => {
 	}`;
 };
 
+// toggle modal on and off
+const toggleModal = modal => {
+	document.body.classList.toggle("disable-scroll");
+	modal.classList.toggle("hidden");
+};
+
 // Global Modal Events
 // open modal button events
 openModalBtns.forEach(button => {
@@ -94,11 +100,13 @@ openModalBtns.forEach(button => {
 		let modalElement = document.querySelector(`#${button.dataset.type}`);
 
 		if (button.dataset.content) {
+			// populate modal according to data-content
 			let member = button.dataset.content;
 			populateTeamModal(teamBioData[member]);
-			modalElement.classList.remove("hidden");
+
+			toggleModal(modalElement);
 		} else {
-			modalElement.classList.remove("hidden");
+			toggleModal(modalElement);
 		}
 	});
 });
@@ -106,14 +114,14 @@ openModalBtns.forEach(button => {
 closeModalBtns.forEach(button => {
 	button.addEventListener("click", () => {
 		let modalElement = button.closest(".modal-overlay");
-		modalElement.classList.add("hidden");
+		toggleModal(modalElement);
 	});
 });
 
 // exit modal via click on modal overlay
 document.addEventListener("click", event => {
 	if (event.target.classList.contains("modal-overlay")) {
-		event.target.classList.add("hidden");
+		toggleModal(event.target);
 	}
 });
 
@@ -124,7 +132,7 @@ document.addEventListener("keydown", function (event) {
 	if (event.key === "Escape") {
 		allModalElements.forEach(modal => {
 			if (!modal.classList.contains("hidden")) {
-				modal.classList.add("hidden");
+				toggleModal(modal);
 			}
 		});
 	}
