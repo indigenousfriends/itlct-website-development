@@ -259,23 +259,23 @@ Variables (colors, text, spacing, etc.)
 	);
 
 	/* values-page gradients */
-	--value-grad-sustainability: linear-gradient(
+	--values-grad-sustainability: linear-gradient(
 		269deg,
 		#0e0e0e 46.26%,
 		#1b1b1b00 99.04%
 	);
-	--value-grad-authenticity: linear-gradient(
+	--values-grad-authenticity: linear-gradient(
 		88deg,
 		#b91515 47.26%,
 		#b91515ba 55.57%,
 		#772d2d66 68.47%
 	);
-	--value-grad-education: linear-gradient(
+	--values-grad-education: linear-gradient(
 		90deg,
 		#184f85 63.23%,
 		#184f8500 83.39%
 	);
-	--value-grad-innovation: linear-gradient(
+	--values-grad-innovation: linear-gradient(
 		280deg,
 		#007a80 67.16%,
 		#007a8000 80.36%

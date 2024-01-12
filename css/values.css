@@ -93,47 +93,30 @@ Values
 	align-items: flex-start;
 }
 
-/* card specific */
+/* card specific backgrounds*/
 .humanity {
 	background-color: var(--color-copper);
 }
 
 .sustainability {
-	background: linear-gradient(
-			269deg,
-			#0e0e0e 46.26%,
-			rgba(27, 27, 27, 0) 99.04%
-		),
+	background: var(--values-grad-sustainability),
 		url("/assets/images/pages/values/sustainability.png") top/cover;
 }
 
 .authenticity {
-	background: linear-gradient(
-			88deg,
-			#b91515 47.26%,
-			rgba(185, 21, 21, 0.73) 55.57%,
-			rgba(119, 45, 45, 0.4) 68.47%
-		),
+	background: var(--values-grad-authenticity),
 		url("/assets/images/pages/values/authenticity.png") top/cover;
 }
 .multigenerational {
 	background-color: var(--color-grape);
 }
 .education {
-	background: linear-gradient(
-			90deg,
-			#184f85 63.23%,
-			rgba(24, 79, 133, 0) 83.39%
-		),
+	background: var(--values-grad-education),
 		url("/assets/images/pages/values/education.png") top/cover;
 }
 
 .innovation {
-	background: linear-gradient(
-			280deg,
-			#007a80 67.16%,
-			rgba(0, 122, 128, 0) 80.36%
-		),
+	background: var(--values-grad-innovation),
 		url("/assets/images/pages/values/innovation.png") top/cover;
 }
 
@@ -273,7 +256,7 @@ Values
 
 	/* value card text backgrounds */
 	.sustainability .text {
-		background: #0f0f0f;
+		background: var(--color-black);
 	}
 	.authenticity .text {
 		background-color: var(--color-amaranth);
