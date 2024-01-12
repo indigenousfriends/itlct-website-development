@@ -45,16 +45,16 @@ const populateTeamModal = profile => {
 	const { imgPath, name, role, bio, email, linkedin } = profile;
 
 	// Team modal elements
-	let memberImg = document.querySelector("#member-img");
-	let memberName = document.querySelector("#member-name");
-	let memberRole = document.querySelector("#member-role");
-	let memberEmail = document.querySelector("#member-email");
-	let memberLinkedin = document.querySelector("#member-linkedin");
-	let memberBio = document.querySelector("#member-bio");
+	const memberImg = document.querySelector("#member-img");
+	const memberName = document.querySelector("#member-name");
+	const memberRole = document.querySelector("#member-role");
+	const memberEmail = document.querySelector("#member-email");
+	const memberLinkedin = document.querySelector("#member-linkedin");
+	const memberBio = document.querySelector("#member-bio");
 
 	// picture
 	memberImg.src = imgPath;
-	memberImg.alt = name;
+	memberImg.alt = `A profile picture of ${name}`;
 
 	// text
 	memberName.textContent = name;
@@ -62,18 +62,28 @@ const populateTeamModal = profile => {
 
 	// bio
 	bio.forEach(paragraph => {
-		let pElement = document.createElement("p");
+		const pElement = document.createElement("p");
 		pElement.textContent = paragraph;
 		memberBio.appendChild(pElement);
 	});
 
 	// socials
+	// email
 	memberEmail.href = `mailto:${
 		email || "mailto:info@iftheselandscouldtalk.org"
 	}`;
-	memberLinkedin =
+	memberEmail.ariaLabel = `connect with ${name} via email at ${
+		email || "info@iftheselandscouldtalk.org"
+	}`;
+
+	// linkedIn
+	memberLinkedin.href =
 		linkedin ||
 		"https://www.linkedin.com/company/if-these-lands-could-talk-itlct/";
+	memberLinkedin.ariaLabel = `connect with ${name} on LinkedIn at ${
+		linkedin ||
+		"https://www.linkedin.com/company/if-these-lands-could-talk-itlct/"
+	}`;
 };
 
 // Global Modal Events
@@ -150,7 +160,7 @@ Contact Form
 */
 // HTML Reference Variables
 // form elements
-let contactForm = document.querySelector("#");
+let contactForm = document.querySelector("#contact-form");
 let nameInput = document.querySelector("#name-input");
 let emailInput = document.querySelector("#email-input");
 let messageInput = document.querySelector("#message-input");

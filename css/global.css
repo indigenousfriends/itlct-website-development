@@ -407,6 +407,8 @@ Utility Classes ( flexbox, wrappers,  etc.)
 	visibility: hidden;
 }
 
+/* modal scroll class */
+
 /* Global Wrapper */
 .wrapper {
 	width: var(--wrapper-width);
