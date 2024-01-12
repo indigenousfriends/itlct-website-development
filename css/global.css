@@ -251,11 +251,11 @@ Variables (colors, text, spacing, etc.)
 		#09090900 86.82%
 	);
 	--hero-grad-events: linear-gradient(
-		272deg,
-		#090909c4 40.35%,
-		#090909bd 44.51%,
-		#090909b5 48.63%,
-		#09090900 83.13%
+		90deg,
+		rgba(9, 9, 9, 0.77) 40.35%,
+		rgba(9, 9, 9, 0.74) 44.51%,
+		rgba(9, 9, 9, 0.71) 48.63%,
+		rgba(9, 9, 9, 0) 83.13%
 	);
 
 	/* values-page gradients */
@@ -328,6 +328,7 @@ Variables (colors, text, spacing, etc.)
 	/* Wrappers */
 	--wrapper-width: 85%;
 	--wrapper-width-max: 1328px;
+	--wrapper-width-max-sm: 1080px;
 
 	/* Media Queries */
 	--mq-width-desktop-max: 1024px;
@@ -452,12 +453,17 @@ Utility Classes ( flexbox, wrappers,  etc.)
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 }
-
+/* custom disable scroll class: for modal functionality */
+.disable-scroll {
+	overflow: hidden;
+}
 /* hidden */
 .hidden {
 	display: none;
 	visibility: hidden;
 }
+
+/* modal scroll class */
 
 /* Global Wrapper */
 .wrapper {
@@ -532,6 +538,7 @@ button,
 .btn-alt {
 	display: block;
 	width: fit-content;
+	min-height: 50px;
 	padding: 10px 40px;
 	font-family: var(--font-main);
 	font-weight: var(--font-weight-bold);
@@ -789,6 +796,11 @@ header {
 	color: var(--color-white);
 }
 
+/* custom max width for hero content */
+.hero .wrapper {
+	max-width: var(--wrapper-width-max-sm);
+}
+
 /* Hero heading layout and sizing */
 .hero-text-container {
 	width: 50%;
@@ -957,10 +969,10 @@ Media Queries (overriding styles for different screen sizes)
 /* Tablet and smaller 1024px*/
 @media (max-width: 1024px) {
 	/* 
-===================================
-Styled Img Container Components
-===================================
-*/
+	===================================
+	Styled Img Container Components
+	===================================
+	*/
 
 	/* removing wrapper styles for mobile design */
 	.section-2-col .wrapper {
@@ -996,10 +1008,7 @@ Styled Img Container Components
 		width: var(--wrapper-width);
 		margin: 0 auto;
 	}
-}
 
-/* Smaller than desktop */
-@media screen and (max-width: 1024px) {
 	/* 
 	===================================
 	Global Section Adjustment
@@ -1021,6 +1030,14 @@ Styled Img Container Components
 
 /* Tablet and smaller 768px */
 @media screen and (max-width: 768px) {
+	/* 
+	===================================
+	Mobile Menu
+	===================================
+	*/
+	header nav .flex-container {
+		width: inherit;
+	}
 	h2,
 	h3 {
 		font-size: var(--font-size-title-sm);
