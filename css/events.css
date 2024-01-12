@@ -34,6 +34,7 @@ Page Component Styles (icon grid, team member card)
 	align-items: flex-start;
 	padding: 0 var(--spacing-xl);
 	gap: var(--spacing-med);
+	justify-content: center;
 }
 
 .color-strip-cards .card {
@@ -101,7 +102,7 @@ Page Component Styles (icon grid, team member card)
 }
 
 .card.event {
-	flex: 0 1 335px;
+	flex: 0 1 30%;
 	width: 33%;
 }
 
@@ -186,16 +187,14 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 		background-image: "./assets/images/pages/events/mobile/hero-events-mobile.jpg";
 	}
 
-	.card-container,
-	.events-container {
-		flex-direction: column;
-		row-gap: var(--spacing-lg);
+	.card {
+		flex: 0 0 100%;
+		width: 100%;
 	}
 
-	.card,
 	.card.event {
-		flex: 0 1 100%;
-		width: 100%;
+		flex: 0 0 48%;
+		width: 48%;
 	}
 
 	.color-strip-cards .card img {
@@ -228,5 +227,18 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 	}
 	.bg-grad-teal {
 		background-color: var(--color-teal);
+	}
+}
+
+/* Mobile Only 470px */
+@media screen and (max-width: 470px) {
+	.card-container,
+	.events-container {
+		flex-direction: column;
+	}
+
+	.card,
+	.card.event {
+		width: 100%;
 	}
 }

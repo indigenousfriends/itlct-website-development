@@ -852,6 +852,11 @@ Media Queries (overriding styles for different screen sizes)
 	.section-header {
 		padding: var(--spacing-med) 0;
 	}
+
+	.events-container {
+		padding: 0;
+		gap: var(--spacing-lg);
+	}
 }
 
 /* Tablet and smaller 768px */
@@ -860,6 +865,12 @@ Media Queries (overriding styles for different screen sizes)
 	h3 {
 		font-size: var(--font-size-title-sm);
 		line-height: var(--line-height-lg);
+	}
+
+	.wrapper {
+		width: 100%;
+		max-width: 100%;
+		padding: 0 var(--spacing-sm);
 	}
 
 	/* 
