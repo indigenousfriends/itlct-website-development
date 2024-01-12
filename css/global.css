@@ -251,11 +251,11 @@ Variables (colors, text, spacing, etc.)
 		#09090900 86.82%
 	);
 	--hero-grad-events: linear-gradient(
-		272deg,
-		#090909c4 40.35%,
-		#090909bd 44.51%,
-		#090909b5 48.63%,
-		#09090900 83.13%
+		90deg,
+		rgba(9, 9, 9, 0.77) 40.35%,
+		rgba(9, 9, 9, 0.74) 44.51%,
+		rgba(9, 9, 9, 0.71) 48.63%,
+		rgba(9, 9, 9, 0) 83.13%
 	);
 
 	/* values-page gradients */
@@ -328,6 +328,7 @@ Variables (colors, text, spacing, etc.)
 	/* Wrappers */
 	--wrapper-width: 85%;
 	--wrapper-width-max: 1328px;
+	--wrapper-width-max-sm: 1080px;
 
 	/* Media Queries */
 	--mq-width-desktop-max: 1024px;
@@ -788,7 +789,7 @@ header {
 
 /* custom max width for hero content */
 .hero .wrapper {
-	max-width: 1080px;
+	max-width: var(--wrapper-width-max-sm);
 }
 
 /* Hero heading layout and sizing */

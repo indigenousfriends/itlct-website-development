@@ -29,7 +29,7 @@ main {
 form .wrapper {
 	display: flex;
 	gap: var(--spacing-xxl);
-	max-width: 1080px;
+	max-width: var(--wrapper-width-max-sm);
 }
 
 .text-container,

@@ -1,11 +1,7 @@
 /*
 ===================================
 ===================================
-Styles for an individual page
-
-- Rename this file to match the page you are working on (e.g. home.css, about.css, etc.)
-- Create a new file for your page and link this file to it in the <head> of your HTML document
-- Variables from global.css will work in this CSS file as well. Do not add any variables to this file.
+Events Styles
 ===================================
 ===================================
 */
@@ -45,7 +41,7 @@ Page Component Styles (icon grid, team member card)
 
 .color-strip-cards .card .card-text-container {
 	color: var(--color-white);
-	border-radius: 0px 0px 10px 10px;
+	border-radius: 0px 0px var(--border-radius) var(--border-radius);
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -134,16 +130,8 @@ Section Styles (background, padding, etc.)
 
 /* Hero Section */
 .hero {
-	background:
-		linear-gradient(
-			-272deg,
-			rgba(9, 9, 9, 0.77) 40.35%,
-			rgba(9, 9, 9, 0.74) 44.51%,
-			rgba(9, 9, 9, 0.71) 48.63%,
-			rgba(9, 9, 9, 0) 83.13%
-		),
-		url("../assets/images/pages/events/hero-events.jpg") top/cover;
-	background-position: center;
+	background-image: var(--hero-grad-events),
+		url("../assets/images/pages/events/hero-events.jpg");
 	display: flex;
 	align-items: center;
 }
