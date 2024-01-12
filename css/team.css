@@ -102,12 +102,6 @@ Hero
 }
 
 /* flex layout */
-.hero .wrapper {
-	display: flex;
-	padding: var(--spacing-lg);
-	gap: var(--spacing-xxl);
-}
-
 .hero-img,
 .hero-text-container {
 	width: 50%;
