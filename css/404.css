@@ -34,12 +34,21 @@ header {
 ===================================
 */
 
-/* background and text */
 main {
+	/* background and text */
 	background: linear-gradient(0deg, #6c4681 -8.79%, #184f85 132.08%);
+	/* background: var(--grad-blue-purple); */
 	color: var(--text-color-light);
+
+	/* height */
+	min-height: 90vh;
+	/* centering content for smaller screens */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
+/* text adjustments */
 h1 {
 	text-align: center;
 }
