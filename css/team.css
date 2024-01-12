@@ -192,7 +192,6 @@ Hero
 
 	.hero .wrapper {
 		gap: var(--spacing-lg);
-		padding: 0;
 	}
 }
 
