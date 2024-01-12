@@ -157,27 +157,6 @@ Technology & Program Cards
 @media screen and (max-width: 768px) {
 	/* 
 ===================================
-Hero 
-===================================
-*/
-	.hero {
-		/* remove background-img */
-		background: none;
-		padding: 0;
-	}
-
-	.impact-hero-wrapper {
-		display: flex;
-		align-items: center;
-		flex: 1 1 50%;
-	}
-	.hero-text-container {
-		width: 100%;
-		text-align: center;
-	}
-
-	/* 
-===================================
 Program Gallery
 ===================================
 */

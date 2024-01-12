@@ -18,13 +18,17 @@ Hero
 	flex-direction: column;
 	justify-content: flex-end;
 	gap: var(--spacing-sm);
+	align-items: center;
 }
+
 /* text adjustments */
 .hero h2 {
 	font-size: var(--font-size-title-xl);
 }
 
-/* hero button container */
+.hero-text-container {
+	width: 100%;
+}
 
 .hero-btn-container {
 	display: flex;
@@ -71,7 +75,7 @@ Community Partnerships
 }
 
 .community-card p {
-	line-height: var(--line-height-lg);
+	line-height: var(--line-height-med);
 	margin: var(--spacing-sm) 0;
 }
 
@@ -110,8 +114,8 @@ Global Ecosystem
 /* background img */
 
 .global-ecosystem {
-	background: url("../assets/images/pages/home/bg-overlay-vector-01.svg")
-			center/cover,
+	background:
+		url("../assets/images/pages/home/bg-overlay-vector-01.svg") center/cover,
 		linear-gradient(to top, var(--color-blue), var(--color-grape));
 }
 
@@ -264,8 +268,8 @@ Upcoming Events and Programs
 
 /* section background */
 .events {
-	background: url("../assets/images/pages/home/bg-overlay-vector-02.svg")
-			center/cover,
+	background:
+		url("../assets/images/pages/home/bg-overlay-vector-02.svg") center/cover,
 		linear-gradient(to top, var(--color-grape), var(--color-blue));
 }
 /* event list layout */
@@ -319,14 +323,6 @@ Media Queries (overriding styles for different screen sizes)
 Hero
 ===================================
 */
-	.hero {
-		/* remove background-img */
-		background: none;
-	}
-	/* text spacing adjustment */
-	.hero .wrapper {
-		gap: var(--spacing-med);
-	}
 
 	/* removing desktop buttons, replacing with mobile CAT Btn */
 	.hero-btn-container .btn-alt {
@@ -479,7 +475,7 @@ Events and Programs
 	===================================
 	*/
 	/* headings */
-	.hero h2,
+	.hero h1,
 	.what-we-do h3,
 	.events h3 {
 		font-size: var(--font-size-title-med);

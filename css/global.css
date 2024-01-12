@@ -305,7 +305,10 @@ Variables (colors, text, spacing, etc.)
 	--font-weight-reg: 400;
 
 	/* Line Height */
-	--line-height-lg: 26px;
+	--line-height-xxl: 50px;
+	--line-height-xl: 40px;
+	--line-height-lg: 32px;
+	--line-height-med: 26px;
 
 	/* Spacing */
 	--spacing-xxl: 140px;
@@ -313,6 +316,7 @@ Variables (colors, text, spacing, etc.)
 	--spacing-lg: 80px;
 	--spacing-med: 40px;
 	--spacing-sm: 20px;
+	--spacing-xs: 10px;
 
 	/* Borders */
 	/* width */
@@ -382,9 +386,11 @@ h1 {
 }
 h2 {
 	font-size: var(--font-size-title-lg);
+	line-height: var(--line-height-xxl);
 }
 h3 {
 	font-size: var(--font-size-title-med);
+	line-height: var(--line-height-xl);
 }
 h4 {
 	font-size: var(--font-size-title-sm);
@@ -394,8 +400,8 @@ h5 {
 }
 
 p {
-	font-weight: 400;
-	line-height: 26px;
+	font-weight: var(--font-weight-reg);
+	line-height: var(--line-height-med);
 }
 /* Links */
 a {
@@ -460,6 +466,15 @@ Utility Classes ( flexbox, wrappers,  etc.)
 	margin: 0 auto;
 }
 
+.section-header {
+	padding: var(--spacing-lg);
+	text-align: center;
+}
+
+.section-header h2 {
+	font-weight: var(--font-weight-bold);
+}
+
 /* 
 ===================================
 Global Component Styles (buttons, forms, etc.)
@@ -479,7 +494,6 @@ hr {
 blockquote {
 	background-color: var(--color-onyx);
 	color: var(--color-white);
-
 	width: fit-content;
 	padding: var(--spacing-lg);
 	margin: 0;
@@ -510,13 +524,10 @@ button,
 	display: block;
 	width: fit-content;
 	padding: 10px 40px;
-
 	font-family: var(--font-main);
 	font-weight: var(--font-weight-bold);
-
 	color: var(--color-white);
 	background-color: var(--color-amaranth);
-
 	border: var(--border-width-btn) solid transparent;
 	border-radius: var(--border-radius);
 	cursor: pointer;
@@ -529,6 +540,7 @@ button:focus,
 	color: var(--color-onyx);
 	background-color: var(--color-white);
 }
+
 /* long button */
 .btn-long {
 	padding: 10px var(--spacing-lg);
@@ -768,6 +780,15 @@ header {
 	color: var(--color-white);
 }
 
+/* Hero heading layout and sizing */
+.hero-text-container {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-med) 0;
+}
+
 .img-mobile {
 	display: none;
 	visibility: hidden;
@@ -968,8 +989,8 @@ Styled Img Container Components
 	}
 }
 
-/* Tablet and smaller 768px */
-@media screen and (max-width: 768px) {
+/* Smaller than desktop */
+@media screen and (max-width: 1024px) {
 	/* 
 	===================================
 	Global Section Adjustment
@@ -978,20 +999,58 @@ Styled Img Container Components
 	section {
 		padding: var(--spacing-med) 0;
 	}
+
+	.section-header {
+		padding: var(--spacing-med) 0;
+	}
+
+	.events-container {
+		padding: 0;
+		gap: var(--spacing-lg);
+	}
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+	h2,
+	h3 {
+		font-size: var(--font-size-title-sm);
+		line-height: var(--line-height-lg);
+	}
+
+	.wrapper {
+		width: 100%;
+		max-width: 100%;
+		padding: 0 var(--spacing-sm);
+	}
+
 	/* 
-	===================================
-	Hero Adjustment
-	===================================
-	*/
+===================================
+Hero 
+===================================
+*/
 
-	.hero {
+	.hero-wrapper {
+		display: flex;
+		align-items: center;
+		flex: 1 1 50%;
+	}
+
+	.hero-text-container {
+		width: 100%;
+		text-align: center;
+	}
+
+	body .hero {
 		/* layout for <img> and wrapper */
+		display: flex;
+		align-items: center;
 		flex-direction: column;
-
 		color: var(--color-onyx);
 		padding-top: 0;
-
-		gap: var(--spacing-lg);
+		gap: 0;
+		background: none;
+		padding: 0;
 	}
 
 	/* revealing mobile hero img */
@@ -1019,7 +1078,7 @@ Styled Img Container Components
 	===================================
 	*/
 
-	.hero h2 {
+	.hero h1 {
 		font-size: var(--font-size-title-med);
 	}
 	body {
