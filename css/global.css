@@ -381,8 +381,6 @@ ul {
 	list-style: none;
 }
 
-/* Forms */
-
 /* 
 ===================================
 Utility Classes ( flexbox, wrappers,  etc.)
@@ -513,8 +511,10 @@ button:focus,
 input[type="text"],
 input[type="email"],
 textarea {
+	border: 1px solid #6c6c6c;
 	border-radius: var(--border-radius);
-	padding: 18px;
+	padding: var(--spacing-xs) var(--spacing-sm);
+	font-family: var(--font-main);
 }
 
 /* text area */
