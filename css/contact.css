@@ -83,6 +83,7 @@ Media Queries (overriding styles for different screen sizes)
 	/* Layout to column  */
 	form .wrapper {
 		flex-direction: column;
+		gap: var(--spacing-med);
 	}
 
 	.text-container,

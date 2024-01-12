@@ -786,6 +786,11 @@ header {
 	color: var(--color-white);
 }
 
+/* custom max width for hero content */
+.hero .wrapper {
+	max-width: 1080px;
+}
+
 /* Hero heading layout and sizing */
 .hero-text-container {
 	width: 50%;

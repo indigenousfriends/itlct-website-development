@@ -106,8 +106,8 @@ Hero
 .hero .wrapper {
 	display: flex;
 	justify-content: space-between;
-	max-width: 1080px;
 }
+
 .hero-img,
 .hero-text-container {
 	width: 50%;
