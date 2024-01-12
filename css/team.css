@@ -299,7 +299,7 @@ Team Modal
 		gap: 10px;
 	}
 
-	/* adjusting height for content */
+	/* adjusting scroll height  */
 	.team-modal .modal-scroll-container {
 		max-height: calc(85vh - 400px);
 	}

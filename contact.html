@@ -172,17 +172,17 @@
 					<!-- Company Column -->
 					<div class="company">
 						<!-- Footer Logo -->
-						<a
-							href="/index.html"
-							class="img-link"
-							aria-label="ITLCT Home Page Link"
-						>
+						<a href="/index.html" class="img-link">
 							<img
 								src="/assets/logos/itlct-logo.svg"
 								alt="If These Lands Could Talk Logo"
 							/>
 						</a>
-						<button class="land-ack-btn" id="open-la-btn">
+						<button
+							class="land-ack-btn"
+							data-role="open-modal"
+							data-type="land-ack-modal"
+						>
 							Land Acknowledgement
 						</button>
 					</div>
@@ -306,8 +306,8 @@
 				<div class="modal-btn-container">
 					<button
 						class="close-modal"
-						id="close-la-btn"
-						aria-label="open land acknowledgement modal"
+						data-role="close-modal"
+						aria-label="close land acknowledgement modal"
 					>
 						<svg
 							width="24"
