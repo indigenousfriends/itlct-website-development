@@ -21,15 +21,15 @@ header {
 main {
 	background: var(--grad-blue-purple);
 	color: var(--text-color-light);
+	padding: var(--spacing-xxl) 0;
 	min-height: 90vh;
 }
 
 /* Form layout */
 form .wrapper {
-	padding: var(--spacing-xxl) 0;
 	display: flex;
 	gap: var(--spacing-xxl);
-	max-width: 1075px;
+	max-width: var(--wrapper-width-max-sm);
 }
 
 .text-container,
@@ -75,9 +75,15 @@ Media Queries (overriding styles for different screen sizes)
 
 /* Tablet and smaller 768px */
 @media screen and (max-width: 768px) {
+	/* padding adjustment */
+	main {
+		padding: var(--spacing-lg) 0;
+	}
+
 	/* Layout to column  */
 	form .wrapper {
 		flex-direction: column;
+		gap: var(--spacing-med);
 	}
 
 	.text-container,
