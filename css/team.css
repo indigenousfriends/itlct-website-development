@@ -98,9 +98,16 @@ Hero
 
 .hero {
 	background-image: url("/assets/images/pages/team/hero-team.png");
+	display: flex;
+	align-items: center;
 }
 
 /* flex layout */
+.hero .wrapper {
+	display: flex;
+	justify-content: space-between;
+	max-width: 1080px;
+}
 .hero-img,
 .hero-text-container {
 	width: 50%;
@@ -198,11 +205,6 @@ Hero
 */
 
 	/* remove background-img */
-	.hero {
-		background: none;
-		padding: 0;
-		gap: var(--spacing-lg);
-	}
 
 	.hero-text-container {
 		width: 100%;
@@ -243,6 +245,9 @@ Get Involved
 		color: var(--text-color-dark);
 	}
 
+	.get-involved h2 {
+		text-align: center;
+	}
 	/* button style swap to .btn-main styles */
 	.get-involved .btn-alt {
 		color: var(--color-white);
@@ -302,15 +307,6 @@ Team Modal
 
 /* Mobile Only 470px */
 @media screen and (max-width: 470px) {
-	/* 
-===================================
-Mobile Text
-===================================
-*/
-	h1 {
-		font-size: var(--font-size-title-sm);
-		text-align: center;
-	}
 	/* 
 ===================================
 Member Card Component

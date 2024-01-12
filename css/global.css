@@ -954,10 +954,10 @@ Media Queries (overriding styles for different screen sizes)
 /* Tablet and smaller 1024px*/
 @media (max-width: 1024px) {
 	/* 
-===================================
-Styled Img Container Components
-===================================
-*/
+	===================================
+	Styled Img Container Components
+	===================================
+	*/
 
 	/* removing wrapper styles for mobile design */
 	.section-2-col .wrapper {
@@ -993,10 +993,7 @@ Styled Img Container Components
 		width: var(--wrapper-width);
 		margin: 0 auto;
 	}
-}
 
-/* Smaller than desktop */
-@media screen and (max-width: 1024px) {
 	/* 
 	===================================
 	Global Section Adjustment
@@ -1018,6 +1015,14 @@ Styled Img Container Components
 
 /* Tablet and smaller 768px */
 @media screen and (max-width: 768px) {
+	/* 
+	===================================
+	Mobile Menu
+	===================================
+	*/
+	header nav .flex-container {
+		width: inherit;
+	}
 	h2,
 	h3 {
 		font-size: var(--font-size-title-sm);
