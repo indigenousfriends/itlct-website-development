@@ -225,6 +225,7 @@ Variables (colors, text, spacing, etc.)
 	/* Color Definitions */
 	--color-white: #fff;
 	--color-amaranth: #b91515;
+	--color-light-amaranth: #d94252;
 	--color-teal: #007a80;
 	--color-grape: #6c4681;
 	--color-onyx: #1f1d1d;
@@ -386,8 +387,6 @@ ul {
 	list-style: none;
 }
 
-/* Forms */
-
 /* 
 ===================================
 Utility Classes ( flexbox, wrappers,  etc.)
@@ -524,8 +523,10 @@ button:focus,
 input[type="text"],
 input[type="email"],
 textarea {
+	border: 1px solid #6c6c6c;
 	border-radius: var(--border-radius);
-	padding: 18px;
+	padding: var(--spacing-xs) var(--spacing-sm);
+	font-family: var(--font-main);
 }
 
 /* text area */
@@ -750,6 +751,7 @@ footer nav ul {
 footer .policy {
 	padding-top: 5px;
 }
+
 footer .social {
 	display: flex;
 	gap: var(--spacing-sm);
