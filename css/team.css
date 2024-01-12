@@ -152,7 +152,7 @@ Get Involved
 */
 
 .get-involved {
-	background: linear-gradient(180deg, #6c4681 -5.71%, #184f85 103.44%);
+	background: var(--grad-blue-purple);
 	color: var(--text-color-light);
 }
 
