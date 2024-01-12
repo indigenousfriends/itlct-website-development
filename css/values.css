@@ -28,14 +28,6 @@ Hero
 	display: flex;
 	justify-content: flex-end;
 }
-/* values heading sizing */
-.hero-text-container {
-	width: 50%;
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-sm);
-}
-
 /* 
 ===================================
 Values
