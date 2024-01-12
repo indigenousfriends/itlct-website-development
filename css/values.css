@@ -18,12 +18,8 @@ Hero
 ===================================
 */
 .hero {
-	background: linear-gradient(
-			260deg,
-			rgba(9, 9, 9, 0.8) 46.9%,
-			rgba(9, 9, 9, 0) 86.82%
-		),
-		url("../assets/images/pages/values/hero-values.png") top/cover;
+	background-image: var(--hero-grad-values),
+		url("../assets/images/pages/values/hero-values.png");
 	display: flex;
 	align-items: center;
 }
@@ -92,6 +88,18 @@ Values
 	flex-direction: column;
 	gap: var(--spacing-sm);
 }
+/* limiting text width for values-img-text components */
+.values-img-text .text {
+	max-width: 350px;
+}
+/* moving limited ext to side of card */
+.text-right {
+	align-items: flex-end;
+}
+
+.text-left {
+	align-items: flex-start;
+}
 
 /* card specific */
 .humanity {
@@ -156,6 +164,7 @@ Support Banner
 	font-size: 46px;
 	font-weight: 700;
 	line-height: 50px;
+	max-width: 1000px;
 }
 
 .support a {
@@ -220,10 +229,12 @@ Media Queries (overriding styles for different screen sizes)
 Values
 ===================================
 */
+	/* replacing background img w mobile img */
 	.values-img-text .img-mobile {
 		display: block;
 		visibility: visible;
 	}
+
 	/* layout to colum */
 	.values-row,
 	.values-img-text {
@@ -235,7 +246,9 @@ Values
 		padding: var(--spacing-sm);
 		min-height: 300px;
 	}
-
+	.values-card h3 {
+		text-align: center;
+	}
 	/* Img + Text Card styles */
 	.values-img-text {
 		background: none;
@@ -254,7 +267,14 @@ Values
 		padding: var(--spacing-sm);
 		justify-content: center;
 		width: 100%;
+		max-width: initial;
 	}
+	/* resetting text layout to center of card */
+	.text-right,
+	.text-left {
+		align-items: center;
+	}
+
 	.values-img-text img {
 		object-fit: cover;
 	}
@@ -322,6 +342,7 @@ Mobile Fonts
 	.support h2,
 	.empowering h2 {
 		font-size: var(--font-size-title-med);
+		text-align: center;
 	}
 
 	.support p {
@@ -331,6 +352,30 @@ Mobile Fonts
 
 	.values-card h3 {
 		font-size: var(--font-size-title-sm);
-		text-align: center;
+	}
+	/* 
+===================================
+Values
+===================================
+*/
+	/* adjusting spacing for value cards */
+	.values-card,
+	.values-img-text .text,
+	.values-img-text img {
+		min-height: 200px;
+	}
+
+	/* 
+===================================
+Empowering
+===================================
+*/
+	/* adjusting spacing between sections */
+	.empowering {
+		padding: var(--spacing-med) 0 0 0;
+	}
+
+	.empowering .wrapper {
+		gap: var(--spacing-med);
 	}
 }

@@ -6,12 +6,8 @@ Hero
 
 /* background and layout adjustments  */
 .hero {
-	background: linear-gradient(
-			352deg,
-			rgba(9, 9, 9, 0.8) 32.03%,
-			rgba(9, 9, 9, 0) 73.42%
-		),
-		url("../assets/images/pages/home/hero-home.jpg") top/cover;
+	background-image: var(--hero-grad-home),
+		url("../assets/images/pages/home/hero-home.jpg");
 	text-align: center;
 	display: flex;
 }

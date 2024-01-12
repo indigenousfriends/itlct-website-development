@@ -14,12 +14,8 @@ Hero
 
 /* background and layout adjustments  */
 .hero {
-	background: linear-gradient(
-			107deg,
-			rgba(9, 9, 9, 0.8) 9.51%,
-			rgba(9, 9, 9, 0) 76.72%
-		),
-		url("../assets/images/pages/impact/hero-impact.png") top/cover;
+	background-image: var(--hero-grad-impact),
+		url("../assets/images/pages/impact/hero-impact.png");
 	display: flex;
 	align-items: center;
 }

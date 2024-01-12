@@ -19,7 +19,7 @@ header {
 
 /* background styles */
 main {
-	background: linear-gradient(0deg, #6c4681 -8.79%, #184f85 132.08%);
+	background: var(--grad-blue-purple);
 	color: var(--text-color-light);
 	min-height: 90vh;
 }
