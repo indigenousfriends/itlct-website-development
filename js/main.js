@@ -98,7 +98,7 @@ openModalBtns.forEach(button => {
 	button.addEventListener("click", () => {
 		let modalElement = document.querySelector(`#${button.dataset.type}`);
 
-		// opening modals based on data-type attr
+		// opening modals based on data-content attr
 		if (button.dataset.content) {
 			// populate modal according to data-content
 			let member = button.dataset.content;
