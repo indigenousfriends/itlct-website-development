@@ -28,19 +28,19 @@ Member Card Component
 }
 /* text */
 .member h2 {
-	font-size: 28px;
-	font-weight: 700;
-	line-height: 32px;
+	font-size: var(--font-size-title-sm);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-lg);
 }
 
 .member .role {
-	font-size: 24px;
-	font-weight: 500;
-	line-height: 28px;
+	font-size: var(--font-size-body-lg);
+	font-weight: var(--font-weight-med);
+	line-height: var(--line-height-med);
 }
 .member p {
-	font-size: 16px;
-	font-weight: 400;
+	font-size: var(--font-size-body-reg);
+	font-weight: var(--font-weight-reg);
 	line-height: 20px;
 }
 
@@ -97,8 +97,7 @@ Hero
 */
 
 .hero {
-	background: url("/assets/images/pages/team/hero-team.png"),
-		lightgray 50% / cover no-repeat;
+	background-image: url("/assets/images/pages/team/hero-team.png");
 	display: flex;
 }
 

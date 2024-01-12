@@ -96,20 +96,23 @@ const toggleModal = modal => {
 // open modal button events
 openModalBtns.forEach(button => {
 	button.addEventListener("click", () => {
-		// opening modals based on data-type attr
 		let modalElement = document.querySelector(`#${button.dataset.type}`);
 
+		// opening modals based on data-type attr
 		if (button.dataset.content) {
 			// populate modal according to data-content
 			let member = button.dataset.content;
 			populateTeamModal(teamBioData[member]);
 
+			// open modal
 			toggleModal(modalElement);
 		} else {
+			// open modal
 			toggleModal(modalElement);
 		}
 	});
 });
+
 // exit via close modal button
 closeModalBtns.forEach(button => {
 	button.addEventListener("click", () => {
