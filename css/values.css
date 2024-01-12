@@ -8,12 +8,6 @@ Our Values
 
 /* 
 ===================================
-Page Component Styles (icon grid, team member card)
-===================================
-*/
-
-/* 
-===================================
 Section Styles (background, padding, etc.)
 ===================================
 */
@@ -24,12 +18,8 @@ Hero
 ===================================
 */
 .hero {
-	background: linear-gradient(
-			260deg,
-			rgba(9, 9, 9, 0.8) 46.9%,
-			rgba(9, 9, 9, 0) 86.82%
-		),
-		url("../assets/images/pages/values/hero-values.png") top/cover;
+	background-image: var(--hero-grad-values),
+		url("../assets/images/pages/values/hero-values.png");
 	display: flex;
 	align-items: center;
 }
@@ -38,14 +28,6 @@ Hero
 	display: flex;
 	justify-content: flex-end;
 }
-/* values heading sizing */
-.hero-text-container {
-	width: 50%;
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-sm);
-}
-
 /* 
 ===================================
 Values
@@ -54,53 +36,88 @@ Values
 
 /* layout */
 .values-list,
-.values-row {
+.values-row,
+.values-img-text {
 	display: flex;
 	gap: var(--spacing-sm);
 }
 
-.values-list {
+.values-list,
+.values-img-text {
 	flex-direction: column;
 }
 
-.values-item {
-	color: var(--text-color-light);
-	padding: var(--spacing-med) var(--spacing-sm);
-	border-radius: var(--border-radius);
+/* card widths */
+.sustainability,
+.authenticity {
+	width: 60%;
 }
 
-/* text */
-.values-item h3 {
+.humanity,
+.multigenerational {
+	width: 40%;
 }
-/* img + text value items */
-.sustainability,
-.authenticity,
+
 .education,
 .innovation {
-	display: flex;
+	width: 50%;
 }
 
-/* card specific */
+/* general card styling */
+.values-card {
+	padding: 60px;
+	color: var(--text-color-light);
+	border-radius: var(--border-radius);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* text layout*/
+.values-card .text {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+/* limiting text width for values-img-text components */
+.values-img-text .text {
+	max-width: 350px;
+}
+/* moving limited ext to side of card */
+.text-right {
+	align-items: flex-end;
+}
+
+.text-left {
+	align-items: flex-start;
+}
+
+/* card specific backgrounds*/
 .humanity {
 	background-color: var(--color-copper);
 }
 
 .sustainability {
-	background-color: var(--color-onyx);
+	background: var(--values-grad-sustainability),
+		url("/assets/images/pages/values/sustainability.png") top/cover;
 }
 
 .authenticity {
-	background-color: var(--color-amaranth);
+	background: var(--values-grad-authenticity),
+		url("/assets/images/pages/values/authenticity.png") top/cover;
 }
 .multigenerational {
 	background-color: var(--color-grape);
 }
 .education {
-	background-color: var(--color-blue);
+	background: var(--values-grad-education),
+		url("/assets/images/pages/values/education.png") top/cover;
 }
 
 .innovation {
-	background-color: var(--color-teal);
+	background: var(--values-grad-innovation),
+		url("/assets/images/pages/values/innovation.png") top/cover;
 }
 
 /* 
@@ -122,11 +139,13 @@ Support Banner
 	font-size: 46px;
 	font-weight: 700;
 	line-height: 50px;
+	max-width: 1000px;
 }
 
 .support a {
 	width: fit-content;
 }
+
 .support-text {
 	display: flex;
 	flex-direction: column;
@@ -166,52 +185,10 @@ Support Banner
 Empowering 
 ===================================
 */
-.styled-img-container {
-	position: relative;
-}
-
-.styled-img-container img {
-	border-radius: var(--border-radius);
-	max-height: 550px;
-	object-fit: cover;
-	object-position: top;
-	aspect-ratio: 1/1;
-}
-
-.styled-img-container::before {
-	position: absolute;
-	content: " ";
-	width: 80%;
-	aspect-ratio: 1/1;
-	z-index: -1;
-	background-color: var(--color-amaranth);
-	border-radius: var(--border-radius);
-}
-
-.styled-img-container.style-left::before {
-	transform: translate(-70px, -65px);
-}
+/* using styled img container component in global.css */
 
 .empowering .wrapper {
-	display: flex;
 	flex-direction: row-reverse;
-	gap: var(--spacing-xl);
-	padding: var(--spacing-xl);
-
-	width: var(--wrapper-width);
-	max-width: var(--wrapper-max-width);
-	margin: 0 auto;
-}
-
-.empowering .styled-img-container,
-.empowering .text-container {
-	width: 50%;
-}
-
-.empowering .text-container {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-sm);
 }
 
 /* 
@@ -222,6 +199,75 @@ Media Queries (overriding styles for different screen sizes)
 
 /* Tablet and smaller 1024px*/
 @media (max-width: 1024px) {
+	/* 
+===================================
+Values
+===================================
+*/
+	/* replacing background img w mobile img */
+	.values-img-text .img-mobile {
+		display: block;
+		visibility: visible;
+	}
+
+	/* layout to colum */
+	.values-row,
+	.values-img-text {
+		flex-direction: column;
+	}
+
+	.values-card {
+		width: 100%;
+		padding: var(--spacing-sm);
+		min-height: 300px;
+	}
+	.values-card h3 {
+		text-align: center;
+	}
+	/* Img + Text Card styles */
+	.values-img-text {
+		background: none;
+		padding: 0;
+		display: flex;
+	}
+
+	/* images treated like cards */
+	.values-img-text .text,
+	.values-img-text img {
+		border-radius: var(--border-radius);
+		min-height: 300px;
+	}
+
+	.values-img-text .text {
+		padding: var(--spacing-sm);
+		justify-content: center;
+		width: 100%;
+		max-width: initial;
+	}
+	/* resetting text layout to center of card */
+	.text-right,
+	.text-left {
+		align-items: center;
+	}
+
+	.values-img-text img {
+		object-fit: cover;
+	}
+
+	/* value card text backgrounds */
+	.sustainability .text {
+		background: var(--color-black);
+	}
+	.authenticity .text {
+		background-color: var(--color-amaranth);
+	}
+	.education .text {
+		background-color: var(--color-blue);
+	}
+	.innovation .text {
+		background-color: var(--color-teal);
+	}
+
 	/* 
 ===================================
 Empowering
@@ -235,32 +281,8 @@ Empowering
 		width: 100%;
 		padding: 0;
 	}
-	.empowering .styled-img-container,
-	.empowering .text-container {
-		width: 100%;
-	}
 
 	/* removing absolute positioned graphic */
-	.styled-img-container::before {
-		position: static;
-	}
-
-	/* constraint on image height */
-	.styled-img-container img {
-		max-height: 300px;
-	}
-
-	/* background color */
-	.styled-img-container {
-		background-color: var(--color-amaranth);
-		padding: var(--spacing-med) var(--spacing-sm);
-	}
-
-	/* wrapper on text box */
-	.empowering .text-container {
-		width: 85%;
-		margin: 0 auto;
-	}
 }
 
 /* Tablet and smaller 768px */
@@ -292,14 +314,43 @@ Hero
 Mobile Fonts
 ===================================
 */
-
 	.support h2,
 	.empowering h2 {
 		font-size: var(--font-size-title-med);
+		text-align: center;
 	}
 
 	.support p {
 		font-size: var(--font-size-title-sm);
 		line-height: 32px;
+	}
+
+	.values-card h3 {
+		font-size: var(--font-size-title-sm);
+	}
+	/* 
+===================================
+Values
+===================================
+*/
+	/* adjusting spacing for value cards */
+	.values-card,
+	.values-img-text .text,
+	.values-img-text img {
+		min-height: 200px;
+	}
+
+	/* 
+===================================
+Empowering
+===================================
+*/
+	/* adjusting spacing between sections */
+	.empowering {
+		padding: var(--spacing-med) 0 0 0;
+	}
+
+	.empowering .wrapper {
+		gap: var(--spacing-med);
 	}
 }
