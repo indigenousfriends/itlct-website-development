@@ -1,0 +1,103 @@
+/*
+===================================
+===================================
+Contact Page Styles
+===================================
+===================================
+*/
+
+/* 
+===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+/* resetting min height with no header  */
+header {
+	min-height: initial;
+}
+
+/* background styles */
+main {
+	background: linear-gradient(0deg, #6c4681 -8.79%, #184f85 132.08%);
+	color: var(--text-color-light);
+	min-height: 90vh;
+}
+
+/* Form layout */
+form .wrapper {
+	padding: var(--spacing-xxl) 0;
+	display: flex;
+	gap: var(--spacing-xxl);
+	max-width: 1075px;
+}
+
+.text-container,
+.form-container {
+	width: 50%;
+}
+
+/* Form Text */
+
+form .text-container,
+form .form-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* Form Inputs Layout */
+.input-container input {
+	width: 100%;
+}
+
+.form-container button {
+	align-self: center;
+}
+
+/* text area styles */
+
+textarea[name="message-input"] {
+	min-height: 140px;
+}
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+===================================
+*/
+
+/* Tablet and smaller 1024px*/
+@media screen and (max-width: 1024px) {
+	form .wrapper {
+		gap: var(--spacing-lg);
+	}
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+	/* Layout to column  */
+	form .wrapper {
+		flex-direction: column;
+	}
+
+	.text-container,
+	.form-container {
+		width: 100%;
+	}
+
+	h1 {
+		text-align: center;
+	}
+}
+
+/* Mobile Only 470px */
+@media screen and (max-width: 470px) {
+	/* 
+===================================
+Mobile Fonts
+===================================
+*/
+	h1 {
+		font-size: var(--font-size-title-med);
+	}
+}
