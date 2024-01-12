@@ -161,6 +161,28 @@ Section Styles (background, padding, etc.)
 	margin: 0 auto;
 }
 
+.event-detail-container {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	align-items: center;
+	gap: var(--spacing-xl);
+	padding: var(--spacing-xl);
+}
+
+.event-detail-container img {
+	width: 50%;
+}
+
+.cta-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-med);
+	padding: var(--spacing-xxl);
+	text-align: center;
+}
+
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
