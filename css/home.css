@@ -21,11 +21,6 @@ Hero
 	align-items: center;
 }
 
-/* text adjustments */
-.hero h2 {
-	font-size: var(--font-size-title-xl);
-}
-
 .hero-text-container {
 	width: 100%;
 }
@@ -148,12 +143,7 @@ What We Do
 .what-we-do h2 {
 	text-align: center;
 	margin-bottom: var(--spacing-lg);
-	font-size: var(--font-size-title-lg);
 	color: var(--text-color-dark);
-}
-
-.wwd-card h3 {
-	font-size: var(--font-size-title-med);
 }
 
 /* card layout */
@@ -468,25 +458,8 @@ Events and Programs
 	===================================
 	*/
 	/* headings */
-	.hero h1,
-	.what-we-do h2,
-	.events h2 {
-		font-size: var(--font-size-title-med);
-	}
-	.community h2,
-	.global-ecosystem h2,
-	.our-values h2 {
-		font-size: var(--font-size-title-sm);
-	}
 
-	.wwd-card h3 {
-		font-size: var(--font-size-title-sm);
-	}
-	.value-card h4 {
-		font-size: var(--font-size-title-sm);
-	}
-
-	.newsletter-form h5 {
-		font-size: var(--font-size-title-sm);
+	.what-we-do h2 {
+		margin-bottom: var(--spacing-med);
 	}
 }
