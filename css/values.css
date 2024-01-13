@@ -19,7 +19,7 @@ Hero
 */
 .hero {
 	background-image: var(--hero-grad-values),
-		url("../assets/images/pages/values/hero-values.png");
+		url("../assets/images/pages/values/hero-values.jpg");
 	display: flex;
 	align-items: center;
 }
@@ -100,24 +100,24 @@ Values
 
 .sustainability {
 	background: var(--values-grad-sustainability),
-		url("/assets/images/pages/values/sustainability.png") top/cover;
+		url("/assets/images/pages/values/sustainability.jpg") top/cover;
 }
 
 .authenticity {
 	background: var(--values-grad-authenticity),
-		url("/assets/images/pages/values/authenticity.png") top/cover;
+		url("/assets/images/pages/values/authenticity.jpg") top/cover;
 }
 .multigenerational {
 	background-color: var(--color-grape);
 }
 .education {
 	background: var(--values-grad-education),
-		url("/assets/images/pages/values/education.png") top/cover;
+		url("/assets/images/pages/values/education.jpg") top/cover;
 }
 
 .innovation {
 	background: var(--values-grad-innovation),
-		url("/assets/images/pages/values/innovation.png") top/cover;
+		url("/assets/images/pages/values/innovation.jpg") top/cover;
 }
 
 /* 
@@ -127,12 +127,10 @@ Support Banner
 */
 .support {
 	background-color: var(--color-blue);
+	color: var(--text-color-light);
 }
 
 /* text adjustments */
-.support h2 {
-	color: var(--color-light-amaranth);
-}
 
 .support p {
 	color: var(--text-color-light);
@@ -199,6 +197,10 @@ Media Queries (overriding styles for different screen sizes)
 
 /* Tablet and smaller 1024px*/
 @media (max-width: 1024px) {
+	.hero {
+		background-image: var(--hero-grad-values),
+			url("../assets/images/pages/values/mobile/hero-values-mobile.jpg");
+	}
 	/* 
 ===================================
 Values
