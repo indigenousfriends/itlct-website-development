@@ -21,8 +21,13 @@ header {
 main {
 	background: var(--grad-blue-purple);
 	color: var(--text-color-light);
-	padding: var(--spacing-xxl) 0;
+	padding: var(--spacing-xl) 0;
 	min-height: 90vh;
+
+	/* centering form in main */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* Form layout */
@@ -59,6 +64,12 @@ form .form-container {
 
 textarea[name="message-input"] {
 	min-height: 140px;
+}
+
+/* form response */
+.form-response-container {
+	/* persistent space for user response */
+	min-height: var(--spacing-med);
 }
 /* 
 ===================================
