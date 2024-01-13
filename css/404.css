@@ -18,27 +18,17 @@ Section Styles (background, padding, etc.)
 ===================================
 */
 
-/* 
-===================================
-Header Styles
-===================================
-*/
-
-/* resetting min height */
+/* header: resetting min height */
 header {
-	min-height: initial;
+	min-height: auto;
 }
-/* 
-===================================
-404 Styles
-===================================
-*/
+/* 404 styles */
 
 main {
 	/* background and text */
 	background: linear-gradient(0deg, #6c4681 -8.79%, #184f85 132.08%);
 	/* background: var(--grad-blue-purple); */
-	color: var(--text-color-light);
+	color: var(--text-color-dark);
 
 	/* height */
 	min-height: 90vh;
@@ -59,12 +49,22 @@ span {
 }
 
 /* layout */
-main .wrapper,
+
+main .wrapper {
+	max-width: 800px;
+}
+article,
 .page-links {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: var(--spacing-sm);
+}
+
+article {
+	background-color: var(--color-white);
+	border-radius: var(--border-radius);
+	padding: var(--spacing-lg);
 }
 
 /* 
@@ -86,8 +86,8 @@ Media Queries (overriding styles for different screen sizes)
 }
 
 /* Mobile Only 400px */
-@media screen and (max-width: 400px) {
-	h1 {
-		font-size: var(--font-size-title-med);
+@media screen and (max-width: 470px) {
+	article {
+		padding: var(--spacing-med);
 	}
 }
