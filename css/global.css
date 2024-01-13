@@ -228,12 +228,58 @@ Variables (colors, text, spacing, etc.)
 	--color-light-amaranth: #d94252;
 	--color-teal: #007a80;
 	--color-grape: #6c4681;
+	--color-black: #0f0f0f;
 	--color-onyx: #1f1d1d;
 	--color-blue: #184f85;
 	--color-pink: #fa6cb7;
 	--color-citrine: #d3c53f;
 	--color-citron: #92a32d;
 	--color-copper: #b37122;
+
+	/* Gradients */
+
+	/* general gradient */
+	--grad-blue-purple: linear-gradient(0deg, #6c4681 -8.79%, #184f85 132.08%);
+
+	/* hero gradients*/
+	--hero-grad-home: linear-gradient(352deg, #090909cc 32.03%, #09090900 73.42%);
+	--hero-grad-about: linear-gradient(107deg, #090909cc 9.51%, #09090900 76.72%);
+	--hero-grad-impact: var(--hero-grad-about);
+	--hero-grad-values: linear-gradient(
+		260deg,
+		#090909cc 46.9%,
+		#09090900 86.82%
+	);
+	--hero-grad-events: linear-gradient(
+		90deg,
+		rgba(9, 9, 9, 0.77) 40.35%,
+		rgba(9, 9, 9, 0.74) 44.51%,
+		rgba(9, 9, 9, 0.71) 48.63%,
+		rgba(9, 9, 9, 0) 83.13%
+	);
+
+	/* values-page gradients */
+	--values-grad-sustainability: linear-gradient(
+		269deg,
+		#0e0e0e 46.26%,
+		#1b1b1b00 99.04%
+	);
+	--values-grad-authenticity: linear-gradient(
+		88deg,
+		#b91515 47.26%,
+		#b91515ba 55.57%,
+		#772d2d66 68.47%
+	);
+	--values-grad-education: linear-gradient(
+		90deg,
+		#184f85 63.23%,
+		#184f8500 83.39%
+	);
+	--values-grad-innovation: linear-gradient(
+		280deg,
+		#007a80 67.16%,
+		#007a8000 80.36%
+	);
 
 	/* Color Assignment */
 	--body-background-color: var(--color-white);
@@ -259,7 +305,10 @@ Variables (colors, text, spacing, etc.)
 	--font-weight-reg: 400;
 
 	/* Line Height */
-	--line-height-lg: 26px;
+	--line-height-xxl: 50px;
+	--line-height-xl: 40px;
+	--line-height-lg: 32px;
+	--line-height-med: 26px;
 
 	/* Spacing */
 	--spacing-xxl: 140px;
@@ -267,6 +316,7 @@ Variables (colors, text, spacing, etc.)
 	--spacing-lg: 80px;
 	--spacing-med: 40px;
 	--spacing-sm: 20px;
+	--spacing-xs: 10px;
 
 	/* Borders */
 	/* width */
@@ -278,6 +328,7 @@ Variables (colors, text, spacing, etc.)
 	/* Wrappers */
 	--wrapper-width: 85%;
 	--wrapper-width-max: 1328px;
+	--wrapper-width-max-sm: 1080px;
 
 	/* Media Queries */
 	--mq-width-desktop-max: 1024px;
@@ -336,9 +387,11 @@ h1 {
 }
 h2 {
 	font-size: var(--font-size-title-lg);
+	line-height: var(--line-height-xxl);
 }
 h3 {
 	font-size: var(--font-size-title-med);
+	line-height: var(--line-height-xl);
 }
 h4 {
 	font-size: var(--font-size-title-sm);
@@ -348,8 +401,8 @@ h5 {
 }
 
 p {
-	font-weight: 400;
-	line-height: 26px;
+	font-weight: var(--font-weight-reg);
+	line-height: var(--line-height-med);
 }
 /* Links */
 a {
@@ -400,18 +453,32 @@ Utility Classes ( flexbox, wrappers,  etc.)
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 }
-
+/* custom disable scroll class: for modal functionality */
+.disable-scroll {
+	overflow: hidden;
+}
 /* hidden */
 .hidden {
 	display: none;
 	visibility: hidden;
 }
 
+/* modal scroll class */
+
 /* Global Wrapper */
 .wrapper {
 	width: var(--wrapper-width);
 	max-width: var(--wrapper-width-max);
 	margin: 0 auto;
+}
+
+.section-header {
+	padding: var(--spacing-lg);
+	text-align: center;
+}
+
+.section-header h2 {
+	font-weight: var(--font-weight-bold);
 }
 
 /* 
@@ -433,7 +500,6 @@ hr {
 blockquote {
 	background-color: var(--color-onyx);
 	color: var(--color-white);
-
 	width: fit-content;
 	padding: var(--spacing-lg);
 	margin: 0;
@@ -463,14 +529,12 @@ button,
 .btn-alt {
 	display: block;
 	width: fit-content;
+	min-height: 50px;
 	padding: 10px 40px;
-
 	font-family: var(--font-main);
 	font-weight: var(--font-weight-bold);
-
 	color: var(--color-white);
 	background-color: var(--color-amaranth);
-
 	border: var(--border-width-btn) solid transparent;
 	border-radius: var(--border-radius);
 	cursor: pointer;
@@ -483,6 +547,7 @@ button:focus,
 	color: var(--color-onyx);
 	background-color: var(--color-white);
 }
+
 /* long button */
 .btn-long {
 	padding: 10px var(--spacing-lg);
@@ -589,6 +654,65 @@ textarea {
 .close-modal svg:hover {
 	fill: var(--color-amaranth);
 }
+/* 
+===================================
+Custom Components 
+===================================
+*/
+/* section-2-col  */
+.section-2-col .wrapper {
+	display: flex;
+	gap: var(--spacing-xl);
+	padding: var(--spacing-xl);
+
+	width: var(--wrapper-width);
+	max-width: var(--wrapper-max-width);
+	margin: 0 auto;
+}
+
+/* styled image container layout  */
+.section-2-col .styled-img-container,
+.section-2-col .text-container {
+	width: 50%;
+}
+
+.section-2-col .text-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* styled img container styles */
+
+.styled-img-container {
+	position: relative;
+}
+
+.styled-img-container img {
+	border-radius: var(--border-radius);
+	max-height: 550px;
+	object-fit: cover;
+	object-position: top;
+	aspect-ratio: 1/1;
+}
+
+.styled-img-container::before {
+	position: absolute;
+	content: " ";
+	width: 80%;
+	aspect-ratio: 1/1;
+	z-index: -1;
+	background-color: var(--color-amaranth);
+	border-radius: var(--border-radius);
+}
+
+.styled-img-container.style-left::before {
+	transform: translate(-70px, -65px);
+}
+
+.styled-img-container.style-right::before {
+	transform: translate(200px, -65px);
+}
 
 /* 
 ===================================
@@ -658,9 +782,23 @@ header {
 	height: inherit;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: top center;
+	background-position: center;
 	padding: 140px 0;
 	color: var(--color-white);
+}
+
+/* custom max width for hero content */
+.hero .wrapper {
+	max-width: var(--wrapper-width-max-sm);
+}
+
+/* Hero heading layout and sizing */
+.hero-text-container {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-med) 0;
 }
 
 .img-mobile {
@@ -819,8 +957,49 @@ Media Queries (overriding styles for different screen sizes)
 	}
 }
 
-/* Tablet and smaller 768px */
-@media screen and (max-width: 768px) {
+/* Tablet and smaller 1024px*/
+@media (max-width: 1024px) {
+	/* 
+	===================================
+	Styled Img Container Components
+	===================================
+	*/
+
+	/* removing wrapper styles for mobile design */
+	.section-2-col .wrapper {
+		flex-direction: column;
+		gap: var(--spacing-lg);
+		padding: 0;
+		width: 100%;
+	}
+
+	.section-2-col .styled-img-container,
+	.section-2-col .text-container {
+		width: 100%;
+	}
+
+	/* removing absolute positioned graphic */
+	.styled-img-container::before {
+		position: static;
+	}
+
+	.styled-img-container {
+		background-color: var(--color-amaranth);
+		padding: var(--spacing-med) 0;
+	}
+
+	/* limiting img height */
+	.styled-img-container img {
+		max-height: 300px;
+	}
+
+	/* mobile wrapper */
+	.styled-img-container img,
+	.section-2-col .text-container {
+		width: var(--wrapper-width);
+		margin: 0 auto;
+	}
+
 	/* 
 	===================================
 	Global Section Adjustment
@@ -829,20 +1008,66 @@ Media Queries (overriding styles for different screen sizes)
 	section {
 		padding: var(--spacing-med) 0;
 	}
+
+	.section-header {
+		padding: var(--spacing-med) 0;
+	}
+
+	.events-container {
+		padding: 0;
+		gap: var(--spacing-lg);
+	}
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
 	/* 
 	===================================
-	Hero Adjustment
+	Mobile Menu
 	===================================
 	*/
+	header nav .flex-container {
+		width: inherit;
+	}
+	h2,
+	h3 {
+		font-size: var(--font-size-title-sm);
+		line-height: var(--line-height-lg);
+	}
 
-	.hero {
+	.wrapper {
+		width: 100%;
+		max-width: 100%;
+		padding: 0 var(--spacing-sm);
+	}
+
+	/* 
+===================================
+Hero 
+===================================
+*/
+
+	.hero-wrapper {
+		display: flex;
+		align-items: center;
+		flex: 1 1 50%;
+	}
+
+	.hero-text-container {
+		width: 100%;
+		text-align: center;
+	}
+
+	body .hero {
 		/* layout for <img> and wrapper */
+		display: flex;
+		align-items: center;
 		flex-direction: column;
-
 		color: var(--color-onyx);
 		padding-top: 0;
-
-		gap: var(--spacing-lg);
+		gap: 0;
+		background: none;
+		padding: 0;
 	}
 
 	/* revealing mobile hero img */
@@ -862,7 +1087,7 @@ Media Queries (overriding styles for different screen sizes)
 	}
 }
 
-/* custom breakpoint 470px */
+/* Mobile Breakpoint 470px */
 @media screen and (max-width: 470px) {
 	/* 
 	===================================
@@ -870,7 +1095,7 @@ Media Queries (overriding styles for different screen sizes)
 	===================================
 	*/
 
-	.hero h2 {
+	.hero h1 {
 		font-size: var(--font-size-title-med);
 	}
 	body {
@@ -925,11 +1150,3 @@ Media Queries (overriding styles for different screen sizes)
 		font-size: var(--font-size-title-sm);
 	}
 }
-
-/* NOT CURRENTLY WORKING */
-/* Tablet and smaller 1024px*/
-/* @media screen and (max-width: var(--mq-width-desktop-max)) {
-} */
-/* Mobile Only 400px */
-/* @media screen and (max-width: var(--mq-width-phone-max)) {
-} */

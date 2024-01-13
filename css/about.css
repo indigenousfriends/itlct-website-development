@@ -20,23 +20,10 @@ Hero
 
 /* background and layout adjustments  */
 .hero {
-	background: linear-gradient(
-			107deg,
-			rgba(9, 9, 9, 0.8) 9.51%,
-			rgba(9, 9, 9, 0) 76.72%
-		),
-		url("../assets/images/pages/about/hero-about.jpg") top/cover;
-	/* text-align: center; */
+	background-image: var(--hero-grad-about),
+		url("../assets/images/pages/about/hero-about.jpg");
 	display: flex;
 	align-items: center;
-}
-
-/* about heading layout and sizing */
-.hero-text-container {
-	width: 50%;
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-sm);
 }
 
 /* 
@@ -45,8 +32,12 @@ Main Content
 ===================================
 */
 /* wrapper spacing similar to section */
+
+main {
+	padding: var(--spacing-xl);
+}
+
 main .wrapper {
-	padding: var(--spacing-xxl) 0;
 	max-width: 800px;
 	color: var(--color-onyx);
 }
@@ -93,10 +84,8 @@ Hero
 		text-align: center;
 	}
 
-	/* main wrapper reset */
-	main .wrapper {
-		max-width: var(--wrapper-max-width);
-		padding: var(--spacing-xl) 0;
+	main {
+		padding: var(--spacing-lg) 0;
 	}
 }
 
@@ -112,8 +101,7 @@ Hero
 		font-size: var(--font-size-body-lg);
 	}
 
-	/* padding between header, main, footer */
-	main .wrapper {
+	main {
 		padding: var(--spacing-med) 0;
 	}
 }

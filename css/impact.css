@@ -8,65 +8,16 @@ Our Impact Styles
 
 /* 
 ===================================
-Page Component Styles (icon grid, team member card)
-===================================
-*/
-
-/* styled img container */
-
-.styled-img-container {
-	position: relative;
-}
-
-.styled-img-container img {
-	border-radius: var(--border-radius);
-	max-height: 550px;
-	object-fit: cover;
-	object-position: top;
-	aspect-ratio: 1/1;
-}
-
-.styled-img-container::before {
-	position: absolute;
-	content: " ";
-	width: 80%;
-	aspect-ratio: 1/1;
-	z-index: -1;
-	background-color: var(--color-amaranth);
-	border-radius: var(--border-radius);
-}
-
-.styled-img-container.style-left::before {
-	transform: translate(-70px, -65px);
-}
-
-.styled-img-container.style-right::before {
-	transform: translate(200px, -65px);
-}
-/* 
-===================================
 Hero 
 ===================================
 */
 
 /* background and layout adjustments  */
 .hero {
-	background: linear-gradient(
-			107deg,
-			rgba(9, 9, 9, 0.8) 9.51%,
-			rgba(9, 9, 9, 0) 76.72%
-		),
-		url("../assets/images/pages/impact/hero-impact.png") top/cover;
+	background-image: var(--hero-grad-impact),
+		url("../assets/images/pages/impact/hero-impact.png");
 	display: flex;
 	align-items: center;
-}
-
-/* impact heading layout and sizing */
-.hero-text-container {
-	width: 50%;
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-sm);
 }
 
 /* 
@@ -74,31 +25,6 @@ Hero
 Section Styles (background, padding, etc.)
 ===================================
 */
-
-/* 
-===================================
-Technology & Stewardship Cards
-===================================
-*/
-.section-2-col .wrapper {
-	display: flex;
-	gap: var(--spacing-xl);
-	padding: var(--spacing-xl);
-
-	width: var(--wrapper-width);
-	max-width: var(--wrapper-max-width);
-	margin: 0 auto;
-}
-.section-2-col .styled-img-container,
-.section-2-col .text-container {
-	width: 50%;
-}
-
-.section-2-col .text-container {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-sm);
-}
 
 /* 
 ===================================
@@ -229,27 +155,6 @@ Technology & Program Cards
 
 /* Tablet and smaller 768px */
 @media screen and (max-width: 768px) {
-	/* 
-===================================
-Hero 
-===================================
-*/
-	.hero {
-		/* remove background-img */
-		background: none;
-		padding: 0;
-	}
-
-	.impact-hero-wrapper {
-		display: flex;
-		align-items: center;
-		flex: 1 1 50%;
-	}
-	.hero-text-container {
-		width: 100%;
-		text-align: center;
-	}
-
 	/* 
 ===================================
 Program Gallery

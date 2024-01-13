@@ -17,7 +17,6 @@
 	<body>
 		<!-- Header Navigation-->
 		<header>
-			<h1 class="sr-only">If These Lands Could Talk</h1>
 			<!-- Navigation -->
 			<nav>
 				<div class="wrapper">
@@ -82,7 +81,7 @@
 								<li><a href="/impact.html">Our Impact</a></li>
 								<li><a href="/values.html">Our Values</a></li>
 								<li><a href="/events.html">Events</a></li>
-								<li><a href="/our-team.html">Our Team</a></li>
+								<li><a href="/team.html">Our Team</a></li>
 								<li><a href="/contact.html">Contact</a></li>
 								<!-- Mobile Support Button -->
 								<li class="mobile-support-btn"><a href="#">Support US</a></li>
@@ -97,26 +96,29 @@
 			<!-- Hero -->
 			<section class="hero">
 				<img
-					src="/assets/images/pages/home/hero-home.jpg"
+					src="/assets/images/pages/home/mobile/hero-home-mobile.jpg"
 					alt="homepage background"
 					class="img-mobile"
 				/>
 				<!-- Wrapper -->
-				<div class="wrapper">
-					<h2>Preserving Tomorrow by Building Today</h2>
-					<p>
-						If These Lands Could Talk (ITLCT) is global network of
-						change-makers, supporters, and allies who support native and
-						indigenous communities to thrive authentically and on their own
-						terms with digital technology both now and in the future.
-					</p>
-					<!-- Home Page: Hero Button Container -->
-					<div class="hero-btn-container">
-						<a href="#" class="btn-alt">Our Impact</a>
-						<a href="" class="btn-alt">Our Values</a>
-						<a href="/pages/about.html" class="btn-main mobile-about-btn"
-							>About US</a
-						>
+				<div class="wrapper hero-wrapper">
+					<div></div>
+					<div class="hero-text-container">
+						<h1>Preserving Tomorrow by Building Today</h1>
+						<p>
+							If These Lands Could Talk (ITLCT) is global network of
+							change-makers, supporters, and allies who support native and
+							indigenous communities to thrive authentically and on their own
+							terms with digital technology both now and in the future.
+						</p>
+						<!-- Home Page: Hero Button Container -->
+						<div class="hero-btn-container">
+							<a href="#" class="btn-alt">Our Impact</a>
+							<a href="" class="btn-alt">Our Values</a>
+							<a href="/pages/about.html" class="btn-main mobile-about-btn"
+								>About US</a
+							>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -370,7 +372,11 @@
 								alt="If These Lands Could Talk Logo"
 							/>
 						</a>
-						<button class="land-ack-btn" id="open-la-btn">
+						<button
+							class="land-ack-btn"
+							data-role="open-modal"
+							data-type="land-ack-modal"
+						>
 							Land Acknowledgement
 						</button>
 					</div>
@@ -494,8 +500,8 @@
 				<div class="modal-btn-container">
 					<button
 						class="close-modal"
-						id="close-la-btn"
-						aria-label="open land acknowledgement modal"
+						data-role="close-modal"
+						aria-label="close land acknowledgement modal"
 					>
 						<svg
 							width="24"

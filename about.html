@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="/css/global.css" />
 		<link rel="stylesheet" href="/css/about.css" />
 	</head>
+
 	<body>
 		<!-- Header Navigation-->
 		<header>
@@ -80,10 +81,10 @@
 							<!-- Page Links -->
 							<ul id="nav-links" class="nav-links">
 								<li><a href="/about.html">About US</a></li>
-								<li><a href="#">Our Impact</a></li>
+								<li><a href="/impact.html">Our Impact</a></li>
 								<li><a href="/values.html">Our Values</a></li>
 								<li><a href="/events.html">Events</a></li>
-								<li><a href="/our-team.html">Our Team</a></li>
+								<li><a href="/team.html">Our Team</a></li>
 								<li><a href="/contact.html">Contact</a></li>
 								<!-- Mobile Support Button -->
 								<li class="mobile-support-btn"><a href="#">Support US</a></li>
@@ -103,7 +104,7 @@
 					class="img-mobile"
 				/>
 				<!-- Wrapper -->
-				<div class="wrapper">
+				<div class="wrapper hero-wrapper">
 					<div class="hero-text-container">
 						<h2>If These Lands Could Talk... What Would They Say?</h2>
 
@@ -179,7 +180,11 @@
 								alt="If These Lands Could Talk Logo"
 							/>
 						</a>
-						<button class="land-ack-btn" id="open-la-btn">
+						<button
+							class="land-ack-btn"
+							data-role="open-modal"
+							data-type="land-ack-modal"
+						>
 							Land Acknowledgement
 						</button>
 					</div>
@@ -303,8 +308,8 @@
 				<div class="modal-btn-container">
 					<button
 						class="close-modal"
-						id="close-la-btn"
-						aria-label="open land acknowledgement modal"
+						data-role="close-modal"
+						aria-label="close land acknowledgement modal"
 					>
 						<svg
 							width="24"

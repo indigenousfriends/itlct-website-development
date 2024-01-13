@@ -19,17 +19,22 @@ header {
 
 /* background styles */
 main {
-	background: linear-gradient(0deg, #6c4681 -8.79%, #184f85 132.08%);
+	background: var(--grad-blue-purple);
 	color: var(--text-color-light);
+	padding: var(--spacing-xl) 0;
 	min-height: 90vh;
+
+	/* centering form in main */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* Form layout */
 form .wrapper {
-	padding: var(--spacing-xxl) 0;
 	display: flex;
 	gap: var(--spacing-xxl);
-	max-width: 1075px;
+	max-width: var(--wrapper-width-max-sm);
 }
 
 .text-container,
@@ -60,6 +65,12 @@ form .form-container {
 textarea[name="message-input"] {
 	min-height: 140px;
 }
+
+/* form response */
+.form-response-container {
+	/* persistent space for user response */
+	min-height: var(--spacing-med);
+}
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
@@ -75,9 +86,15 @@ Media Queries (overriding styles for different screen sizes)
 
 /* Tablet and smaller 768px */
 @media screen and (max-width: 768px) {
+	/* padding adjustment */
+	main {
+		padding: var(--spacing-lg) 0;
+	}
+
 	/* Layout to column  */
 	form .wrapper {
 		flex-direction: column;
+		gap: var(--spacing-med);
 	}
 
 	.text-container,
