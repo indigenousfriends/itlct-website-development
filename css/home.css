@@ -296,15 +296,16 @@ Media Queries (overriding styles for different screen sizes)
 		width: 70%;
 	}
 	.community-card img {
-		object-position: right;
+		object-fit: cover;
+		object-position: 70%;
 	}
 
 	.community-card a {
-		text-decoration: none;
 		padding: var(--spacing-xs) 0;
 		text-align: center;
 		width: 100%;
 	}
+
 	/* global ecosystem */
 	.global-ecosystem .text-container {
 		width: 80%;
@@ -319,10 +320,33 @@ Media Queries (overriding styles for different screen sizes)
 
 	/* what we do section */
 	.wwd-card-list {
-		gap: var(--spacing-xs);
+		flex-direction: column;
+		gap: var(--spacing-med);
 	}
+
 	.wwd-card {
-		width: calc(33% - var(--spacing-sm));
+		width: 100%;
+	}
+
+	.wwd-card-text {
+		min-height: auto;
+	}
+
+	/* our values section */
+	/* layout */
+	.values-list {
+		flex-direction: column;
+		padding: var(--spacing-lg) var(--spacing-sm);
+	}
+
+	/* background */
+	.our-values {
+		text-align: center;
+	}
+
+	/* title adjustment */
+	.value-card {
+		width: 100%;
 	}
 }
 
@@ -416,42 +440,15 @@ What We Do
 ===================================
 */
 
-	.wwd-card-list {
-		flex-direction: column;
-		gap: var(--spacing-med);
-	}
-
-	.wwd-card {
-		width: 100%;
-	}
-
-	.wwd-card-text {
-		min-height: auto;
-	}
-
 	/* 
 ===================================
 Our Values
 ===================================
 */
-
-	/* layout */
-	.values-list {
-		flex-direction: column;
-		padding: var(--spacing-lg) var(--spacing-sm);
-	}
-
-	/* background */
 	.our-values {
-		background: var(--color-onyx);
-		text-align: center;
+		background-image: none;
+		background-color: var(--color-onyx);
 	}
-
-	/* title adjustment */
-	.value-card {
-		width: 100%;
-	}
-
 	/* 
 ===================================
 Events and Programs
