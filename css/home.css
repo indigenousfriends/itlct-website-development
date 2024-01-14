@@ -291,6 +291,32 @@ Media Queries (overriding styles for different screen sizes)
 			url("../assets/images/pages/home/mobile/hero-home-mobile.jpg");
 	}
 
+	/* community partnerships */
+	.community-card .text-container {
+		width: 70%;
+	}
+	.community-card img {
+		object-position: right;
+	}
+
+	.community-card a {
+		text-decoration: none;
+		padding: var(--spacing-xs) 0;
+		text-align: center;
+		width: 100%;
+	}
+	/* global ecosystem */
+	.global-ecosystem .text-container {
+		width: 80%;
+		padding-right: 175px;
+	}
+
+	.global-ecosystem blockquote {
+		min-width: 340px;
+		top: 130px;
+		right: 125px;
+	}
+
 	/* what we do section */
 	.wwd-card-list {
 		gap: var(--spacing-xs);
@@ -348,6 +374,10 @@ Community Partnerships
 		text-align: center;
 		padding: var(--spacing-lg) var(--spacing-sm);
 	}
+
+	.community-card a {
+		max-width: 300px;
+	}
 	/* 
 ===================================
 Global Ecosystem
@@ -375,6 +405,7 @@ Global Ecosystem
 		padding: 0;
 	}
 	.global-ecosystem blockquote {
+		min-width: auto;
 		position: static;
 		text-align: start;
 	}
