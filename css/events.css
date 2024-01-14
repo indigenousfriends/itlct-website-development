@@ -6,6 +6,10 @@ Events Styles
 ===================================
 */
 
+header {
+	min-height: auto;
+}
+
 /* 
 ===================================
 Page Component Styles (icon grid, team member card)
@@ -149,6 +153,28 @@ Section Styles (background, padding, etc.)
 	margin: 0 auto;
 }
 
+.event-detail-container {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	align-items: center;
+	gap: var(--spacing-lg);
+}
+
+.event-detail-container img {
+	width: auto;
+	max-width: 100%;
+}
+
+.cta-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-med);
+	padding: var(--spacing-lg) var(--spacing-xxl);
+	text-align: center;
+}
+
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
@@ -163,9 +189,14 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 
 @media screen and (max-width: 1024px) {
 	.card-container,
-	.events-container {
-		padding: 0;
+	.events-container,
+	.cta-container {
 		column-gap: var(--spacing-xs);
+	}
+
+	.event-detail-container,
+	.cta-container {
+		padding: var(--spacing-med) 0;
 	}
 }
 
@@ -173,6 +204,11 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 @media screen and (max-width: 768px) {
 	.hero {
 		background-image: "./assets/images/pages/events/mobile/hero-events-mobile.jpg";
+	}
+
+	.card-container,
+	.events-container {
+		padding: 0;
 	}
 
 	.card {
@@ -216,6 +252,10 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 	.bg-grad-teal {
 		background-color: var(--color-teal);
 	}
+
+	.event-detail-container img {
+		max-width: 338px;
+	}
 }
 
 /* Mobile Only 470px */
@@ -228,5 +268,9 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 	.card,
 	.card.event {
 		width: 100%;
+	}
+
+	.event-detail-container img {
+		max-width: 320px;
 	}
 }
