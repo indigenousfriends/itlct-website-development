@@ -206,6 +206,11 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 		background-image: "./assets/images/pages/events/mobile/hero-events-mobile.jpg";
 	}
 
+	.card-container,
+	.events-container {
+		padding: 0;
+	}
+
 	.card {
 		flex: 0 0 100%;
 		width: 100%;
@@ -263,5 +268,9 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 	.card,
 	.card.event {
 		width: 100%;
+	}
+
+	.event-detail-container img {
+		max-width: 320px;
 	}
 }
