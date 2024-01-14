@@ -97,7 +97,7 @@ Hero
 */
 
 .hero {
-	background-image: url("/assets/images/pages/team/hero-team.png");
+	background-image: url("/assets/images/pages/team/hero-team.jpg");
 	display: flex;
 	align-items: center;
 }
@@ -106,6 +106,7 @@ Hero
 .hero .wrapper {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .hero-img,
@@ -116,7 +117,9 @@ Hero
 .hero-img {
 	max-width: 435px;
 }
-
+.hero-img img {
+	border-radius: var(--border-radius);
+}
 /* 
 ===================================
 Team Members
@@ -157,19 +160,25 @@ Get Involved
 	color: var(--text-color-light);
 }
 
+.get-involved img {
+	border-radius: var(--border-radius);
+}
 /* flex layout */
 .get-involved .wrapper {
 	display: flex;
 	gap: var(--spacing-xxl);
+	align-items: center;
 }
 .get-involved .text,
 .get-involved .img {
 	width: 50%;
 }
+
 .get-involved .img {
 	max-width: 435px;
 	aspect-ratio: 1/1;
 }
+
 /* text layout */
 .get-involved .text {
 	display: flex;
@@ -189,7 +198,9 @@ Media Queries (overriding styles for different screen sizes)
 Hero
 ===================================
 */
-
+	.hero {
+		background-image: url("/assets/images/pages/team/mobile/hero-team.jpg");
+	}
 	.hero .wrapper {
 		gap: var(--spacing-lg);
 	}
