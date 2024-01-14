@@ -163,7 +163,8 @@ Section Styles (background, padding, etc.)
 }
 
 .event-detail-container img {
-	width: 50%;
+	width: auto;
+	max-width: 100%;
 }
 
 .cta-container {
@@ -189,9 +190,14 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 
 @media screen and (max-width: 1024px) {
 	.card-container,
-	.events-container {
-		padding: 0;
+	.events-container,
+	.cta-container {
 		column-gap: var(--spacing-xs);
+	}
+
+	.event-detail-container,
+	.cta-container {
+		padding: var(--spacing-med) 0;
 	}
 }
 
