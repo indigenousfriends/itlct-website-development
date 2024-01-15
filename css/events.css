@@ -194,9 +194,12 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 		column-gap: var(--spacing-xs);
 	}
 
-	.event-detail-container,
-	.cta-container {
+	.event-detail-container {
 		padding: var(--spacing-med) 0;
+	}
+
+	.cta-container {
+		padding: 0 0 var(--spacing-med);
 	}
 }
 

@@ -241,6 +241,10 @@ Upcoming Events and Programs
 	color: var(--text-color-light);
 }
 
+.event a:hover {
+	text-decoration: underline;
+}
+
 /* section background */
 .events {
 	background-image: url("/assets/images/pages/home/bg-overlay-vector-02.svg"),
