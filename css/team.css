@@ -1,0 +1,338 @@
+/*
+===================================
+===================================
+Our Team Styles
+===================================
+===================================
+*/
+
+/*
+===================================
+Member Card Component
+===================================
+*/
+/* member card style */
+.member {
+	background-color: var(--color-teal);
+	color: var(--text-color-light);
+	padding: var(--spacing-sm);
+	border-radius: var(--border-radius);
+	max-width: 654px;
+}
+/* img styling*/
+.member .img {
+	max-width: 240px;
+}
+.member img {
+	border-radius: var(--border-radius);
+}
+/* text */
+.member h2 {
+	font-size: var(--font-size-title-sm);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-lg);
+}
+
+.member .role {
+	font-size: var(--font-size-body-lg);
+	font-weight: var(--font-weight-med);
+	line-height: var(--line-height-med);
+}
+.member p {
+	font-size: var(--font-size-body-reg);
+	font-weight: var(--font-weight-reg);
+	line-height: 20px;
+}
+
+/* member card layout */
+.member,
+.member .text,
+.member .bio,
+.member-cat {
+	display: flex;
+}
+
+/* similar gaps */
+.member,
+.member .text,
+.member-cat {
+	gap: var(--spacing-sm);
+}
+
+.member .bio {
+	gap: 10px;
+}
+
+/* text container and bio  */
+.member .text,
+.member .bio {
+	flex-direction: column;
+}
+.member .text {
+	justify-content: space-between;
+}
+
+/* team modal styles */
+.team-modal .member {
+	background: none;
+	width: 100%;
+	max-width: initial;
+	color: var(--text-color-dark);
+	padding: var(--spacing-sm) 0;
+}
+
+.team-modal .img {
+	max-width: 140px;
+}
+/* 
+===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+/* 
+===================================
+Hero
+===================================
+*/
+
+.hero {
+	background-image: url("/assets/images/pages/team/hero-team.jpg");
+	display: flex;
+	align-items: center;
+}
+
+/* flex layout */
+.hero .wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.hero-img,
+.hero-text-container {
+	width: 50%;
+}
+
+.hero-img {
+	max-width: 435px;
+}
+.hero-img img {
+	border-radius: var(--border-radius);
+}
+/* 
+===================================
+Team Members
+===================================
+*/
+
+/* layout */
+.team-members {
+	display: flex;
+	gap: var(--spacing-sm);
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+/* 
+===================================
+Positions
+===================================
+*/
+
+.positions .wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-med);
+	max-width: 780px;
+	text-align: center;
+	align-items: center;
+	color: var(--text-color-dark);
+}
+/* 
+===================================
+Get Involved
+===================================
+*/
+
+.get-involved {
+	background: var(--grad-blue-purple);
+	color: var(--text-color-light);
+}
+
+.get-involved img {
+	border-radius: var(--border-radius);
+}
+/* flex layout */
+.get-involved .wrapper {
+	display: flex;
+	gap: var(--spacing-xxl);
+	align-items: center;
+}
+.get-involved .text,
+.get-involved .img {
+	width: 50%;
+}
+
+.get-involved .img {
+	max-width: 435px;
+	aspect-ratio: 1/1;
+}
+
+/* text layout */
+.get-involved .text {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+===================================
+*/
+
+/* Tablet and smaller 1024px*/
+@media (max-width: 1024px) {
+	/* 
+===================================
+Hero
+===================================
+*/
+	.hero {
+		background-image: url("/assets/images/pages/team/mobile/hero-team.jpg");
+	}
+	.hero .wrapper {
+		gap: var(--spacing-lg);
+	}
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+	/* 
+===================================
+Hero
+===================================
+*/
+
+	/* remove background-img */
+
+	.hero-text-container {
+		width: 100%;
+		text-align: center;
+	}
+
+	/* removing desktop img */
+	.hero-img {
+		display: none;
+		visibility: hidden;
+	}
+
+	.hero .img-mobile {
+		max-height: 390px;
+		object-fit: cover;
+	}
+	/* 
+===================================
+Members Card Component
+===================================
+*/
+	/* layout adjustments */
+	.member {
+		flex-direction: column;
+		width: 100%;
+	}
+	.member .img {
+		align-self: center;
+	}
+	/* 
+===================================
+Get Involved
+===================================
+*/
+	/* remove background */
+	.get-involved {
+		background: none;
+		color: var(--text-color-dark);
+	}
+
+	.get-involved h2 {
+		text-align: center;
+	}
+	/* button style swap to .btn-main styles */
+	.get-involved .btn-alt {
+		color: var(--color-white);
+		background-color: var(--color-amaranth);
+		border: var(--border-width-btn) solid transparent;
+		align-self: center;
+		margin-top: var(--spacing-med);
+	}
+
+	.get-involved .btn-alt:hover,
+	.get-involved .btn-alt:focus {
+		color: var(--color-onyx);
+		background-color: var(--color-white);
+	}
+
+	/* mobile/desktop img swap */
+	.get-involved .img {
+		display: none;
+		visibility: hidden;
+	}
+
+	.get-involved .img-mobile {
+		max-height: 390px;
+	}
+
+	.get-involved img {
+		object-fit: cover;
+	}
+	/* layout */
+	.get-involved .wrapper {
+		flex-direction: column;
+	}
+
+	.get-involved .text {
+		width: 100%;
+		padding: var(--spacing-med) 0;
+	}
+
+	/* 
+===================================
+Team Modal
+===================================
+*/
+	.team-modal .text {
+		flex-direction: row;
+	}
+	.team-modal .member-cat {
+		align-items: flex-end;
+		gap: 10px;
+	}
+
+	/* adjusting scroll height  */
+	.team-modal .modal-scroll-container {
+		max-height: calc(85vh - 400px);
+	}
+}
+
+/* Mobile Only 470px */
+@media screen and (max-width: 470px) {
+	/* 
+===================================
+Member Card Component
+===================================
+*/
+	.member-cat {
+		flex-wrap: wrap;
+	}
+
+	/* 
+===================================
+Team Modal
+===================================
+*/
+
+	.team-modal .member-cat {
+		justify-content: flex-end;
+	}
+}

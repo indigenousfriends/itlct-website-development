@@ -1,0 +1,58 @@
+/*
+===================================
+===================================
+Policy Page Styles
+===================================
+===================================
+*/
+
+/* 
+===================================
+Page Component Styles (icon grid, team member card)
+===================================
+*/
+
+/* 
+===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+.policy-page header {
+	min-height: auto;
+}
+
+.policy-page main {
+	padding: var(--spacing-xl) 0;
+}
+main .wrapper {
+	max-width: var(--wrapper-width-max-sm);
+}
+.policy-page article {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	color: var(--text-color-dark);
+}
+
+.policy-page article a {
+	color: var(--text-color-dark);
+}
+
+.policy-page article a:hover {
+	color: var(--text-color-dark);
+	text-decoration: underline;
+}
+
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+===================================
+*/
+
+/* Mobile Only */
+@media screen and (max-width: 470px) {
+	.policy-page main {
+		padding: var(--spacing-med) 0;
+	}
+}
