@@ -1,0 +1,71 @@
+/*
+===================================
+===================================
+Styles for an individual page
+
+- Rename this file to match the page you are working on (e.g. home.css, about.css, etc.)
+- Create a new file for your page and link this file to it in the <head> of your HTML document
+- Variables from global.css will work in this CSS file as well. Do not add any variables to this file.
+===================================
+===================================
+*/
+
+/* 
+===================================
+Page Component Styles (icon grid, team member card)
+===================================
+*/
+
+/* 
+===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+.policy-page header {
+	min-height: auto;
+}
+
+.policy-page main {
+	padding: var(--spacing-xl);
+}
+
+.policy-page article {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	color: var(--text-color-dark);
+}
+
+.policy-page article a {
+	color: var(--text-color-dark);
+}
+
+.policy-page article a:hover {
+	color: var(--text-color-dark);
+	text-decoration: underline;
+}
+
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+
+Note: Here we are using a mobile-first approach, so we start with the smallest screen size and work our way up.
+Start by writing styles for the mobile version of the design on the lines above.
+Anything that needs to change for larger screens should be added to the media queries below.
+
+Feel free to change the min/max-width values to whatever you need. Use variables.
+===================================
+*/
+
+/* Tablet and smaller 1024px*/
+@media (max-width: var(--mq-width-desktop-max)) {
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: var(--mq-width-tablet-max)) {
+}
+
+/* Mobile Only 400px */
+@media screen and (max-width: var(--mq-width-phone-max)) {
+}
