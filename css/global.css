@@ -932,21 +932,10 @@ footer .social svg {
 	.ml-form-embedWrapper
 	.ml-form-embedBody
 	.ml-form-embedPermissions
-	.ml-form-embedPermissionsOptionsCheckbox:last-child {
-	display: flex;
-	flex-flow: column-reverse;
-	gap: var(--spacing-sm);
-	justify-content: space-between;
-}
-
-.ml-embedded
-	#mlb2-11072124.ml-form-embedContainer
-	.ml-form-embedWrapper
-	.ml-form-embedBody
-	.ml-form-embedPermissions
 	.ml-form-embedPermissionsOptionsCheckbox
 	.label-description {
 	padding-left: var(--spacing-xs);
+	line-height: 28px;
 }
 
 .ml-embedded
@@ -976,6 +965,8 @@ footer .social svg {
 	margin: var(--spacing-sm) 0 0;
 	display: flex;
 	flex-wrap: wrap;
+	flex-flow: row-reverse;
+	gap: var(--spacing-xs);
 }
 
 .ml-embedded
