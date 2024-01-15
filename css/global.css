@@ -894,6 +894,7 @@ footer .social {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-sm);
+	width: min-content;
 }
 
 /* text adjustments  */
@@ -903,6 +904,7 @@ footer .social {
 /* email input adjustment */
 .newsletter-form input[type="email"] {
 	width: 100%;
+	min-width: 400px;
 }
 
 /* 
@@ -1105,6 +1107,23 @@ Hero
 		width: 90%;
 		padding: var(--spacing-sm);
 	}
+
+	/* 
+	===================================
+	Footer
+	===================================
+	*/
+	.newsletter-form {
+		width: auto;
+	}
+	/* text adjustments  */
+	.newsletter-form p {
+		width: 80%;
+	}
+	/* email input adjustment */
+	.newsletter-form input[type="email"] {
+		min-width: auto;
+	}
 }
 
 /* Mobile Breakpoint 470px */
@@ -1115,7 +1134,7 @@ Hero
 	===================================
 	*/
 
-	.hero h1 {
+	h1 {
 		font-size: var(--font-size-title-med);
 	}
 	body {
