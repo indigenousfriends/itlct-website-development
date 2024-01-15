@@ -1,0 +1,13 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/ifthesel/staging/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp wordpress.html $DEPLOYPATH
+    - /bin/cp strapi.html $DEPLOYPATH
+    - /bin/cp -R data $DEPLOYPATH
+    - /bin/cp -R events $DEPLOYPATH
+    - /bin/cp -R pages $DEPLOYPATH
+    - /bin/cp -R css $DEPLOYPATH
+    - /bin/cp -R js $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R images $DEPLOYPATH
