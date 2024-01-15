@@ -15,7 +15,7 @@ Hero
 /* background and layout adjustments  */
 .hero {
 	background-image: var(--hero-grad-impact),
-		url("../assets/images/pages/impact/hero-impact.png");
+		url("../assets/images/pages/impact/hero-impact.jpg");
 	display: flex;
 	align-items: center;
 }
@@ -94,10 +94,11 @@ Media Queries (overriding styles for different screen sizes)
 /* custom breakpoint for programs background */
 @media (max-width: 1176px) {
 	/* 
-===================================
-Programs 
-===================================
-*/
+	===================================
+	Programs 
+	===================================
+	*/
+
 	/* linear gradient graphic */
 	.programs::before {
 		height: 75%;
@@ -107,10 +108,10 @@ Programs
 /* Tablet and smaller 1024px*/
 @media (max-width: 1024px) {
 	/* 
-===================================
-Technology & Program Cards
-===================================
-*/
+	===================================
+	Technology & Program Cards
+	===================================
+	*/
 
 	/* removing spacing between footer */
 	.stewardship {
@@ -156,13 +157,24 @@ Technology & Program Cards
 /* Tablet and smaller 768px */
 @media screen and (max-width: 768px) {
 	/* 
-===================================
-Program Gallery
-===================================
-*/
+	===================================
+	Technology & Program Cards
+	===================================
+	*/
+
+	/* removing wrapper styles for mobile design */
+	.section-2-col .wrapper {
+		gap: var(--spacing-med);
+	}
+	/* 
+	===================================
+	Program Gallery
+	===================================
+	*/
 
 	.program-gallery {
 		padding: var(--spacing-med) var(--spacing-sm);
+		gap: var(--spacing-med);
 	}
 
 	/* gradient graphic adjustments */
