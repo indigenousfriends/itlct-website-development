@@ -991,6 +991,7 @@ footer .social svg {
 	a {
 	color: var(--color-white);
 	font-size: inherit;
+	text-decoration: none;
 }
 
 /* 
