@@ -21,11 +21,6 @@ Hero
 	align-items: center;
 }
 
-/* text adjustments */
-.hero h2 {
-	font-size: var(--font-size-title-xl);
-}
-
 .hero-text-container {
 	width: 100%;
 }
@@ -101,22 +96,12 @@ Global Ecosystem
 ===================================
 */
 
-/* text styles: to be added over to global */
-
-.global-ecosystem h3,
-.global-ecosystem p {
-	color: var(--text-color-light);
-}
-.global-ecosystem p {
-	color: var(--text-color-light);
-}
-
 /* background img */
 
 .global-ecosystem {
-	background:
-		url("../assets/images/pages/home/bg-overlay-vector-01.svg") center/cover,
-		linear-gradient(to top, var(--color-blue), var(--color-grape));
+	background-image: url("/assets/images/pages/home/bg-overlay-vector-01.svg"),
+		var(--grad-blue-purple);
+	color: var(--text-color-light);
 }
 
 .global-ecosystem .content-container {
@@ -152,18 +137,13 @@ What We Do
 */
 
 /* text adjustments */
-.what-we-do h3 {
-	text-align: center;
-	margin-bottom: var(--spacing-lg);
-	font-size: var(--font-size-title-lg);
-}
-
-.wwd-card h4,
-.wwd-card p {
+.what-we-do {
 	color: var(--text-color-light);
 }
-.wwd-card h4 {
-	font-size: var(--font-size-title-med);
+.what-we-do h2 {
+	text-align: center;
+	margin-bottom: var(--spacing-lg);
+	color: var(--text-color-dark);
 }
 
 /* card layout */
@@ -211,17 +191,12 @@ Our Values
 ===================================
 */
 
-/* text adjustments */
-
-.value-card h4 {
-	font-size: var(--font-size-title-med);
-}
-
 /* section styles */
 .our-values {
 	color: var(--text-color-light);
-	background: url("../assets/images/pages/home/bg-section-our-values.jpg")
-		top/cover;
+	background-image: url("../assets/images/pages/home/bg-section-our-values.jpg");
+	background-position: center;
+	background-size: cover;
 }
 
 /* title and card layout */
@@ -272,9 +247,8 @@ Upcoming Events and Programs
 
 /* section background */
 .events {
-	background:
-		url("../assets/images/pages/home/bg-overlay-vector-02.svg") center/cover,
-		linear-gradient(to top, var(--color-grape), var(--color-blue));
+	background-image: url("/assets/images/pages/home/bg-overlay-vector-02.svg"),
+		var(--grad-blue-purple);
 }
 /* event list layout */
 .event-list {
@@ -291,8 +265,11 @@ Upcoming Events and Programs
 	max-width: 320px;
 }
 
+.event h3 {
+	font-size: var(--font-size-title-sm);
+	line-height: var(--line-height-lg);
+}
 .event img {
-	border-radius: var(--border-radius);
 	min-height: 430px;
 	object-fit: cover;
 }
@@ -312,22 +289,77 @@ Media Queries (overriding styles for different screen sizes)
 
 /* Tablet and smaller 1024px*/
 @media screen and (max-width: 1024px) {
-	.wwd-card-list {
-		gap: var(--spacing-sm);
+	/* hero background img */
+	.hero {
+		background-image: var(--hero-grad-home),
+			url("../assets/images/pages/home/mobile/hero-home-mobile.jpg");
 	}
+
+	/* community partnerships */
+	.community-card .text-container {
+		width: 70%;
+	}
+	.community-card img {
+		object-fit: cover;
+		object-position: 70%;
+	}
+
+	.community-card a {
+		padding: var(--spacing-xs) 0;
+		text-align: center;
+		width: 100%;
+	}
+
+	/* global ecosystem */
+	.global-ecosystem .text-container {
+		width: 80%;
+		padding-right: 175px;
+	}
+
+	.global-ecosystem blockquote {
+		min-width: 340px;
+		top: 130px;
+		right: 125px;
+	}
+
+	/* what we do section */
+	.wwd-card-list {
+		flex-direction: column;
+		gap: var(--spacing-med);
+	}
+
 	.wwd-card {
-		width: calc(33% - var(--spacing-sm));
+		width: 100%;
+	}
+
+	.wwd-card-text {
+		min-height: auto;
+	}
+
+	/* our values section */
+	/* layout */
+	.values-list {
+		flex-direction: column;
+		padding: var(--spacing-lg) var(--spacing-sm);
+	}
+
+	/* background */
+	.our-values {
+		text-align: center;
+	}
+
+	/* title adjustment */
+	.value-card {
+		width: 100%;
 	}
 }
 
 /* Tablet and smaller 768px */
 @media screen and (max-width: 768px) {
-	/* 
-===================================
-Hero
-===================================
-*/
-
+	/* hero section */
+	.hero .wrapper {
+		justify-content: center;
+	}
 	/* removing desktop buttons, replacing with mobile CAT Btn */
 	.hero-btn-container .btn-alt {
 		display: none;
@@ -344,16 +376,16 @@ Community Partnerships
 ===================================
 */
 	.community {
-		background: var(--color-amaranth);
+		background-color: var(--color-amaranth);
 		padding-top: 0;
 	}
 	.community .wrapper {
-		width: 100%;
+		padding: 0;
 	}
+
 	.community-card {
 		flex-direction: column;
 	}
-
 	.community-card .img-container,
 	.community-card .text-container {
 		width: 100%;
@@ -370,6 +402,10 @@ Community Partnerships
 		text-align: center;
 		padding: var(--spacing-lg) var(--spacing-sm);
 	}
+
+	.community-card a {
+		max-width: 300px;
+	}
 	/* 
 ===================================
 Global Ecosystem
@@ -384,7 +420,8 @@ Global Ecosystem
 
 	/* background */
 	.global-ecosystem {
-		background: var(--color-grape);
+		background-image: none;
+		background-color: var(--color-grape);
 		text-align: center;
 	}
 
@@ -396,6 +433,7 @@ Global Ecosystem
 		padding: 0;
 	}
 	.global-ecosystem blockquote {
+		min-width: auto;
 		position: static;
 		text-align: start;
 	}
@@ -406,42 +444,15 @@ What We Do
 ===================================
 */
 
-	.wwd-card-list {
-		flex-direction: column;
-		gap: var(--spacing-med);
-	}
-
-	.wwd-card {
-		width: 100%;
-	}
-
-	.wwd-card-text {
-		min-height: auto;
-	}
-
 	/* 
 ===================================
 Our Values
 ===================================
 */
-
-	/* layout */
-	.values-list {
-		flex-direction: column;
-		padding: var(--spacing-lg) var(--spacing-sm);
-	}
-
-	/* background */
 	.our-values {
-		background: var(--color-onyx);
-		text-align: center;
+		background-image: none;
+		background-color: var(--color-onyx);
 	}
-
-	/* title adjustment */
-	.value-card {
-		width: 100%;
-	}
-
 	/* 
 ===================================
 Events and Programs
@@ -462,7 +473,7 @@ Events and Programs
 	.events {
 		background: var(--color-white);
 	}
-	.events h3 {
+	.events h2 {
 		text-align: center;
 	}
 	.events,
@@ -479,32 +490,8 @@ Events and Programs
 	===================================
 	*/
 	/* headings */
-	.hero h1,
-	.what-we-do h3,
-	.events h3 {
-		font-size: var(--font-size-title-med);
-	}
-	.community h3,
-	.global-ecosystem h3,
-	.our-values h3 {
-		font-size: var(--font-size-title-sm);
-	}
 
-	.value-card h4 {
-		font-size: var(--font-size-title-sm);
+	.what-we-do h2 {
+		margin-bottom: var(--spacing-med);
 	}
-
-	.newsletter-form h5 {
-		font-size: var(--font-size-title-sm);
-	}
-
-	/* 
-	===================================
-	Mobile Menu
-	===================================
-	*/
-}
-
-/* Mobile Only 400px */
-@media screen and (max-width: var(--mq-width-phone-max)) {
 }
