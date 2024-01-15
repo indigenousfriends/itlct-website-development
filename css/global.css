@@ -234,7 +234,7 @@ Variables (colors, text, spacing, etc.)
 	--color-pink: #fa6cb7;
 	--color-citrine: #d3c53f;
 	--color-citron: #92a32d;
-	--color-copper: #b37122;
+	--color-copper: #a3671f;
 
 	/* Gradients */
 
@@ -475,6 +475,15 @@ Utility Classes ( flexbox, wrappers,  etc.)
 .section-header {
 	padding: var(--spacing-lg);
 	text-align: center;
+	gap: var(--spacing-lg);
+}
+
+.gradient-header {
+	background-image: var(--grad-blue-purple);
+}
+
+.gradient-header h2 {
+	color: var(--text-color-light);
 }
 
 .section-header h2 {
@@ -733,16 +742,12 @@ header nav .flex-container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 65px;
+	gap: var(--spacing-sm);
 }
 
 .nav-links {
 	display: flex;
 	gap: var(--spacing-med);
-}
-
-.nav-links li:last-child {
-	display: none;
 }
 
 /* Mobile Menu button */
@@ -759,6 +764,11 @@ header nav .flex-container {
 	background-color: transparent;
 }
 
+/* appears in mobile menu */
+.mobile-support-btn {
+	display: none;
+	visibility: hidden;
+}
 /* Mobile menu icons */
 .mobile-menu svg {
 	fill: var(--color-white);
@@ -900,13 +910,15 @@ Media Queries (overriding styles for different screen sizes)
 ===================================
 */
 
-/* custom breakpoint for top navigation 1360px*/
-@media screen and (max-width: 1360px) {
+@media screen and (max-width: 1395px) {
 	/* header nav adjustments */
 	.nav-links {
 		gap: var(--spacing-sm);
 	}
+}
 
+/* custom breakpoint for top navigation 1360px*/
+@media screen and (max-width: 1290px) {
 	.nav-links li {
 		font-size: var(--font-size-body-reg);
 	}
