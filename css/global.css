@@ -1162,7 +1162,9 @@ Hero
 	.newsletter-form input[type="email"] {
 		width: 100%;
 	}
-
+	.newsletter-form h5 {
+		font-size: var(--font-size-title-sm);
+	}
 	/* 
 	===================================
 	Modal 
