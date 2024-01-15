@@ -914,6 +914,17 @@ footer .social svg {
 	#mlb2-11072124.ml-form-embedContainer
 	.ml-form-embedWrapper
 	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsOptionsCheckbox
+	.label-description::after {
+	height: 16px;
+	width: 16px;
+}
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
 	.ml-form-formContent.horozintalForm {
 	padding-bottom: 0;
 }
