@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- /noindex -->
+  <meta name="robots" content="noindex">
+  <title>ITLCT Event Single Demo from Strapi</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/cms.css" />
+</head>
+
+<body>
+  <main>
+    <div class="wrapper">
+      <h1 id="post-title">Event Title</h1>
+      <div id="content-container"></div>
+      <h2>Event Highlights</h2>
+      <div id="highlights-container">
+      </div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="../js/cms.js"></script>
+  <script>
+    getItemData('events', 'wordpress');
+  </script>
+</body>
+
+</html>
