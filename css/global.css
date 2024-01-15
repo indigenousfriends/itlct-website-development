@@ -953,6 +953,7 @@ footer .social svg {
 	.ml-form-embedPermissionsContent
 	p {
 	margin: 0;
+	line-height: 28px;
 }
 
 .ml-embedded
@@ -964,7 +965,7 @@ footer .social svg {
 	font-size: 12px;
 	margin: var(--spacing-sm) 0 0;
 	display: flex;
-	flex-wrap: wrap;
+	justify-content: flex-end;
 	flex-flow: row-reverse;
 	gap: var(--spacing-xs);
 }
