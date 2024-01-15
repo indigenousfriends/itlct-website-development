@@ -192,6 +192,7 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 	.events-container,
 	.cta-container {
 		column-gap: var(--spacing-xs);
+		padding: 0;
 	}
 
 	.event-detail-container {
