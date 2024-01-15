@@ -889,23 +889,109 @@ footer .social {
 	gap: var(--spacing-sm);
 }
 
-/* newsletter form  */
-.newsletter-form {
-	color: var(--color-white);
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-sm);
-	width: min-content;
+footer .social svg {
+	fill: var(--color-white);
 }
 
-/* text adjustments  */
-.newsletter-form p {
-	width: 70%;
+.ml-embedded,
+.ml-embedded h4,
+.ml-embedded span,
+.ml-embedded p,
+.ml-embedded label,
+.ml-embedded .label-description,
+.ml-embedded button,
+.ml-embedded input[type="email"],
+.ml-embedded input[type="checkbox"] + label {
+	font-family: var(--font-main) !important;
 }
-/* email input adjustment */
-.newsletter-form input[type="email"] {
-	width: 100%;
-	min-width: 400px;
+
+.ml-embedded button,
+.ml-embedded input[type="email"] {
+	height: 50px;
+}
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsOptionsCheckbox
+	.label-description::after {
+	height: 16px;
+	width: 16px;
+}
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-formContent.horozintalForm {
+	padding-bottom: 0;
+}
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsOptionsCheckbox
+	label {
+	padding-left: 15px;
+}
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsOptionsCheckbox
+	.label-description {
+	padding-left: var(--spacing-xs);
+	line-height: 28px;
+}
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsOptionsCheckbox
+	.description,
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsContent
+	p {
+	margin: 0;
+	line-height: 28px;
+}
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsContent.horizontal {
+	font-size: 12px;
+	margin: var(--spacing-sm) 0 0;
+	display: flex;
+	justify-content: flex-end;
+	flex-flow: row-reverse;
+	gap: var(--spacing-xs);
+}
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsContent
+	a {
+	color: var(--color-white);
+	font-size: inherit;
+	text-decoration: none;
 }
 
 /* 
