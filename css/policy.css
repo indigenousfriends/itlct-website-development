@@ -58,14 +58,9 @@ Feel free to change the min/max-width values to whatever you need. Use variables
 ===================================
 */
 
-/* Tablet and smaller 1024px*/
-@media (max-width: var(--mq-width-desktop-max)) {
-}
-
-/* Tablet and smaller 768px */
-@media screen and (max-width: var(--mq-width-tablet-max)) {
-}
-
-/* Mobile Only 400px */
-@media screen and (max-width: var(--mq-width-phone-max)) {
+/* Mobile Only */
+@media screen and (max-width: 470px) {
+	.policy-page main {
+		padding: var(--spacing-med) 0;
+	}
 }

@@ -877,6 +877,10 @@ footer nav ul {
 
 footer .policy {
 	padding-top: 5px;
+	display: flex;
+	flex-flow: row wrap;
+	gap: var(--spacing-sm);
+	align-items: start;
 }
 
 footer .social {
@@ -1051,6 +1055,13 @@ Media Queries (overriding styles for different screen sizes)
 		width: 100%;
 		max-width: 100%;
 		padding: 0 var(--spacing-sm);
+	}
+
+	footer .policy-container,
+	footer .policy-container .policy {
+		flex-direction: column-reverse;
+		align-items: center;
+		gap: var(--spacing-sm);
 	}
 
 	/* 
