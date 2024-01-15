@@ -887,21 +887,102 @@ footer .social {
 footer .social svg {
 	fill: var(--color-white);
 }
-/* newsletter form  */
-.newsletter-form {
-	color: var(--color-white);
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-sm);
+
+.ml-embedded,
+.ml-embedded h4,
+.ml-embedded span,
+.ml-embedded p,
+.ml-embedded label,
+.ml-embedded .label-description,
+.ml-embedded button,
+.ml-embedded input[type="email"],
+.ml-embedded input[type="checkbox"] + label {
+	font-family: var(--font-main) !important;
 }
 
-/* text adjustments  */
-.newsletter-form p {
-	width: 60%;
+.ml-embedded button,
+.ml-embedded input[type="email"] {
+	height: 50px;
 }
-/* email input adjustment */
-.newsletter-form input[type="email"] {
-	width: 100%;
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-formContent.horozintalForm {
+	padding-bottom: 0;
+}
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsOptionsCheckbox
+	label {
+	padding-left: 15px;
+}
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsOptionsCheckbox:last-child {
+	display: flex;
+	flex-flow: column-reverse;
+	gap: var(--spacing-sm);
+	justify-content: space-between;
+}
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsOptionsCheckbox
+	.label-description {
+	padding-left: var(--spacing-xs);
+}
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsOptionsCheckbox
+	.description,
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsContent
+	p {
+	margin: 0;
+}
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsContent.horizontal {
+	font-size: 12px;
+	margin: var(--spacing-sm) 0 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.ml-embedded
+	#mlb2-11072124.ml-form-embedContainer
+	.ml-form-embedWrapper
+	.ml-form-embedBody
+	.ml-form-embedPermissions
+	.ml-form-embedPermissionsContent
+	a {
+	color: var(--color-white);
+	font-size: inherit;
 }
 
 /* 
