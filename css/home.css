@@ -266,6 +266,10 @@ Upcoming Events and Programs
 	color: var(--text-color-light);
 }
 
+.event a:hover {
+	text-decoration: underline;
+}
+
 /* section background */
 .events {
 	background:
