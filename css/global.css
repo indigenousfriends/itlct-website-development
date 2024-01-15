@@ -877,6 +877,10 @@ footer nav ul {
 
 footer .policy {
 	padding-top: 5px;
+	display: flex;
+	flex-flow: row wrap;
+	gap: var(--spacing-sm);
+	align-items: start;
 }
 
 footer .social {
@@ -1134,6 +1138,13 @@ Media Queries (overriding styles for different screen sizes)
 		padding: 0 var(--spacing-sm);
 	}
 
+	footer .policy-container,
+	footer .policy-container .policy {
+		flex-direction: column-reverse;
+		align-items: center;
+		gap: var(--spacing-sm);
+	}
+
 	/* 
 ===================================
 Hero 
@@ -1178,6 +1189,23 @@ Hero
 		width: 90%;
 		padding: var(--spacing-sm);
 	}
+
+	/* 
+	===================================
+	Footer
+	===================================
+	*/
+	.newsletter-form {
+		width: auto;
+	}
+	/* text adjustments  */
+	.newsletter-form p {
+		width: 80%;
+	}
+	/* email input adjustment */
+	.newsletter-form input[type="email"] {
+		min-width: auto;
+	}
 }
 
 /* Mobile Breakpoint 470px */
@@ -1188,7 +1216,7 @@ Hero
 	===================================
 	*/
 
-	.hero h1 {
+	h1 {
 		font-size: var(--font-size-title-med);
 	}
 	body {
