@@ -389,7 +389,8 @@ h2 {
 	font-size: var(--font-size-title-lg);
 	line-height: var(--line-height-xxl);
 }
-h3 {
+h3,
+.newsletter-form h2 {
 	font-size: var(--font-size-title-med);
 	line-height: var(--line-height-xl);
 }
@@ -1119,7 +1120,8 @@ Media Queries (overriding styles for different screen sizes)
 		width: inherit;
 	}
 	h2,
-	h3 {
+	h3,
+	.newsletter-form h2 {
 		font-size: var(--font-size-title-sm);
 		line-height: var(--line-height-lg);
 	}
