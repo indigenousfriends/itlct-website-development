@@ -67,7 +67,7 @@ textarea[name="message-input"] {
 }
 
 /* form response */
-.form-response-container {
+#form-response-container {
 	/* persistent space for user response */
 	min-height: var(--spacing-med);
 }
