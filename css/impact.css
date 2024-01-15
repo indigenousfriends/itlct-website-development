@@ -15,7 +15,7 @@ Hero
 /* background and layout adjustments  */
 .hero {
 	background-image: var(--hero-grad-impact),
-		url("../assets/images/pages/impact/hero-impact.png");
+		url("../assets/images/pages/impact/hero-impact.jpg");
 	display: flex;
 	align-items: center;
 }
