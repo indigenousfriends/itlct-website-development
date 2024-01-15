@@ -9,12 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Email addresses
     $info = 'solivan@indigenousfriends.org';
-    $events = 'solivan@indigenousfriends.org';
 
     // Sender and recipient email addresses
     $from = "info+websiteform@iftheselandscouldtalk.org";
     $to = $info;
-    $cc = "";
+    $cc = "max@indigenousfriends.org";
 
     // Success redirect URL
     $successURL = $_SERVER['HTTP_REFERER'] . '?success=true#contact-us-form';
