@@ -551,9 +551,9 @@ button,
 }
 
 button:hover,
-button:focus,
+button:focus-within,
 .btn-main:hover,
-.btn-main:focus {
+.btn-main:focus-within {
 	color: var(--color-onyx);
 	background-color: var(--color-white);
 }
@@ -575,7 +575,7 @@ button:focus,
 }
 
 .btn-alt:hover,
-.btn-alt:focus {
+.btn-alt:focus-within {
 	background-color: var(--color-white);
 	color: var(--color-onyx);
 }
