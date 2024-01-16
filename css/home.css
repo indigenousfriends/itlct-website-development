@@ -367,6 +367,10 @@ Media Queries (overriding styles for different screen sizes)
 		display: none;
 		visibility: hidden;
 	}
+
+	.hero-text-container {
+		padding: var(--spacing-med) 0;
+	}
 	.mobile-about-btn {
 		display: block;
 		visibility: visible;
