@@ -230,6 +230,7 @@ Variables (colors, text, spacing, etc.)
 	--color-grape: #6c4681;
 	--color-black: #0f0f0f;
 	--color-onyx: #1f1d1d;
+	--color-light-onyx: #424241;
 	--color-blue: #184f85;
 	--color-pink: #fa6cb7;
 	--color-citrine: #d3c53f;
@@ -283,7 +284,7 @@ Variables (colors, text, spacing, etc.)
 
 	/* Color Assignment */
 	--body-background-color: var(--color-white);
-	--text-color-dark: var(--color-onyx);
+	--text-color-dark: var(--color-light-onyx);
 	--text-color-light: var(--color-white);
 	/* Text */
 	/* Font */
