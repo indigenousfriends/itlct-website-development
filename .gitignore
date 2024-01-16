@@ -14,3 +14,6 @@ Thumbs.db
 # Ignore Visual Studio Code settings
 .vscode/
 *.code-workspace
+
+# Ignore cpanel config for a2 hosting
+.cpanel.yml

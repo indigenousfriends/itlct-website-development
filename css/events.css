@@ -1,0 +1,280 @@
+/*
+===================================
+===================================
+Events Styles
+===================================
+===================================
+*/
+
+header {
+	min-height: auto;
+}
+
+/* 
+===================================
+Page Component Styles (icon grid, team member card)
+===================================
+*/
+
+/* Cards */
+
+.card-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-med);
+}
+
+.events-container {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	padding: 0 var(--spacing-xl);
+	gap: var(--spacing-med);
+	justify-content: center;
+}
+
+.color-strip-cards .card {
+	border-radius: var(--border-radius);
+	position: relative;
+	overflow: hidden;
+}
+
+.color-strip-cards .card .card-text-container {
+	color: var(--color-white);
+	border-radius: 0px 0px var(--border-radius) var(--border-radius);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	flex-flow: column;
+	padding: var(--spacing-sm) var(--spacing-med);
+	gap: var(--spacing-sm);
+}
+
+.card-description {
+	display: none;
+}
+
+.bg-grad-blue {
+	background: linear-gradient(
+		60deg,
+		#195085 55.81%,
+		rgba(66, 66, 65, 0) 70.18%
+	);
+}
+
+.bg-grad-grape {
+	background: linear-gradient(
+		60deg,
+		#563867 55.81%,
+		rgba(66, 66, 65, 0) 70.18%
+	);
+}
+
+.bg-grad-copper {
+	background: linear-gradient(
+		60deg,
+		#955c17 55.81%,
+		rgba(66, 66, 65, 0) 70.18%
+	);
+}
+
+.bg-grad-teal {
+	background: linear-gradient(
+		60deg,
+		#017b80 55.81%,
+		rgba(66, 66, 65, 0) 70.18%
+	);
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 0 1 48%;
+	width: 48%;
+	gap: var(--spacing-sm);
+}
+
+.card.event {
+	flex: 0 1 30%;
+	width: 33%;
+}
+
+.events-container a {
+	color: var(--color-onyx);
+}
+
+.events-container a:hover p {
+	text-decoration: underline;
+}
+
+.event h3 {
+	font-size: var(--font-size-title-sm);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-lg);
+}
+
+.event p {
+	font-size: var(--font-size-body-lg);
+	font-weight: var(--font-weight-reg);
+	line-height: var(--line-height-med);
+}
+
+/* 
+===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+/* Hero Section */
+.hero {
+	background-image: var(--hero-grad-events),
+		url("../assets/images/pages/events/hero-events.jpg");
+	display: flex;
+	align-items: center;
+}
+
+/* Highlights Section */
+
+#highlights-container {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+#highlights-container img {
+	width: min-content;
+	margin: 0 auto;
+}
+
+.event-detail-container {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	align-items: center;
+	gap: var(--spacing-lg);
+}
+
+.event-detail-container img {
+	width: auto;
+	max-width: 100%;
+}
+
+.cta-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-med);
+	padding: var(--spacing-lg) var(--spacing-xxl);
+	text-align: center;
+}
+
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+
+Note: Here we are using a mobile-first approach, so we start with the smallest screen size and work our way up.
+Start by writing styles for the mobile version of the design on the lines above.
+Anything that needs to change for larger screens should be added to the media queries below.
+
+Feel free to change the min/max-width values to whatever you need. Use variables.
+===================================
+*/
+
+@media screen and (max-width: 1024px) {
+	.card-container,
+	.events-container,
+	.cta-container {
+		column-gap: var(--spacing-xs);
+		padding: 0;
+	}
+
+	.event-detail-container {
+		padding: var(--spacing-med) 0;
+	}
+
+	.cta-container {
+		padding: 0 0 var(--spacing-med);
+	}
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+	.hero {
+		background-image: "./assets/images/pages/events/mobile/hero-events-mobile.jpg";
+	}
+
+	.card-container,
+	.events-container {
+		padding: 0;
+	}
+
+	.card {
+		flex: 0 0 100%;
+		width: 100%;
+	}
+
+	.card.event {
+		flex: 0 0 48%;
+		width: 48%;
+	}
+
+	.color-strip-cards .card img {
+		border-radius: var(--border-radius);
+	}
+
+	.color-strip-cards .card .card-text-container {
+		position: static;
+		padding: var(--spacing-med);
+		border-radius: var(--border-radius);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-flow: column;
+		width: 100%;
+	}
+
+	.card-description {
+		display: block;
+	}
+
+	.bg-grad-blue {
+		background-color: var(--color-blue);
+	}
+	.bg-grad-grape {
+		background-color: var(--color-grape);
+	}
+	.bg-grad-copper {
+		background-color: var(--color-copper);
+	}
+	.bg-grad-teal {
+		background-color: var(--color-teal);
+	}
+
+	.event-detail-container img {
+		max-width: 338px;
+	}
+}
+
+/* Mobile Only 470px */
+@media screen and (max-width: 470px) {
+	.card-container,
+	.events-container {
+		flex-direction: column;
+	}
+
+	.card,
+	.card.event {
+		width: 100%;
+	}
+
+	.event-detail-container img {
+		max-width: 320px;
+	}
+}

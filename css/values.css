@@ -1,0 +1,362 @@
+/*
+===================================
+===================================
+Our Values
+===================================
+===================================
+*/
+
+/* 
+===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+/* 
+===================================
+Hero
+===================================
+*/
+.hero {
+	background-image: var(--hero-grad-values),
+		url("../assets/images/pages/values/hero-values.jpg");
+	display: flex;
+	align-items: center;
+}
+/* values heading layout */
+.hero .wrapper {
+	display: flex;
+	justify-content: flex-end;
+}
+/* 
+===================================
+Values
+===================================
+*/
+
+/* layout */
+.values-list,
+.values-row,
+.values-img-text {
+	display: flex;
+	gap: var(--spacing-sm);
+}
+
+.values-list,
+.values-img-text {
+	flex-direction: column;
+}
+
+/* card widths */
+.sustainability,
+.authenticity {
+	width: 60%;
+}
+
+.humanity,
+.multigenerational {
+	width: 40%;
+}
+
+.education,
+.innovation {
+	width: 50%;
+}
+
+/* general card styling */
+.values-card {
+	padding: 60px;
+	color: var(--text-color-light);
+	border-radius: var(--border-radius);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.values-card h2 {
+	font-size: var(--font-size-title-med);
+	line-height: var(--line-height-xl);
+}
+/* text layout*/
+.values-card .text {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+/* limiting text width for values-img-text components */
+.values-img-text .text {
+	max-width: 350px;
+}
+/* moving limited ext to side of card */
+.text-right {
+	align-items: flex-end;
+}
+
+.text-left {
+	align-items: flex-start;
+}
+
+/* card specific backgrounds*/
+.humanity {
+	background-color: var(--color-copper);
+}
+
+.sustainability {
+	background: var(--values-grad-sustainability),
+		url("/assets/images/pages/values/sustainability.jpg") top/cover;
+}
+
+.authenticity {
+	background: var(--values-grad-authenticity),
+		url("/assets/images/pages/values/authenticity.jpg") top/cover;
+}
+.multigenerational {
+	background-color: var(--color-grape);
+}
+.education {
+	background: var(--values-grad-education),
+		url("/assets/images/pages/values/education.jpg") top/cover;
+}
+
+.innovation {
+	background: var(--values-grad-innovation),
+		url("/assets/images/pages/values/innovation.jpg") top/cover;
+}
+
+/* 
+===================================
+Support Banner
+===================================
+*/
+.support {
+	background-color: var(--color-blue);
+	color: var(--text-color-light);
+}
+
+/* text adjustments */
+
+.support p {
+	color: var(--text-color-light);
+	font-size: 46px;
+	font-weight: 700;
+	line-height: 50px;
+	max-width: 1000px;
+}
+
+.support a {
+	width: fit-content;
+}
+
+.support-text {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* layout */
+.support .wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-med);
+}
+
+/* heading and heart layout*/
+.support-heading {
+	display: flex;
+	gap: var(--spacing-sm);
+}
+
+.support-heading img {
+	width: var(--spacing-med);
+}
+
+/* support un images */
+.support-img-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing-sm);
+}
+
+.support-img-container img {
+	width: fit-content;
+	max-height: 100px;
+}
+/* 
+===================================
+Empowering 
+===================================
+*/
+/* using styled img container component in global.css */
+
+.empowering .wrapper {
+	flex-direction: row-reverse;
+}
+
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+===================================
+*/
+
+/* Tablet and smaller 1024px*/
+@media (max-width: 1024px) {
+	.hero {
+		background-image: var(--hero-grad-values),
+			url("../assets/images/pages/values/mobile/hero-values-mobile.jpg");
+	}
+	/* 
+===================================
+Values
+===================================
+*/
+	/* replacing background img w mobile img */
+	.values-img-text .img-mobile {
+		display: block;
+		visibility: visible;
+	}
+
+	/* layout to colum */
+	.values-row,
+	.values-img-text {
+		flex-direction: column;
+	}
+
+	.values-card {
+		width: 100%;
+		padding: var(--spacing-sm);
+		min-height: 300px;
+	}
+	.values-card h2 {
+		text-align: center;
+	}
+	/* Img + Text Card styles */
+	.values-img-text {
+		background: none;
+		padding: 0;
+		display: flex;
+	}
+
+	/* images treated like cards */
+	.values-img-text .text,
+	.values-img-text img {
+		border-radius: var(--border-radius);
+		min-height: 300px;
+	}
+
+	.values-img-text .text {
+		padding: var(--spacing-sm);
+		justify-content: center;
+		width: 100%;
+		max-width: initial;
+	}
+	/* resetting text layout to center of card */
+	.text-right,
+	.text-left {
+		align-items: center;
+	}
+
+	.values-img-text img {
+		object-fit: cover;
+	}
+
+	/* value card text backgrounds */
+	.sustainability .text {
+		background: var(--color-black);
+	}
+	.authenticity .text {
+		background-color: var(--color-amaranth);
+	}
+	.education .text {
+		background-color: var(--color-blue);
+	}
+	.innovation .text {
+		background-color: var(--color-teal);
+	}
+
+	/* 
+===================================
+Empowering
+===================================
+*/
+	.empowering {
+		padding: var(--spacing-xxl) 0 0 0;
+	}
+	.empowering .wrapper {
+		flex-direction: column;
+		width: 100%;
+		padding: 0;
+	}
+
+	/* removing absolute positioned graphic */
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+	/* 
+===================================
+Hero
+===================================
+*/
+	/* mobile view + layout */
+	.hero {
+		background: none;
+	}
+
+	.hero .wrapper {
+		justify-content: flex-start;
+	}
+
+	.hero-text-container {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+/* Mobile Only 470px */
+@media screen and (max-width: 470px) {
+	/* 
+===================================
+Mobile Fonts
+===================================
+*/
+	.values-card h2 {
+		font-size: var(--font-size-title-sm);
+		line-height: var(--line-height-med);
+	}
+	.support h2,
+	.empowering h2 {
+		font-size: var(--font-size-title-med);
+		text-align: center;
+	}
+
+	.support p {
+		font-size: var(--font-size-title-sm);
+		line-height: 32px;
+	}
+
+	/* 
+===================================
+Values
+===================================
+*/
+	/* adjusting spacing for value cards */
+	.values-card,
+	.values-img-text .text,
+	.values-img-text img {
+		min-height: 200px;
+	}
+
+	/* 
+===================================
+Empowering
+===================================
+*/
+	/* adjusting spacing between sections */
+	.empowering {
+		padding: var(--spacing-med) 0 0 0;
+	}
+
+	.empowering .wrapper {
+		gap: var(--spacing-med);
+	}
+}

@@ -1,0 +1,497 @@
+/* 
+===================================
+Hero 
+===================================
+*/
+
+/* background and layout adjustments  */
+.hero {
+	background-image: var(--hero-grad-home),
+		url("../assets/images/pages/home/hero-home.jpg");
+	text-align: center;
+	display: flex;
+}
+
+.hero .wrapper {
+	height: inherit;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	gap: var(--spacing-sm);
+	align-items: center;
+}
+
+.hero-text-container {
+	width: 100%;
+}
+
+.hero-btn-container {
+	display: flex;
+	justify-content: center;
+	gap: var(--spacing-med);
+}
+
+.mobile-about-btn {
+	display: none;
+	visibility: hidden;
+}
+
+/* 
+===================================
+Community Partnerships 
+===================================
+*/
+
+/* Community Card */
+
+/* flex layout */
+.community-card {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+/* flex children */
+.community-card .img-container,
+.community-card .text-container {
+	width: 50%;
+}
+
+/* text container */
+.community-card .text-container {
+	/* layout */
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	/* styling */
+	border-radius: var(--border-radius) 0 0 var(--border-radius);
+	padding: var(--spacing-lg);
+	background-color: var(--color-amaranth);
+	color: var(--color-white);
+}
+
+.community-card p {
+	line-height: var(--line-height-med);
+	margin: var(--spacing-sm) 0;
+}
+
+.community-card img {
+	height: 100%;
+	object-fit: cover;
+
+	border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.community-card a {
+	text-decoration: none;
+}
+
+.community-card a:hover,
+.community-card a:focus {
+	background-color: var(--color-white);
+}
+
+/* 
+===================================
+Global Ecosystem
+===================================
+*/
+
+/* background img */
+
+.global-ecosystem {
+	background-image: url("/assets/images/pages/home/bg-overlay-vector-01.svg"),
+		var(--grad-blue-purple);
+	color: var(--text-color-light);
+}
+
+.global-ecosystem .content-container {
+	display: flex;
+}
+.global-ecosystem .text-container,
+.global-ecosystem blockquote {
+	width: 50%;
+}
+.global-ecosystem blockquote {
+	position: relative;
+	top: 100px;
+	right: 100px;
+
+	height: min-content;
+}
+
+/* Text and blockquote styles */
+.global-ecosystem .text-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	background-color: var(--color-grape);
+	padding: var(--spacing-lg);
+	padding-right: 140px;
+	border-radius: var(--border-radius);
+}
+
+/* 
+===================================
+What We Do
+===================================
+*/
+
+/* text adjustments */
+.what-we-do {
+	color: var(--text-color-light);
+}
+.what-we-do h2 {
+	text-align: center;
+	margin-bottom: var(--spacing-lg);
+	color: var(--text-color-dark);
+}
+
+/* card layout */
+.wwd-card-list {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--spacing-med);
+}
+
+/* card styling */
+.wwd-card {
+	width: calc(33% - var(--spacing-med));
+}
+
+.wwd-card-img img {
+	border-radius: var(--border-radius) var(--border-radius) 0 0;
+	object-position: top;
+	object-fit: cover;
+	height: 200px;
+}
+
+.wwd-card-text {
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
+	padding: var(--spacing-med) var(--spacing-sm);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	min-height: 330px;
+}
+
+/* individual card styling */
+.wwd-digital {
+	background-color: var(--color-teal);
+}
+.wwd-community {
+	background-color: var(--color-copper);
+}
+.wwd-programs {
+	background-color: var(--color-blue);
+}
+
+/* 
+===================================
+Our Values
+===================================
+*/
+
+/* section styles */
+.our-values {
+	color: var(--text-color-light);
+	background-image: url("../assets/images/pages/home/bg-section-our-values.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+/* title and card layout */
+.our-values .wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-med);
+}
+/* title layout */
+.values-title-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+/* values list layout */
+.values-list {
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--color-blue);
+
+	border-radius: var(--border-radius);
+	padding: var(--spacing-lg);
+	gap: var(--spacing-lg);
+}
+/* card style */
+.value-card {
+	width: calc(33% - var(--spacing-lg));
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* 
+===================================
+Upcoming Events and Programs
+===================================
+*/
+
+/* text adjustments */
+.events,
+.event a {
+	color: var(--text-color-light);
+}
+
+.event a:hover {
+	text-decoration: underline;
+}
+
+/* section background */
+.events {
+	background-image: url("/assets/images/pages/home/bg-overlay-vector-02.svg"),
+		var(--grad-blue-purple);
+}
+/* event list layout */
+.event-list {
+	margin-top: var(--spacing-med);
+
+	display: flex;
+	justify-content: space-between;
+	gap: var(--spacing-sm);
+}
+
+/* Event Card Style */
+.event {
+	width: calc(33% - var(--spacing-sm));
+	max-width: 320px;
+}
+
+.event h3 {
+	font-size: var(--font-size-title-sm);
+	line-height: var(--line-height-lg);
+}
+.event img {
+	min-height: 430px;
+	object-fit: cover;
+}
+
+.event-text {
+	margin-top: var(--spacing-sm);
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+===================================
+*/
+
+/* Tablet and smaller 1024px*/
+@media screen and (max-width: 1024px) {
+	/* hero background img */
+	.hero {
+		background-image: var(--hero-grad-home),
+			url("../assets/images/pages/home/mobile/hero-home-mobile.jpg");
+	}
+
+	/* community partnerships */
+	.community-card .text-container {
+		width: 70%;
+	}
+	.community-card img {
+		object-fit: cover;
+		object-position: 70%;
+	}
+
+	.community-card a {
+		padding: var(--spacing-xs) 0;
+		text-align: center;
+		width: 100%;
+	}
+
+	/* global ecosystem */
+	.global-ecosystem .text-container {
+		width: 80%;
+		padding-right: 175px;
+	}
+
+	.global-ecosystem blockquote {
+		min-width: 340px;
+		top: 130px;
+		right: 125px;
+	}
+
+	/* what we do section */
+	.wwd-card-list {
+		flex-direction: column;
+		gap: var(--spacing-med);
+	}
+
+	.wwd-card {
+		width: 100%;
+	}
+
+	.wwd-card-text {
+		min-height: auto;
+	}
+
+	/* our values section */
+	/* layout */
+	.values-list {
+		flex-direction: column;
+		padding: var(--spacing-lg) var(--spacing-sm);
+	}
+
+	/* background */
+	.our-values {
+		text-align: center;
+	}
+
+	/* title adjustment */
+	.value-card {
+		width: 100%;
+	}
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+	/* hero section */
+	.hero .wrapper {
+		justify-content: center;
+	}
+	/* removing desktop buttons, replacing with mobile CAT Btn */
+	.hero-btn-container .btn-alt {
+		display: none;
+		visibility: hidden;
+	}
+	.mobile-about-btn {
+		display: block;
+		visibility: visible;
+	}
+
+	/* 
+===================================
+Community Partnerships
+===================================
+*/
+	.community {
+		background-color: var(--color-amaranth);
+		padding-top: 0;
+	}
+	.community .wrapper {
+		padding: 0;
+	}
+
+	.community-card {
+		flex-direction: column;
+	}
+	.community-card .img-container,
+	.community-card .text-container {
+		width: 100%;
+	}
+
+	.community-card img,
+	.community-card .text-container {
+		border-radius: 0px;
+	}
+
+	.community-card .text-container {
+		gap: var(--spacing-sm);
+		align-items: center;
+		text-align: center;
+		padding: var(--spacing-lg) var(--spacing-sm);
+	}
+
+	.community-card a {
+		max-width: 300px;
+	}
+	/* 
+===================================
+Global Ecosystem
+===================================
+*/
+
+	/* layout  */
+	.global-ecosystem .content-container {
+		flex-direction: column;
+		gap: var(--spacing-med);
+	}
+
+	/* background */
+	.global-ecosystem {
+		background-image: none;
+		background-color: var(--color-grape);
+		text-align: center;
+	}
+
+	.global-ecosystem .text-container,
+	.global-ecosystem blockquote {
+		width: 100%;
+	}
+	.global-ecosystem .text-container {
+		padding: 0;
+	}
+	.global-ecosystem blockquote {
+		min-width: auto;
+		position: static;
+		text-align: start;
+	}
+
+	/* 
+===================================
+What We Do
+===================================
+*/
+
+	/* 
+===================================
+Our Values
+===================================
+*/
+	.our-values {
+		background-image: none;
+		background-color: var(--color-onyx);
+	}
+	/* 
+===================================
+Events and Programs
+===================================
+*/
+	/* layout */
+	.event-list {
+		flex-direction: column;
+		align-items: center;
+		gap: var(--spacing-med);
+	}
+
+	.event {
+		width: 100%;
+	}
+
+	/* background + text */
+	.events {
+		background: var(--color-white);
+	}
+	.events h2 {
+		text-align: center;
+	}
+	.events,
+	.event a {
+		color: var(--text-color-dark);
+	}
+}
+
+/* Custom Breakpoint 470px */
+@media screen and (max-width: 470px) {
+	/* 
+	===================================
+	Mobile Font Size
+	===================================
+	*/
+	/* headings */
+
+	.what-we-do h2 {
+		margin-bottom: var(--spacing-med);
+	}
+}

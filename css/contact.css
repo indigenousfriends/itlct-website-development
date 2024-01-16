@@ -1,0 +1,125 @@
+/*
+===================================
+===================================
+Contact Page Styles
+===================================
+===================================
+*/
+
+/* 
+===================================
+Section Styles (background, padding, etc.)
+===================================
+*/
+
+/* resetting min height with no header  */
+header {
+	min-height: initial;
+}
+
+/* background styles */
+main {
+	background: var(--grad-blue-purple);
+	color: var(--text-color-light);
+	padding: var(--spacing-xl) 0;
+	min-height: 90vh;
+
+	/* centering form in main */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Form layout */
+form .wrapper {
+	display: flex;
+	gap: var(--spacing-xxl);
+	max-width: var(--wrapper-width-max-sm);
+}
+
+.text-container,
+.form-container {
+	width: 50%;
+}
+
+/* Form Text */
+
+form .text-container,
+form .form-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+/* Form Inputs Layout */
+.input-container input {
+	width: 100%;
+}
+
+.form-container button {
+	align-self: center;
+}
+
+/* text area styles */
+
+textarea[name="message-input"] {
+	min-height: 140px;
+}
+
+/* form response */
+#form-response-container {
+	min-height: var(--spacing-med);
+	display: none;
+}
+
+#form-response-container.success {
+	display: block;
+}
+
+/* 
+===================================
+Media Queries (overriding styles for different screen sizes)
+===================================
+*/
+
+/* Tablet and smaller 1024px*/
+@media screen and (max-width: 1024px) {
+	form .wrapper {
+		gap: var(--spacing-lg);
+	}
+}
+
+/* Tablet and smaller 768px */
+@media screen and (max-width: 768px) {
+	/* padding adjustment */
+	main {
+		padding: var(--spacing-lg) 0;
+	}
+
+	/* Layout to column  */
+	form .wrapper {
+		flex-direction: column;
+		gap: var(--spacing-med);
+	}
+
+	.text-container,
+	.form-container {
+		width: 100%;
+	}
+
+	h1 {
+		text-align: center;
+	}
+}
+
+/* Mobile Only 470px */
+@media screen and (max-width: 470px) {
+	/* 
+===================================
+Mobile Fonts
+===================================
+*/
+	h1 {
+		font-size: var(--font-size-title-med);
+	}
+}
