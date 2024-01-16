@@ -900,7 +900,7 @@ footer .social svg {
 	#mlb2-11072124.ml-form-embedContainer
 	.ml-form-embedWrapper
 	.ml-form-successBody {
-	padding-top: 0;
+	padding: 0;
 }
 
 .ml-embedded,
@@ -1185,7 +1185,7 @@ Hero
 		color: var(--color-onyx);
 		padding-top: 0;
 		gap: 0;
-		background: none;
+		background-color: var(--color-onyx);
 		padding: 0;
 	}
 
