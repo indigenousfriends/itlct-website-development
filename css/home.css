@@ -23,6 +23,8 @@ Hero
 
 .hero-text-container {
 	width: 100%;
+	padding: 0;
+	padding-top: var(--spacing-lg);
 }
 
 .hero-btn-container {
