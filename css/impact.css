@@ -117,6 +117,9 @@ Media Queries (overriding styles for different screen sizes)
 	.stewardship {
 		padding-bottom: 0;
 	}
+	.technology {
+		padding-top: 0;
+	}
 
 	/* removing wrapper styles for mobile design */
 	.section-2-col .wrapper {
@@ -144,6 +147,7 @@ Media Queries (overriding styles for different screen sizes)
 	/* limiting img height */
 	.styled-img-container img {
 		max-height: 300px;
+		object-position: center;
 	}
 
 	/* mobile wrapper */
