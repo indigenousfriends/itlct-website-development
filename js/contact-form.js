@@ -11,6 +11,7 @@ let emailInput = document.querySelector("#email-input");
 let messageInput = document.querySelector("#message-input");
 
 // User response element
+let formResponseContainer = document.querySelector("#form-response-container");
 let formResponse = document.querySelector("#form-response");
 
 // Responses
@@ -23,6 +24,7 @@ window.onload = function () {
 
 	if (urlParams.has("success") && urlParams.get("success") === "true") {
 		formResponse.textContent = successRes;
+		formResponseContainer.classList.add("success");
 	}
 
 	if (urlParams.has("success") && urlParams.get("success") === "false") {

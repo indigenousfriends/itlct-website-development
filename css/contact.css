@@ -68,9 +68,14 @@ textarea[name="message-input"] {
 
 /* form response */
 #form-response-container {
-	/* persistent space for user response */
 	min-height: var(--spacing-med);
+	display: none;
 }
+
+#form-response-container.success {
+	display: block;
+}
+
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
