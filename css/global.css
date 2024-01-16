@@ -1185,7 +1185,7 @@ Hero
 		color: var(--color-onyx);
 		padding-top: 0;
 		gap: 0;
-		background-color: var(--color-onyx);
+		background: none;
 		padding: 0;
 	}
 
