@@ -23,6 +23,8 @@ Hero
 
 .hero-text-container {
 	width: 100%;
+	padding: 0;
+	padding-top: var(--spacing-lg);
 }
 
 .hero-btn-container {
@@ -364,6 +366,10 @@ Media Queries (overriding styles for different screen sizes)
 	.hero-btn-container .btn-alt {
 		display: none;
 		visibility: hidden;
+	}
+
+	.hero-text-container {
+		padding: var(--spacing-med) 0;
 	}
 	.mobile-about-btn {
 		display: block;
