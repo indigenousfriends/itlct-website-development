@@ -288,6 +288,7 @@ Variables (colors, text, spacing, etc.)
 	/* Text */
 	/* Font */
 	--font-main: "Josefin Sans", sans-serif;
+	--font-body: "Open Sans", sans-serif;
 	/* Sizing */
 	/* heading elements */
 	--font-size-title-xl: 5.6rem; /* Title Large - 56px */
@@ -402,8 +403,9 @@ h5 {
 }
 
 p {
+	font-family: var(--font-body);
 	font-weight: var(--font-weight-reg);
-	line-height: var(--line-height-med);
+	line-height: var(--line-height-lg);
 }
 /* Links */
 a {
