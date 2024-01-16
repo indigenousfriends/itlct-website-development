@@ -61,6 +61,9 @@ const populateTeamModal = profile => {
 	memberRole.textContent = role;
 
 	// bio
+	// empty bio component
+	memberBio.innerHTML = "";
+	// populate w new bio contents
 	bio.forEach(paragraph => {
 		const pElement = document.createElement("p");
 		pElement.textContent = paragraph;
@@ -98,14 +101,15 @@ openModalBtns.forEach(button => {
 	button.addEventListener("click", () => {
 		let modalElement = document.querySelector(`#${button.dataset.type}`);
 
+		let member = button.dataset.content;
 		// opening modals based on data-content attr
-		if (button.dataset.content) {
+		if (member) {
 			// populate modal according to data-content
-			let member = button.dataset.content;
 			populateTeamModal(teamBioData[member]);
 
 			// open modal
 			toggleModal(modalElement);
+			member = "";
 		} else {
 			// open modal
 			toggleModal(modalElement);

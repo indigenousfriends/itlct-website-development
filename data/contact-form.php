@@ -8,12 +8,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST['message-input'];
 
     // Email addresses
-    $info = 'solivan@indigenousfriends.org';
+    $info = 'info@iftheselandscouldtalk.org';
 
     // Sender and recipient email addresses
     $from = "info+websiteform@iftheselandscouldtalk.org";
     $to = $info;
-    $cc = "max@indigenousfriends.org";
+    $cc = "";
 
     // Success redirect URL
     $successURL = $_SERVER['HTTP_REFERER'] . '?success=true#contact-us-form';

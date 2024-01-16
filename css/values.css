@@ -73,7 +73,10 @@ Values
 	justify-content: center;
 	align-items: center;
 }
-
+.values-card h2 {
+	font-size: var(--font-size-title-med);
+	line-height: var(--line-height-xl);
+}
 /* text layout*/
 .values-card .text {
 	display: flex;
@@ -223,7 +226,7 @@ Values
 		padding: var(--spacing-sm);
 		min-height: 300px;
 	}
-	.values-card h3 {
+	.values-card h2 {
 		text-align: center;
 	}
 	/* Img + Text Card styles */
@@ -316,6 +319,10 @@ Hero
 Mobile Fonts
 ===================================
 */
+	.values-card h2 {
+		font-size: var(--font-size-title-sm);
+		line-height: var(--line-height-med);
+	}
 	.support h2,
 	.empowering h2 {
 		font-size: var(--font-size-title-med);
@@ -327,9 +334,6 @@ Mobile Fonts
 		line-height: 32px;
 	}
 
-	.values-card h3 {
-		font-size: var(--font-size-title-sm);
-	}
 	/* 
 ===================================
 Values

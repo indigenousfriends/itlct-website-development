@@ -1,479 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="assets/logos/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<title>If These Lands Could Talk - Our Team</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="/css/global.css" />
+		<link rel="stylesheet" href="/css/team.css" />
+		<!-- MailerLite Universal -->
+		<script src="/js/mailerlite.js" defer></script>
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link
-		rel="shortcut icon"
-		href="assets/logos/favicon.svg"
-		type="image/svg+xml" />
-	<title>If These Lands Could Talk - Our Team</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap"
-		rel="stylesheet" />
-	<link rel="stylesheet" href="/css/global.css" />
-	<link rel="stylesheet" href="/css/team.css" />
-	<!-- MailerLite Universal -->
-	<script src="/js/mailerlite.js" defer></script>
-</head>
+	<body>
+		<!-- Header Navigation-->
+		<header>
+			<!-- Navigation -->
+			<nav>
+				<div class="wrapper">
+					<div class="flex-container">
+						<!-- ITLCT Logo -->
+						<a
+							href="/index.html"
+							class="img-link"
+							aria-label="If These Lands Could Talk Home Page Link"
+						>
+							<img
+								src="/assets/logos/itlct-logo.svg"
+								alt="If These Lands Could Talk Logo"
+							/>
+						</a>
+						<!-- Navigation Menu -->
+						<div class="mobile-menu-container">
+							<!-- mobile menu button -->
+							<button
+								id="mobile-menu"
+								class="mobile-menu"
+								aria-label="toggle mobile menu on"
+							>
+								<!-- Hamburger Icon -->
+								<img
+									src="/assets/icons/global/menu-icon.svg"
+									alt="mobile menu icon"
+									class="menu-icon"
+								/>
+								<!-- exit menu icon -->
+								<img
+									src="/assets/icons/global/close-icon.svg"
+									alt="exit mobile menu icon"
+									class="menu-exit-icon hidden"
+								/>
+							</button>
 
-<body>
-	<!-- Header Navigation-->
-	<header>
-		<!-- Navigation -->
-		<nav>
-			<div class="wrapper">
-				<div class="flex-container">
-					<!-- ITLCT Logo -->
-					<a
-						href="/index.html"
-						class="img-link"
-						aria-label="If These Lands Could Talk Home Page Link">
+							<!-- Page Links -->
+							<ul id="nav-links" class="nav-links">
+								<li><a href="/about.html">About Us</a></li>
+								<li><a href="/impact.html">Our Impact</a></li>
+								<li><a href="/values.html">Our Values</a></li>
+								<li><a href="/events.html">Events</a></li>
+								<li><a href="/team.html">Our Team</a></li>
+								<!-- Mobile Contact Button -->
+								<li class="mobile-support-btn">
+									<a href="/contact.html">Contact</a>
+								</li>
+							</ul>
+						</div>
+
+						<!-- desktop support btn -->
+						<a href="/contact.html" class="btn-main desktop-support-btn"
+							>Contact Us</a
+						>
+					</div>
+				</div>
+			</nav>
+			<!-- Hero -->
+			<section class="hero">
+				<!-- mobile img -->
+				<img
+					src="/assets/images/pages/team/mobile/hero-team-mobile.jpg"
+					alt="Child and adult planting saplings into fresh soil."
+					class="img-mobile"
+				/>
+				<!-- Wrapper -->
+				<div class="wrapper hero-wrapper">
+					<!-- hero img -->
+					<div class="hero-img">
 						<img
-							src="/assets/logos/itlct-logo.svg"
-							alt="If These Lands Could Talk Logo" />
-					</a>
-					<!-- Navigation Menu -->
-					<div class="mobile-menu-container">
-						<!-- mobile menu button -->
-						<button
-							id="mobile-menu"
-							class="mobile-menu"
-							aria-label="toggle mobile menu on">
-							<!-- Hamburger Icon -->
-							<img
-								src="/assets/icons/global/menu-icon.svg"
-								alt="mobile menu icon"
-								class="menu-icon" />
-							<!-- exit menu icon -->
-							<img
-								src="/assets/icons/global/close-icon.svg"
-								alt="exit mobile menu icon"
-								class="menu-exit-icon hidden" />
-						</button>
+							src="/assets/images/pages/team/hero-team-planting-seeds.jpg"
+							alt="Child and adult planting saplings into fresh soil."
+						/>
+					</div>
+					<!-- hero text -->
+					<div class="hero-text-container">
+						<h1>Our Team</h1>
+						<p>
+							The vision of our team is to leverage digital technology and
+							innovation to improve STEAM (Science, Technology, Engineering,
+							Art, and Math) excellence, retention, community building, and
+							advancement in Native and Indigenous communities across the world.
+						</p>
+					</div>
+				</div>
+			</section>
+		</header>
 
-						<!-- Page Links -->
-						<ul id="nav-links" class="nav-links">
+		<!-- Main Content -->
+		<main>
+			<!-- Team Members -->
+			<section>
+				<div class="wrapper">
+					<ul class="team-members">
+						<!-- Natasha Rabsatt -->
+						<li class="member">
+							<!-- img -->
+							<div class="img">
+								<img
+									src="/assets/images/pages/team/natasha-rabsatt.png"
+									alt="Portrait of Natasha Rabsatt"
+								/>
+							</div>
+							<!-- text -->
+							<div class="text">
+								<!-- SM Bio -->
+								<div class="bio">
+									<h2>Natasha Rabsatt, M.S.</h2>
+									<p class="role">Co-Founder</p>
+									<p>
+										Natasha is Caribbean afro-indigenous with Classic Taino
+										(Puerto Rico - Boriken) and African Heritage.
+									</p>
+								</div>
+								<!-- social CAT -->
+								<div class="member-cat">
+									<!-- email -->
+									<a
+										href="mailto:info@iftheselandscouldtalk.org"
+										class="img-link"
+										target="_blank"
+										rel="noopener noreferrer"
+										aria-label="send an email to Natasha Rabsatt"
+									>
+										<img src="/assets/icons/pages/team/mail.svg" alt="email" />
+									</a>
+									<!-- linkedIn -->
+									<a
+										href="https://www.linkedin.com/in/natasha-rabsatt/"
+										class="img-link"
+										target="_blank"
+										rel="noopener noreferrer"
+										aria-label="Connect with Natasha Rabsatt on LinkedIn"
+										class="img-link"
+									>
+										<img
+											src="/assets/icons/pages/team/linkedin.svg"
+											alt="LinkedIn"
+										/>
+									</a>
+									<!-- Read More Button -->
+									<button
+										class="btn-main team-modal-btn"
+										data-role="open-modal"
+										data-type="team-modal"
+										data-content="natasha"
+									>
+										Read More
+									</button>
+								</div>
+							</div>
+						</li>
+						<!-- Marsha Maxwell -->
+						<li class="member">
+							<!-- img -->
+							<div class="img">
+								<img
+									src="/assets/images/pages/team/marsha-maxwell.png"
+									alt="Portrait of Marsha Maxwell"
+								/>
+							</div>
+							<!-- text -->
+							<div class="text">
+								<!-- SM Bio -->
+								<div class="bio">
+									<h2>Dr. Marsha Maxwell, CETL</h2>
+									<p class="role">Co-Founder</p>
+									<p>
+										Dr. Maxwell has strategic, tactical and operational
+										technology experience.
+									</p>
+								</div>
+								<!-- connect CAT -->
+								<div class="member-cat">
+									<!-- email -->
+									<a
+										href="mailto:info@iftheselandscouldtalk.org"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="img-link"
+										aria-label="send an email to Marsha Maxwell"
+									>
+										<img src="/assets/icons/pages/team/mail.svg" alt="email" />
+									</a>
+									<!-- linkedIn -->
+									<a
+										href="https://www.linkedin.com/in/marsha-a-maxwell-phd/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="img-link"
+										aria-label="Connect with Marsha Maxwell on LinkedIn"
+									>
+										<img
+											src="/assets/icons/pages/team/linkedin.svg"
+											alt="LinkedIn"
+										/>
+									</a>
+									<!-- Read More Button -->
+									<button
+										class="btn-main team-modal-btn"
+										data-role="open-modal"
+										data-type="team-modal"
+										data-content="marsha"
+									>
+										Read More
+									</button>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- Positions -->
+			<section class="positions">
+				<!-- wrapper -->
+				<div class="wrapper">
+					<h2>Our Current Positions</h2>
+					<p>
+						We are currently seeking aligned advisory board members to support
+						the cause. If you are interested or know someone who is, please
+						reach out.
+					</p>
+					<!-- Contact Button -->
+					<a href="/contact.html" class="btn-main">Contact US</a>
+				</div>
+			</section>
+
+			<!-- Get Involved -->
+			<section class="get-involved">
+				<!-- mobile img -->
+				<img
+					src="/assets/images/pages/team/mobile/get-involved-mobile.jpg"
+					alt="Indigenous student writing on a chalk board."
+					class="img-mobile"
+				/>
+				<div class="wrapper">
+					<!-- text -->
+					<div class="text">
+						<h2>Want to Get Involved?</h2>
+						<p>
+							As we grow the community and build impact, you or someone you know
+							may want to know how to get involved with our events.
+						</p>
+						<a href="/contact.html" class="btn-alt">Contact US</a>
+					</div>
+					<!-- img -->
+					<div class="img">
+						<img
+							src="/assets/images/pages/team/get-involved.jpg"
+							alt="Indigenous student writing on a chalk board."
+						/>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer>
+			<div class="wrapper">
+				<!-- 3 Column Layout Container -->
+				<div class="column-container">
+					<!-- Company Column -->
+					<div class="company">
+						<!-- Footer Logo -->
+						<a href="/index.html" class="img-link">
+							<img
+								src="/assets/logos/itlct-logo.svg"
+								alt="If These Lands Could Talk Logo"
+							/>
+						</a>
+						<button
+							class="land-ack-btn"
+							data-role="open-modal"
+							data-type="land-ack-modal"
+						>
+							Land Acknowledgement
+						</button>
+					</div>
+
+					<!-- Footer Navigation -->
+					<nav>
+						<ul>
 							<li><a href="/about.html">About Us</a></li>
 							<li><a href="/impact.html">Our Impact</a></li>
 							<li><a href="/values.html">Our Values</a></li>
-							<li><a href="/events.html">Events</a></li>
-							<li><a href="/team.html">Our Team</a></li>
+							<li><a href="/events.html">Events & Programs</a></li>
 							<li><a href="/contact.html">Contact</a></li>
-							<!-- Mobile Support Button -->
-							<li class="mobile-support-btn"><a href="#">Support Us</a></li>
 						</ul>
+					</nav>
+
+					<!-- CAT Newsletter -->
+					<div class="ml-embedded" data-form="w80VC7"></div>
+				</div>
+
+				<hr />
+
+				<!-- Copyright and Social container -->
+				<div class="policy-container">
+					<!-- policy and contact links -->
+					<div class="policy">
+						<a href="/privacy-policy.html">Privacy Policy</a>
+						<a href="/terms-of-use.html">Terms of Use</a>
+						<a href="/accessibility-statement.html">Accessibility</a>
 					</div>
-
-					<!-- desktop support btn -->
-					<a href="#" class="btn-main desktop-support-btn">Support Us</a>
+					<!-- Footer Socials -->
+					<ul class="social">
+						<!-- LinkedIn -->
+						<li>
+							<a
+								href="https://www.linkedin.com/company/if-these-lands-could-talk-itlct/"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Connect with If These Lands Could Talk on LinkedIn"
+								class="img-link"
+							>
+								<img src="/assets/icons/global/linkedin.svg" alt="LinkedIn" />
+							</a>
+						</li>
+						<!-- FaceBook -->
+						<li>
+							<a
+								href="https://www.facebook.com/people/If-These-Lands-Could-Talk-ITLCT/61550097182345/"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Connect with If These Lands Could Talk on FaceBook"
+								class="img-link"
+							>
+								<img src="/assets/icons/global/facebook.svg" alt="" />
+							</a>
+						</li>
+						<!-- Instagram -->
+						<li>
+							<a
+								href="https://www.instagram.com/iftheselandscouldtalk/"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Connect with If These Lands Could Talk on Instagram"
+								class="img-link"
+							>
+								<img src="/assets/icons/global/instagram.svg" alt="Instagram" />
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
-		</nav>
-		<!-- Hero -->
-		<section class="hero">
-			<!-- mobile img -->
-			<img
-				src="/assets/images/pages/team/mobile/hero-team-mobile.jpg"
-				alt="Child and adult planting saplings into fresh soil."
-				class="img-mobile" />
-			<!-- Wrapper -->
-			<div class="wrapper hero-wrapper">
-				<!-- hero img -->
-				<div class="hero-img">
-					<img
-						src="/assets/images/pages/team/hero-team-planting-seeds.jpg"
-						alt="Child and adult planting saplings into fresh soil." />
-				</div>
-				<!-- hero text -->
-				<div class="hero-text-container">
-					<h1>Our Team</h1>
-					<p>
-						The vision of our team is to leverage digital technology and
-						innovation to improve STEAM (Science, Technology, Engineering,
-						Art, and Math) excellence, retention, community building, and
-						advancement in native and indigenous communities across the world.
-					</p>
-				</div>
-			</div>
-		</section>
-	</header>
+		</footer>
 
-	<!-- Main Content -->
-	<main>
-		<!-- Team Members -->
-		<section>
-			<div class="wrapper">
-				<ul class="team-members">
-					<!-- Natasha Rabsatt -->
-					<li class="member">
-						<!-- img -->
-						<div class="img">
-							<img
-								src="/assets/images/pages/team/natasha-rabsatt.png"
-								alt="Portrait of Natasha Rabsatt" />
-						</div>
-						<!-- text -->
-						<div class="text">
-							<!-- SM Bio -->
-							<div class="bio">
-								<h2>Natasha Rabsatt, M.S.</h2>
-								<p class="role">Co-Founder</p>
-								<p>
-									Natasha is Caribbean afro-indigenous with Classic Taino
-									(Puerto Rico - Boriken) and African Heritage.
-								</p>
-							</div>
-							<!-- social CAT -->
-							<div class="member-cat">
-								<!-- email -->
-								<a
-									href="mailto:info@iftheselandscouldtalk.org"
-									class="img-link"
-									target="_blank"
-									rel="noopener noreferrer"
-									aria-label="send an email to Natasha Rabsatt">
-									<img src="/assets/icons/pages/team/mail.svg" alt="email" />
-								</a>
-								<!-- linkedIn -->
-								<a
-									href="https://www.linkedin.com/in/natasha-rabsatt/"
-									class="img-link"
-									target="_blank"
-									rel="noopener noreferrer"
-									aria-label="Connect with Natasha Rabsatt on LinkedIn"
-									class="img-link">
-									<img
-										src="/assets/icons/pages/team/linkedin.svg"
-										alt="LinkedIn" />
-								</a>
-								<!-- Read More Button -->
-								<button
-									class="btn-main team-modal-btn"
-									data-role="open-modal"
-									data-type="team-modal"
-									data-content="natasha">
-									Read More
-								</button>
-							</div>
-						</div>
-					</li>
-					<!-- Marsha Maxwell -->
-					<li class="member">
-						<!-- img -->
-						<div class="img">
-							<img
-								src="/assets/images/pages/team/marsha-maxwell.png"
-								alt="Portrait of Marsha Maxwell" />
-						</div>
-						<!-- text -->
-						<div class="text">
-							<!-- SM Bio -->
-							<div class="bio">
-								<h2>Dr. Marsha Maxwell, CETL</h2>
-								<p class="role">Co-Founder</p>
-								<p>
-									Dr. Maxwell has strategic, tactical and operational
-									technology experience.
-								</p>
-							</div>
-							<!-- connect CAT -->
-							<div class="member-cat">
-								<!-- email -->
-								<a
-									href="mailto:info@iftheselandscouldtalk.org"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="img-link"
-									aria-label="send an email to Marsha Maxwell">
-									<img src="/assets/icons/pages/team/mail.svg" alt="email" />
-								</a>
-								<!-- linkedIn -->
-								<a
-									href="https://www.linkedin.com/in/marsha-a-maxwell-phd/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="img-link"
-									aria-label="Connect with Marsha Maxwell on LinkedIn">
-									<img
-										src="/assets/icons/pages/team/linkedin.svg"
-										alt="LinkedIn" />
-								</a>
-								<!-- Read More Button -->
-								<button
-									class="btn-main team-modal-btn"
-									data-role="open-modal"
-									data-type="team-modal"
-									data-content="marsha">
-									Read More
-								</button>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</section>
-
-		<!-- Positions -->
-		<section class="positions">
-			<!-- wrapper -->
-			<div class="wrapper">
-				<h2>Our Current Positions</h2>
-				<p>
-					We are currently seeking aligned advisory board members to support
-					the cause. If you are interested or know someone who is, please
-					reach out.
-				</p>
-				<!-- Contact Button -->
-				<a href="/contact.html" class="btn-main">Contact US</a>
-			</div>
-		</section>
-
-		<!-- Get Involved -->
-		<section class="get-involved">
-			<!-- mobile img -->
-			<img
-				src="/assets/images/pages/team/mobile/get-involved-mobile.jpg"
-				alt="Indigenous student writing on a chalk board."
-				class="img-mobile" />
-			<div class="wrapper">
-				<!-- text -->
-				<div class="text">
-					<h2>Want to Get Involved?</h2>
-					<p>
-						As we grow the community and build impact, you or someone you know
-						may want to know how to get involved with our events.
-					</p>
-					<a href="/contact.html" class="btn-alt">Contact US</a>
-				</div>
-				<!-- img -->
-				<div class="img">
-					<img
-						src="/assets/images/pages/team/get-involved.jpg"
-						alt="Indigenous student writing on a chalk board." />
-				</div>
-			</div>
-		</section>
-	</main>
-
-	<!-- Footer -->
-	<footer>
-		<div class="wrapper">
-			<!-- 3 Column Layout Container -->
-			<div class="column-container">
-				<!-- Company Column -->
-				<div class="company">
-					<!-- Footer Logo -->
-					<a href="/index.html" class="img-link">
-						<img
-							src="/assets/logos/itlct-logo.svg"
-							alt="If These Lands Could Talk Logo" />
-					</a>
+		<!-- Land Acknowledgement modal -->
+		<div class="modal-overlay land-ack hidden" id="land-ack-modal">
+			<div class="modal-content">
+				<!-- button container -->
+				<div class="modal-btn-container">
 					<button
-						class="land-ack-btn"
-						data-role="open-modal"
-						data-type="land-ack-modal">
-						Land Acknowledgement
+						class="close-modal"
+						data-role="close-modal"
+						aria-label="close land acknowledgement modal"
+					>
+						<img
+							src="/assets/icons/global/close-icon-dark.svg"
+							alt="close menu icon"
+						/>
 					</button>
 				</div>
 
-				<!-- Footer Navigation -->
-				<nav>
-					<ul>
-						<li><a href="/about.html">About Us</a></li>
-						<li><a href="/impact.html">Our Impact</a></li>
-						<li><a href="/values.html">Our Values</a></li>
-						<li><a href="/events.html">Events & Programs</a></li>
-						<li><a href="/contact.html">Contact</a></li>
-						<li><a href="#">Support Us</a></li>
-					</ul>
-				</nav>
+				<!-- text container -->
+				<div class="modal-text-container">
+					<h4>Land Acknowledgement</h4>
+					<div class="modal-scroll-container">
+						<p>
+							ITLCT operates predominantly through digital means. The Atlanta,
+							Georgia area is the official home for ITLCT. Our leaders are
+							located in the United States between the states of Georgia and
+							Florida and so we wish to acknowledge both locations.
+						</p>
 
-				<!-- CAT Newsletter -->
-				<div class="ml-embedded" data-form="w80VC7"></div>
-				</form>
-			</div>
+						<p>
+							We acknowledge that ITLCT leaders reside on the traditional
+							homelands and territories of Florida consisting of but not limited
+							to the Seminole Nation and other first peoples such as the Calusa,
+							Tobobaga, Timucua, Apalachee, Miccosukee, Mascogo, Taíno, amongst
+							others. ITLCT also acknowledge that we operate, and our leaders
+							also reside on the traditional homelands and territories of
+							Georgia consisting of the Cherokee Nation and other first peoples
+							such as but not limited to the Catawba, Muscogee (Creek),
+							Chickasaw, Shawnee, Oconee, Apalachicola, Chatot, amongst others.
+						</p>
 
-			<hr />
-
-			<!-- Copyright and Social container -->
-			<div class="policy-container">
-				<!-- policy and contact links -->
-				<div class="policy">
-					<a href="/privacy-policy.html">Privacy Policy</a>
-					<a href="/terms-of-use.html">Terms of Use</a>
-					<a href="/accessibility-statement.html">Accessibility Statement</a>
-				</div>
-				<!-- Footer Socials -->
-				<ul class="social">
-					<!-- LinkedIn -->
-					<li>
-						<a
-							href="https://www.linkedin.com/company/if-these-lands-could-talk-itlct/"
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="Connect with If These Lands Could Talk on LinkedIn"
-							class="img-link">
-							<img src="/assets/icons/global/linkedin.svg" alt="LinkedIn" />
-						</a>
-					</li>
-					<!-- FaceBook -->
-					<li>
-						<a
-							href="https://www.facebook.com/people/If-These-Lands-Could-Talk-ITLCT/61550097182345/"
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="Connect with If These Lands Could Talk on FaceBook"
-							class="img-link">
-							<img src="/assets/icons/global/facebook.svg" alt="" />
-						</a>
-					</li>
-					<!-- Instagram -->
-					<li>
-						<a
-							href="https://www.instagram.com/iftheselandscouldtalk/"
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="Connect with If These Lands Could Talk on Instagram"
-							class="img-link">
-							<img src="/assets/icons/global/instagram.svg" alt="Instagram" />
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</footer>
-
-	<!-- Land Acknowledgement modal -->
-	<div class="modal-overlay land-ack hidden" id="land-ack-modal">
-		<div class="modal-content">
-			<!-- button container -->
-			<div class="modal-btn-container">
-				<button
-					class="close-modal"
-					data-role="close-modal"
-					aria-label="close land acknowledgement modal">
-					<img
-						src="/assets/icons/global/close-icon-dark.svg"
-						alt="close menu icon" />
-				</button>
-			</div>
-
-			<!-- text container -->
-			<div class="modal-text-container">
-				<h4>Land Acknowledgement</h4>
-				<div class="modal-scroll-container">
-					<p>
-						ITLCT operates predominantly through digital means. The Atlanta,
-						Georgia area is the official home for ITLCT. Our leaders are
-						located in the United States between the states of Georgia and
-						Florida and so we wish to acknowledge both locations.
-					</p>
-
-					<p>
-						We acknowledge that ITLCT leaders reside on the traditional
-						homelands and territories of Florida consisting of but not limited
-						to the Seminole Nation and other first peoples such as the Calusa,
-						Tobobaga, Timucua, Apalachee, Miccosukee, Mascogo, Taíno, amongst
-						others. ITLCT also acknowledge that we operate, and our leaders
-						also reside on the traditional homelands and territories of
-						Georgia consisting of the Cherokee Nation and other first peoples
-						such as but not limited to the Catawba, Muscogee (Creek),
-						Chickasaw, Shawnee, Oconee, Apalachicola, Chatot, amongst others.
-					</p>
-
-					<p>
-						The first peoples of Florida and Georgia who lived, worked,
-						nurtured the land, and shared knowledge were involuntarily
-						removed, faced difficult challenges and oppression, may still be
-						seeking recognition and reconciliation in some cases, but today,
-						they continue to shape their communities and the future in
-						positive ways. ITLCT recognizes this and vows to be humble and
-						respectful stewards of the lands, histories, and communities of
-						Florida and Georgia's first people and other global tribes,
-						nations, and communities as we engage in our work.
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Team Modal -->
-	<div class="modal-overlay team-modal hidden" id="team-modal">
-		<div class="modal-content">
-			<!-- button container -->
-			<div class="modal-btn-container">
-				<button
-					class="close-modal"
-					data-role="close-modal"
-					aria-label="open team member modal">
-					<svg
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M1.7416 23.9993C1.29575 23.9993 0.849903 23.8293 0.509942 23.4894C-0.169981 22.8094 -0.169981 21.7067 0.509942 21.026L21.0267 0.509942C21.7067 -0.169981 22.8094 -0.169981 23.4901 0.509942C24.17 1.18986 24.17 2.29265 23.4901 2.97327L2.97257 23.4894C2.63261 23.8293 2.18745 23.9993 1.7416 23.9993Z" />
-						<path
-							d="M22.2577 24C21.8118 24 21.366 23.83 21.026 23.4901L0.509942 2.97327C-0.169981 2.29334 -0.169981 1.19056 0.509942 0.509942C1.18986 -0.169981 2.29265 -0.169981 2.97327 0.509942L23.4901 21.0267C24.17 21.7067 24.17 22.8094 23.4901 23.4901C23.1494 23.83 22.7035 24 22.2577 24Z" />
-					</svg>
-				</button>
-			</div>
-			<!-- member profile -->
-			<div class="member">
-				<!-- img -->
-				<div class="img">
-					<img
-						id="member-img"
-						src="/assets/images/pages/team/natasha-rabsatt.png"
-						alt="" />
-				</div>
-				<!-- text -->
-				<div class="text">
-					<!-- SM Bio -->
-					<div class="bio">
-						<h3 id="member-name"></h3>
-						<p class="role" id="member-role"></p>
-					</div>
-					<!-- connect CAT -->
-					<div class="member-cat">
-						<!-- email -->
-						<a
-							id="member-email"
-							href=""
-							class="img-link"
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="">
-							<img src="/assets/icons/pages/team/mail.svg" alt="email" />
-						</a>
-						<!-- linkedIn -->
-						<a
-							id="member-linkedin"
-							href=""
-							class="img-link"
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="">
-							<img
-								src="/assets/icons/pages/team/linkedin.svg"
-								alt="LinkedIn" />
-						</a>
+						<p>
+							The first peoples of Florida and Georgia who lived, worked,
+							nurtured the land, and shared knowledge were involuntarily
+							removed, faced difficult challenges and oppression, may still be
+							seeking recognition and reconciliation in some cases, but today,
+							they continue to shape their communities and the future in
+							positive ways. ITLCT recognizes this and vows to be humble and
+							respectful stewards of the lands, histories, and communities of
+							Florida and Georgia's first people and other global tribes,
+							nations, and communities as we engage in our work.
+						</p>
 					</div>
 				</div>
 			</div>
-			<!-- text container -->
-			<div class="modal-text-container">
-				<div class="modal-scroll-container" id="member-bio"></div>
+		</div>
+
+		<!-- Team Modal -->
+		<div class="modal-overlay team-modal hidden" id="team-modal">
+			<div class="modal-content">
+				<!-- button container -->
+				<div class="modal-btn-container">
+					<button
+						class="close-modal"
+						data-role="close-modal"
+						aria-label="open team member modal"
+					>
+						<svg
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M1.7416 23.9993C1.29575 23.9993 0.849903 23.8293 0.509942 23.4894C-0.169981 22.8094 -0.169981 21.7067 0.509942 21.026L21.0267 0.509942C21.7067 -0.169981 22.8094 -0.169981 23.4901 0.509942C24.17 1.18986 24.17 2.29265 23.4901 2.97327L2.97257 23.4894C2.63261 23.8293 2.18745 23.9993 1.7416 23.9993Z"
+							/>
+							<path
+								d="M22.2577 24C21.8118 24 21.366 23.83 21.026 23.4901L0.509942 2.97327C-0.169981 2.29334 -0.169981 1.19056 0.509942 0.509942C1.18986 -0.169981 2.29265 -0.169981 2.97327 0.509942L23.4901 21.0267C24.17 21.7067 24.17 22.8094 23.4901 23.4901C23.1494 23.83 22.7035 24 22.2577 24Z"
+							/>
+						</svg>
+					</button>
+				</div>
+				<!-- member profile -->
+				<div class="member">
+					<!-- img -->
+					<div class="img">
+						<img id="member-img" src="" alt="" />
+					</div>
+					<!-- text -->
+					<div class="text">
+						<!-- SM Bio -->
+						<div class="bio">
+							<h3 id="member-name"></h3>
+							<p class="role" id="member-role"></p>
+						</div>
+						<!-- connect CAT -->
+						<div class="member-cat">
+							<!-- email -->
+							<a
+								id="member-email"
+								href=""
+								class="img-link"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label=""
+							>
+								<img src="/assets/icons/pages/team/mail.svg" alt="email" />
+							</a>
+							<!-- linkedIn -->
+							<a
+								id="member-linkedin"
+								href=""
+								class="img-link"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label=""
+							>
+								<img
+									src="/assets/icons/pages/team/linkedin.svg"
+									alt="LinkedIn"
+								/>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- text container -->
+				<div class="modal-text-container">
+					<div class="modal-scroll-container" id="member-bio"></div>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- JavaScript -->
-	<script src="js/main.js"></script>
-</body>
-
+		<!-- JavaScript -->
+		<script src="js/main.js"></script>
+	</body>
 </html>

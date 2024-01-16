@@ -204,6 +204,16 @@ Hero
 	.hero .wrapper {
 		gap: var(--spacing-lg);
 	}
+
+	/* 
+	===================================
+	Team Modal
+	===================================
+	*/
+	/* adjusting scroll height  */
+	.team-modal .modal-scroll-container {
+		max-height: calc(85vh - 400px);
+	}
 }
 
 /* Tablet and smaller 768px */
@@ -297,21 +307,16 @@ Get Involved
 	}
 
 	/* 
-===================================
-Team Modal
-===================================
-*/
+	===================================
+	Team Modal
+	===================================
+	*/
 	.team-modal .text {
 		flex-direction: row;
 	}
 	.team-modal .member-cat {
 		align-items: flex-end;
 		gap: 10px;
-	}
-
-	/* adjusting scroll height  */
-	.team-modal .modal-scroll-container {
-		max-height: calc(85vh - 400px);
 	}
 }
 
