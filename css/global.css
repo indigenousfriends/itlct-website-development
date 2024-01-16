@@ -1242,7 +1242,7 @@ Hero
 	}
 
 	p {
-		line-height: 20px;
+		line-height: var(--line-height-med);
 	}
 	/* 
 	===================================
