@@ -588,6 +588,12 @@ button:focus-within,
 	color: var(--color-onyx);
 }
 
+.btn-hover-drk:hover,
+.btn-hover-drk:focus-within {
+	background-color: var(--color-onyx);
+	border-color: var(--color-onyx);
+	color: var(--color-white);
+}
 /* Forms */
 
 /* General styles */
