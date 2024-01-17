@@ -415,6 +415,11 @@ a {
 	border-bottom: var(--border-width-link) solid transparent;
 }
 
+/* current page link style */
+.nav-links [aria-current="page"] {
+	border-bottom: var(--border-width-link) solid var(--color-white);
+}
+
 a:hover,
 a:focus,
 .land-ack-btn:hover,
