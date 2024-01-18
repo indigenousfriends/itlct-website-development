@@ -1,13 +1,6 @@
 // Fetch page data from Strapi
 function getPageData(page, source) {
-	const cms = source;
-	let apiURL = "";
-
-	if (cms === "strapi") {
-		apiURL = `https://cms.iftheselandscouldtalk.org/api/${page}?populate=*`;
-	} else if (cms === "wordpress") {
-		apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/page`;
-	}
+	const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${page}`;
 
 	fetch(`${apiURL}`, {
 		method: "GET",
@@ -30,13 +23,7 @@ function getPageData(page, source) {
 function getItemData(collection, source) {
 	const urlParams = new URLSearchParams(window.location.search);
 	const slug = urlParams.get("e");
-	let apiURL = "";
-
-	if (source === "strapi") {
-		apiURL = `https://cms.iftheselandscouldtalk.org/api/${collection}/${slug}?populate=*`;
-	} else if (source === "wordpress") {
-		apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}?slug=${slug}`;
-	}
+	let apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}?slug=${slug}`;
 
 	fetch(`${apiURL}`, {
 		method: "GET",
