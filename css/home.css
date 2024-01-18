@@ -6,7 +6,7 @@ Hero
 
 /* background and layout adjustments  */
 .hero {
-	background-image: var(--hero-grad-home),
+	background-image: var(--hero-grad-home-alt),
 		url("../assets/images/pages/home/hero-home.jpg");
 	text-align: center;
 	display: flex;
