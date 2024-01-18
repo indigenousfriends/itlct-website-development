@@ -161,7 +161,7 @@ Section Styles (background, padding, etc.)
 	flex-flow: column;
 	justify-content: space-around;
 	align-items: center;
-	gap: var(--spacing-lg);
+	gap: var(--spacing-med);
 }
 
 .event-detail-container img {
@@ -169,8 +169,10 @@ Section Styles (background, padding, etc.)
 	max-width: 100%;
 }
 
-.event-poster {
-	max-width: 578px;
+.event-detail-container .event-poster {
+	max-width: 400px;
+	aspect-ratio: 567 / 735;
+	width: 100%;
 }
 .cta-container {
 	display: flex;
