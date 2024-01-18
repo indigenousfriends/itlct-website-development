@@ -415,6 +415,11 @@ a {
 	border-bottom: var(--border-width-link) solid transparent;
 }
 
+/* current page link style */
+.nav-links [aria-current="page"] {
+	border-bottom: var(--border-width-link) solid var(--color-white);
+}
+
 a:hover,
 a:focus,
 .land-ack-btn:hover,
@@ -583,6 +588,12 @@ button:focus-within,
 	color: var(--color-onyx);
 }
 
+.btn-hover-drk:hover,
+.btn-hover-drk:focus-within {
+	background-color: var(--color-onyx);
+	border-color: var(--color-onyx);
+	color: var(--color-white);
+}
 /* Forms */
 
 /* General styles */
