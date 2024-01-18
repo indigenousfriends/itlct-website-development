@@ -1,0 +1,14 @@
+# Prevent Apache from serving .htaccess files:
+<FilesMatch "^\.htaccess">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Enable Gzip Compression:
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml
+</IfModule>
+
+# Set defualt pages:
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
