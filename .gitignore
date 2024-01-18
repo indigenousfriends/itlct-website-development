@@ -16,4 +16,4 @@ Thumbs.db
 *.code-workspace
 
 # Ignore cpanel config for a2 hosting
-.cpanel.yml
+# .cpanel.yml
