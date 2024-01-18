@@ -10,6 +10,9 @@ header {
 	min-height: auto;
 }
 
+section {
+	padding: var(--spacing-lg) 0;
+}
 /* 
 ===================================
 Page Component Styles (icon grid, team member card)
@@ -166,6 +169,9 @@ Section Styles (background, padding, etc.)
 	max-width: 100%;
 }
 
+.event-poster {
+	max-width: 578px;
+}
 .cta-container {
 	display: flex;
 	flex-direction: column;
