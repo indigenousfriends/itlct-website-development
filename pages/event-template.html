@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-	<!-- This file is a placehodler for a page. Rename this file to the name of the page you are working on. -->
-
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link
 			rel="shortcut icon"
-			href="assets/logos/favicon.svg"
+			href="../assets/logos/favicon.svg"
 			type="image/svg+xml"
 		/>
-		<title>If These Lands Could Talk - Contact Us</title>
+		<title>If These Lands Could Talk</title>
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,11 +20,11 @@
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700&display=swap"
 		/>
-		<!-- StyleSheets -->
-		<link rel="stylesheet" href="/css/global.css" />
-		<link rel="stylesheet" href="/css/contact.css" />
+		<!-- Styles -->
+		<link rel="stylesheet" href="../css/global.css" />
+		<link rel="stylesheet" href="../css/events.css" />
 		<!-- MailerLite Universal -->
-		<script src="/js/mailerlite.js" defer></script>
+		<script src="../js/mailerlite.js" defer></script>
 	</head>
 
 	<body>
@@ -78,16 +76,13 @@
 								<li><a href="/team.html">Our Team</a></li>
 								<!-- Mobile Contact Button -->
 								<li class="mobile-support-btn">
-									<a href="/contact.html" aria-current="page">Contact</a>
+									<a href="/contact.html">Contact</a>
 								</li>
 							</ul>
 						</div>
 
 						<!-- desktop support btn -->
-						<a
-							href="/contact.html"
-							class="btn-main desktop-support-btn"
-							aria-current="page"
+						<a href="/contact.html" class="btn-main desktop-support-btn"
 							>Contact Us</a
 						>
 					</div>
@@ -95,74 +90,41 @@
 			</nav>
 		</header>
 
-		<!-- Contact Content -->
+		<!-- Event Content -->
 		<main>
-			<!-- Contact Form -->
-			<form
-				action="/data/contact-form.php"
-				name="contactForm"
-				method="post"
-				id="contact-form"
-				class="contact-form"
-			>
-				<div class="wrapper">
-					<!-- text -->
-					<div class="text-container">
-						<h1>Get in Touch</h1>
-						<p>
-							We would love to hear from you! Please fill out the contact form
-							to get in touch. In your message, please let us know a little
-							about yourself and how we can assist you.
-						</p>
-						<p>We look forward to connecting!</p>
-					</div>
-					<div class="form-container">
-						<!-- name -->
-						<div class="input-container">
-							<label for="name-input" class="sr-only">Enter Name Here</label>
-							<input
-								type="text"
-								name="name-input"
-								id="name-input"
-								placeholder="Name"
-								required
-							/>
-						</div>
+			<!-- Event Flier -->
+			<section class="event-detail-container">
+				<img
+					src="/assets/images/pages/event-single/event-wimw-desktop.jpg"
+					srcset="/assets/images/pages/event-single/mobile/event-wimw-mobile.jpg 768w, /assets/images/pages/event-single/event-wimw-desktop.jpg 1x"
+					alt="WIMW Event Poster"
+					class="event-poster"
+				/>
 
-						<!-- email -->
-						<div class="input-container">
-							<label for="email-input" class="sr-only">Enter Email Here</label>
-							<input
-								type="email"
-								name="email-input"
-								id="email-input"
-								placeholder="Email"
-								required
-							/>
-						</div>
-						<!-- message -->
-						<div class="input-container">
-							<label for="message-input" class="sr-only"
-								>Enter Message Here</label
-							>
-							<textarea
-								name="message-input"
-								id="message-input"
-								placeholder="Message"
-								required
-							></textarea>
-						</div>
-
-						<!-- response container -->
-						<div id="form-response-container">
-							<p id="form-response"></p>
-						</div>
-
-						<!-- submit -->
-						<button type="submit" class="btn-main">Send Message</button>
+				<!-- Event Description -->
+				<div id="content-container" class="wrapper">
+					<div class="cta-container">
+						<h2>Event Name</h2>
+						<p>Event description</p>
+						<a
+							target="_blank"
+							rel="noopener noreferrer"
+							href="https://walkinginmultipleworlds_s1q1.eventbrite.com/"
+							class="btn-main btn-hover-drk"
+							>View Event</a
+						>
 					</div>
 				</div>
-			</form>
+			</section>
+			<!-- Event Highlights -->
+			<div class="section-header gradient-header">
+				<h2>Event Highlights</h2>
+			</div>
+			<section>
+				<div class="wrapper">
+					<div class="event-detail-container"></div>
+				</div>
+			</section>
 		</main>
 
 		<!-- Footer -->
@@ -311,7 +273,13 @@
 				</div>
 			</div>
 		</div>
-		<script src="/js/contact-form.js"></script>
+
 		<script src="/js/main.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="../js/cms.js"></script>
+  <script>
+    getPageData('homepage', 'wordpress');
+    getCollectionData('events', 'wordpress');
+  </script> -->
 	</body>
 </html>

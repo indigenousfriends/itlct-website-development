@@ -54,8 +54,7 @@ Member Card Component
 
 /* similar gaps */
 .member,
-.member .text,
-.member-cat {
+.member .text {
 	gap: var(--spacing-sm);
 }
 
@@ -322,15 +321,6 @@ Get Involved
 
 /* Mobile Only 470px */
 @media screen and (max-width: 470px) {
-	/* 
-===================================
-Member Card Component
-===================================
-*/
-	.member-cat {
-		flex-wrap: wrap;
-	}
-
 	/* 
 ===================================
 Team Modal
