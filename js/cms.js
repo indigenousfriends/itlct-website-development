@@ -1,5 +1,5 @@
 // Fetch page data from Strapi
-function getPageData(page, source) {
+function getPageData(page) {
 	const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${page}`;
 
 	fetch(`${apiURL}`, {
@@ -20,7 +20,7 @@ function getPageData(page, source) {
 		.catch(error => console.error("Error:", error));
 }
 
-function getItemData(collection, source) {
+function getItemData(collection) {
 	const urlParams = new URLSearchParams(window.location.search);
 	const slug = urlParams.get("e");
 	let apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}?slug=${slug}`;
@@ -33,15 +33,7 @@ function getItemData(collection, source) {
 	})
 		.then(response => response.json())
 		.then(response => {
-			console.log(response);
-
-			let p = {};
-
-			if (source === "strapi") {
-				p = response.data.attributes;
-			} else if (source === "wordpress") {
-				p = response[0].acf;
-			}
+			p = response[0].acf;
 
 			const postTitle = document.getElementById("post-title");
 			const postContent = document.getElementById("content-container");
@@ -55,17 +47,8 @@ function getItemData(collection, source) {
 }
 
 // Fetch all events
-function getCollectionData(collection, source) {
-	const cms = source;
-	let apiURL = "";
-
-	if (cms === "strapi") {
-		apiURL = `https://cms.iftheselandscouldtalk.org/api/${collection}-items?populate=*`;
-	} else if (cms === "wordpress") {
-		apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}`;
-	}
-
-	console.log(apiURL);
+function getCollectionData(collection) {
+	const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}?_fields=acf&acf_format=standard`;
 
 	fetch(`${apiURL}`, {
 		method: "GET",
@@ -75,41 +58,27 @@ function getCollectionData(collection, source) {
 	})
 		.then(response => response.json())
 		.then(response => {
-			let posts = response;
+			const posts = response;
 
 			posts.forEach(post => {
+				const p = post.acf;
+
 				const container = document.getElementById(`${collection}-container`);
 				const postDiv = document.createElement("div");
-				postDiv.classList.add("card");
+				postDiv.classList.add("card", "event");
 
 				const postImage = document.createElement("img");
 				const postTitle = document.createElement("h3");
-
 				const postContent = document.createElement("p");
-				const postLink = document.createElement("a");
-				postLink.classList.add("btn-main");
 
-				let p = post.attributes;
-
-				if (cms === "wordpress") {
-					p = post.acf;
-				}
-
-				// postImage.src = cmsURL + p.featuredImage.data.attributes.url;
+				postImage.src = p.featured_image.url;
+				postImage.alt = p.featured_image.alt;
 				postTitle.textContent = p.title;
-				if (cms == "strapi") {
-					postContent.innerHTML = marked.parse(p.content);
-				} else if (cms == "wordpress") {
-					postContent.innerHTML = p.content;
-				}
+				postContent.innerHTML = p.excerpt;
 
-				postLink.innerHTML = "Read more";
-				postLink.href = "/events/event.html?e=" + post.slug;
-
-				postDiv.appendChild(postTitle);
 				postDiv.appendChild(postImage);
+				postDiv.appendChild(postTitle);
 				postDiv.appendChild(postContent);
-				postDiv.appendChild(postLink);
 
 				container.appendChild(postDiv);
 			});
