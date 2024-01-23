@@ -55,21 +55,22 @@ function getItemData(collection) {
 		.then(response => response.json())
 		.then(response => {
 			p = response[0].acf;
+			console.log(p);
 
-			const postTitle = document.getElementById("post-title");
-			const postContent = document.getElementById("content-container");
-			const postHighlights = document.getElementById("highlights-container");
+			const title = document.getElementById("post-title");
+			const description = document.getElementById("description-container");
+			const highlights = document.getElementById("highlights-container");
 
-			postTitle.textContent = p.title;
-			postContent.innerHTML = marked.parse(p.content);
-			postHighlights.innerHTML = marked.parse(p.highlights);
+			appendData(p.title, "h1", "text", title);
+			appendData(p.content, "div", "markup", description);
+			appendData(p.highlights, "div", "markup", highlights);
 		})
 		.catch(error => console.error("Error:", error));
 }
 
 // Fetch all events
 function getCollectionData(collection) {
-	const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}?_fields=acf&acf_format=standard`;
+	const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}?acf_format=standard`;
 
 	fetch(`${apiURL}`, {
 		method: "GET",
@@ -81,13 +82,15 @@ function getCollectionData(collection) {
 		.then(response => {
 			const posts = response;
 
+			// Generate cards for each post
 			posts.forEach(post => {
 				// Single post data
 				const p = post.acf;
 				// Setup container elements
 				const container = document.getElementById(`${collection}-container`);
-				const card = document.createElement("div");
+				const card = document.createElement("a");
 				card.classList.add("card", "event");
+				card.href = `events/event.html?e=${post.slug}`;
 
 				// Append data to card
 				appendData(p.featured_image, "img", "image", card);
