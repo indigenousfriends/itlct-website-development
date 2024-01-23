@@ -1,4 +1,25 @@
-// Fetch page data from Strapi
+// Helper functions
+function appendData(data, element, method, target) {
+	if (data) {
+		const el = document.createElement(element);
+		if (method === "text") {
+			el.textContent = data;
+		} else if (method === "markup") {
+			el.innerHTML = marked.parse(data);
+		} else if (method === "image") {
+			if (data.url) {
+				el.src = data.url;
+				data.alt ? (el.alt = data.alt) : "If These Lands Could Talk";
+			}
+		} else {
+			el.innerHTML = data;
+		}
+
+		target.appendChild(el);
+	}
+}
+
+// Fetch page data from WordPress
 function getPageData(page) {
 	const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${page}`;
 
@@ -61,26 +82,20 @@ function getCollectionData(collection) {
 			const posts = response;
 
 			posts.forEach(post => {
+				// Single post data
 				const p = post.acf;
-
+				// Setup container elements
 				const container = document.getElementById(`${collection}-container`);
-				const postDiv = document.createElement("div");
-				postDiv.classList.add("card", "event");
+				const card = document.createElement("div");
+				card.classList.add("card", "event");
 
-				const postImage = document.createElement("img");
-				const postTitle = document.createElement("h3");
-				const postContent = document.createElement("p");
+				// Append data to card
+				appendData(p.featured_image, "img", "image", card);
+				appendData(p.title, "h3", "text", card);
+				appendData(p.excerpt, "p", "markup", card);
 
-				postImage.src = p.featured_image.url;
-				postImage.alt = p.featured_image.alt;
-				postTitle.textContent = p.title;
-				postContent.innerHTML = p.excerpt;
-
-				postDiv.appendChild(postImage);
-				postDiv.appendChild(postTitle);
-				postDiv.appendChild(postContent);
-
-				container.appendChild(postDiv);
+				// Append card to container
+				container.appendChild(card);
 			});
 		})
 		.catch(error => console.error("Error:", error));
