@@ -7,9 +7,8 @@ function appendData(data, element, method, target) {
 			target.textContent = "";
 			target.appendChild(document.createTextNode(data));
 		} else if (method === "markup") {
-			const markup = marked.parse(data);
 			target.innerHTML = "";
-			target.appendChild(document.createTextNode(markup));
+			target.innerHTML = marked.parse(data);
 		} else if (method === "image") {
 			if (data.url) {
 				el.src = data.url;
