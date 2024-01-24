@@ -244,6 +244,12 @@ Variables (colors, text, spacing, etc.)
 
 	/* hero gradients*/
 	--hero-grad-home: linear-gradient(352deg, #090909cc 32.03%, #09090900 73.42%);
+	--hero-grad-home-alt: linear-gradient(
+		352deg,
+		#000000cc 45%,
+		#09090900 73.42%
+	);
+
 	--hero-grad-about: linear-gradient(107deg, #090909cc 9.51%, #09090900 76.72%);
 	--hero-grad-impact: var(--hero-grad-about);
 	--hero-grad-values: linear-gradient(

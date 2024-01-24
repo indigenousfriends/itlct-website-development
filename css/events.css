@@ -161,7 +161,7 @@ Section Styles (background, padding, etc.)
 	flex-flow: column;
 	justify-content: space-around;
 	align-items: center;
-	gap: var(--spacing-lg);
+	gap: var(--spacing-med);
 }
 
 .event-detail-container img {
@@ -169,8 +169,10 @@ Section Styles (background, padding, etc.)
 	max-width: 100%;
 }
 
-.event-poster {
-	width: 290px;
+.event-detail-container .event-poster {
+	max-width: 400px;
+	aspect-ratio: 567 / 735;
+	width: 100%;
 }
 
 .cta-container {
@@ -185,12 +187,6 @@ Section Styles (background, padding, etc.)
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
-
-Note: Here we are using a mobile-first approach, so we start with the smallest screen size and work our way up.
-Start by writing styles for the mobile version of the design on the lines above.
-Anything that needs to change for larger screens should be added to the media queries below.
-
-Feel free to change the min/max-width values to whatever you need. Use variables.
 ===================================
 */
 
