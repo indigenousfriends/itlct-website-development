@@ -8,14 +8,13 @@ function appendData(data, element, method, target) {
 			target.appendChild(document.createTextNode(data));
 		} else if (method === "link") {
 			let el;
-			if (!target) {
-				el = document.createElement(element);
-			} else {
+			if (target) {
 				el = document.getElementById(target);
+				console.log(`Found target: ${target}`);
+			} else {
+				el = document.createElement(element);
+				console.log("Created element");
 			}
-			console.log(JSON.stringify(data));
-
-			console.log(el);
 
 			el.href = data.url;
 			el.textContent = data.title;
@@ -99,7 +98,7 @@ function getItemData(collection) {
 			const highlights = document.getElementById("highlights-container");
 			const btn1 = document.getElementById("button-1");
 			const btn2 = document.getElementById("button-2");
-
+			console.log(btn1);
 			appendData(data.title, "h1", "text", title);
 			appendData(data.content, "div", "markup", description);
 			appendData(data.button_1, "a", "link", btn1);
