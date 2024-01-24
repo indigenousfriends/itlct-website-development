@@ -170,8 +170,9 @@ Section Styles (background, padding, etc.)
 }
 
 .event-poster {
-	max-width: 578px;
+	width: 290px;
 }
+
 .cta-container {
 	display: flex;
 	flex-direction: column;

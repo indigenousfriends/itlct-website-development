@@ -2,26 +2,30 @@
 function appendData(data, element, method, target) {
 	if (data) {
 		const el = document.createElement(element);
+
 		if (method === "text") {
-			el.textContent = data;
+			target.textContent = "";
+			target.appendChild(document.createTextNode(data));
 		} else if (method === "markup") {
-			el.innerHTML = marked.parse(data);
+			const markup = marked.parse(data);
+			target.innerHTML = "";
+			target.appendChild(document.createTextNode(markup));
 		} else if (method === "image") {
 			if (data.url) {
 				el.src = data.url;
 				data.alt ? (el.alt = data.alt) : "If These Lands Could Talk";
+				target.appendChild(el);
 			}
 		} else {
 			el.innerHTML = data;
+			target.appendChild(el);
 		}
-
-		target.appendChild(el);
 	}
 }
 
 // Fetch page data from WordPress
 function getPageData(page) {
-	const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${page}`;
+	const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/pages?slug=${page}`;
 
 	fetch(`${apiURL}`, {
 		method: "GET",
@@ -31,12 +35,30 @@ function getPageData(page) {
 	})
 		.then(response => response.json())
 		.then(response => {
-			const page = response.data;
-			const pageTitle = document.getElementById("page-title");
-			const pageContent = document.getElementById("content-container");
+			// Page data
+			const page = response[0].acf;
+			// console.log(page);
 
-			pageTitle.textContent = page.attributes.Title;
-			pageContent.innerHTML = page.attributes.content;
+			// Dynamic eleemnts
+			const pageTitle = document.getElementById("page-title"); // For <title> tag
+			const heroHeading = document.getElementById("hero-heading"); // For h1 in the hero
+			const heroSubheading = document.getElementById("hero-subheading");
+			const heroImage = document.getElementById("hero-image");
+			const heroButtonContainer = document.getElementById(
+				"hero-button-container",
+			);
+			const mainContent = document.getElementById("main-content");
+			// const pageContent = document.getElementById("content-container");
+
+			// Append data to elements
+			appendData(page.hero_heading, "h1", "text", heroHeading);
+			appendData(page.hero_subheading, "h2", "text", heroSubheading);
+			appendData(page.hero_image, "img", "image", heroImage);
+			console.log(page.main_content);
+
+			appendData(page.main_content, "div", "markup", mainContent);
+
+			// TODO: Add button repeater functionality
 		})
 		.catch(error => console.error("Error:", error));
 }
