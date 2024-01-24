@@ -36,7 +36,6 @@ function getPageData(page) {
 		.then(response => {
 			// Page data
 			const page = response[0].acf;
-			// console.log(page);
 
 			// Dynamic eleemnts
 			const pageTitle = document.getElementById("page-title"); // For <title> tag
@@ -53,7 +52,6 @@ function getPageData(page) {
 			appendData(page.hero_heading, "h1", "text", heroHeading);
 			appendData(page.hero_subheading, "h2", "text", heroSubheading);
 			appendData(page.hero_image, "img", "image", heroImage);
-			console.log(page.main_content);
 
 			appendData(page.main_content, "div", "markup", mainContent);
 
@@ -76,7 +74,6 @@ function getItemData(collection) {
 		.then(response => response.json())
 		.then(response => {
 			p = response[0].acf;
-			console.log(p);
 
 			const title = document.getElementById("post-title");
 			const description = document.getElementById("description-container");
