@@ -24,7 +24,7 @@ function appendData(data, element, method, target) {
 
 // Fetch page data from WordPress
 function getPageData(page) {
-	const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/pages?slug=${page}`;
+	const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/pages?slug=${page}&acf_format=standard`;
 
 	fetch(`${apiURL}`, {
 		method: "GET",
@@ -35,27 +35,31 @@ function getPageData(page) {
 		.then(response => response.json())
 		.then(response => {
 			// Page data
-			const page = response[0].acf;
+			const data = response[0].acf;
 
-			// Dynamic eleemnts
+			// Dynamic elements
 			const pageTitle = document.getElementById("page-title"); // For <title> tag
+			const hero = document.getElementById("hero"); // For hero section
 			const heroHeading = document.getElementById("hero-heading"); // For h1 in the hero
 			const heroSubheading = document.getElementById("hero-subheading");
 			const heroImage = document.getElementById("hero-image");
+
+			// TODO: Add button repeater functionality
 			const heroButtonContainer = document.getElementById(
 				"hero-button-container",
 			);
 			const mainContent = document.getElementById("main-content");
-			// const pageContent = document.getElementById("content-container");
 
 			// Append data to elements
-			appendData(page.hero_heading, "h1", "text", heroHeading);
-			appendData(page.hero_subheading, "h2", "text", heroSubheading);
-			appendData(page.hero_image, "img", "image", heroImage);
+			appendData(data.hero_heading, "h1", "text", heroHeading);
+			appendData(data.hero_subheading, "h2", "text", heroSubheading);
 
-			appendData(page.main_content, "div", "markup", mainContent);
+			if (data.hero_image.url) {
+				appendData(data.hero_image, "img", "image", heroImage);
+				hero.style.backgroundImage = `url(${data.hero_image.url})`;
+			}
 
-			// TODO: Add button repeater functionality
+			appendData(data.main_content, "div", "markup", mainContent);
 		})
 		.catch(error => console.error("Error:", error));
 }
@@ -63,7 +67,7 @@ function getPageData(page) {
 function getItemData(collection) {
 	const urlParams = new URLSearchParams(window.location.search);
 	const slug = urlParams.get("e");
-	let apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}?slug=${slug}`;
+	const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}?slug=${slug}?acf_format=standard`;
 
 	fetch(`${apiURL}`, {
 		method: "GET",
@@ -105,15 +109,15 @@ function getCollectionData(collection) {
 				// Single event data
 				const data = post.acf;
 
-				// Setup container elements
+				// Container elements
 				const container = document.getElementById(`${collection}-container`);
 				const card = document.createElement("a");
 				card.classList.add("card", "event");
 				card.href = `events/event.html?e=${post.slug}`;
 
-				// Append data to card
-				const image = document.createElement("img");
+				// Append data to the card
 				if (data.featured_image.url) {
+					const image = document.createElement("img");
 					image.src = data.featured_image.url;
 					data.featured_image.alt
 						? (image.alt = data.featured_image.alt)
@@ -133,7 +137,7 @@ function getCollectionData(collection) {
 					card.appendChild(excerpt);
 				}
 
-				// Append card to container
+				// Append this card to the container
 				container.appendChild(card);
 			});
 		})
