@@ -85,12 +85,13 @@
 			<img
 				src="/assets/images/pages/events/mobile/hero-events-mobile.jpg"
 				alt="Events background"
+				id="hero-image"
 				class="img-mobile" />
 			<!-- Wrapper -->
 			<div class="wrapper hero-wrapper">
 				<div class="hero-text-container">
-					<h1>Events and Programs</h1>
-					<p>
+					<h1 id="hero-heading">Events and Programs</h1>
+					<p id="hero-subheading">
 						We welcome you to join us and create positive impact through
 						community building and meaningful engagement.
 					</p>
@@ -380,7 +381,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 	<script src="./js/cms.js"></script>
 	<script>
-		// getPageData('events'); 
+		getPageData('events');
 		getCollectionData('events');
 	</script>
 </body>

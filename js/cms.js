@@ -1,4 +1,4 @@
-// Helper functions
+// Helper functions for appending data to DOM elements
 function appendData(data, element, method, target) {
 	if (data) {
 		const el = document.createElement(element);
@@ -102,8 +102,9 @@ function getCollectionData(collection) {
 
 			// Generate cards for each post
 			posts.forEach(post => {
-				// Single post data
-				const p = post.acf;
+				// Single event data
+				const data = post.acf;
+
 				// Setup container elements
 				const container = document.getElementById(`${collection}-container`);
 				const card = document.createElement("a");
@@ -111,9 +112,26 @@ function getCollectionData(collection) {
 				card.href = `events/event.html?e=${post.slug}`;
 
 				// Append data to card
-				appendData(p.featured_image, "img", "image", card);
-				appendData(p.title, "h3", "text", card);
-				appendData(p.excerpt, "p", "markup", card);
+				const image = document.createElement("img");
+				if (data.featured_image.url) {
+					image.src = data.featured_image.url;
+					data.featured_image.alt
+						? (image.alt = data.featured_image.alt)
+						: "If These Lands Could Talk";
+					card.appendChild(image);
+				}
+
+				if (data.title) {
+					const title = document.createElement("h3");
+					title.textContent = data.title;
+					card.appendChild(title);
+				}
+
+				if (data.excerpt) {
+					const excerpt = document.createElement("p");
+					excerpt.textContent = data.excerpt;
+					card.appendChild(excerpt);
+				}
 
 				// Append card to container
 				container.appendChild(card);
