@@ -1,13 +1,46 @@
-// Fetch page data from Strapi
-function getPageData(page, source) {
-	const cms = source;
-	let apiURL = "";
+// const { json } = require("body-parser");
 
-	if (cms === "strapi") {
-		apiURL = `https://cms.iftheselandscouldtalk.org/api/${page}?populate=*`;
-	} else if (cms === "wordpress") {
-		apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/page`;
+// Helper functions for appending data to DOM elements
+function appendData(data, element, method, dest) {
+	if (data && dest) {
+		if (method === "text") {
+			dest.textContent = "";
+			dest.appendChild(document.createTextNode(data));
+		} else if (method === "link") {
+			let el = document.getElementById(element);
+
+			if (el) {
+				el.href = data.url;
+				el.textContent = "";
+				el.textContent = data.title;
+			} else {
+				el = document.createElement("a");
+				el.href = data.url;
+				el.textContent = data.title;
+				el.classList.add("btn-main", "btn-hover-drk");
+				dest.appendChild(el);
+			}
+		} else if (method === "markup") {
+			dest.innerHTML = "";
+			dest.innerHTML = marked.parse(data);
+		} else if (method === "image") {
+			const el = document.createElement("img");
+
+			if (data.url) {
+				el.src = data.url;
+				el.alt ? (el.alt = data.alt) : "If These Lands Could Talk";
+				el.appendChild(dest);
+			}
+		} else {
+			el.innerHTML = data;
+			el.appendChild(dest);
+		}
 	}
+}
+
+// Fetch page data from WordPress
+function getPageData(page) {
+	const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/pages?slug=${page}&acf_format=standard`;
 
 	fetch(`${apiURL}`, {
 		method: "GET",
@@ -17,26 +50,40 @@ function getPageData(page, source) {
 	})
 		.then(response => response.json())
 		.then(response => {
-			const page = response.data;
-			const pageTitle = document.getElementById("page-title");
-			const pageContent = document.getElementById("content-container");
+			// Page data
+			const data = response[0].acf;
 
-			pageTitle.textContent = page.attributes.Title;
-			pageContent.innerHTML = page.attributes.content;
+			// Dynamic elements
+			const pageTitle = document.getElementById("page-title"); // For <title> tag
+			const hero = document.getElementById("hero"); // For hero section
+			const heroHeading = document.getElementById("hero-heading"); // For h1 in the hero
+			const heroSubheading = document.getElementById("hero-subheading");
+			const heroImage = document.getElementById("hero-image");
+
+			// TODO: Add button repeater functionality
+			const btnContainer = document.getElementById("hero-button-container");
+			const mainContent = document.getElementById("main-content");
+
+			// Append data to elements
+			appendData(data.hero_heading, "h1", "text", heroHeading);
+			appendData(data.hero_subheading, "h2", "text", heroSubheading);
+			appendData(data.button_1, "button-1", "link", btnContainer);
+			appendData(data.button_2, "button-2", "link", btnContainer);
+
+			if (data.hero_image.url) {
+				appendData(data.hero_image, "img", "image", heroImage);
+				hero.style.backgroundImage = `url(${data.hero_image.url})`;
+			}
+
+			appendData(data.main_content, "div", "markup", mainContent);
 		})
 		.catch(error => console.error("Error:", error));
 }
 
-function getItemData(collection, source) {
+function getItemData(collection) {
 	const urlParams = new URLSearchParams(window.location.search);
 	const slug = urlParams.get("e");
-	let apiURL = "";
-
-	if (source === "strapi") {
-		apiURL = `https://cms.iftheselandscouldtalk.org/api/${collection}/${slug}?populate=*`;
-	} else if (source === "wordpress") {
-		apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}?slug=${slug}`;
-	}
+	const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}?slug=${slug}&acf_format=standard`;
 
 	fetch(`${apiURL}`, {
 		method: "GET",
@@ -46,39 +93,25 @@ function getItemData(collection, source) {
 	})
 		.then(response => response.json())
 		.then(response => {
-			console.log(response);
+			data = response[0].acf;
 
-			let p = {};
+			const title = document.getElementById("post-title");
+			const description = document.getElementById("description-container");
+			const highlights = document.getElementById("highlights-container");
+			const btnContainer = document.getElementById("button-container");
 
-			if (source === "strapi") {
-				p = response.data.attributes;
-			} else if (source === "wordpress") {
-				p = response[0].acf;
-			}
-
-			const postTitle = document.getElementById("post-title");
-			const postContent = document.getElementById("content-container");
-			const postHighlights = document.getElementById("highlights-container");
-
-			postTitle.textContent = p.title;
-			postContent.innerHTML = marked.parse(p.content);
-			postHighlights.innerHTML = marked.parse(p.highlights);
+			appendData(data.title, "h1", "text", title);
+			appendData(data.content, "div", "markup", description);
+			appendData(data.button_1, "button-1", "link", btnContainer);
+			appendData(data.button_2, "button-2", "link", btnContainer);
+			appendData(data.highlights, "div", "markup", highlights);
 		})
 		.catch(error => console.error("Error:", error));
 }
 
 // Fetch all events
-function getCollectionData(collection, source) {
-	const cms = source;
-	let apiURL = "";
-
-	if (cms === "strapi") {
-		apiURL = `https://cms.iftheselandscouldtalk.org/api/${collection}-items?populate=*`;
-	} else if (cms === "wordpress") {
-		apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}`;
-	}
-
-	console.log(apiURL);
+function getCollectionData(collection) {
+	const apiURL = `https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/${collection}?acf_format=standard`;
 
 	fetch(`${apiURL}`, {
 		method: "GET",
@@ -88,43 +121,43 @@ function getCollectionData(collection, source) {
 	})
 		.then(response => response.json())
 		.then(response => {
-			let posts = response;
+			const posts = response;
 
+			// Generate cards for each post
 			posts.forEach(post => {
+				// Single event data
+				const data = post.acf;
+
+				// Container elements
 				const container = document.getElementById(`${collection}-container`);
-				const postDiv = document.createElement("div");
-				postDiv.classList.add("card");
+				const card = document.createElement("a");
+				card.classList.add("card", "event");
+				card.href = `events/event.html?e=${post.slug}`;
 
-				const postImage = document.createElement("img");
-				const postTitle = document.createElement("h3");
-
-				const postContent = document.createElement("p");
-				const postLink = document.createElement("a");
-				postLink.classList.add("btn-main");
-
-				let p = post.attributes;
-
-				if (cms === "wordpress") {
-					p = post.acf;
+				// Append data to the card
+				if (data.featured_image.url) {
+					const image = document.createElement("img");
+					image.src = data.featured_image.url;
+					data.featured_image.alt
+						? (image.alt = data.featured_image.alt)
+						: "If These Lands Could Talk";
+					card.appendChild(image);
 				}
 
-				// postImage.src = cmsURL + p.featuredImage.data.attributes.url;
-				postTitle.textContent = p.title;
-				if (cms == "strapi") {
-					postContent.innerHTML = marked.parse(p.content);
-				} else if (cms == "wordpress") {
-					postContent.innerHTML = p.content;
+				if (data.title) {
+					const title = document.createElement("h3");
+					title.textContent = data.title;
+					card.appendChild(title);
 				}
 
-				postLink.innerHTML = "Read more";
-				postLink.href = "/events/event.html?e=" + post.slug;
+				if (data.excerpt) {
+					const excerpt = document.createElement("p");
+					excerpt.textContent = data.excerpt;
+					card.appendChild(excerpt);
+				}
 
-				postDiv.appendChild(postTitle);
-				postDiv.appendChild(postImage);
-				postDiv.appendChild(postContent);
-				postDiv.appendChild(postLink);
-
-				container.appendChild(postDiv);
+				// Append this card to the container
+				container.appendChild(card);
 			});
 		})
 		.catch(error => console.error("Error:", error));
