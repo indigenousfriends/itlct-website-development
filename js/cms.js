@@ -8,7 +8,7 @@ function appendData(data, element, method, dest) {
 			dest.appendChild(document.createTextNode(data));
 		} else if (method === "link") {
 			let el = document.getElementById(element);
-			console.log(element);
+
 			if (el) {
 				el.href = data.url;
 				el.textContent = "";
@@ -24,15 +24,16 @@ function appendData(data, element, method, dest) {
 			dest.innerHTML = "";
 			dest.innerHTML = marked.parse(data);
 		} else if (method === "image") {
-			const dest = document.createElement(element);
+			const el = document.createElement("img");
+
 			if (data.url) {
-				dest.src = data.url;
-				data.alt ? (dest.alt = data.alt) : "If These Lands Could Talk";
-				dest.appendChild(dest);
+				el.src = data.url;
+				el.alt ? (el.alt = data.alt) : "If These Lands Could Talk";
+				el.appendChild(dest);
 			}
 		} else {
-			dest.innerHTML = data;
-			dest.appendChild(dest);
+			el.innerHTML = data;
+			el.appendChild(dest);
 		}
 	}
 }
@@ -60,14 +61,14 @@ function getPageData(page) {
 			const heroImage = document.getElementById("hero-image");
 
 			// TODO: Add button repeater functionality
-			const heroButtonContainer = document.getElementById(
-				"hero-button-container",
-			);
+			const btnContainer = document.getElementById("hero-button-container");
 			const mainContent = document.getElementById("main-content");
 
 			// Append data to elements
 			appendData(data.hero_heading, "h1", "text", heroHeading);
 			appendData(data.hero_subheading, "h2", "text", heroSubheading);
+			appendData(data.button_1, "button-1", "link", btnContainer);
+			appendData(data.button_2, "button-2", "link", btnContainer);
 
 			if (data.hero_image.url) {
 				appendData(data.hero_image, "img", "image", heroImage);
@@ -98,8 +99,6 @@ function getItemData(collection) {
 			const description = document.getElementById("description-container");
 			const highlights = document.getElementById("highlights-container");
 			const btnContainer = document.getElementById("button-container");
-			// const btn1 = document.getElementById("button-1");
-			// const btn2 = document.getElementById("button-2");
 
 			appendData(data.title, "h1", "text", title);
 			appendData(data.content, "div", "markup", description);
