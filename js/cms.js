@@ -1,37 +1,38 @@
 // const { json } = require("body-parser");
 
 // Helper functions for appending data to DOM elements
-function appendData(data, element, method, target) {
-	if (data && target) {
+function appendData(data, element, method, dest) {
+	if (data && dest) {
 		if (method === "text") {
-			target.textContent = "";
-			target.appendChild(document.createTextNode(data));
+			dest.textContent = "";
+			dest.appendChild(document.createTextNode(data));
 		} else if (method === "link") {
-			let el;
-			if (target) {
-				el = document.getElementById(target);
-				console.log(`Found target: ${target}`);
+			let el = document.getElementById(element);
+			console.log(element);
+			if (el) {
+				el.href = data.url;
+				el.textContent = "";
+				el.textContent = data.title;
 			} else {
-				el = document.createElement(element);
-				console.log("Created element");
+				el = document.createElement("a");
+				el.href = data.url;
+				el.textContent = data.title;
+				el.classList.add("btn-main", "btn-hover-drk");
+				dest.appendChild(el);
 			}
-
-			el.href = data.url;
-			el.textContent = data.title;
-			target.appendChild(el);
 		} else if (method === "markup") {
-			target.innerHTML = "";
-			target.innerHTML = marked.parse(data);
+			dest.innerHTML = "";
+			dest.innerHTML = marked.parse(data);
 		} else if (method === "image") {
-			const el = document.createElement(element);
+			const dest = document.createElement(element);
 			if (data.url) {
-				el.src = data.url;
-				data.alt ? (el.alt = data.alt) : "If These Lands Could Talk";
-				target.appendChild(el);
+				dest.src = data.url;
+				data.alt ? (dest.alt = data.alt) : "If These Lands Could Talk";
+				dest.appendChild(dest);
 			}
 		} else {
-			el.innerHTML = data;
-			target.appendChild(el);
+			dest.innerHTML = data;
+			dest.appendChild(dest);
 		}
 	}
 }
@@ -96,13 +97,14 @@ function getItemData(collection) {
 			const title = document.getElementById("post-title");
 			const description = document.getElementById("description-container");
 			const highlights = document.getElementById("highlights-container");
-			const btn1 = document.getElementById("button-1");
-			const btn2 = document.getElementById("button-2");
-			console.log(btn1);
+			const btnContainer = document.getElementById("button-container");
+			// const btn1 = document.getElementById("button-1");
+			// const btn2 = document.getElementById("button-2");
+
 			appendData(data.title, "h1", "text", title);
 			appendData(data.content, "div", "markup", description);
-			appendData(data.button_1, "a", "link", btn1);
-			// appendData(data.button_2, "a", "link", btn2);
+			appendData(data.button_1, "button-1", "link", btnContainer);
+			appendData(data.button_2, "button-2", "link", btnContainer);
 			appendData(data.highlights, "div", "markup", highlights);
 		})
 		.catch(error => console.error("Error:", error));

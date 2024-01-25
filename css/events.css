@@ -184,6 +184,13 @@ Section Styles (background, padding, etc.)
 	text-align: center;
 }
 
+.button-container {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	gap: var(--spacing-lg);
+}
+
 /* 
 ===================================
 Media Queries (overriding styles for different screen sizes)
