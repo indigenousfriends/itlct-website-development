@@ -54,28 +54,86 @@ function getPageData(page) {
 			const data = response[0].acf;
 
 			// Dynamic elements
-			const pageTitle = document.getElementById("page-title"); // For <title> tag
 			const hero = document.getElementById("hero"); // For hero section
 			const heroHeading = document.getElementById("hero-heading"); // For h1 in the hero
 			const heroSubheading = document.getElementById("hero-subheading");
 			const heroImage = document.getElementById("hero-image");
 
-			// TODO: Add button repeater functionality
 			const btnContainer = document.getElementById("hero-button-container");
 			const mainContent = document.getElementById("main-content");
 
-			// Append data to elements
-			appendData(data.hero_heading, "h1", "text", heroHeading);
-			appendData(data.hero_subheading, "h2", "text", heroSubheading);
-			appendData(data.button_1, "button-1", "link", btnContainer);
-			appendData(data.button_2, "button-2", "link", btnContainer);
+			const cards = document.querySelectorAll("#card-container .card");
+			const tiles = data.tile_section;
 
+			if (cards.length > 0 && data.tile_section) {
+				Object.keys(tiles).forEach(key => {
+					const tile = tiles[key];
+					const slug = key.replace(/_/g, "-");
+					const tileImage = document.querySelector(`#${slug} img`);
+					const tileHeading = document.querySelector(
+						`#${slug} .card-text-container  h3`,
+					);
+					const tileText = document.querySelector(
+						`#${slug} .card-text-container  p`,
+					);
+					const tileDescription = document.querySelector(
+						`#${slug} .card-description  p`,
+					);
+
+					if (tile.image.url && tileImage) {
+						appendData(tile.image, "img", "image", tileImage);
+					}
+					if (tile.heading && tileHeading) {
+						appendData(tile.heading, "h3", "text", tileHeading);
+					}
+					if (tile.text && tileText) {
+						appendData(tile.text, "p", "text", tileText);
+					}
+					if (tile.description && tileDescription) {
+						appendData(tile.description, "p", "text", tileDescription);
+					}
+				});
+			}
+
+			// Append data to elements
 			if (data.hero_image.url) {
 				appendData(data.hero_image, "img", "image", heroImage);
 				hero.style.backgroundImage = `url(${data.hero_image.url})`;
 			}
+			data.hero_heading
+				? appendData(data.hero_heading, "h1", "text", heroHeading)
+				: null;
+			data.hero_subheading
+				? appendData(data.hero_subheading, "h2", "text", heroSubheading)
+				: null;
+			data.button_1
+				? appendData(data.button_1, "button-1", "link", btnContainer)
+				: null;
+			data.button_2
+				? appendData(data.button_2, "button-2", "link", btnContainer)
+				: null;
+			data.main_content
+				? appendData(data.main_content, "div", "markup", mainContent)
+				: null;
 
-			appendData(data.main_content, "div", "markup", mainContent);
+			if (cards > 0 && data.tile_section) {
+				tiles.forEach(tile => {
+					const tileData = data.tile_section.tile_section[tile.id];
+					const tileImage = tile.querySelector("img");
+					const tileTitle = tile.querySelector("h3");
+					const tileExcerpt = tile.querySelector("p");
+
+					if (tileData.image.url) {
+						appendData(tileData.image, "img", "image", tileImage);
+					}
+					if (tileData.heading) {
+						appendData(tileData.heading, "h3", "text", tileTitle);
+					}
+					if (tileData.excerpt) {
+						appendData(tileData.excerpt, "p", "text", tileExcerpt);
+					}
+				});
+			}
 		})
 		.catch(error => console.error("Error:", error));
 }
