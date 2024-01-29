@@ -12,11 +12,11 @@ function appendData(data, element, method, dest) {
 			if (el) {
 				el.href = data.url;
 				el.textContent = "";
-				el.textContent = data.title;
+				el.textContent = response.title;
 			} else {
 				el = document.createElement("a");
 				el.href = data.url;
-				el.textContent = data.title;
+				el.textContent = response.title;
 				el.classList.add("btn-main", "btn-hover-drk");
 				dest.appendChild(el);
 			}
@@ -24,12 +24,16 @@ function appendData(data, element, method, dest) {
 			dest.innerHTML = "";
 			dest.innerHTML = marked.parse(data);
 		} else if (method === "image") {
-			const el = document.createElement("img");
-
-			if (data.url) {
+			if (!dest && data.url) {
+				el = document.createElement("img");
 				el.src = data.url;
 				el.alt ? (el.alt = data.alt) : "If These Lands Could Talk";
 				el.appendChild(dest);
+			} else {
+				dest.setAttribute("src", data.url);
+				data.alt
+					? dest.setAttribute("alt", data.alt)
+					: dest.setAttribute("alt", "If These Lands Could Talk");
 			}
 		} else {
 			el.innerHTML = data;
@@ -123,15 +127,15 @@ function getPageData(page) {
 					const tileTitle = tile.querySelector("h3");
 					const tileExcerpt = tile.querySelector("p");
 
-					if (tileData.image.url) {
-						appendData(tileData.image, "img", "image", tileImage);
-					}
-					if (tileData.heading) {
-						appendData(tileData.heading, "h3", "text", tileTitle);
-					}
-					if (tileData.excerpt) {
-						appendData(tileData.excerpt, "p", "text", tileExcerpt);
-					}
+					tileData.image.url && tileImage
+						? appendData(tileData.image, "img", "image", tileImage)
+						: null;
+					tileData.heading && tileTitle
+						? appendData(tileData.heading, "h3", "text", tileTitle)
+						: null;
+					tileData.excerpt && tileExcerpt
+						? appendData(tileData.excerpt, "p", "text", tileExcerpt)
+						: null;
 				});
 			}
 		})
@@ -151,18 +155,27 @@ function getItemData(collection) {
 	})
 		.then(response => response.json())
 		.then(response => {
-			data = response[0].acf;
-
+			const data = response[0].acf;
 			const title = document.getElementById("post-title");
 			const description = document.getElementById("description-container");
 			const highlights = document.getElementById("highlights-container");
 			const btnContainer = document.getElementById("button-container");
 
-			appendData(data.title, "h1", "text", title);
-			appendData(data.content, "div", "markup", description);
-			appendData(data.button_1, "button-1", "link", btnContainer);
-			appendData(data.button_2, "button-2", "link", btnContainer);
-			appendData(data.highlights, "div", "markup", highlights);
+			response[0].title.rendered && title // Using the WordPress title instead of the ACF title
+				? appendData(response[0].title.rendered, "h1", "markup", title)
+				: null;
+			data.content && description
+				? appendData(data.content, "div", "markup", description)
+				: null;
+			data.button_1 && btnContainer
+				? appendData(data.button_1, "button-1", "link", btnContainer)
+				: null;
+			data.button_2 && btnContainer
+				? appendData(data.button_2, "button-2", "link", btnContainer)
+				: null;
+			data.highlights && highlights
+				? appendData(data.highlights, "div", "markup", highlights)
+				: null;
 		})
 		.catch(error => console.error("Error:", error));
 }
@@ -182,16 +195,24 @@ function getCollectionData(collection) {
 			const posts = response;
 
 			// Generate cards for each post
-			posts.forEach(post => {
-				// Single event data
+			posts.forEach((post, index) => {
+				// Single item data
 				const data = post.acf;
+
+				// Start and End dates
+				const currentDate = new Date();
+				const startDate = new Date(data.startdate);
+				const endDate = new Date(data.enddate);
+				const past = endDate < currentDate;
 
 				// Container elements
 				const container = document.getElementById(`${collection}-container`);
+				const pastEventsContainer = document.getElementById(
+					"previous-events-container",
+				);
 				const card = document.createElement("a");
 				card.classList.add("card", "event");
 				card.href = `events/event.html?e=${post.slug}`;
-
 				// Append data to the card
 				if (data.featured_image.url) {
 					const image = document.createElement("img");
@@ -201,21 +222,22 @@ function getCollectionData(collection) {
 						: "If These Lands Could Talk";
 					card.appendChild(image);
 				}
-
-				if (data.title) {
+				if (response[index].title) {
 					const title = document.createElement("h3");
-					title.textContent = data.title;
+					title.textContent = response[index].title.rendered;
 					card.appendChild(title);
 				}
-
 				if (data.excerpt) {
 					const excerpt = document.createElement("p");
 					excerpt.textContent = data.excerpt;
 					card.appendChild(excerpt);
 				}
-
 				// Append this card to the container
-				container.appendChild(card);
+				if (past) {
+					pastEventsContainer.appendChild(card);
+				} else {
+					container.appendChild(card);
+				}
 			});
 		})
 		.catch(error => console.error("Error:", error));
