@@ -12,11 +12,11 @@ function appendData(data, element, method, dest) {
 			if (el) {
 				el.href = data.url;
 				el.textContent = "";
-				el.textContent = response.title;
+				el.textContent = data.title;
 			} else {
 				el = document.createElement("a");
 				el.href = data.url;
-				el.textContent = response.title;
+				el.textContent = data.title;
 				el.classList.add("btn-main", "btn-hover-drk");
 				dest.appendChild(el);
 			}
