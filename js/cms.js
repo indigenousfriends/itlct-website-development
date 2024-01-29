@@ -12,11 +12,11 @@ function appendData(data, element, method, dest) {
 			if (el) {
 				el.href = data.url;
 				el.textContent = "";
-				el.textContent = data.title;
+				el.textContent = response.title;
 			} else {
 				el = document.createElement("a");
 				el.href = data.url;
-				el.textContent = data.title;
+				el.textContent = response.title;
 				el.classList.add("btn-main", "btn-hover-drk");
 				dest.appendChild(el);
 			}
@@ -195,16 +195,24 @@ function getCollectionData(collection) {
 			const posts = response;
 
 			// Generate cards for each post
-			posts.forEach(post => {
+			posts.forEach((post, index) => {
 				// Single item data
 				const data = post.acf;
 
+				// Start and End dates
+				const currentDate = new Date();
+				const startDate = new Date(data.startdate);
+				const endDate = new Date(data.enddate);
+				const past = endDate < currentDate;
+
 				// Container elements
 				const container = document.getElementById(`${collection}-container`);
+				const pastEventsContainer = document.getElementById(
+					"previous-events-container",
+				);
 				const card = document.createElement("a");
 				card.classList.add("card", "event");
 				card.href = `events/event.html?e=${post.slug}`;
-
 				// Append data to the card
 				if (data.featured_image.url) {
 					const image = document.createElement("img");
@@ -214,9 +222,9 @@ function getCollectionData(collection) {
 						: "If These Lands Could Talk";
 					card.appendChild(image);
 				}
-				if (data.title) {
+				if (response[index].title) {
 					const title = document.createElement("h3");
-					title.textContent = data.title;
+					title.textContent = response[index].title.rendered;
 					card.appendChild(title);
 				}
 				if (data.excerpt) {
@@ -224,9 +232,12 @@ function getCollectionData(collection) {
 					excerpt.textContent = data.excerpt;
 					card.appendChild(excerpt);
 				}
-
 				// Append this card to the container
-				container.appendChild(card);
+				if (past) {
+					pastEventsContainer.appendChild(card);
+				} else {
+					container.appendChild(card);
+				}
 			});
 		})
 		.catch(error => console.error("Error:", error));
