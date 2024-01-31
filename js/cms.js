@@ -55,6 +55,7 @@ function getPageData(page) {
 		.then(response => {
 			// Page data
 			const data = response[0].acf;
+			console.log(data);
 			// Hero
 			const hero = document.getElementById("hero"); // For hero section
 			const heroHeading = document.getElementById("hero-heading"); // For h1 in the hero
@@ -119,52 +120,53 @@ function getPageData(page) {
 			});
 
 			// Cards
-			const cards = document.querySelectorAll("#card-container .card");
-			const tiles = data.tile_section;
-			if (cards.length > 0 && data.tile_section) {
-				Object.keys(tiles).forEach(key => {
-					const tile = tiles[key];
+			const cardElements = document.querySelectorAll("#card-container .card");
+			const cards = data.card_section;
+
+			if (cardElements.length > 0 && data.card_section) {
+				Object.keys(cards).forEach(key => {
+					const card = cards[key];
 					const slug = key.replace(/_/g, "-");
-					const tileImage = document.querySelector(`#${slug} img`);
-					const tileHeading = document.querySelector(
+					const cardImage = document.querySelector(`#${slug} img`);
+					const cardHeading = document.querySelector(
 						`#${slug} .card-text-container  h3`,
 					);
-					const tileText = document.querySelector(
+					const cardText = document.querySelector(
 						`#${slug} .card-text-container  p`,
 					);
-					const tileDescription = document.querySelector(
+					const cardDescription = document.querySelector(
 						`#${slug} .card-description  p`,
 					);
 
-					if (tile.image && tileImage) {
-						appendData(tile.image, "img", "image", tileImage);
+					if (card.image && cardImage) {
+						appendData(card.image, "img", "image", cardImage);
 					}
-					if (tile.heading && tileHeading) {
-						appendData(tile.heading, "h3", "text", tileHeading);
+					if (card.heading && cardHeading) {
+						appendData(card.heading, "h3", "text", cardHeading);
 					}
-					if (tile.text && tileText) {
-						appendData(tile.text, "p", "text", tileText);
+					if (card.text && cardText) {
+						appendData(card.text, "p", "text", cardText);
 					}
-					if (tile.description && tileDescription) {
-						appendData(tile.description, "p", "text", tileDescription);
+					if (card.description && cardDescription) {
+						appendData(card.description, "p", "text", cardDescription);
 					}
 				});
 			}
-			if (cards > 0 && data.tile_section) {
-				tiles.forEach(tile => {
-					const tileData = data.tile_section.tile_section[tile.id];
-					const tileImage = tile.querySelector("img");
-					const tileTitle = tile.querySelector("h3");
-					const tileExcerpt = tile.querySelector("p");
+			if (cardElements > 0 && data.card_section) {
+				cards.forEach(card => {
+					const cardData = data.card_section.card_section[card.id];
+					const cardImage = card.querySelector("img");
+					const cardTitle = card.querySelector("h3");
+					const cardExcerpt = card.querySelector("p");
 
-					tileData.image.url && tileImage
-						? appendData(tileData.image, "img", "image", tileImage)
+					cardData.image.url && cardImage
+						? appendData(cardData.image, "img", "image", cardImage)
 						: null;
-					tileData.heading && tileTitle
-						? appendData(tileData.heading, "h3", "text", tileTitle)
+					cardData.heading && cardTitle
+						? appendData(cardData.heading, "h3", "text", cardTitle)
 						: null;
-					tileData.excerpt && tileExcerpt
-						? appendData(tileData.excerpt, "p", "text", tileExcerpt)
+					cardData.excerpt && cardExcerpt
+						? appendData(cardData.excerpt, "p", "text", cardExcerpt)
 						: null;
 				});
 			}
