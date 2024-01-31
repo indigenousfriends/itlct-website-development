@@ -55,19 +55,68 @@ function getPageData(page) {
 		.then(response => {
 			// Page data
 			const data = response[0].acf;
-
 			// Hero
 			const hero = document.getElementById("hero"); // For hero section
 			const heroHeading = document.getElementById("hero-heading"); // For h1 in the hero
 			const heroSubheading = document.getElementById("hero-subheading");
 			const heroImage = document.getElementById("hero-image");
 			const btnContainer = document.getElementById("hero-button-container");
+			if (data.hero_image.url) {
+				appendData(data.hero_image, "img", "image", heroImage);
+				hero.style.backgroundImage = `url(${data.hero_image.url})`;
+			}
+			data.hero_heading
+				? appendData(data.hero_heading, "h1", "text", heroHeading)
+				: null;
+			data.hero_subheading
+				? appendData(data.hero_subheading, "h2", "text", heroSubheading)
+				: null;
+			data.button_1
+				? appendData(data.button_1, "button-1", "link", btnContainer)
+				: null;
+			data.button_2
+				? appendData(data.button_2, "button-2", "link", btnContainer)
+				: null;
+
+			// Main Content Sections
+			const mainContent = document.getElementById("main-content");
+			data.main_content
+				? appendData(data.main_content, "div", "markup", mainContent)
+				: null;
 
 			// Generic Content Sections
-			const mainContent = document.getElementById("main-content");
-			const section1 = document.getElementById("section-1");
-			const section2 = document.getElementById("section-2");
-			const section3 = document.getElementById("section-3");
+			const sections = document.querySelectorAll("section");
+			sections.forEach((section, index) => {
+				const sectionID = section.id;
+				const slug = sectionID.replace(/-/g, "_");
+
+				if (
+					sectionID &&
+					slug.includes("section") &&
+					data.hasOwnProperty(slug)
+				) {
+					const sectionData = data[slug];
+					const sectionHeading = document.querySelector(`#${sectionID} h2`);
+					const sectionText = document.querySelector(`#${sectionID} p`);
+					const sectionImage = document.querySelector(`#${sectionID} img`);
+					const sectionButton = document.querySelector(`#${sectionID} button`);
+
+					sectionData.heading && sectionHeading
+						? appendData(sectionData.heading, "h2", "text", sectionHeading)
+						: null;
+					sectionData.text && sectionText
+						? appendData(sectionData.text, "p", "text", sectionText)
+						: null;
+					sectionData.image && sectionImage
+						? appendData(sectionData.image, "img", "image", sectionImage)
+						: null;
+					sectionData.button && sectionButton
+						? appendData(sectionData.button, "button", "link", sectionButton)
+						: null;
+				} else {
+					null;
+				}
+			});
 
 			// Cards
 			const cards = document.querySelectorAll("#card-container .card");
@@ -101,28 +150,6 @@ function getPageData(page) {
 					}
 				});
 			}
-
-			// Append data to elements
-			if (data.hero_image.url) {
-				appendData(data.hero_image, "img", "image", heroImage);
-				hero.style.backgroundImage = `url(${data.hero_image.url})`;
-			}
-			data.hero_heading
-				? appendData(data.hero_heading, "h1", "text", heroHeading)
-				: null;
-			data.hero_subheading
-				? appendData(data.hero_subheading, "h2", "text", heroSubheading)
-				: null;
-			data.button_1
-				? appendData(data.button_1, "button-1", "link", btnContainer)
-				: null;
-			data.button_2
-				? appendData(data.button_2, "button-2", "link", btnContainer)
-				: null;
-			data.main_content
-				? appendData(data.main_content, "div", "markup", mainContent)
-				: null;
-
 			if (cards > 0 && data.tile_section) {
 				tiles.forEach(tile => {
 					const tileData = data.tile_section.tile_section[tile.id];
