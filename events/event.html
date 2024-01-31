@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link
 		rel="shortcut icon"
-		href="assets/logos/favicon.svg"
+		href="../assets/logos/favicon.svg"
 		type="image/svg+xml" />
-	<title>If These Lands Could Talk - Accessibility Statement</title>
+	<title>If These Lands Could Talk</title>
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,14 +18,15 @@
 	<link
 		rel="stylesheet"
 		href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700&display=swap" />
-	<!-- styles -->
-	<link rel="stylesheet" href="/css/global.css" />
-	<link rel="stylesheet" href="/css/policy.css" />
-	<script src="/js/mailerlite.js" defer></script>
+	<!-- Styles -->
+	<link rel="stylesheet" href="../css/global.css" />
+	<link rel="stylesheet" href="../css/events.css" />
+	<!-- MailerLite Universal -->
+	<script src="../js/mailerlite.js" defer></script>
 </head>
 
-<body class="policy-page">
-	<!-- Header -->
+<body>
+	<!-- Header Navigation-->
 	<header>
 		<!-- Navigation -->
 		<nav>
@@ -80,34 +81,38 @@
 		</nav>
 	</header>
 
+	<!-- Event Content -->
 	<main>
-		<!-- wrapper -->
-		<div class="wrapper">
-			<!-- About Article -->
-			<article id="main-content">
-				<h1>Accessibility Statement</h1>
-
-				<h2>Our Commitment to Accessibility</h2>
-
-				<p>
-					If These Lands Could Talk (“ITLCT) is committed to ensuring digital
-					accessibility for people with disabilities. We are continually
-					improving the user experience for everyone and strive for compliance
-					with the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA.
-					ITLCT welcomes comments on how to improve accessibility across our
-					digital properties. Please email us at:
-					<a
-						href="mailto:accessibility@iftheselandscouldtalk.org"
-						target="_blank"
-						rel="noopener noreferrer">accessibility@iftheselandscouldtalk.org</a>
-					with questions or suggestions.
-				</p>
-
-				<time>Accessibility statement dated as of January 8, 2024.</time>
-			</article>
+		<section class="event-detail-container">
+			<img
+				src="/assets/images/pages/event-single/event-wimw-desktop.jpg"
+				srcset="/assets/images/pages/event-single/mobile/event-wimw-mobile.jpg 768w, /assets/images/pages/event-single/event-wimw-desktop.jpg 1x"
+				alt="WIMW Event Poster"
+				class="event-poster" />
+			<div class="wrapper">
+				<div class="cta-container">
+					<h1 id="post-title"></h1>
+					<div id="description-container"></div>
+					<div id="button-container" class="button-container">
+						<a href="#" id="button-1" class="btn-main btn-hover-drk">View Event</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Event Highlights -->
+		<div class="section-header gradient-header">
+			<h2>Event Highlights</h2>
 		</div>
+		<section>
+			<div class="wrapper">
+				<div id="highlights-container" class="event-detail-container">
+					<img
+						src="/assets/images/pages/events/digital-stewardship-event-poster.jpg"
+						alt="Digital steweardship event poster" />
+				</div>
+			</div>
+		</section>
 	</main>
-
 	<!-- Footer -->
 	<footer>
 		<div class="wrapper">
@@ -248,12 +253,11 @@
 		</div>
 	</div>
 
-	<!-- JavaScript -->
 	<script src="/js/main.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-	<script src="/js/cms.js"></script>
+	<script src="../js/cms.js"></script>
 	<script>
-		getPageData('accessibility');
+		getItemData('events');
 	</script>
 </body>
 
