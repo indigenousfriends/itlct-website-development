@@ -55,7 +55,7 @@ function getPageData(page) {
 		.then(response => {
 			// Page data
 			const data = response[0].acf;
-			console.log(data);
+			// console.log(data);
 			// Hero
 			const hero = document.getElementById("hero"); // For hero section
 			const heroHeading = document.getElementById("hero-heading"); // For h1 in the hero
@@ -150,24 +150,6 @@ function getPageData(page) {
 					if (card.description && cardDescription) {
 						appendData(card.description, "p", "text", cardDescription);
 					}
-				});
-			}
-			if (cardElements > 0 && data.card_section) {
-				cards.forEach(card => {
-					const cardData = data.card_section.card_section[card.id];
-					const cardImage = card.querySelector("img");
-					const cardTitle = card.querySelector("h3");
-					const cardExcerpt = card.querySelector("p");
-
-					cardData.image.url && cardImage
-						? appendData(cardData.image, "img", "image", cardImage)
-						: null;
-					cardData.heading && cardTitle
-						? appendData(cardData.heading, "h3", "text", cardTitle)
-						: null;
-					cardData.excerpt && cardExcerpt
-						? appendData(cardData.excerpt, "p", "text", cardExcerpt)
-						: null;
 				});
 			}
 		})
