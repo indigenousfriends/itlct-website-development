@@ -1,5 +1,3 @@
-// const { json } = require("body-parser");
-
 // Helper functions for appending data to DOM elements
 function appendData(data, element, method, dest) {
 	if (data && dest) {
@@ -30,6 +28,7 @@ function appendData(data, element, method, dest) {
 				el.alt ? (el.alt = data.alt) : "If These Lands Could Talk";
 				el.appendChild(dest);
 			} else {
+				console.log(dest);
 				dest.setAttribute("src", data.url);
 				data.alt
 					? dest.setAttribute("alt", data.alt)
@@ -57,18 +56,22 @@ function getPageData(page) {
 			// Page data
 			const data = response[0].acf;
 
-			// Dynamic elements
+			// Hero
 			const hero = document.getElementById("hero"); // For hero section
 			const heroHeading = document.getElementById("hero-heading"); // For h1 in the hero
 			const heroSubheading = document.getElementById("hero-subheading");
 			const heroImage = document.getElementById("hero-image");
-
 			const btnContainer = document.getElementById("hero-button-container");
-			const mainContent = document.getElementById("main-content");
 
+			// Generic Content Sections
+			const mainContent = document.getElementById("main-content");
+			const section1 = document.getElementById("section-1");
+			const section2 = document.getElementById("section-2");
+			const section3 = document.getElementById("section-3");
+
+			// Cards
 			const cards = document.querySelectorAll("#card-container .card");
 			const tiles = data.tile_section;
-			console.log(data);
 			if (cards.length > 0 && data.tile_section) {
 				Object.keys(tiles).forEach(key => {
 					const tile = tiles[key];
@@ -156,11 +159,26 @@ function getItemData(collection) {
 		.then(response => response.json())
 		.then(response => {
 			const data = response[0].acf;
+			const posterContainer = document.getElementById("poster-container");
 			const title = document.getElementById("post-title");
 			const description = document.getElementById("description-container");
 			const highlights = document.getElementById("highlights-container");
 			const btnContainer = document.getElementById("button-container");
 
+			if (data.featured_image.url) {
+				const image = document.createElement("img");
+				image.src = data.featured_image.url;
+				data.featured_image.alt
+					? (image.alt = data.featured_image.alt)
+					: "If These Lands Could Talk";
+
+				image.classList.add("event-poster");
+				posterContainer.appendChild(image);
+
+				// console.log(data.featured_image.url);
+				// appendData(data.featured_image, "img", "image", image);
+				// hero.style.backgroundImage = `url(${data.featured_image.url})`;
+			}
 			response[0].title.rendered && title // Using the WordPress title instead of the ACF title
 				? appendData(response[0].title.rendered, "h1", "markup", title)
 				: null;
