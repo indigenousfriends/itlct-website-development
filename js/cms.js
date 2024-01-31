@@ -68,7 +68,7 @@ function getPageData(page) {
 
 			const cards = document.querySelectorAll("#card-container .card");
 			const tiles = data.tile_section;
-
+			console.log(data);
 			if (cards.length > 0 && data.tile_section) {
 				Object.keys(tiles).forEach(key => {
 					const tile = tiles[key];
@@ -84,7 +84,7 @@ function getPageData(page) {
 						`#${slug} .card-description  p`,
 					);
 
-					if (tile.image.url && tileImage) {
+					if (tile.image && tileImage) {
 						appendData(tile.image, "img", "image", tileImage);
 					}
 					if (tile.heading && tileHeading) {
@@ -192,18 +192,17 @@ function getCollectionData(collection) {
 	})
 		.then(response => response.json())
 		.then(response => {
-			const posts = response;
+			const items = response;
 
-			// Generate cards for each post
-			posts.forEach((post, index) => {
+			// Generate cards for each item
+			items.forEach((item, index) => {
 				// Single item data
-				const data = post.acf;
+				const data = item.acf;
 
-				// Start and End dates
+				// Using dates to sort events
 				const currentDate = new Date();
-				const startDate = new Date(data.startdate);
-				const endDate = new Date(data.enddate);
-				const past = endDate < currentDate;
+				data.enddate ? (endDate = new Date(data.enddate)) : null;
+				endDate ? (past = endDate < currentDate) : null;
 
 				// Container elements
 				const container = document.getElementById(`${collection}-container`);
@@ -212,7 +211,7 @@ function getCollectionData(collection) {
 				);
 				const card = document.createElement("a");
 				card.classList.add("card", "event");
-				card.href = `events/event.html?e=${post.slug}`;
+				card.href = `events/event.html?e=${item.slug}`;
 				// Append data to the card
 				if (data.featured_image.url) {
 					const image = document.createElement("img");
