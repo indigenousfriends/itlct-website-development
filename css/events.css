@@ -171,7 +171,6 @@ Section Styles (background, padding, etc.)
 
 .event-detail-container .event-poster {
 	max-width: 400px;
-	aspect-ratio: 567 / 735;
 	width: 100%;
 }
 
