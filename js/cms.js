@@ -1,5 +1,3 @@
-// const { json } = require("body-parser");
-
 // Helper functions for appending data to DOM elements
 function appendData(data, element, method, dest) {
 	if (data && dest) {
@@ -25,6 +23,7 @@ function appendData(data, element, method, dest) {
 			dest.innerHTML = marked.parse(data);
 		} else if (method === "image") {
 			if (!dest && data.url) {
+				// TODO Figure out what's going on with this.
 				el = document.createElement("img");
 				el.src = data.url;
 				el.alt ? (el.alt = data.alt) : "If These Lands Could Talk";
@@ -57,18 +56,22 @@ function getPageData(page) {
 			// Page data
 			const data = response[0].acf;
 
-			// Dynamic elements
+			// Hero
 			const hero = document.getElementById("hero"); // For hero section
 			const heroHeading = document.getElementById("hero-heading"); // For h1 in the hero
 			const heroSubheading = document.getElementById("hero-subheading");
 			const heroImage = document.getElementById("hero-image");
-
 			const btnContainer = document.getElementById("hero-button-container");
-			const mainContent = document.getElementById("main-content");
 
+			// Generic Content Sections
+			const mainContent = document.getElementById("main-content");
+			const section1 = document.getElementById("section-1");
+			const section2 = document.getElementById("section-2");
+			const section3 = document.getElementById("section-3");
+
+			// Cards
 			const cards = document.querySelectorAll("#card-container .card");
 			const tiles = data.tile_section;
-
 			if (cards.length > 0 && data.tile_section) {
 				Object.keys(tiles).forEach(key => {
 					const tile = tiles[key];
@@ -84,7 +87,7 @@ function getPageData(page) {
 						`#${slug} .card-description  p`,
 					);
 
-					if (tile.image.url && tileImage) {
+					if (tile.image && tileImage) {
 						appendData(tile.image, "img", "image", tileImage);
 					}
 					if (tile.heading && tileHeading) {
@@ -156,11 +159,22 @@ function getItemData(collection) {
 		.then(response => response.json())
 		.then(response => {
 			const data = response[0].acf;
+			const posterContainer = document.getElementById("poster-container");
 			const title = document.getElementById("post-title");
 			const description = document.getElementById("description-container");
 			const highlights = document.getElementById("highlights-container");
 			const btnContainer = document.getElementById("button-container");
 
+			if (data.featured_image.url) {
+				const image = document.createElement("img");
+				image.src = data.featured_image.url;
+				data.featured_image.alt
+					? (image.alt = data.featured_image.alt)
+					: "If These Lands Could Talk";
+
+				image.classList.add("event-poster");
+				posterContainer.appendChild(image);
+			}
 			response[0].title.rendered && title // Using the WordPress title instead of the ACF title
 				? appendData(response[0].title.rendered, "h1", "markup", title)
 				: null;
@@ -192,18 +206,17 @@ function getCollectionData(collection) {
 	})
 		.then(response => response.json())
 		.then(response => {
-			const posts = response;
+			const items = response;
 
-			// Generate cards for each post
-			posts.forEach((post, index) => {
+			// Generate cards for each item
+			items.forEach((item, index) => {
 				// Single item data
-				const data = post.acf;
+				const data = item.acf;
 
-				// Start and End dates
+				// Using dates to sort events
 				const currentDate = new Date();
-				const startDate = new Date(data.startdate);
-				const endDate = new Date(data.enddate);
-				const past = endDate < currentDate;
+				data.enddate ? (endDate = new Date(data.enddate)) : null;
+				endDate ? (past = endDate < currentDate) : null;
 
 				// Container elements
 				const container = document.getElementById(`${collection}-container`);
@@ -212,7 +225,7 @@ function getCollectionData(collection) {
 				);
 				const card = document.createElement("a");
 				card.classList.add("card", "event");
-				card.href = `events/event.html?e=${post.slug}`;
+				card.href = `events/event.html?e=${item.slug}`;
 				// Append data to the card
 				if (data.featured_image.url) {
 					const image = document.createElement("img");
