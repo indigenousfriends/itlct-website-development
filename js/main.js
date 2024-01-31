@@ -148,3 +148,51 @@ mobileMenuBtn.addEventListener("click", () => {
 	// toggle mobile menu component
 	mobileMenuComponent.classList.toggle("open-menu");
 });
+
+/* 
+===================================
+Content Management System
+===================================
+*/
+// Helper functions for appending data to DOM elements
+function appendData(data, element, method, dest) {
+	if (data && dest) {
+		if (method === "text") {
+			dest.textContent = "";
+			dest.appendChild(document.createTextNode(data));
+		} else if (method === "link") {
+			let el = document.getElementById(element);
+
+			if (el) {
+				el.href = data.url;
+				el.textContent = "";
+				el.textContent = data.title;
+			} else {
+				el = document.createElement("a");
+				el.href = data.url;
+				el.textContent = data.title;
+				el.classList.add("btn-main", "btn-hover-drk");
+				dest.appendChild(el);
+			}
+		} else if (method === "markup") {
+			dest.innerHTML = "";
+			dest.innerHTML = marked.parse(data);
+		} else if (method === "image") {
+			if (!dest && data.url) {
+				// TODO Figure out what's going on with this.
+				el = document.createElement("img");
+				el.src = data.url;
+				el.alt ? (el.alt = data.alt) : "If These Lands Could Talk";
+				el.appendChild(dest);
+			} else {
+				dest.setAttribute("src", data.url);
+				data.alt
+					? dest.setAttribute("alt", data.alt)
+					: dest.setAttribute("alt", "If These Lands Could Talk");
+			}
+		} else {
+			el.innerHTML = data;
+			el.appendChild(dest);
+		}
+	}
+}
