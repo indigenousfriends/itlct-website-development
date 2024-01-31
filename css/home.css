@@ -156,7 +156,7 @@ What We Do
 }
 
 /* card styling */
-.wwd-card {
+.what-we-do .card {
 	width: calc(33% - var(--spacing-med));
 }
 
@@ -167,7 +167,7 @@ What We Do
 	height: 200px;
 }
 
-.wwd-card-text {
+.what-we-do .card .card-text-container {
 	border-radius: 0 0 var(--border-radius) var(--border-radius);
 	padding: var(--spacing-med) var(--spacing-sm);
 	display: flex;
@@ -330,11 +330,11 @@ Media Queries (overriding styles for different screen sizes)
 		gap: var(--spacing-med);
 	}
 
-	.wwd-card {
+	.what-we-do .card {
 		width: 100%;
 	}
 
-	.wwd-card-text {
+	.what-we-do .card .card-text-container {
 		min-height: auto;
 	}
 
