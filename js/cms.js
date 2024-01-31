@@ -23,12 +23,12 @@ function appendData(data, element, method, dest) {
 			dest.innerHTML = marked.parse(data);
 		} else if (method === "image") {
 			if (!dest && data.url) {
+				// TODO Figure out what's going on with this.
 				el = document.createElement("img");
 				el.src = data.url;
 				el.alt ? (el.alt = data.alt) : "If These Lands Could Talk";
 				el.appendChild(dest);
 			} else {
-				console.log(dest);
 				dest.setAttribute("src", data.url);
 				data.alt
 					? dest.setAttribute("alt", data.alt)
@@ -174,10 +174,6 @@ function getItemData(collection) {
 
 				image.classList.add("event-poster");
 				posterContainer.appendChild(image);
-
-				// console.log(data.featured_image.url);
-				// appendData(data.featured_image, "img", "image", image);
-				// hero.style.backgroundImage = `url(${data.featured_image.url})`;
 			}
 			response[0].title.rendered && title // Using the WordPress title instead of the ACF title
 				? appendData(response[0].title.rendered, "h1", "markup", title)
