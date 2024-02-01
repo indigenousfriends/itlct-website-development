@@ -17,7 +17,11 @@ function getPageData(page) {
 			const heroHeading = document.getElementById("hero-heading"); // For h1 in the hero
 			const heroSubheading = document.getElementById("hero-subheading");
 			const heroImage = document.getElementById("hero-image");
-			const btnContainer = document.getElementById("hero-button-container");
+			const heroButton1 = document.getElementById("hero-button-1");
+			const heroButton2 = document.getElementById("hero-button-2");
+			console.log(data.hero_button_1);
+			console.log(data.hero_button_2);
+
 			if (data.hero_image.url) {
 				appendData(data.hero_image, "img", "image", heroImage);
 				heroImage.setAttribute("src", data.hero_image.url);
@@ -32,11 +36,11 @@ function getPageData(page) {
 			data.hero_subheading
 				? appendData(data.hero_subheading, "h2", "text", heroSubheading)
 				: null;
-			data.button_1
-				? appendData(data.button_1, "button-1", "link", btnContainer)
+			data.hero_button_1
+				? appendData(data.hero_button_1, "hero-button-1", "link", heroButton1)
 				: null;
-			data.button_2
-				? appendData(data.button_2, "button-2", "link", btnContainer)
+			data.hero_button_1
+				? appendData(data.hero_button_2, "hero-button-2", "link", heroButton2)
 				: null;
 
 			// Main Content Sections
@@ -59,18 +63,25 @@ function getPageData(page) {
 					const sectionData = data[slug];
 					const sectionHeading = document.querySelector(`#${sectionID} h2`);
 					const sectionText = document.querySelector(`#${sectionID} p`);
+					const sectionQuote = document.querySelector(
+						`#${sectionID} blockquote p`,
+					);
 					const sectionImage = document.querySelector(`#${sectionID} img`);
 					const sectionButton = document.querySelector(`#${sectionID} a`);
 
+					sectionData.image && sectionImage
+						? appendData(sectionData.image, "img", "image", sectionImage)
+						: null;
 					sectionData.heading && sectionHeading
 						? appendData(sectionData.heading, "h2", "text", sectionHeading)
 						: null;
 					sectionData.text && sectionText
 						? appendData(sectionData.text, "p", "text", sectionText)
 						: null;
-					sectionData.image && sectionImage
-						? appendData(sectionData.image, "img", "image", sectionImage)
+					sectionData.quote && sectionQuote
+						? appendData(sectionData.quote, "blockquote", "text", sectionQuote)
 						: null;
+
 					if (sectionData.button && sectionButton) {
 						// appendData(sectionData.button, "button", "link", sectionButton);
 						sectionButton.href = sectionData.button.url;

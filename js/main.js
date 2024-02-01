@@ -105,16 +105,18 @@ function appendData(data, element, method, dest) {
 			dest.appendChild(document.createTextNode(data));
 		} else if (method === "link") {
 			let el = document.getElementById(element);
-
+			console.log(el);
 			if (el) {
 				el.href = data.url;
 				el.textContent = "";
 				el.textContent = data.title;
+				el.target = data.target ? data.target : "_self";
 			} else {
 				el = document.createElement("a");
 				el.href = data.url;
 				el.textContent = data.title;
 				el.classList.add("btn-main", "btn-hover-drk");
+				el.target = data.target ? data.target : "_self";
 				dest.appendChild(el);
 			}
 		} else if (method === "markup") {
