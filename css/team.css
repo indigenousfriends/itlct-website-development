@@ -20,7 +20,7 @@ Member Card Component
 	max-width: 654px;
 }
 /* img styling*/
-.member .img {
+.member img {
 	max-width: 240px;
 }
 .member img {
@@ -46,7 +46,7 @@ Member Card Component
 
 /* member card layout */
 .member,
-.member .text,
+.member .text-container,
 .member .bio,
 .member-cat {
 	display: flex;
@@ -54,7 +54,7 @@ Member Card Component
 
 /* similar gaps */
 .member,
-.member .text {
+.member .text-container {
 	gap: var(--spacing-sm);
 }
 
@@ -63,11 +63,12 @@ Member Card Component
 }
 
 /* text container and bio  */
-.member .text,
+.member .text-container,
 .member .bio {
 	flex-direction: column;
 }
-.member .text {
+.member .text-container {
+	flex-direction: column;
 	justify-content: space-between;
 }
 
@@ -130,6 +131,7 @@ Team Members
 	display: flex;
 	gap: var(--spacing-sm);
 	justify-content: center;
+	flex-direction: row-reverse;
 	flex-wrap: wrap;
 }
 

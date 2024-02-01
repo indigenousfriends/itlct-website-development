@@ -49,7 +49,7 @@ function getPageData(page) {
 			const sections = document.querySelectorAll("section");
 			sections.forEach((section, index) => {
 				const sectionID = section.id;
-				const slug = sectionID.replace(/-/g, "_");
+				const slug = slugify(sectionID);
 
 				if (
 					sectionID &&

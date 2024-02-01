@@ -113,7 +113,7 @@
 		<!-- Team Members -->
 		<section>
 			<div class="wrapper">
-				<ul class="team-members">
+				<ul id="team-members-container" class="team-members">
 					<!-- Natasha Rabsatt -->
 					<li class="member">
 						<!-- img -->
@@ -123,7 +123,7 @@
 								alt="Portrait of Natasha Rabsatt" />
 						</div>
 						<!-- text -->
-						<div class="text">
+						<div class="text-container">
 							<!-- SM Bio -->
 							<div class="bio">
 								<h2>Natasha Rabsatt, M.S.</h2>
@@ -152,7 +152,7 @@
 								alt="Portrait of Marsha Maxwell" />
 						</div>
 						<!-- text -->
-						<div class="text">
+						<div class="text-container">
 							<!-- SM Bio -->
 							<div class="bio">
 								<h2>Dr. Marsha Maxwell, CETL</h2>
@@ -395,7 +395,13 @@
 	</div>
 
 	<!-- JavaScript -->
-	<script src="js/main.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script src="/js/pages.js"></script>
+	<script src="/js/team.js"></script>
+	<script>
+		getPageData('team');
+	</script>
 </body>
 
 </html>
