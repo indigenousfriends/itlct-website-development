@@ -88,7 +88,7 @@ function getPageData(page) {
 			if (cardElements.length > 0 && data.card_section) {
 				Object.keys(cards).forEach(key => {
 					const card = cards[key];
-					const slug = key.slugify(/_/g, "-");
+					const slug = key.replace(/_/g, "-");
 					const cardImage = document.querySelector(`#${slug} img`);
 					const cardHeading = document.querySelector(
 						`#${slug} .card-text-container  h3`,
