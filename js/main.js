@@ -7,7 +7,6 @@ Modals
 // HTML Reference Variables
 let openModalBtns = document.querySelectorAll(`[data-role="open-modal"]`);
 let closeModalBtns = document.querySelectorAll(`[data-role="close-modal"]`);
-console.log(openModalBtns);
 // toggle modal on and off
 const toggleModal = modal => {
 	document.body.classList.toggle("disable-scroll");
@@ -21,7 +20,6 @@ openModalBtns.forEach(button => {
 		let modalElement = document.querySelector(`#${button.dataset.type}`);
 
 		let member = button.dataset.content;
-		console.log(`Found modals: ${modalElement}`);
 
 		// opening modals based on data-content attr
 		if (member) {
@@ -32,7 +30,6 @@ openModalBtns.forEach(button => {
 			toggleModal(modalElement);
 			member = "";
 		} else {
-			console.log("No member found");
 			// open modal
 			toggleModal(modalElement);
 		}

@@ -47,9 +47,9 @@ function getPageData(page) {
 
 			// Generic Content Sections
 			const sections = document.querySelectorAll("section");
-			sections.forEach((section, index) => {
+			sections.forEach(section => {
 				const sectionID = section.id;
-				const slug = slugify(sectionID);
+				const slug = sectionID.replace(/-/g, "_");
 
 				if (
 					sectionID &&
@@ -82,11 +82,12 @@ function getPageData(page) {
 			// Cards
 			const cardElements = document.querySelectorAll("#card-container .card");
 			const cards = data.card_section;
+			console.log(data.card_section);
 
 			if (cardElements.length > 0 && data.card_section) {
 				Object.keys(cards).forEach(key => {
 					const card = cards[key];
-					const slug = key.replace(/_/g, "-");
+					const slug = key.slugify(/_/g, "-");
 					const cardImage = document.querySelector(`#${slug} img`);
 					const cardHeading = document.querySelector(
 						`#${slug} .card-text-container  h3`,
