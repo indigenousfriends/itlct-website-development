@@ -67,8 +67,6 @@ function generateModals(items) {
 		teamModalData.push(teamMemberData);
 	});
 
-	console.log(teamModalData);
-
 	// Populate modal
 	function populateTeamModal(teamModalData) {
 		// deconstructing object
@@ -120,4 +118,4 @@ function getAllTeamData() {
 		.catch(error => console.error("Error:", error));
 }
 
-console.log(getAllTeamData());
+getAllTeamData();

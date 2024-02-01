@@ -60,7 +60,7 @@ function getPageData(page) {
 					const sectionHeading = document.querySelector(`#${sectionID} h2`);
 					const sectionText = document.querySelector(`#${sectionID} p`);
 					const sectionImage = document.querySelector(`#${sectionID} img`);
-					const sectionButton = document.querySelector(`#${sectionID} button`);
+					const sectionButton = document.querySelector(`#${sectionID} a`);
 
 					sectionData.heading && sectionHeading
 						? appendData(sectionData.heading, "h2", "text", sectionHeading)
@@ -71,9 +71,11 @@ function getPageData(page) {
 					sectionData.image && sectionImage
 						? appendData(sectionData.image, "img", "image", sectionImage)
 						: null;
-					sectionData.button && sectionButton
-						? appendData(sectionData.button, "button", "link", sectionButton)
-						: null;
+					if (sectionData.button && sectionButton) {
+						// appendData(sectionData.button, "button", "link", sectionButton);
+						sectionButton.href = sectionData.button.url;
+						sectionButton.textContent = sectionData.button.title;
+					}
 				} else {
 					null;
 				}
@@ -82,7 +84,6 @@ function getPageData(page) {
 			// Cards
 			const cardElements = document.querySelectorAll("#card-container .card");
 			const cards = data.card_section;
-			console.log(data.card_section);
 
 			if (cardElements.length > 0 && data.card_section) {
 				Object.keys(cards).forEach(key => {
