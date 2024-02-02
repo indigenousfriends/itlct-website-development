@@ -299,7 +299,7 @@ Get Involved
 	}
 	/* layout */
 	.get-involved .wrapper {
-		flex-direction: column;
+		flex-direction: column-reverse;
 	}
 
 	.get-involved .text {
