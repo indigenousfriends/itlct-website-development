@@ -113,66 +113,7 @@
 		<!-- Team Members -->
 		<section>
 			<div class="wrapper">
-				<ul class="team-members">
-					<!-- Natasha Rabsatt -->
-					<li class="member">
-						<!-- img -->
-						<div class="img">
-							<img
-								src="/assets/images/pages/team/natasha-rabsatt.png"
-								alt="Portrait of Natasha Rabsatt" />
-						</div>
-						<!-- text -->
-						<div class="text">
-							<!-- SM Bio -->
-							<div class="bio">
-								<h2>Natasha Rabsatt, M.S.</h2>
-								<p class="role">Co-Founder</p>
-								<p>
-									Natasha is Caribbean afro-indigenous with Classic Taino
-									(Puerto Rico - Boriken) and African Heritage.
-								</p>
-							</div>
-							<!-- Read More Button -->
-							<button
-								class="btn-main team-modal-btn"
-								data-role="open-modal"
-								data-type="team-modal"
-								data-content="natasha">
-								Read More
-							</button>
-						</div>
-					</li>
-					<!-- Marsha Maxwell -->
-					<li class="member">
-						<!-- img -->
-						<div class="img">
-							<img
-								src="/assets/images/pages/team/marsha-maxwell.png"
-								alt="Portrait of Marsha Maxwell" />
-						</div>
-						<!-- text -->
-						<div class="text">
-							<!-- SM Bio -->
-							<div class="bio">
-								<h2>Dr. Marsha Maxwell, CETL</h2>
-								<p class="role">Co-Founder</p>
-								<p>
-									Dr. Maxwell has strategic, tactical and operational
-									technology experience.
-								</p>
-							</div>
-							<!-- Read More Button -->
-							<button
-								class="btn-main team-modal-btn"
-								data-role="open-modal"
-								data-type="team-modal"
-								data-content="marsha">
-								Read More
-							</button>
-						</div>
-					</li>
-				</ul>
+				<ul id="team-members-container" class="team-members"></ul>
 			</div>
 		</section>
 
@@ -193,11 +134,6 @@
 
 		<!-- Get Involved -->
 		<section id="section-3" class="get-involved">
-			<!-- mobile img -->
-			<img
-				src="/assets/images/pages/team/mobile/get-involved-mobile.jpg"
-				alt="Indigenous student writing on a chalk board."
-				class="img-mobile" />
 			<div class="wrapper">
 				<!-- text -->
 				<div class="text">
@@ -214,6 +150,11 @@
 						src="/assets/images/pages/team/get-involved.jpg"
 						alt="Indigenous student writing on a chalk board." />
 				</div>
+				<!-- mobile img -->
+				<img
+					src="/assets/images/pages/team/mobile/get-involved-mobile.jpg"
+					alt="Indigenous student writing on a chalk board."
+					class="img-mobile" />
 			</div>
 		</section>
 	</main>
@@ -376,26 +317,32 @@
 			<div class="member">
 				<!-- img -->
 				<div class="img">
-					<img id="member-img" src="" alt="" />
+					<img id="modal-member-img" src="" alt="" />
 				</div>
 				<!-- text -->
 				<div class="text">
 					<!-- SM Bio -->
 					<div class="bio">
-						<h3 id="member-name"></h3>
-						<p class="role" id="member-role"></p>
+						<h3 id="modal-member-name"></h3>
+						<p class="role" id="modal-member-role"></p>
 					</div>
 				</div>
 			</div>
 			<!-- text container -->
 			<div class="modal-text-container">
-				<div class="modal-scroll-container" id="member-bio"></div>
+				<div class="modal-scroll-container" id="modal-member-bio"></div>
 			</div>
 		</div>
 	</div>
 
 	<!-- JavaScript -->
-	<script src="js/main.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script src="/js/pages.js"></script>
+	<script src="/js/team.js"></script>
+	<script>
+		getPageData('team');
+	</script>
 </body>
 
 </html>
