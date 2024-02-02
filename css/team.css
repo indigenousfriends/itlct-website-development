@@ -81,9 +81,6 @@ Member Card Component
 	padding: var(--spacing-sm) 0;
 }
 
-.team-modal .img {
-	max-width: 140px;
-}
 /* 
 ===================================
 Section Styles (background, padding, etc.)
