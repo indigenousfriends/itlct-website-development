@@ -1,3 +1,32 @@
+// Populate modal
+function populateTeamModal(data) {
+	const teamMemberData = {
+		imgPath: data.image.url,
+		name: data.name,
+		role: data.position,
+		bio: data.bio,
+	};
+
+	const { imgPath, name, role, bio } = teamMemberData;
+
+	// Team modal elements
+	const memberImg = document.querySelector("#modal-member-img");
+	const memberName = document.querySelector("#modal-member-name");
+	const memberRole = document.querySelector("#modal-member-role");
+	const memberBio = document.querySelector("#modal-member-bio");
+
+	// picture
+	memberImg.src = imgPath;
+	memberImg.alt = `A profile picture of ${name}`;
+
+	// text
+	memberName.textContent = name;
+	memberRole.textContent = role;
+
+	// bio
+	appendData(bio, "p", "text", memberBio);
+}
+
 function generateCards(items) {
 	items.forEach(item => {
 		// Single item data
@@ -38,64 +67,37 @@ function generateCards(items) {
 			text.appendChild(summary);
 		}
 
-		const btn = document.createElement("button");
-		btn.classList.add("btn-main", "team-modal-btn");
-		btn.setAttribute("data-role", "open-modal");
-		btn.setAttribute("data-type", "team-modal");
-		btn.setAttribute("data-content", slugify(data.name));
-		btn.textContent = "Read More";
-		text.appendChild(btn);
+		if (data.bio && text) {
+			const btn = document.createElement("button");
+			btn.classList.add("btn-main", "team-modal-btn");
+			btn.setAttribute("data-role", "open-team-modal");
+			btn.setAttribute("data-type", "team-modal");
+			btn.setAttribute("data-content", slugify(data.name));
+			btn.textContent = "Read More";
+			text.appendChild(btn);
+
+			btn.addEventListener("click", () => {
+				let modalElement = document.querySelector(`#${btn.dataset.type}`);
+				let member = btn.dataset.content;
+
+				// opening modals based on data-content attr
+				if (member) {
+					// populate modal according to data-content
+					populateTeamModal(data);
+
+					// open modal
+					toggleModal(modalElement);
+					member = "";
+				} else {
+					// open modal
+					toggleModal(modalElement);
+				}
+			});
+		}
 
 		// Append this card to the container
 		container.appendChild(card);
 	});
-}
-
-function generateModals(items) {
-	let teamModalData = [];
-
-	items.forEach(item => {
-		const data = item.acf;
-
-		const teamMemberData = {
-			imgPath: data.image.url,
-			name: data.name,
-			role: data.position,
-			bio: data.bio,
-		};
-
-		teamModalData.push(teamMemberData);
-	});
-
-	// Populate modal
-	function populateTeamModal(teamModalData) {
-		// deconstructing object
-		const { imgPath, name, role, bio, email, linkedin } = teamModalData;
-
-		// Team modal elements
-		const memberImg = document.querySelector("#modal-member-img");
-		const memberName = document.querySelector("#modal-member-name");
-		const memberRole = document.querySelector("#modal-member-role");
-		const memberBio = document.querySelector("#modal-member-bio");
-
-		// picture
-		memberImg.src = imgPath;
-		memberImg.alt = `A profile picture of ${name}`;
-
-		// text
-		memberName.textContent = name;
-		memberRole.textContent = role;
-
-		// bio
-		// empty bio component
-		memberBio.innerHTML = "";
-		// populate w new bio contents
-		bio.forEach(paragraph => {
-			const pElement = document.createElement("p");
-			pElement.textContent = paragraph;
-			memberBio.appendChild(pElement);
-		});
-	}
 }
 
 // Fetch all team members
@@ -113,7 +115,7 @@ function getAllTeamData() {
 		.then(response => {
 			const items = response;
 			generateCards(items);
-			generateModals(items);
+			// generateModals(items);
 		})
 		.catch(error => console.error("Error:", error));
 }

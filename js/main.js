@@ -13,28 +13,13 @@ const toggleModal = modal => {
 	modal.classList.toggle("hidden");
 };
 
-function toggleModal(modal) {}
-
 // Global Modal Events
 // open modal button events
 openModalBtns.forEach(button => {
 	button.addEventListener("click", () => {
 		let modalElement = document.querySelector(`#${button.dataset.type}`);
-
-		let member = button.dataset.content;
-
-		// opening modals based on data-content attr
-		if (member) {
-			// populate modal according to data-content
-			populateTeamModal(teamModalData[member]);
-
-			// open modal
-			toggleModal(modalElement);
-			member = "";
-		} else {
-			// open modal
-			toggleModal(modalElement);
-		}
+		// open modal
+		toggleModal(modalElement);
 	});
 });
 

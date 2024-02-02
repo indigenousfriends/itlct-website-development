@@ -66,7 +66,6 @@ function getPageData(page) {
 					);
 					const sectionImage = document.querySelector(`#${sectionID} img`);
 					const sectionButton = document.querySelector(`#${sectionID} a`);
-					console.log(sectionImage);
 
 					sectionData.image && sectionImage
 						? appendData(sectionData.image, "img", "image", sectionImage)
