@@ -13,6 +13,8 @@ const toggleModal = modal => {
 	modal.classList.toggle("hidden");
 };
 
+function toggleModal(modal) {}
+
 // Global Modal Events
 // open modal button events
 openModalBtns.forEach(button => {
@@ -105,7 +107,7 @@ function appendData(data, element, method, dest) {
 			dest.appendChild(document.createTextNode(data));
 		} else if (method === "link") {
 			let el = document.getElementById(element);
-			console.log(el);
+
 			if (el) {
 				el.href = data.url;
 				el.textContent = "";
@@ -124,7 +126,7 @@ function appendData(data, element, method, dest) {
 			dest.innerHTML = marked.parse(data);
 		} else if (method === "image") {
 			if (!dest && data.url) {
-				// TODO Figure out what's going on with this.
+				// Images are working, but targetting mobile in some cases
 				el = document.createElement("img");
 				el.src = data.url;
 				el.alt ? (el.alt = data.alt) : "If These Lands Could Talk";

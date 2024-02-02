@@ -19,8 +19,6 @@ function getPageData(page) {
 			const heroImage = document.getElementById("hero-image");
 			const heroButton1 = document.getElementById("hero-button-1");
 			const heroButton2 = document.getElementById("hero-button-2");
-			console.log(data.hero_button_1);
-			console.log(data.hero_button_2);
 
 			if (data.hero_image.url) {
 				appendData(data.hero_image, "img", "image", heroImage);
@@ -68,6 +66,7 @@ function getPageData(page) {
 					);
 					const sectionImage = document.querySelector(`#${sectionID} img`);
 					const sectionButton = document.querySelector(`#${sectionID} a`);
+					console.log(sectionImage);
 
 					sectionData.image && sectionImage
 						? appendData(sectionData.image, "img", "image", sectionImage)
