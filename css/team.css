@@ -21,7 +21,7 @@ Member Card Component
 }
 /* img styling*/
 .member img {
-	max-width: 240px;
+	width: 180px;
 }
 .member img {
 	border-radius: var(--border-radius);
@@ -253,6 +253,7 @@ Members Card Component
 		width: 100%;
 	}
 	.member .img {
+		width: 240px;
 		align-self: center;
 	}
 	/* 
