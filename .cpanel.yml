@@ -1,6 +1,6 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/ifthesel/staging/
+    - export DEPLOYPATH=/home/ifthesel/public_html/
     - /bin/cp .htaccess $DEPLOYPATH
     - /bin/cp 404.html $DEPLOYPATH
     - /bin/cp about.html $DEPLOYPATH
