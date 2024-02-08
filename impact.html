@@ -85,6 +85,7 @@
 			<img
 				src="./assets/images/pages/impact/mobile/hero-impact-mobile.jpg"
 				alt="Our Impact background"
+				id="hero-image"
 				class="img-mobile" />
 			<!-- Wrapper -->
 			<div class="wrapper hero-wrapper">
@@ -101,7 +102,7 @@
 	<!-- Our Impact Content -->
 	<main>
 		<!-- Technology is all around us -->
-		<section class="section-2-col technology">
+		<section id="section-1" class="section-2-col technology">
 			<div class="wrapper">
 				<!-- styled img card  -->
 				<div class="styled-img-container style-left">
@@ -124,7 +125,7 @@
 		</section>
 
 		<!-- Program Gallery -->
-		<section class="programs">
+		<section id="icons-section" class="programs">
 			<div class="wrapper">
 				<!-- Program Icon gallery -->
 				<ul class="program-gallery">
@@ -166,7 +167,7 @@
 		</section>
 
 		<!-- Responsible Stewardship -->
-		<section class="section-2-col stewardship">
+		<section id="section-3" class="section-2-col stewardship">
 			<div class="wrapper">
 				<!-- text container -->
 				<div class="text-container">
@@ -330,6 +331,11 @@
 
 	<!-- JavaScript -->
 	<script src="/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script src="/js/pages.js"></script>
+	<script>
+		getPageData('impact');
+	</script>
 </body>
 
 </html>

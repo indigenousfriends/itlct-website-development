@@ -20,8 +20,8 @@ Member Card Component
 	max-width: 654px;
 }
 /* img styling*/
-.member .img {
-	max-width: 240px;
+.member img {
+	width: 180px;
 }
 .member img {
 	border-radius: var(--border-radius);
@@ -46,7 +46,7 @@ Member Card Component
 
 /* member card layout */
 .member,
-.member .text,
+.member .text-container,
 .member .bio,
 .member-cat {
 	display: flex;
@@ -54,7 +54,7 @@ Member Card Component
 
 /* similar gaps */
 .member,
-.member .text {
+.member .text-container {
 	gap: var(--spacing-sm);
 }
 
@@ -63,11 +63,12 @@ Member Card Component
 }
 
 /* text container and bio  */
-.member .text,
+.member .text-container,
 .member .bio {
 	flex-direction: column;
 }
-.member .text {
+.member .text-container {
+	flex-direction: column;
 	justify-content: space-between;
 }
 
@@ -80,9 +81,6 @@ Member Card Component
 	padding: var(--spacing-sm) 0;
 }
 
-.team-modal .img {
-	max-width: 140px;
-}
 /* 
 ===================================
 Section Styles (background, padding, etc.)
@@ -130,6 +128,7 @@ Team Members
 	display: flex;
 	gap: var(--spacing-sm);
 	justify-content: center;
+	flex-direction: row-reverse;
 	flex-wrap: wrap;
 }
 
@@ -251,6 +250,7 @@ Members Card Component
 		width: 100%;
 	}
 	.member .img {
+		width: 240px;
 		align-self: center;
 	}
 	/* 
@@ -297,7 +297,7 @@ Get Involved
 	}
 	/* layout */
 	.get-involved .wrapper {
-		flex-direction: column;
+		flex-direction: column-reverse;
 	}
 
 	.get-involved .text {

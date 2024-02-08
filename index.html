@@ -18,8 +18,8 @@
 	<link
 		rel="stylesheet"
 		href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700&display=swap" />
-	<link rel="stylesheet" href="/css/v2/global.css?v=2" />
-	<link rel="stylesheet" href="/css/v2/home.css?v=2" />
+	<link rel="stylesheet" href="/css/global.css?v=2" />
+	<link rel="stylesheet" href="/css/home.css?v=2" />
 	<!-- MailerLite Universal -->
 	<script src="/js/mailerlite.js" defer></script>
 </head>
@@ -83,6 +83,7 @@
 			<img
 				src="/assets/images/pages/home/mobile/hero-home-mobile.jpg"
 				alt="Indigenous girl blowing dandelion seeds on a grassy field"
+				id="hero-image"
 				class="img-mobile" />
 			<!-- Wrapper -->
 			<div class="wrapper hero-wrapper">
@@ -96,8 +97,8 @@
 					</p>
 					<!-- Home Page: Hero Button Container -->
 					<div class="hero-btn-container">
-						<a href="/impact.html" class="btn-alt">Our Impact</a>
-						<a href="/values.html" class="btn-alt">Our Values</a>
+						<a href="/impact.html" id="hero-button-1" class="btn-alt">Our Impact</a>
+						<a href="/values.html" id="hero-button-2" class="btn-alt">Our Values</a>
 						<a href="/values.html" class="btn-main mobile-about-btn">Our Values</a>
 					</div>
 				</div>
@@ -108,7 +109,7 @@
 	<!-- Main content -->
 	<main>
 		<!--Community Partnerships  -->
-		<section class="community">
+		<section id="section-1" class="community">
 			<div class="wrapper">
 				<!-- card -->
 				<div class="community-card">
@@ -133,7 +134,7 @@
 		</section>
 
 		<!-- Global Ecosystem  -->
-		<section class="global-ecosystem">
+		<section id="section-2" class="global-ecosystem">
 			<div class="wrapper">
 				<!-- container -->
 				<div class="content-container">
@@ -167,15 +168,15 @@
 			<div class="wrapper">
 				<h2>What We Do</h2>
 
-				<ul class="wwd-card-list">
+				<ul id="card-container" class="wwd-card-list">
 					<!-- digital fluency -->
-					<li class="wwd-card">
+					<li id="card-1" class="card">
 						<div class="wwd-card-img">
 							<img
 								src="/assets/images/pages/home/digital-fluency.jpg"
 								alt="A diverse group of women having a conversation in a circle" />
 						</div>
-						<div class="wwd-card-text wwd-digital">
+						<div class="card-text-container wwd-digital">
 							<h3>Digital Fluency</h3>
 							<p>
 								We assist and partner with communities to engage with digital
@@ -186,13 +187,13 @@
 					</li>
 
 					<!-- community engagement -->
-					<li class="wwd-card">
+					<li id="card-2" class="card">
 						<div class="wwd-card-img">
 							<img
 								src="/assets/images/pages/home/community-engagement.jpg"
 								alt="Diverse hands forming a circle" />
 						</div>
-						<div class="wwd-card-text wwd-community">
+						<div class="card-text-container wwd-community">
 							<h3>Community Engagement</h3>
 							<p>
 								We host community meetups in the metaverse and with digital
@@ -203,13 +204,13 @@
 					</li>
 
 					<!-- Digital Technology Programs -->
-					<li class="wwd-card">
+					<li id="card-3" class="card">
 						<div class="wwd-card-img">
 							<img
 								src="/assets/images/pages/home/digital-technology.jpg"
 								alt="A diverse group of four young people" />
 						</div>
-						<div class="wwd-card-text wwd-programs">
+						<div class="card-text-container wwd-programs">
 							<h3>Digital Technology Programs</h3>
 							<p>
 								We provide STEAM opportunities that are relevant to Native and
@@ -222,7 +223,7 @@
 		</section>
 
 		<!-- Our  Values -->
-		<section class="our-values">
+		<section id="section-4" class="our-values">
 			<div class="wrapper">
 				<!-- title and subtitle -->
 				<div class="values-title-container">
@@ -268,29 +269,7 @@
 			<div class="wrapper">
 				<h2>Upcoming Events and Programs</h2>
 				<!-- Event gallery -->
-				<ul class="event-list">
-					<!-- Event -->
-					<li class="event">
-						<a
-							href="/events/walking-in-multiple-worlds.html"
-							class="img-link">
-							<!-- img container -->
-							<div class="event-img">
-								<img
-									src="/assets/images/pages/event-single/mobile/event-wimw-mobile.jpg"
-									alt="Walking in Multiple Worlds Event Poster" />
-							</div>
-							<!-- text container -->
-							<div class="event-text">
-								<h3>Walking in Multiple Worlds</h3>
-								<p>
-									Appreciate the past by preserving heritage and culture to
-									pass onto future generations.
-								</p>
-							</div>
-						</a>
-					</li>
-				</ul>
+				<div id="events-container" class="event-list"></div>
 			</div>
 		</section>
 	</main>
@@ -437,6 +416,13 @@
 
 	<!-- JavaScript -->
 	<script src="js/main.js"></script>
+	<script src="/js/pages.js"></script>
+	<script src="/js/events.js"></script>
+	<script>
+		getPageData('home');
+		getAllEventsData();
+	</script>
+
 </body>
 
 </html>
