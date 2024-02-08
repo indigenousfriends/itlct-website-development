@@ -140,21 +140,3 @@ function slugify(text) {
 		.replace(/^-+/, "") // Trim - from start of text
 		.replace(/-+$/, ""); // Trim - from end of text
 }
-
-function getHeaderData() {
-	const apiURL = "https://wp.iftheselandscouldtalk.org/wp-json/wp/v2/menus";
-
-	fetch(`${apiURL}`, {
-		method: "GET",
-		headers: {
-			"Content-Type": "application/json",
-		},
-	})
-		.then(response => response.json())
-		.then(response => {
-			const data = response;
-			console.log(data);
-		});
-}
-
-getHeaderData();
